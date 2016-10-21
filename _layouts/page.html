@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="hero" style="background-color:#{{ page.color }};">
+  <div class="hero__bg-container-page mdl-typography--text-left mdl-color-text--white" >
+    <div class="page-title">{{ page.title }}</div>
+    <div class="page-subtitle">{{ page.subtitle }}</div>
+  </div>
+</div>
+<div class="page-content">
+  <section class="page-content__section mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col">
+	  {{ content }}
+    </div>
+  </section>
+</div>
+
+{% include spacer.html %}
+
+{% include rss-subscribe.html %}

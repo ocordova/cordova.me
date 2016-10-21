@@ -1,0 +1,46 @@
+---
+layout: default
+title: Home
+description: Full-Stack Developer based in Mexico City, experienced in both front-end and back-end development.
+lang: en
+uid: home
+color: 3F51B5
+---
+
+<div class="hero" style="background-color: #{{ page.color }}">
+  <div class="hero__bg-container-home mdl-typography--text-center">
+    <div class="home-title">{{ site.title }}</div>
+    <div class="home-subtitle">{{ site.description[page.lang] }}</div>
+    <a href="{{ site.baseurl }}{{ site.t[page.lang].about.url }}" class="home-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        More about me
+    </a>
+  </div>
+</div>
+<div class="home-blog-section">
+  <div class="home-section-title mdl-typography--display-1 mdl-color-text--grey-600">{{site.latest_blog_posts[page.lang]}}</div>
+  <div class="home-card-container mdl-grid">
+    {% assign posts = site.posts | where:"lang", page.lang %}
+    {% for post in posts %}
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+      <a href="{{ post.url }}">
+      <div class="mdl-card__media" style="background-image: url('{{ post.tile-image }} '); background-color: #{{ post.color }};">
+      </div>
+      </a>
+      <div class="mdl-card__title">
+        <a href="{{ post.url }}"><h4 class="mdl-card__title-text">{{ post.title }}</h4></a>
+      </div>
+      <div class="mdl-card__supporting-text">
+        {{ post.subtitle }}
+      </div>
+      <div class="mdl-card__actions">
+        <a href="{{ post.url }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-typography--text-uppercase">
+        {{ site.read_more[page.lang] }}
+        <svg class="icon-chevron-right" viewBox="0 0 24 24">
+            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+        </svg>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

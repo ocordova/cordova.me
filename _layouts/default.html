@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+{% include head.html %}
+
+<body class="{{ page.uid }} mdl-color--white mdl-color-text--grey-700">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    {% include header.html %}
+    <main class="mdl-layout__content">
+      {{ content }}
+
+      {% include footer.html %}
+    </main>
+  </div>
+  {% if page.js %}
+  {% for js in page.js %}
+    <script type="text/javascript">
+    {% include {{ js }} %}
+    </script>
+  {% endfor %}
+  {% endif %}
+  {% if jekyll.environment == "production" %}
+    {% include analytics.html %}
+  {% endif %}
+</body>
+</html>

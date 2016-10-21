@@ -1,0 +1,72 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Site settings / Translations
+title:               'Ós Córdova'
+description:
+  en:                 'Full-Stack Developer'
+  es:                 'Desarrollador Full-Stack'
+legal:
+  en:                'No rights reserved. The contents of this website are <a href="http://creativecommons.org/publicdomain/zero/1.0/">Public Domain</a>.'
+  es:                'No hay derechos reservados. El contenido de este sitio es del <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.es">Dominio Público</a>.'
+footer:
+  en:                'Hand coded with'
+  es:                'Codificado a mano con'
+read_more:
+  en:                'Read more'
+  es:                'Leer más'
+latest_blog_posts:
+  en:                'Latest blog posts'
+  es:                'Últimas entradas del blog'
+url:                 'https://ocordova.github.io/'
+baseurl:             ''
+index:
+  en:                /
+  es:                /es
+atom:
+  en:                /atom.xml
+  es:                /es/atom.xml
+
+# Static sections by uid
+t:
+  en:
+    home:
+      name:          "Home"
+      url:           "/"
+    about:
+      name:          "About"
+      url:           "/about/"
+    blog:
+      name:          "Blog"
+      url:           "/blog/"
+    contact:
+      name:          "Contact"
+      url:           "/contact/"
+  es:
+    home:
+      name:          "Inicio"
+      url:           "/es/"
+    about:
+      name:          "Acerca de"
+      url:           "/es/acerca-de/"
+    blog:
+      name:          "Blog"
+      url:           "/es/blog/"
+    contact:
+      name:          "Contacto"
+      url:           "/es/contacto/"
+# About/contact
+author:
+  name:              Ós Córdova
+  url:               https://twitter.com/ocordova
+  email:             hola@ocordova.me
+  twitter:           ocordova
+
+# Custom vars
+version:             1.0.0
+excerpt_separator:   <!--more-->
+google_analytics: UA-16434715-1
+# Build settings
+markdown: kramdown

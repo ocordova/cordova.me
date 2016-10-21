@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="hero__bg-container-post mdl-typography--text-center" style="background-color:#{{ page.color }};">
+    <div class="post-title">{{ page.title }}</div>
+    <div class="post-subtitle">{{ page.subtitle }}</div>
+    <div class="post-image" style="background-image:url('{{ page.hero-image }}'); "></div>
+  </div>
+  <button id="share" class="post-share mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent">
+    <svg class="icon-share" viewBox="0 0 24 24">
+        <path d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z" />
+    </svg>
+  </button>
+  <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" for="share">
+    <li class="mdl-menu__item">
+      <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.author.twitter }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+    </li>
+    <li class="mdl-menu__item">
+      <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+    </li>
+    <li class="mdl-menu__item">
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+    </li>
+  </ul>
+</div>
+<div class="post-content">
+  <section class="post-content__section mdl-grid mdl-grid--no-spacing">
+    <div class="mdl-cell mdl-cell--12-col">
+    {{ content }}
+    <div class="post-footer">
+      <time class="date">
+      {% include date.html %}
+      </time>
+      <!--div class="tags">
+        {% for tag in page.tags %}
+          <a href="/tags#{{ tag }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div-->
+    </div>
+    </div>
+  </section>
+</div>
+{% include questions.html %}
