@@ -20,7 +20,7 @@ read_more:
 latest_blog_posts:
   en:                'Latest blog posts'
   es:                'Últimas entradas del blog'
-url:                 'https://ocordova.github.io/'
+url:                 'http://ocordova.me'
 baseurl:             ''
 index:
   en:                /
