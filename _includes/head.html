@@ -31,10 +31,10 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title[page.lang] }}" href="{{ site.url }}{{ site.baseurl }}{{ site.atom[page.lang] }}">
   {% assign posts = site.posts | where:"uid", page.uid | sort: 'lang' %}
   {% for post in posts %}
-  <link rel="alternate" hreflang="{{ post.lang }}" href="{{ post.url }}" />
+  <link rel="alternate" hreflang="{{ post.lang }}" href="{{ site.baseurl }}{{ post.url }}" />
   {% endfor %}
   {% assign pages=site.pages | where:"uid", page.uid | sort: 'lang' %}
   {% for page in pages %}
-  <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url }}" />
+  <link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.baseurl }}{{ page.url }}" />
   {% endfor %}
 </head>
