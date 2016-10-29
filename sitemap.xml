@@ -16,7 +16,7 @@ permalink: /sitemap.xml
       </url>
   {% endfor %}
   {% for page in site.pages %}
-  {% unless page.uid == "s_404" %}
+  {% unless page.uid == "not-found" %}
       <url>
         <loc>{{site.url}}{{ page.url }}</loc>
         {% assign versions=site.pages | where:"uid", page.uid %}
