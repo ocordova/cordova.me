@@ -8,7 +8,7 @@ hero-image: /img/posts/2016-10-01-well-hello-there/hero-2480.png
 tile-image: /img/posts/2016-10-01-well-hello-there/tile-480.png
 tags: personal
 uid: p-well-hello-there
-permalink: /es/blog/well-hello-there
+permalink: /es/blog/hola
 lang: es
 ---
 
