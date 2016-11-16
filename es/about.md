@@ -31,7 +31,7 @@ Actualmente estoy disponible para proyectos. No dudes en [ponerte en contacto](/
 Escribo de todo en [Twitter](https://twitter.com/){: .social-link--twitter},
 comparto código en [GitHub](https://github.com/ocordova){: .social-link--github},
 respondo preguntas en [Stack Overflow](http://stackoverflow.com/users/3075569/ocordova){: .social-link--stackoverflow},
-comparto mis conocimientos y pensamientos en mi [Blog](es/blog){: .social-link--blog},
+comparto mis conocimientos y pensamientos en mi [Blog](http://ocordova.me/es/blog){: .social-link--blog},
 comparto fotos de mi vida en [Instagram](https://instagram.com/ocordova/){: .social-link--instagram},
 reblogeo en [Tumblr](https://ocordova.tumblr.com){: .social-link--tumblr},
 y esporádicamente hago tiros en [Dribbble](https://dribbble.com/ocordova){: .social-link--dribbble}.
