@@ -24,7 +24,7 @@ Tengo una fuerte pasión por crear experiencias de usuario sencillas, atractivas
   * Diseño de experiencia (UX)
   * Diseño de interacción (IxD)
 
-Actualmente estoy disponible para proyectos. No dudes en [ponerte en contacto](/contacto).
+Actualmente estoy disponible para proyectos. No dudes en [ponerte en contacto](http://ocordova.me/es/contacto/).
 
 ### Encuéntrame en
 
