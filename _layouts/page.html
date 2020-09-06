@@ -2,20 +2,33 @@
 layout: default
 ---
 
-<div class="hero" style="background-color:#{{ page.color }};">
-  <div class="hero__bg-container-page mdl-typography--text-left mdl-color-text--white" >
-    <div class="page-title">{{ page.title }}</div>
-    <div class="page-subtitle">{{ page.subtitle }}</div>
-  </div>
-</div>
-<div class="page-content">
-  <section class="page-content__section mdl-grid mdl-grid--no-spacing">
-    <div class="mdl-cell mdl-cell--12-col">
-	  {{ content }}
+<div class="container">
+  <!-- begin page -->
+  <article class="page">
+    <div
+      class="page__head"
+      data-aos="fade-up"
+      data-aos-easing="ease-out-quad"
+      data-aos-duration="700"
+    >
+      <h1 class="page__title">{{ page.title | escape }}</h1>
+      {% if page.image %}
+      <div
+        class="page-image"
+        style="background-image: url({{site.baseurl}}{{page.image}})"
+      ></div>
+      {% endif %}
     </div>
-  </section>
+
+    <div
+      class="page__content"
+      data-aos="fade-up"
+      data-aos-easing="ease-out-quad"
+      data-aos-delay="100"
+      data-aos-duration="700"
+    >
+      {{ content }}
+    </div>
+  </article>
+  <!-- end page -->
 </div>
-
-{% include spacer.html %}
-
-{% include rss-subscribe.html %}

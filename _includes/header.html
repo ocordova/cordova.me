@@ -1,16 +1,44 @@
-<header class="mdl-layout__header mdl-layout__header--scroll" style="background-color: #{{ page.color }}">
-  <div class="mdl-layout__header-row">
-    <a href="{{site.index[page.lang]}}" class="logo-svg">
-      <svg aria-hidden="true" viewBox="0 0 24 24">
-        <path d="M11,19c3.313,0,6-2.687,6-6h2c0,4.418-3.582,8-8,8c-4.418,0-8-3.582-8-8c0-4.418,3.582-8,8-8v2c-3.313,0-6,2.687-6,6
-  S7.687,19,11,19 M15.854,6.594c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5s-1.5-0.672-1.5-1.5S15.025,6.594,15.854,6.594z" />
-      </svg>
-    </a>
-    <div class="mdl-layout-spacer"></div>
-    <nav class="mdl-navigation">
-      {% for menu in site.t[page.lang] %}
-      <a class="mdl-navigation__link" href="{{ site.baseurl }}{{ menu[1].url }}">{{ menu[1].name }}</a>
-      {% endfor %}
+<div class="container-full">
+  <!-- begin header -->
+  <header class="header">
+    <div class="logo">
+      <a class="logo__link" href="{{ site.baseurl }}/">
+        <svg
+          class="link_image"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11,19c3.313,0,6-2.687,6-6h2c0,4.418-3.582,8-8,8c-4.418,0-8-3.582-8-8c0-4.418,3.582-8,8-8v2c-3.313,0-6,2.687-6,6
+      S7.687,19,11,19 M15.854,6.594c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5s-1.5-0.672-1.5-1.5S15.025,6.594,15.854,6.594z"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <span class="main-nav__open">Menu</span>
+
+      <div class="main-nav__box">
+        <span class="main-nav__close">Close</span>
+
+        <ul class="nav__list list-reset">
+          <li class="nav__item">
+            <a href="{{site.baseurl}}/" class="nav__link">Home</a>
+          </li>
+          {% for page in site.pages %} {% unless page.name == 'tags.html' or
+          page.name == '404.html' %} {% if page.title %}
+          <li class="nav__item">
+            <a href="{{ page.url | prepend: site.baseurl }}" class="nav__link"
+              >{{ page.title }}</a
+            >
+          </li>
+          {% endif %} {% endunless %} {% endfor %}
+        </ul>
+      </div>
     </nav>
-  </div>
-</header>
+  </header>
+  <!-- end header -->
+</div>

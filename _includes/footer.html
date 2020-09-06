@@ -1,76 +1,24 @@
-<footer class="footer mdl-mega-footer mdl-color--white mdl-color-text--grey-600">
-  <div class="mdl-mega-footer__top-section">
-    <div class="mdl-mega-footer__left-section">
-      <ul class="mdl-mega-footer__link-list">
-        {% for menu in site.t[page.lang] %}
-        <li class="footer-link footer-link__{{menu[0]}}"><a href="{{ site.baseurl }}{{ menu[1].url }}">{{ menu[1].name }}</a></li>
-        {% if menu[0] == 'blog' %}
-        <li class="footer-link footer-link__rss">
-          <a href="{{ site.baseurl }}{{site.atom[page.lang]}}">
-            <svg aria-hidden="true" class="icon-rss" viewBox="0 0 24 24">
-              <path d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" />
-            </svg>
-          </a>
-        </li>
-        {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="mdl-mega-footer__right-section">
-      <div class="lang mdl-color-text--grey-800">
-        {% assign posts = site.posts | where:"uid", page.uid | sort: 'lang' %}
-        {% for post in posts %}
-        {% if forloop.last == true %}<span class="lang-separator">·</span>{% endif %}
-        <a href="{{ post.url | prepend: site.baseurl }}" class="{{ post.lang }}">{{ post.lang }}</a>
-        {% endfor %}
-        {% assign pages = site.pages | where:"uid", page.uid | sort: 'lang' %}
-        {% for page in pages %}
-        {% if forloop.last == true %}<span class="lang-separator">·</span>{% endif %}
-        <a href="{{ page.url | prepend: site.baseurl }}" class="{{ page.lang }}">{{ page.lang }}</a>
-        {% endfor %}
+<div class="container">
+  <!-- begin footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="contact">
+        <div class="contact__title">
+          Questions? ping me on
+          <a class="contact__link" target="_blank" href="https://twitter.com/ocordova">Twitter</a> or in my
+          <a class="contact__link" target="_blank" href="https://github.com/ocordova/ama">AMA repo</a>.
+        </div>
+        <ul class="contact__list list-reset">
+          {% for contact in site.contact %}
+          <li class="contact__item">
+            <a class="contact__link" target="_blank" href="{{contact.link}}"
+              >{{contact.name}}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="mdl-mega-footer__bottom-section">
-    <div class="mdl-mega-footer__left-section mdl-color-text--grey-600">
-      <p>
-        {{ site.legal[page.lang] }}
-      </p>
-      <p>
-        {{ site.footer[page.lang] }}
-        <svg aria-hidden="true" class="icon-heart-outline" viewBox="0 0 24 24">
-          <path d="M12.1,18.55L12,18.65L11.89,18.55C7.14,14.24 4,11.39 4,8.5C4,6.5 5.5,5 7.5,5C9.04,5 10.54,6 11.07,7.36H12.93C13.46,6 14.96,5 16.5,5C18.5,5 20,6.5 20,8.5C20,11.39 16.86,14.24 12.1,18.55M16.5,3C14.76,3 13.09,3.81 12,5.08C10.91,3.81 9.24,3 7.5,3C4.42,3 2,5.41 2,8.5C2,12.27 5.4,15.36 10.55,20.03L12,21.35L13.45,20.03C18.6,15.36 22,12.27 22,8.5C22,5.41 19.58,3 16.5,3Z" />
-        </svg>
-      </p>
-    </div>
-    <div class="mdl-mega-footer__right-section">
-      <div class="social-icons">
-        <a class="social-icons__twitter" href="https://twitter.com/ocordova">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
-          </svg>
-        </a>
-        <a class="social-icons__github" href="https://github.com/ocordova">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
-          </svg>
-        </a>
-        <a class="social-icons__stackoverflow" href="http://stackoverflow.com/users/3075569/ocordova">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z" />
-          </svg>
-        </a>
-        <a class="social-icons__dribbble" href="https://dribbble.com/ocordova">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M16.42,18.42C16,16.5 15.5,14.73 15,13.17C15.5,13.1 16,13.06 16.58,13.06H16.6V13.06H16.6C17.53,13.06 18.55,13.18 19.66,13.43C19.28,15.5 18.08,17.27 16.42,18.42M12,19.8C10.26,19.8 8.66,19.23 7.36,18.26C7.64,17.81 8.23,16.94 9.18,16.04C10.14,15.11 11.5,14.15 13.23,13.58C13.82,15.25 14.36,17.15 14.77,19.29C13.91,19.62 13,19.8 12,19.8M4.2,12C4.2,11.96 4.2,11.93 4.2,11.89C4.42,11.9 4.71,11.9 5.05,11.9H5.06C6.62,11.89 9.36,11.76 12.14,10.89C12.29,11.22 12.44,11.56 12.59,11.92C10.73,12.54 9.27,13.53 8.19,14.5C7.16,15.46 6.45,16.39 6.04,17C4.9,15.66 4.2,13.91 4.2,12M8.55,5C9.1,5.65 10.18,7.06 11.34,9.25C9,9.96 6.61,10.12 5.18,10.12C5.14,10.12 5.1,10.12 5.06,10.12H5.05C4.81,10.12 4.6,10.12 4.43,10.11C5,7.87 6.5,6 8.55,5M12,4.2C13.84,4.2 15.53,4.84 16.86,5.91C15.84,7.14 14.5,8 13.03,8.65C12,6.67 11,5.25 10.34,4.38C10.88,4.27 11.43,4.2 12,4.2M18.13,7.18C19.1,8.42 19.71,9.96 19.79,11.63C18.66,11.39 17.6,11.28 16.6,11.28V11.28H16.59C15.79,11.28 15.04,11.35 14.33,11.47C14.16,11.05 14,10.65 13.81,10.26C15.39,9.57 16.9,8.58 18.13,7.18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-          </svg>
-        </a>
-        <a class="social-icons__linkedin" href="https://linkedin.com/in/ocordova">
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
+  <!-- end footer -->
+</div>

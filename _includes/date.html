@@ -1,9 +1,0 @@
-{% if page.lang == 'en' %}
-  {{ page.date | date: "%d %b %Y" }}
-  {{ post.date | date: "%d %b %Y" }}
-{% endif %}
-
-{% if page.lang == 'es' %}
-  {{ page.date | date: "%d %b %Y" | replace:"Jan","Ene" | replace:"Apr","Abr" | replace:"Aug","Ago" | replace:"Dec","Dic" }}
-  {{ post.date | date: "%d %b %Y" | replace:"Jan","Ene" | replace:"Apr","Abr" | replace:"Aug","Ago" | replace:"Dec","Dic" }}
-{% endif %}
