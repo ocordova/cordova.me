@@ -150,28 +150,30 @@ var chatId = msg.chat.id;
 }
 {% endhighlight %}
 
-We're going to retrieve a random quote from [quotesondesign.com](http://quotesondesign.com/) so we can send it to the user. Fortunatelly the website has a JSON REST API, to get a random quote we can use the URL: `http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1`.
+We're going to retrieve a random quote from [quotesondesign.com](http://quotesondesign.com/) so we can send it to the user. Fortunatelly the website has a JSON REST API, to get a random quote we can use the URL: `https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand`.
 
 Google Apps Script can interact with APIs from all over the web, we can use the built-in [URL Fetch Service](https://developers.google.com/apps-script/reference/url-fetch/) with the method [fetch()](<https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app#fetch(String)>) to make a request to the URL mentioned above.
 
 The same as the Bot API, we need to parse the response to work with a JSON Object.
 
 {% highlight js %}
-var url = 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
+var url = 'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
 var data = UrlFetchApp.fetch(url);
 var posts = JSON.parse(data);
 {% endhighlight %}
 
-The returned value would look like this:
+The returned value would look like an array of this:
 
 {% highlight js %}
 [
-{
-   "ID": 1588,
-   "title": "Alan Cooper",
-   "content": "<p>No matter how cool your interface is, it would be better if there were less of it.<\/p>\n",
-   "link": "https:\/\/quotesondesign.com\/alan-cooper-2\/"
-}
+ {
+    "id": 2415,
+    "title": { "rendered": "Alan Cooper" },
+    "content": {
+      "rendered": "<p>No matter how cool your interface is, it would be better if there were less of it.<\/p>\n",
+      "protected": false
+    }
+  },
 ]
 {% endhighlight %}
 
@@ -190,10 +192,10 @@ Notice the returned value contains HTML p tags, since Bot API does not support t
 
 {% highlight js %}
 // Delete the html tags and \n (newline)
-var cleanContent = post.content.replace(/<(?:.|\n)\*?>/gm, "").replace(/\n/gm,"");
+var cleanContent = post.content.rendered .replace(/<(?:.|\n)*?>/gm, '') .replace(/\n/gm, '');
 
 // Format the quote
-var quote = '"'+cleanContent+'"\n — <strong>'+post.title+'</strong>';
+var quote = '"' + cleanContent + '"\n — <strong>' + post.title.rendered + '</strong>';
 {% endhighlight %}
 
 The next step is to send the Bot API our request, for this we're also going to use the **URL Fetch Service** and the Bot API method [sendMessage](https://core.telegram.org/bots/api#sendmessage).
@@ -236,49 +238,61 @@ UrlFetchApp.fetch('https://api.telegram.org/bot' + API_TOKEN + '/', data);
 
 {% highlight js %}
 function doPost(e) {
-var update = JSON.parse(e.postData.contents);
-
-// Make sure this is update is a type message
-if (update.hasOwnProperty('message')) {
-var msg = update.message;
-var chatId = msg.chat.id;
+  var update = JSON.parse(e.postData.contents);
+  // Make sure this is update is a type message
+  if (update.hasOwnProperty('message')) {
+    var msg = update.message;
+    var chatId = msg.chat.id;
 
     // Make sure the update is a command.
-    if (msg.hasOwnProperty('entities') && msg.entities[0].type == 'bot_command') {
-
+    if (
+      msg.hasOwnProperty('entities') &&
+      msg.entities[0].type == 'bot_command'
+    ) {
       // If the user sends the /quote command
       if (msg.text == '/quote') {
-        var url = 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1';
+        var url =
+          'https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand';
         var data = UrlFetchApp.fetch(url);
         var posts = JSON.parse(data);
         var post = posts.shift();
 
         // Delete the html tags and \n (newline)
-        var cleanContent = post.content.replace(/<(?:.|\n)*?>/gm, "").replace(/\n/gm, "");
+        var cleanContent = post.content.rendered
+          .replace(/<(?:.|\n)*?>/gm, '')
+          .replace(/\n/gm, '');
 
         // Format the quote
-        var quote = '"' + cleanContent + '"\n — <strong>' + post.title + '</strong>';
+        var quote =
+          '"' +
+          cleanContent +
+          '"\n — <strong>' +
+          post.title.rendered +
+          '</strong>';
 
         var payload = {
-          'method': 'sendMessage',
-          'chat_id': String(chatId),
-          'text': quote,
-          'parse_mode': 'HTML'
-        }
+          method: 'sendMessage',
+          chat_id: String(chatId),
+          text: quote,
+          parse_mode: 'HTML',
+        };
 
         var data = {
-          "method": "post",
-          "payload": payload
-        }
+          method: 'post',
+          payload: payload,
+        };
 
         // Replace with your token
         var API_TOKEN = '297019760:AAFbL7yMus67Qv5Xu6fQ7VB93Jq4dkVaGP4';
-        UrlFetchApp.fetch('https://api.telegram.org/bot' + API_TOKEN + '/', data);
+        UrlFetchApp.fetch(
+          'https://api.telegram.org/bot' + API_TOKEN + '/',
+          data
+        );
       }
     }
+  }
+}
 
-}
-}
 
 {% endhighlight %}
 
