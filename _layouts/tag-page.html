@@ -4,23 +4,13 @@ layout: default
 
 <div class="container">
   <section class="tag">
-    <div
-      class="tag__head"
-      data-aos="fade-up"
-      data-aos-easing="ease-out-quad"
-      data-aos-duration="700"
-    >
+    <div class="tag__head">
       <h1 class="tag__title">{{ page.tag }}</h1>
     </div>
 
     {% for post in page.posts %}
     <!-- begin article -->
-    <div
-      class="article"
-      data-aos="fade-up"
-      data-aos-easing="ease-out-quad"
-      data-aos-duration="800"
-    >
+    <div class="article">
       {% if post.image %}
       <div class="article__image-box">
         <a

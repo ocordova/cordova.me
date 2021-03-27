@@ -5,12 +5,7 @@ layout: default
 <div class="container">
   <!-- begin post -->
   <article class="post">
-    <div
-      class="post__head"
-      data-aos="fade-up"
-      data-aos-easing="ease-out-quad"
-      data-aos-duration="700"
-    >
+    <div class="post__head">
       <h1 class="post__title">{{ page.title | escape }}</h1>
       <h2 class="post__subtitle">{{ page.subtitle | escape }}</h2>
       <div class="post__date">
@@ -26,15 +21,7 @@ layout: default
       {% endif %}
     </div>
 
-    <div
-      class="post__content"
-      data-aos="fade-up"
-      data-aos-easing="ease-out-quad"
-      data-aos-delay="100"
-      data-aos-duration="700"
-    >
-      {{ content }}
-    </div>
+    <div class="post__content">{{ content }}</div>
 
     {% if page.tags.size >= 1 %}
     <div class="post-tags">

@@ -1,5 +1,6 @@
 ---
 ---
+
 /*------------------------------------------------------------------
 [TABLE OF CONTENTS]
 -------------------------------------------------------------------*/
@@ -18,11 +19,9 @@
     4.3 Page
 <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
-
 @import '0-settings/variables';
 @import '0-settings/mixins';
 @import '0-settings/helpers';
-
 
 /* ==============  :: 1 Tools and Plugins ============== */
 @import '1-tools/normalize';
@@ -30,12 +29,9 @@
 @import '1-tools/shared';
 @import '1-tools/syntax-highlighting';
 @import '1-tools/grid';
-@import '1-tools/aos';
-
 
 /* ============== :: 2 Base Styles ============== */
 @import '2-base/base';
-
 
 /* ============== :: 3 Modules ============== */
 /* :: 3.1 Wrapper */
@@ -49,7 +45,6 @@
 
 /* :: 3.4 Footer */
 @import '3-modules/footer';
-
 
 /* ============== :: 4 Layouts ============== */
 /* :: 4.1 Article */

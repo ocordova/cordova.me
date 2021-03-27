@@ -4,12 +4,7 @@ layout: default
 
 <div class="container">
   <!-- begin author -->
-  <section
-    class="author"
-    data-aos="fade-up"
-    data-aos-easing="ease-out-quad"
-    data-aos-duration="600"
-  >
+  <section class="author">
     <div class="author__inner">
       <img
         src="{{site.baseurl}}{{site.author.image}}"
@@ -24,20 +19,10 @@ layout: default
 </div>
 
 <div class="container">
-  <section
-    class="articles"
-    data-aos="fade-up"
-    data-aos-easing="ease-out-quad"
-    data-aos-duration="700"
-  >
+  <section class="articles">
     <h2 class="articles__title">Recent posts</h2>
     {% if site.posts.size > 0 %} {% for post in site.posts %}
-    <div
-      class="article"
-      data-aos="fade-up"
-      data-aos-easing="ease-out-quad"
-      data-aos-duration="700"
-    >
+    <div class="article">
       {% if post.image %}
       <div class="article__image-box">
         <a

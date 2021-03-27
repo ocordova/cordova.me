@@ -3,8 +3,7 @@ layout: post
 title: Telegram Bot with Apps Script
 subtitle: Create a Telegram Bot without a server
 date: 2016-10-03 -0500
-image: "/assets/img/posts/2016-10-03-telegram-bot-with-apps-script/banner.jpg"
-tags: personal
+image: '/assets/img/posts/2016-10-03-telegram-bot-with-apps-script/banner.jpg'
 permalink: /blog/telegram-bot-with-apps-script
 ---
 
@@ -64,7 +63,7 @@ When an user or a program (in this case de Bot API) sends to our script an HTTP 
 
 {% highlight js %}
 function doPost(e) {
-   var update = JSON.parse(e.postData.contents);
+var update = JSON.parse(e.postData.contents);
 }
 {% endhighlight %}
 
@@ -72,30 +71,30 @@ When our script receives an update, in this case the command `/quote` the JSON-o
 
 {% highlight json %}
 {
-   "update_id":926604562,
-   "message":{
-      "message_id":357,
-      "from":{
-         "id":10610041,
-         "first_name":"Jane Doe",
-         "username":"janedoe"
-      },
-      "chat":{
-         "id":10610041,
-         "first_name":"Jane Doe",
-         "username":"janedoe",
-         "type":"private"
-      },
-      "date":1473910635,
-      "text":"/quote",
-      "entities":[
-         {
-            "type":"bot_command",
-            "offset":0,
-            "length":6
-         }
-      ]
-   }
+"update_id":926604562,
+"message":{
+"message_id":357,
+"from":{
+"id":10610041,
+"first_name":"Jane Doe",
+"username":"janedoe"
+},
+"chat":{
+"id":10610041,
+"first_name":"Jane Doe",
+"username":"janedoe",
+"type":"private"
+},
+"date":1473910635,
+"text":"/quote",
+"entities":[
+{
+"type":"bot_command",
+"offset":0,
+"length":6
+}
+]
+}
 }
 {% endhighlight %}
 
@@ -105,8 +104,8 @@ Let's define two variables, the first one will be `chatId` here we're going to s
 
 {% highlight js %}
 if (update.hasOwnProperty('message')) {
-   var msg = update.message;
-   var chatId = msg.chat.id;
+var msg = update.message;
+var chatId = msg.chat.id;
 }
 {% endhighlight %}
 
@@ -166,14 +165,14 @@ The returned value would look like an array of this:
 
 {% highlight js %}
 [
- {
-    "id": 2415,
-    "title": { "rendered": "Alan Cooper" },
-    "content": {
-      "rendered": "<p>No matter how cool your interface is, it would be better if there were less of it.<\/p>\n",
-      "protected": false
-    }
-  },
+{
+"id": 2415,
+"title": { "rendered": "Alan Cooper" },
+"content": {
+"rendered": "<p>No matter how cool your interface is, it would be better if there were less of it.<\/p>\n",
+"protected": false
+}
+},
 ]
 {% endhighlight %}
 
@@ -192,7 +191,7 @@ Notice the returned value contains HTML p tags, since Bot API does not support t
 
 {% highlight js %}
 // Delete the html tags and \n (newline)
-var cleanContent = post.content.rendered .replace(/<(?:.|\n)*?>/gm, '') .replace(/\n/gm, '');
+var cleanContent = post.content.rendered .replace(/<(?:.|\n)\*?>/gm, '') .replace(/\n/gm, '');
 
 // Format the quote
 var quote = '"' + cleanContent + '"\n — <strong>' + post.title.rendered + '</strong>';
@@ -209,10 +208,10 @@ We need to define the POST body for the request containing the requiered paramet
 
 {% highlight js %}
 var payload = {
-   'method': 'sendMessage',
-   'chat_id': String(chatId),
-   'text': quote,
-   'parse_mode': 'HTML'
+'method': 'sendMessage',
+'chat_id': String(chatId),
+'text': quote,
+'parse_mode': 'HTML'
 }
 {% endhighlight %}
 
@@ -222,8 +221,8 @@ We also need to specify the HTTP method for the request, in this case Post.
 
 {% highlight js %}
 var data = {
-   "method": "post",
-   "payload": payload
+"method": "post",
+"payload": payload
 }
 {% endhighlight %}
 
@@ -238,11 +237,11 @@ UrlFetchApp.fetch('https://api.telegram.org/bot' + API_TOKEN + '/', data);
 
 {% highlight js %}
 function doPost(e) {
-  var update = JSON.parse(e.postData.contents);
-  // Make sure this is update is a type message
-  if (update.hasOwnProperty('message')) {
-    var msg = update.message;
-    var chatId = msg.chat.id;
+var update = JSON.parse(e.postData.contents);
+// Make sure this is update is a type message
+if (update.hasOwnProperty('message')) {
+var msg = update.message;
+var chatId = msg.chat.id;
 
     // Make sure the update is a command.
     if (
@@ -290,9 +289,9 @@ function doPost(e) {
         );
       }
     }
-  }
-}
 
+}
+}
 
 {% endhighlight %}
 
