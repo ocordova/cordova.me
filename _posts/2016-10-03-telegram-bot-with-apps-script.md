@@ -4,7 +4,7 @@ title: Telegram Bot with Apps Script
 subtitle: Create a Telegram Bot without a server
 date: 2016-10-03 -0500
 image: '/assets/img/posts/2016-10-03-telegram-bot-with-apps-script/banner.jpg'
-permalink: /blog/telegram-bot-with-apps-script
+permalink: /blog/telegram-bot-with-apps-script/
 description: Create a Telegram Bot without a server
 ---
 

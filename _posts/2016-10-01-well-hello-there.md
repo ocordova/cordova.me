@@ -4,7 +4,7 @@ title: Well Hello There
 subtitle: I just wanted to say hi
 date: 2016-10-01 18:05:55 -0500
 image: '/assets/img/posts/2016-10-01-well-hello-there/banner.jpg'
-permalink: /blog/well-hello-there
+permalink: /blog/well-hello-there/
 description: I just wanted to say hi
 ---
 

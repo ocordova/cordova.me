@@ -4,7 +4,7 @@ title: Jekyll with Tailwind CSS
 subtitle: Setup Jekyll with Tailwind CSS with PostCSS and PurgeCSS (no Webpack involved)
 date: 2021-03-27 -0500
 image: '/assets/img/posts/2021-03-27-jekyll-with-tailwind/banner.jpg'
-permalink: /blog/jekyll-with-tailwind
+permalink: /blog/jekyll-with-tailwind/
 description: Setup Jekyll with Tailwind CSS with PostCSS and PurgeCSS (no Webpack involved)
 ---
 
