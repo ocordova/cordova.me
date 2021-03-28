@@ -26,4 +26,4 @@ In case you were wondering, this site is:
 - Built with [Jekyll](https://jekyllrb.com), the open source static site generator
 - Styled with [Tailwind CSS](http://tailwindcss.com/)
 - Iconified with [Ionicons](https://ionicons.com/)
-- Hosted on [GitHub Pages](http://pages.github.com)
+- Hosted on [Vercel](https://vercel.com/)
