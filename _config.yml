@@ -5,6 +5,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ocordova.me" # the base hostname & protocol for your site, e.g. http://example.com
 
 
+#Author
+author: Óscar Córdova
+
 # SEO
 twitter:
   username: ocordova
@@ -24,6 +27,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-minifier
+  - jekyll-feed
 
 # Pages Path
 defaults:
