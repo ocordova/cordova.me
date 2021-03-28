@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Jekyll with Tailwind CSS
-subtitle: Setup Jekyll with Tailwind CSS with PostCSS and PurgeCSS (no webpack involved)
+subtitle: Setup Jekyll with Tailwind CSS with PostCSS and PurgeCSS (no Webpack involved)
 date: 2021-03-27 -0500
 image: '/assets/img/posts/2021-03-27-jekyll-with-tailwind/banner.jpg'
 permalink: /blog/jekyll-with-tailwind
+description: Setup Jekyll with Tailwind CSS with PostCSS and PurgeCSS (no Webpack involved)
 ---
 
-[Tailwind CSS](https://tailwindcss.com) is a utility-first CSS framework that provides a deep catalog of css classes that you can use directly in your HTML instead of writing loads of css.
+[Tailwind CSS](https://tailwindcss.com) is a utility-first CSS framework that provides a deep catalog of CSS classes that you can use directly in your HTML instead of writing loads of CSS.
 
 I really love Tailwind CSS and I wanted to integrate it into my next Jekyll project, but I struggled using the [jekyll-postcss](https://github.com/mhanberg/jekyll-postcss) plugin. I had difficulties with the cache when building multiple CSS files, so I decided to use [PostCSS](https://postcss.org/) directly.
 
@@ -215,10 +216,10 @@ Create two new npm scripts `dev` and `build`. The final version of your `scripts
   "scripts": {
     "jekyll:dev": "bundle exec jekyll serve --incremental --watch",
     "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
-    "css:dev": "postcss _sass/main.scss --output assets/css/style.css",
+    "css:dev": "postcss _sass/main.scss --output assets/css/style.css --watch",
     "css:build": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css",
     "dev": "concurrently --kill-others \"npm run jekyll:dev\" \"npm run css:dev\"",
-    "build": "npm run css:dev && npm run jekyll:build"
+    "build": "npm run css:build && npm run jekyll:build"
   },
 ```
 

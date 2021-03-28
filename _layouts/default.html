@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-
-  <body>
-    {% if site.google-analytics %} {% include google-analytics.html %} {% endif
-    %} {% include header.html %}
-
-    <!-- begin content -->
-    <main class="content" aria-label="Content">{{ content }}</main>
-    <!-- end content -->
-
+  <body class="bg-white antialiased text-gray-600 max-w-4xl mx-auto">
+    {% include header.html%}
+    <main class="max-w-2xl mx-auto pt-8 lg:pt-16 px-8">{{ content }}</main>
     {% include footer.html %}
-
-    <!-- begin js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"
+      integrity="sha512-YBk7HhgDZvBxmtOfUdvX0z8IH2d10Hp3aEygaMNhtF8fSOvBZ16D/1bXZTJV6ndk/L/DlXxYStP8jrF77v2MIg=="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/common.js"></script>
-    <!-- end js -->
   </body>
 </html>

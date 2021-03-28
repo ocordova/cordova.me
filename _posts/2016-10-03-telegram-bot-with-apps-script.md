@@ -5,6 +5,7 @@ subtitle: Create a Telegram Bot without a server
 date: 2016-10-03 -0500
 image: '/assets/img/posts/2016-10-03-telegram-bot-with-apps-script/banner.jpg'
 permalink: /blog/telegram-bot-with-apps-script
+description: Create a Telegram Bot without a server
 ---
 
 [Google Apps Script](https://developers.google.com/apps-script) is a cloud scripting service based in JavaScript and makes it easy to do cool things with most of Google's products. Lately, I've been a big fan of its flexibility and versatility, for example with just a few lines of code you can interact with the [Telegram Bot API](https://core.telegram.org/bots/api) to control your bot, you won't have to worry about having a server, SSL certificates or configure ports 😏.

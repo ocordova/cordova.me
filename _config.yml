@@ -5,33 +5,17 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ocordova.me" # the base hostname & protocol for your site, e.g. http://example.com
 
 
-# Author Settings
-author:
-  name: Óscar Córdova
-  image: '/assets/img/profile.jpg'
-  job: Full Stack Engineer
-  bio: 
-  email: hola@ocordova.me
-
-
-# Contact links
-contact:
-  - name: GitHub
-    link: https://github.com/ocordova
-  - name: Twitter
-    link: https://twitter.com/ocordova
-  - name: Instagram
-    link: https://instagram.com/ocordova
-  - name: Telegram
-    link: https://telegram.me/oscordova
-
-# Comment Section (Disqus)
-disqus-identifier: # add your shortname for Disqus Comment.
-
+# SEO
+twitter:
+  username: ocordova
+  card: summary
 
 # Google Analytics
 google-analytics: UA-16434715-1 # add your identifier. For example UA-99631805-1.
 
+# Feed
+feed:
+  path: feed.xml
 
 # Build settings
 markdown: kramdown
@@ -51,13 +35,15 @@ defaults:
 include:
   - _pages
 
-sass:
-  sass_dir: _sass
-  style: compressed
-
 
 # Exclude from processing.
 exclude:
+  - node_modules
   - Gemfile
   - Gemfile.lock
   - vendor
+  - package-lock.json
+  - package.json
+  - postcss.config.js
+  - README.md
+  - tailwind.config.js

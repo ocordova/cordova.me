@@ -1,7 +1,5 @@
 <head>
   <meta charset="utf-8" />
-
-  <!-- mobile responsive meta -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
@@ -38,22 +36,19 @@
     {% if page.title %}{{ page.title }} &middot; {{ site.author.name }}{% else
     %}{{ site.title }}{% endif %}
   </title>
-  <meta
-    name="description"
-    content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
-  />
-
-  <link
-    rel="canonical"
-    href="{{ page.url | replace:'index.html','' | absolute_url }}"
-  />
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape
   }}" href="{{ "/feed.xml" | relative_url }}">
 
-  <!-- Stylesheets -->
-  <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+    crossorigin="anonymous"
+  />
   <link
     href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css"
     rel="stylesheet"
   />
+  {% seo %} {% include google-analytics.html %}
 </head>

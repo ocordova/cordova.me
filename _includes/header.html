@@ -1,44 +1,35 @@
-<div class="container-full">
-  <!-- begin header -->
-  <header class="header">
-    <div class="logo">
-      <a class="logo__link" href="{{ site.baseurl }}/">
-        <svg
-          class="link_image"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M11,19c3.313,0,6-2.687,6-6h2c0,4.418-3.582,8-8,8c-4.418,0-8-3.582-8-8c0-4.418,3.582-8,8-8v2c-3.313,0-6,2.687-6,6
-      S7.687,19,11,19 M15.854,6.594c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5s-1.5-0.672-1.5-1.5S15.025,6.594,15.854,6.594z"
-          />
-        </svg>
-      </a>
-    </div>
+{% assign current = page.url | downcase %}
 
-    <nav class="main-nav">
-      <span class="main-nav__open">Menu</span>
-
-      <div class="main-nav__box">
-        <span class="main-nav__close">Close</span>
-
-        <ul class="nav__list list-reset">
-          <li class="nav__item">
-            <a href="{{site.baseurl}}/" class="nav__link">Home</a>
-          </li>
-          {% for page in site.pages %} {% unless page.name == 'tags.html' or
-          page.name == '404.html' %} {% if page.title %}
-          <li class="nav__item">
-            <a href="{{ page.url | prepend: site.baseurl }}" class="nav__link"
-              >{{ page.title }}</a
-            >
-          </li>
-          {% endif %} {% endunless %} {% endfor %}
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- end header -->
-</div>
+<nav
+  class="sticky top-0 flex justify-between items-center w-full max-w-4xl mx-auto bg-white px-8 py-4 border-b border-gray-200"
+>
+  <a href="/" class="hover:text-blue-500">
+    <svg
+      class="w-10 h-10 fill-current"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <defs />
+      <path
+        d="M11 19a6 6 0 006-6h2a8 8 0 11-8-8v2a6 6 0 000 12m4.854-12.406a1.5 1.5 0 11-.001 3.001 1.5 1.5 0 01.001-3.001z"
+      />
+    </svg>
+  </a>
+  <div>
+    <a
+      class="p-1 sm:p-4 hover:text-blue-600 transition-colors {% if current == '/' %}text-blue-500{% endif %}"
+      href="/"
+      >Home</a
+    >
+    <a
+      class="p-1 sm:p-4 hover:text-blue-600 transition-colors {% if current == '/blog/' %}text-blue-500{% endif %}"
+      href="/blog"
+      >Blog</a
+    >
+    <a
+      class="p-1 sm:p-4 hover:text-blue-600 transition-colors {% if current == '/about/' %}text-blue-500{% endif %}"
+      href="/about"
+      >About</a
+    >
+  </div>
+</nav>

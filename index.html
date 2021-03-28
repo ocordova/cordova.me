@@ -1,51 +1,11 @@
 ---
-layout: default
+layout: simple-page
 ---
 
-<div class="container">
-  <!-- begin author -->
-  <section class="author">
-    <div class="author__inner">
-      <img
-        src="{{site.baseurl}}{{site.author.image}}"
-        alt="{{site.author.name}}"
-        class="author__img"
-      />
-      <h1 class="author__name">{{ site.author.name }}</h1>
-      <p class="author__job">{{ site.author.job }}</p>
-    </div>
-  </section>
-  <!-- end author -->
-</div>
+<h1 class="font-extrabold text-4xl text-gray-900 mb-4">Óscar Córdova</h1>
 
-<div class="container">
-  <section class="articles">
-    <h2 class="articles__title">Recent posts</h2>
-    {% if site.posts.size > 0 %} {% for post in site.posts %}
-    <div class="article">
-      {% if post.image %}
-      <div class="article__image-box">
-        <a
-          href="{{post.url | prepend: site.baseurl}}"
-          class="article__image"
-          style="background-image: url({{site.baseurl}}{{post.image}})"
-        ></a>
-      </div>
-      {% endif %}
-      <div class="article__content">
-        <h2 class="article__title">
-          <a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
-        </h2>
-        <div class="article__meta">
-          <span class="article__date"
-            ><time datetime="{{ post.date | date_to_xmlschema }}"
-              >{% assign date_format = site.minima.date_format | default: "%B
-              %-d, %Y" %}{{ post.date | date: date_format }}</time
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endfor %} {% endif %}
-</div>
+<p>I’m a Full Stack Engineer based in Mexico City</p>
+
+<h2 class="font-bold text-2xl text-gray-900 mt-8">Recent posts</h2>
+
+{% include posts.html %}

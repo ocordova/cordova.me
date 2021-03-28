@@ -5,6 +5,7 @@ subtitle: I just wanted to say hi
 date: 2016-10-01 18:05:55 -0500
 image: '/assets/img/posts/2016-10-01-well-hello-there/banner.jpg'
 permalink: /blog/well-hello-there
+description: I just wanted to say hi
 ---
 
 I went through period of boredom at work, no new challenges or something new to learn, so to get rid of that boredom I decided to answer some questions on [Stack Overflow](http://stackoverflow.com/users/3075569/ocordova) (mainly in the `google-apps-script` and other Google Apps related tags where you actually answer 😂). I got really hooked up, but after hitting 1k rep and earning a gold badge an idea occurred to me, write blog posts about web development, design and things I found interesting. I didn’t have a blog, so after considering Wordpress, Tumblr and other platforms, I decided to learn and use [Jekyll](https://jekyllrb.com/), because I heard that's what the cool kids use nowadays.

@@ -1,0 +1,14 @@
+{% for post in site.posts %}
+<article class="flex flex-col w-full border-b border-gray-200 py-8">
+  <a
+    class="text-lg font-semibold text-blue-500 hover:text-blue-600"
+    href="{{post.url}}"
+  >
+    {{ post.title }}
+  </a>
+  <p class="text-sm mt-2 font-medium text-gray-900">{{ post.subtitle }}</p>
+  <time class="text-sm text-gray-500 mt-2">
+    {{post.date | date: '%b %d, %Y'}}
+  </time>
+</article>
+{% endfor %}
