@@ -1,5 +1,5 @@
-{% assign current = page.url | downcase %}
-
+{% assign url = page.url | downcase | split: '/' %} {% assign current = url[0] |
+append: '/' | append: url[1] %}
 <nav
   class="sticky top-0 flex justify-between items-center w-full max-w-4xl mx-auto bg-white px-8 py-4 border-b border-gray-200"
 >
@@ -22,12 +22,12 @@
       >Home</a
     >
     <a
-      class="p-1 sm:p-4 hover:text-blue-600 transition-colors {% if current == '/blog/' %}text-blue-500{% endif %}"
+      class="p-1 sm:p-4 hover:text-blue-600 transition-colors {% if current == '/blog' %}text-blue-500{% endif %}"
       href="/blog"
       >Blog</a
     >
     <a
-      class="p-1 sm:p-4 hover:text-blue-600 transition-colors {% if current == '/about/' %}text-blue-500{% endif %}"
+      class="p-1 sm:p-4 hover:text-blue-600 transition-colors {% if current == '/about' %}text-blue-500{% endif %}"
       href="/about"
       >About</a
     >
