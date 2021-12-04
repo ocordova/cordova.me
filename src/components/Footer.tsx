@@ -9,9 +9,9 @@ export const Footer = () => {
         Made with{' '}
         <span className="flex px-1">
           <HeartIcon className="h-5 w-auto text-red-600 animate-ping absolute opacity-40" />
-          <HeartIcon className="h-5 w-auto text-red-700 relative" />{' '}
+          <HeartIcon className="h-5 w-auto text-red-700 relative" />
         </span>
-        in Mexico City
+        {' '}in Mexico
       </div>
       <div className="flex flex-row justify-center md:justify-start mt-6 md:mt-0">
         <a

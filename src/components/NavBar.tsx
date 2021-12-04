@@ -4,7 +4,7 @@ import { MoonIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { mainNav } from '../config'
 import { Link } from 'gatsby'
 
-import Logo from '../assets/images/logo.svg'
+import Logo from '../images/logo.svg'
 
 const DesktopNavItem = ({ text, to }) => (
   <Link
@@ -50,7 +50,7 @@ export const NavBar = () => {
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {mainNav.map(({ text, to }) => (
-                    <DesktopNavItem to={to} text={text} />
+                    <DesktopNavItem key={to} to={to} text={text} />
                   ))}
                 </div>
               </div>
@@ -68,7 +68,7 @@ export const NavBar = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="pt-2 pb-4 space-y-1">
               {mainNav.map(({ text, to }) => (
-                <MobileNavItem to={to} text={text} />
+                <MobileNavItem key={to} to={to} text={text} />
               ))}
             </div>
           </Disclosure.Panel>

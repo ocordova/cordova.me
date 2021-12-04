@@ -1,41 +1,38 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {
-      fontFamily: {
-        plex: ['IBM Plex Sans', 'sans-serif']
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: {
-              color: '#3B82F6',
-              '&:hover': {
-                color: '#2563EB'
-              }
-            },
-            pre: {
-              color: '#000',
-              'background-color': '#f5f2f0'
-            },
-            code: {
-              '&::before': {
-                content: "'' !important",
-                'padding-left': '0.25rem'
-              },
-              '&::after': {
-                content: "'' !important",
-                'padding-right': '0.25rem'
-              }
+    purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+        extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        a: {
+                            color: '#3B82F6',
+                            '&:hover': {
+                                color: '#2563EB'
+                            }
+                        },
+                        pre: {
+                            color: '#000',
+                            'background-color': '#f5f2f0'
+                        },
+                        code: {
+                            '&::before': {
+                                content: "'' !important",
+                                'padding-left': '0.25rem'
+                            },
+                            '&::after': {
+                                content: "'' !important",
+                                'padding-right': '0.25rem'
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  },
-  variants: {
-    extend: {}
-  },
-  plugins: [require('@tailwindcss/typography')]
+    },
+    variants: {
+        extend: {}
+    },
+    plugins: [require('@tailwindcss/typography')]
 }
