@@ -3,6 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 export const BlogCard = ({ post }, ...more) => {
+  console.log(post)
   const image = getImage(post.frontmatter.hero_image)
   return (
     <Link to={`/blog/${post.slug}`}>

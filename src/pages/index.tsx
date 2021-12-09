@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
+        <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-colorized">
           Óscar Córdova
         </h1>
         <p className="text-gray-600 mt-2">
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
           </h2>
           <a
             href="#"
-            className="whitespace-nowrap text-sm font-medium text-purple-600 hover:text-purple-500"
+            className="whitespace-nowrap text-sm font-medium text-colorized hover:text-black"
           >
             View all<span aria-hidden="true"> &rarr;</span>
           </a>

@@ -1,38 +1,69 @@
 module.exports = {
-    purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-    darkMode: false, // or 'media' or 'class'
-    theme: {
-        extend: {
-            typography: {
-                DEFAULT: {
-                    css: {
-                        a: {
-                            color: '#3B82F6',
-                            '&:hover': {
-                                color: '#2563EB'
-                            }
-                        },
-                        pre: {
-                            color: '#000',
-                            'background-color': '#f5f2f0'
-                        },
-                        code: {
-                            '&::before': {
-                                content: "'' !important",
-                                'padding-left': '0.25rem'
-                            },
-                            '&::after': {
-                                content: "'' !important",
-                                'padding-right': '0.25rem'
-                            }
-                        }
-                    }
-                }
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            a: {
+              animation: 'gradient-colorized 10s linear infinite alternate',
+              'background-image':
+                'linear-gradient(to right, var(--tw-gradient-stops));',
+              '--tw-gradient-from': '#60a5fa',
+              '--tw-gradient-stops':
+                'var(--tw-gradient-from), var(--tw-gradient-to, rgba(96, 165, 250, 0));',
+              '--tw-gradient-stops':
+                'var(--tw-gradient-from), #7c3aed, var(--tw-gradient-to, rgba(124, 58, 237, 0));',
+              '--tw-gradient-to': '#ec4899',
+              color: 'transparent',
+              'background-clip': 'text',
+              '&:hover': {
+                color: '#000000',
+                'text-decoration': 'none'
+              }
+            },
+
+            pre: {
+              color: '#000',
+              'background-color': '#f5f2f0'
+            },
+            code: {
+              '&::before': {
+                content: "'' !important",
+                'padding-left': '0.25rem'
+              },
+              '&::after': {
+                content: "'' !important",
+                'padding-right': '0.25rem'
+              }
             }
+          }
         }
-    },
-    variants: {
-        extend: {}
-    },
-    plugins: [require('@tailwindcss/typography')]
+      },
+      animation: {
+        colorized: 'gradient-colorized 10s linear infinite alternate'
+      },
+      keyframes: {
+        'gradient-colorized': {
+          '0%': {
+            'background-position': '0%',
+            'background-size': '400%'
+          },
+          '50%': {
+            'background-position': '100%',
+            'background-size': '400%'
+          },
+          '100%': {
+            'background-position': '0%',
+            'background-size': '400%'
+          }
+        }
+      }
+    }
+  },
+  variants: {
+    extend: {}
+  },
+  plugins: [require('@tailwindcss/typography')]
 }
