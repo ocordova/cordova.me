@@ -1,7 +1,10 @@
 import * as React from 'react'
-import { Layout } from '../components/Layout'
+import { graphql } from 'gatsby'
 
-const IndexPage = () => {
+import { Layout } from '../components/Layout'
+import { BlogCard } from '../components/BlogCard'
+
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div>
@@ -11,9 +14,47 @@ const IndexPage = () => {
         <p className="text-gray-600 mt-2">
           Full Stack Engineer based in Mexico City
         </p>
+        <div className="flex items-center justify-between space-x-4 mt-10">
+          <h2 className="text-lg font-medium text-gray-900">
+            Latest blog posts
+          </h2>
+          <a
+            href="#"
+            className="whitespace-nowrap text-sm font-medium text-purple-600 hover:text-purple-500"
+          >
+            View all<span aria-hidden="true"> &rarr;</span>
+          </a>
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
+          {data.allMdx.nodes.map((node) => (
+            <BlogCard post={node} key={node.id} />
+          ))}
+        </div>
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
+      nodes {
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+          description
+          hero_image_alt
+          hero_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        id
+        slug
+      }
+    }
+  }
+`
 
 export default IndexPage

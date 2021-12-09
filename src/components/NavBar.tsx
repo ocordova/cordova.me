@@ -46,7 +46,9 @@ export const NavBar = () => {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <img className="block h-10 w-auto" src={Logo} alt="Logo" />
+                  <Link to="/">
+                    <img className="block h-10 w-auto" src={Logo} alt="Logo" />
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   {mainNav.map(({ text, to }) => (
@@ -55,13 +57,13 @@ export const NavBar = () => {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
+                {/* <button
                   type="button"
                   className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
                 >
                   <span className="sr-only">Change theme</span>
                   <MoonIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

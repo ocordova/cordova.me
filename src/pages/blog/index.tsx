@@ -1,10 +1,9 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Layout } from '../../components/Layout'
 import { BlogCard } from '../../components/BlogCard'
 
 const BlogPage = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
