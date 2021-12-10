@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { MDXProvider } from '@mdx-js/react';
+import { MDXProvider } from '@mdx-js/react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Layout } from '../../components/Layout'
 
@@ -11,33 +11,34 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <article className="w-full max-w-none">
-        <h1 className="font-extrabold leading-tight text-4xl text-gray-900 mb-4">
+        <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-3">
           {data.mdx.frontmatter.title}
         </h1>
         <time className="text-gray-500 text-sm">
           Posted on {data.mdx.frontmatter.date}
         </time>
-        <div className="prose max-w-none mt-4">
+        <div className="mt-8">
           <GatsbyImage
-            className="object-cover w-full h-80 rounded-md"
+            className="object-cover w-full h-80 rounded-lg"
             image={image}
             alt={data.mdx.frontmatter.hero_image_alt}
           />
-          <MDXProvider>
-            <MDXRenderer className="mt-4" localImages={embeddedImagesLocal}>
-              {data.mdx.body}
-            </MDXRenderer>
-          </MDXProvider>
+          <div className="prose max-w-none mt-8">
+            <MDXProvider>
+              <MDXRenderer className="mt-4" localImages={embeddedImagesLocal}>
+                {data.mdx.body}
+              </MDXRenderer>
+            </MDXProvider>
+          </div>
         </div>
       </article>
     </Layout>
-
   )
 }
 
 export const query = graphql`
-  query($id: String) {
-    mdx(id: {eq: $id}) {
+  query ($id: String) {
+    mdx(id: { eq: $id }) {
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
@@ -49,7 +50,7 @@ export const query = graphql`
         }
         embeddedImagesLocal {
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData
           }
         }
       }

@@ -2,12 +2,14 @@
 title: Jekyll with Tailwind CSS
 description: Setup Jekyll with Tailwind CSS with PostCSS and PurgeCSS (no Webpack involved)
 date: 2021-03-27
-hero_image: "./banner.jpg"
-hero_image_alt: "Jekyll and tailwind css logos"
+hero_image: './banner.jpg'
+hero_image_alt: 'Jekyll and tailwind css logos'
 embeddedImagesLocal:
-  - jekyll-quickstart.png
-  - jekyll-with-tailwind.png
+  - jekyll-quickstart.jpg
+  - jekyll-with-tailwind.jpg
 ---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 [Tailwind CSS](https://tailwindcss.com) is a utility-first CSS framework that provides a deep catalog of CSS classes that you can use directly in your HTML instead of writing loads of CSS.
 
@@ -55,7 +57,7 @@ bundle exec jekyll serve
 
 We can browse to [http://localhost:4000](http://localhost:4000) to make sure everything is in its place.
 
-![Jekyll quickstart](./jekyll-quickstart.png)
+<GatsbyImage alt="Jekyll quickstart" image={getImage(props.localImages[0])} />
 
 ## Create a package.json file
 
@@ -94,17 +96,17 @@ module.exports = {
     './_includes/**/*.html',
     './_layouts/**/*.html',
     './_posts/*.html',
-    './*.html',
+    './*.html'
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {}
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
-};
+  plugins: []
+}
 ```
 
 Here you can customize your theme and install any additional Tailwind plugin.
@@ -116,15 +118,15 @@ This `postcss.config.js` will be used by PostCSS by default to build our css fil
 ```javascript
 // postcss.config.js
 
-const cssnano = require('cssnano')({ preset: 'default' });
+const cssnano = require('cssnano')({ preset: 'default' })
 
 module.exports = {
   plugins: [
     require('autoprefixer'),
     require('tailwindcss')('./tailwind.config.js'),
-    ...(process.env.NODE_ENV === 'production' ? [cssnano] : []),
-  ],
-};
+    ...(process.env.NODE_ENV === 'production' ? [cssnano] : [])
+  ]
+}
 ```
 
 Notice we included a rule to ensure to minify our css when we build for production.
@@ -201,7 +203,10 @@ title: 'Tailwind CSS!'
 
 Now open a new terminal window and run the `jekyll:dev` command to build the site.
 
-![Jekyll with tailwind](./jekyll-with-tailwind.png)
+<GatsbyImage
+  alt="Jekyll with tailwind"
+  image={getImage(props.localImages[1])}
+/>
 
 ## The last npm script
 

@@ -23,7 +23,7 @@ export const BlogCard = ({ post }, ...more) => {
             <span aria-hidden="true" className="absolute inset-0" />
             {post.frontmatter.title}
           </h3>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-600">
             {post.frontmatter.description}
           </p>
         </div>

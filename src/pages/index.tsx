@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import { Layout } from '../components/Layout'
 import { BlogCard } from '../components/BlogCard'
@@ -8,22 +8,20 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <div>
-        <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-colorized">
+        <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
           Óscar Córdova
         </h1>
         <p className="text-gray-600 mt-2">
           Full Stack Engineer based in Mexico City
         </p>
         <div className="flex items-center justify-between space-x-4 mt-10">
-          <h2 className="text-lg font-medium text-gray-900">
-            Latest blog posts
-          </h2>
-          <a
-            href="#"
-            className="whitespace-nowrap text-sm font-medium text-colorized hover:text-black"
+          <h2 className="text-xl font-bold text-gray-900">Latest blog posts</h2>
+          <Link
+            to={'/blog'}
+            className="whitespace-nowrap text-base font-semibold text-colorized hover:text-gray-900"
           >
             View all<span aria-hidden="true"> &rarr;</span>
-          </a>
+          </Link>
         </div>
         <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2">
           {data.allMdx.nodes.map((node) => (

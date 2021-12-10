@@ -1,0 +1,44 @@
+---
+title: Telegram Bot with Apps Script
+description: Create a Telegram Bot without a server
+date: 2016-10-03
+hero_image: './banner.jpg'
+hero_image_alt: 'Telegram logo'
+embeddedImagesLocal:
+  - start-conversation-with-botfather.jpg
+---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+
+[Google Apps Script](https://developers.google.com/apps-script) is a cloud scripting service based in JavaScript and makes it easy to do cool things with most of Google's products. Lately, I've been a big fan of its flexibility and versatility, for example with just a few lines of code you can interact with the [Telegram Bot API](https://core.telegram.org/bots/api) to control your bot, you won't have to worry about having a server, SSL certificates or configure ports 😏.
+
+## 🤔 What We Are Going to Do
+
+Our goal is to create a simple Telegram bot that replies to a command with a random quote from [Quotes on Design](https://quotesondesign.com/).
+
+You can test it just by starting a conversation with [DesignQuotesBot](https://telegram.me/DesignQuotesBot) and sending the command `/quote`.
+
+<GatsbyImage
+  objectFit="contain"
+  alt="Telegram Bot Demo"
+  image={getImage(props.localImages[0])}
+/>
+
+Now let's get started with the step by step instructions 😊
+
+## 🤖 Meet BotFather
+
+The first step is to talk to [BotFather](https://telegram.me/BotFather) to create and setup our bot, he will also give us our authorization token.
+
+Sign in to Telegram from your favorite device and search for the account **BotFather** and start a conversation.
+
+gif
+
+Click the **Start** button.
+
+<GatsbyImage
+  alt="Start a conversation with BotFather"
+  image={getImage(props.localImages[0])}
+/>
+
+asdfasdf

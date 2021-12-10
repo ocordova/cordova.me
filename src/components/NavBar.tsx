@@ -8,8 +8,9 @@ import Logo from '../images/logo.svg'
 
 const DesktopNavItem = ({ text, to }) => (
   <Link
-    className="text-gray-900 hover:text-gray-600 inline-flex items-center px-1 pt-1 font-medium"
+    className="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 font-base"
     to={to}
+    activeClassName="text-gray-900"
   >
     {text}
   </Link>
@@ -19,9 +20,9 @@ const MobileNavItem = ({ text, to }) => (
   <Disclosure.Button
     as="a"
     href="#"
-    className="text-gray-900 hover:text-gray-600 block pl-3 pr-4 py-2 text-base font-medium"
+    className="text-gray-500 hover:text-gray-900 block pl-3 pr-4 py-2 text-base font-base"
   >
-    <Link className="" to={to}>
+    <Link to={to} activeClassName="text-gray-900">
       {text}
     </Link>
   </Disclosure.Button>
@@ -29,7 +30,7 @@ const MobileNavItem = ({ text, to }) => (
 
 export const NavBar = () => {
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav">
       {({ open }) => (
         <>
           <div className="max-w-2xl mx-auto px-4 lg:px-0">
@@ -47,7 +48,11 @@ export const NavBar = () => {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <Link to="/">
-                    <img className="block h-10 w-auto" src={Logo} alt="Logo" />
+                    <img
+                      className="block h-10 w-auto text-gray-500 hover:text-gray-900"
+                      src={Logo}
+                      alt="Logo"
+                    />
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
