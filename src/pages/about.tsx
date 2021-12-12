@@ -1,9 +1,11 @@
 import React from 'react'
 import { Layout } from '../components/Layout'
+import { Seo } from '../components/Seo'
 
 const IndexPage = () => {
   return (
     <Layout>
+      <Seo title="About" />
       <div>
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
           About

@@ -57,7 +57,11 @@ bundle exec jekyll serve
 
 We can browse to [http://localhost:4000](http://localhost:4000) to make sure everything is in its place.
 
-<GatsbyImage alt="Jekyll quickstart" image={getImage(props.localImages[0])} />
+<GatsbyImage
+  objectFit="contain"
+  alt="Jekyll quickstart"
+  image={getImage(props.localImages[0])}
+/>
 
 ## Create a package.json file
 
@@ -204,6 +208,7 @@ title: 'Tailwind CSS!'
 Now open a new terminal window and run the `jekyll:dev` command to build the site.
 
 <GatsbyImage
+  objectFit="contain"
   alt="Jekyll with tailwind"
   image={getImage(props.localImages[1])}
 />

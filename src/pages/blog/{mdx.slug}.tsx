@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Layout } from '../../components/Layout'
 import { CodeBlock } from '../../components/CodeBlock'
+import { Seo } from '../../components/Seo'
 
 const components = {
   pre: (props) => <div {...props}></div>,
@@ -12,27 +13,33 @@ const components = {
 }
 
 const BlogPost = ({ data }) => {
-  const image = getImage(data.mdx.frontmatter.hero_image)
-  const embeddedImagesLocal = data.mdx.frontmatter.embeddedImagesLocal
+  const post = data.mdx
+  console.log(post)
+  const image = getImage(post.frontmatter.hero_image)
+  const embeddedImagesLocal = post.frontmatter.embeddedImagesLocal
   return (
     <Layout>
+      <Seo
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+      />
       <article className="w-full max-w-none">
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-3">
-          {data.mdx.frontmatter.title}
+          {post.frontmatter.title}
         </h1>
         <time className="text-gray-500 text-sm">
-          Posted on {data.mdx.frontmatter.date}
+          Posted on {post.frontmatter.date}
         </time>
         <div className="mt-8">
           <GatsbyImage
             className="object-cover w-full h-80 rounded-lg"
             image={image}
-            alt={data.mdx.frontmatter.hero_image_alt}
+            alt={post.frontmatter.hero_image_alt}
           />
           <div className="prose max-w-none mt-8">
             <MDXProvider components={components}>
               <MDXRenderer className="mt-4" localImages={embeddedImagesLocal}>
-                {data.mdx.body}
+                {post.body}
               </MDXRenderer>
             </MDXProvider>
           </div>
@@ -47,6 +54,7 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
+        description
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
         hero_image {

@@ -1,7 +1,15 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.ocordova.me`,
-    title: `Óscar Córdova`
+    title: `Óscar Córdova`,
+    author: {
+      name: `Óscar Córdova`,
+      summary: `Full Stack Engineer based in Mexico City`
+    },
+    description: `Full Stack Engineer based in Mexico City`,
+    social: {
+      twitter: `ocordova`
+    }
   },
   plugins: [
     `gatsby-plugin-image`,

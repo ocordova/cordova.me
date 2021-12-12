@@ -3,10 +3,12 @@ import { graphql, Link } from 'gatsby'
 
 import { Layout } from '../components/Layout'
 import { BlogCard } from '../components/BlogCard'
+import { Seo } from '../components/Seo'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
+      <Seo title="Full Stack Engineer" />
       <div>
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
           Óscar Córdova
