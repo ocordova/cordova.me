@@ -4,6 +4,12 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { Layout } from '../../components/Layout'
+import { CodeBlock } from '../../components/CodeBlock'
+
+const components = {
+  pre: (props) => <div {...props}></div>,
+  code: CodeBlock
+}
 
 const BlogPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.hero_image)
@@ -24,7 +30,7 @@ const BlogPost = ({ data }) => {
             alt={data.mdx.frontmatter.hero_image_alt}
           />
           <div className="prose max-w-none mt-8">
-            <MDXProvider>
+            <MDXProvider components={components}>
               <MDXRenderer className="mt-4" localImages={embeddedImagesLocal}>
                 {data.mdx.body}
               </MDXRenderer>

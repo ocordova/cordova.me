@@ -23,12 +23,11 @@ module.exports = {
                 'text-decoration': 'none'
               }
             },
-
-            pre: {
-              color: '#000',
-              'background-color': '#f5f2f0'
-            },
             code: {
+              'background-color': 'rgb(246, 248, 250)',
+              'padding-top': '0.25rem',
+              'padding-bottom': '0.25rem',
+              color: 'rgb(57, 58, 52)',
               '&::before': {
                 content: "'' !important",
                 'padding-left': '0.25rem'
