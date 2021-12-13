@@ -31,6 +31,58 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+              {
+                site {
+                  siteMetadata {
+                    title
+                    description
+                    siteUrl
+                    site_url: siteUrl
+                  }
+                }
+              }
+            `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes.map((node) => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + '/blog/' + node.slug,
+                  guid: site.siteMetadata.siteUrl + '/blog/' + node.slug,
+                  custom_elements: [{ 'content:encoded': node.html }]
+                })
+              })
+            },
+            query: `
+                    {
+                      allMdx(
+                        sort: { order: DESC, fields: [frontmatter___date] },
+                      ) {
+                        nodes {
+                          excerpt
+                          body
+                          slug
+                          frontmatter {
+                            title
+                            date
+                          }
+                        }
+                      }
+                    }
+                `,
+            title: "Óscar Córdova's RSS Feed",
+            output: '/feed.xml',
+            match: '^/blog/'
+          }
+        ]
+      }
+    },
     `gatsby-plugin-mdx`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

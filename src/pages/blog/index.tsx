@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { Layout } from '../../components/Layout'
 import { BlogCard } from '../../components/BlogCard'
 import { Seo } from '../../components/Seo'
@@ -12,7 +12,9 @@ const BlogPage = ({ data }) => {
         Blog
       </h1>
       <div className="prose max-w-none mt-8">
-        <p>You can follow this blog posts via RSS.</p>
+        <p>
+          You can follow this blog posts via <Link to={'/feed.xml'}>RSS</Link>.
+        </p>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 items-stretch">
         {data.allMdx.nodes.map((node) => (
