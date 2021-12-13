@@ -14,7 +14,6 @@ const components = {
 
 const BlogPost = ({ data }) => {
   const post = data.mdx
-  console.log(post)
   const image = getImage(post.frontmatter.hero_image)
   const embeddedImagesLocal = post.frontmatter.embeddedImagesLocal
   return (
