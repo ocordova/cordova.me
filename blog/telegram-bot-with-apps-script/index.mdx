@@ -374,11 +374,21 @@ We'll see a new dialog indicating that your project has been successfully deploy
 
 The final step is to share the Bot API the URL they need to send the update requests, the easiest way is to open your browser and visit the following url:
 
-`https://api.telegram.org/bot{API_TOKEN}/setWebHook?url={CURRENT_WEB_APP_URL}`
+```javascript
+https://api.telegram.org/bot{API_TOKEN}/setWebHook?url={CURRENT_WEB_APP_URL}
+```
 
 Replacing with `{API_TOKEN}` and `{CURRENT_WEB_APP_URL}` with our respective token and URL.
 
-If everything turns out as planned 🤞, after visiting the url we'll see the response: `{"ok":true,"result":true,"description":"Webhook was set"}`
+If everything turns out as planned 🤞, after visiting the url we'll see the response:
+
+```json
+{
+  "ok": true,
+  "result": true,
+  "description": "Webhook was set"
+}
+```
 
 ## 😎 Let's Test It!
 
