@@ -10,12 +10,12 @@ export const Footer = () => {
         <span className="flex px-1">
           <HeartIcon className="h-5 w-auto text-red-600 animate-ping absolute opacity-40" />
           <HeartIcon className="h-5 w-auto text-red-700 relative" />
-        </span>
-        {' '}in Mexico
+        </span>{' '}
+        in Mexico
       </div>
       <div className="flex flex-row justify-center md:justify-start mt-6 md:mt-0">
         <a
-          href=""
+          href="/feed.xml"
           className="text-gray-400 hover:text-red-400 transition-colors"
         >
           <svg
