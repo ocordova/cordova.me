@@ -22,7 +22,7 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description}
       />
-      <article className="w-full max-w-none">
+      <article className="w-full">
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-3">
           {post.frontmatter.title}
         </h1>
@@ -35,7 +35,7 @@ const BlogPost = ({ data }) => {
             image={image}
             alt={post.frontmatter.hero_image_alt}
           />
-          <div className="prose max-w-none mt-8">
+          <div className="prose mt-8">
             <MDXProvider components={components}>
               <MDXRenderer className="mt-4" localImages={embeddedImagesLocal}>
                 {post.body}
