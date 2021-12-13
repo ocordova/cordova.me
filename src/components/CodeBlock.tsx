@@ -1,6 +1,6 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import dracula from 'prism-react-renderer/themes/github'
+import theme from 'prism-react-renderer/themes/github'
 
 export const CodeBlock = ({ children, className }) => {
   const language = className.replace(/language-/, '') || ''
@@ -9,22 +9,23 @@ export const CodeBlock = ({ children, className }) => {
       {...defaultProps}
       code={children}
       language={language}
-      theme={dracula}
+      theme={theme}
     >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style }}>
-          {tokens.map((line, index) => {
-            const lineProps = getLineProps({ line, key: index })
-            return (
-              <div key={index} {...lineProps}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => {
+        // I don't know how tokens have an extra empty line
+        tokens.pop()
+        return (
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
+                  <span {...getTokenProps({ token, key })} />
                 ))}
               </div>
-            )
-          })}
-        </pre>
-      )}
+            ))}
+          </pre>
+        )
+      }}
     </Highlight>
   )
 }

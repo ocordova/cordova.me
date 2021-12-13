@@ -1,0 +1,28 @@
+---
+title: Git superlog
+description: A more advanced git log
+date: 2021-12-13
+type: git
+embeddedImagesLocal:
+  - terminal.jpg
+---
+
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
+
+## Create alias
+
+```bash
+git config --global alias.slog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+```
+
+## Usage
+
+```bash
+git slog
+```
+
+<GatsbyImage
+  objectFit="contain"
+  alt="Terminal with output example"
+  image={getImage(props.localImages[0])}
+/>

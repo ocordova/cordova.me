@@ -10,5 +10,9 @@ export const mainNav = [
   {
     text: 'Blog',
     to: '/blog'
+  },
+  {
+    text: 'Snippets',
+    to: '/snippets'
   }
 ]

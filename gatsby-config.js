@@ -21,6 +21,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `snippets`,
+        path: `${__dirname}/snippets`
+      }
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
@@ -63,6 +70,7 @@ module.exports = {
                     {
                       allMdx(
                         sort: { order: DESC, fields: [frontmatter___date] },
+                        filter: {fileAbsolutePath: {regex: "/(blog)/"}}
                       ) {
                         nodes {
                           excerpt

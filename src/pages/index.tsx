@@ -37,7 +37,11 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
+    allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { fileAbsolutePath: { regex: "/(blog)/" } }
+      limit: 2
+    ) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
