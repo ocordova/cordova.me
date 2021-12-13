@@ -81,7 +81,7 @@ Now, BotFather will ask you for a **username**, let it be **DesignQuotesBot**.
   image={getImage(props.localImages[4])}
 />
 
-BotFather will congratulate us, and give us an unique **authorization token**, it is a string along the lines of `297019760:AAFbL7yMus67Qv5Xu6fQ7VB93Jq4dkVaGP4`, this will be required to send requests to the [Bot API](https://core.telegram.org/bots/api).
+BotFather will congratulate us, and give us an unique **authorization token**, it is a string along the lines of `2970976:AAFbL7yMJqVaGP4`, this will be required to send requests to the [Bot API](https://core.telegram.org/bots/api).
 
 <GatsbyImage
   objectFit="contain"
@@ -275,7 +275,7 @@ var data = {
 To make the request we're going to use the method [fetch(url, params)](<https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app#fetch(String,Object)>). All queries to Telegram Bot API must be served over HTTPS to the endpoint: `https://api.telegram.org/bot<token>`. Here is where we're going to use the **token** we received from the BotFather.
 
 ```javascript
-var API_TOKEN = '297019760:AAFbL7yMus67Qv5Xu6fQ7VB93Jq4dkVaGP4'
+var API_TOKEN = '2970976:AAFbL7yMJqVaGP4'
 UrlFetchApp.fetch('https://api.telegram.org/bot' + API_TOKEN + '/', data)
 ```
 
@@ -327,7 +327,7 @@ function doPost(e) {
         }
 
         // Replace with your token
-        var API_TOKEN = '297019760:AAFbL7yMus67Qv5Xu6fQ7VB93Jq4dkVaGP4'
+        var API_TOKEN = '2970976:AAFbL7yMJqVaGP4'
         UrlFetchApp.fetch(
           'https://api.telegram.org/bot' + API_TOKEN + '/',
           data
@@ -382,12 +382,8 @@ Replacing with `{API_TOKEN}` and `{CURRENT_WEB_APP_URL}` with our respective tok
 
 If everything turns out as planned 🤞, after visiting the url we'll see the response:
 
-```json
-{
-  "ok": true,
-  "result": true,
-  "description": "Webhook was set"
-}
+```javascript
+{"ok":true,"result":true,"description":"Webhook was set"}
 ```
 
 ## 😎 Let's Test It!
