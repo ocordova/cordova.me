@@ -5,6 +5,7 @@ date: 2016-10-03
 hero_image: './banner.jpg'
 hero_image_alt: 'Telegram logo'
 embeddedImagesLocal:
+  - search-for-the-user-botfather.jpg
   - start-conversation-with-botfather.jpg
   - list-of-commands-supported-by-botfather.jpg
   - give-your-bot-a-name.jpg
@@ -28,8 +29,8 @@ Our goal is to create a simple Telegram bot that replies to a command with a ran
 You can test it just by starting a conversation with [DesignQuotesBot](https://telegram.me/DesignQuotesBot) and sending the command `/quote`.
 
 <video controls autoplay muted>
-  <source src="/blog/telegram-bot-demo.mp4" type="video/mp4" />
-  <source src="/blog/telegram-bot-demo.ogg" type="video/ogg" />
+  <source src="/telegram-bot-demo.mp4" type="video/mp4" />
+  <source src="/telegram-bot-demo.ogg" type="video/ogg" />
 </video>
 
 Now let's get started with the step by step instructions 😊
@@ -39,6 +40,11 @@ Now let's get started with the step by step instructions 😊
 The first step is to talk to [BotFather](https://telegram.me/BotFather) to create and setup our bot, he will also give us our authorization token.
 
 Sign in to Telegram from your favorite device and search for the account **BotFather** and start a conversation.
+
+<GatsbyImage
+  alt="Start a conversation with BotFather"
+  image={getImage(props.localImages[0])}
+/>
 
 Click the **Start** button.
 
@@ -380,7 +386,7 @@ We just need to open Telegram on any device, search for our bot and send the com
 <GatsbyImage
   objectFit="contain"
   alt="Testing our bot"
-  image={getImage(props.localImages[6])}
+  image={getImage(props.localImages[10])}
 />
 
 ## 🙌 We’re done!
