@@ -12,7 +12,7 @@ const SnippetPage = ({ data }) => {
         Snippets
       </h1>
       <div className="prose max-w-none mt-8">
-        <p>You can follow this Snippet</p>
+        <p>Code snippets that I've created or collected over time.</p>
       </div>
       <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 items-stretch">
         {data.allMdx.nodes.map((node) => (
