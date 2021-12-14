@@ -3,6 +3,7 @@ import React from 'react'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { GithubStars } from '../components/stats/GithubStars'
+import { StackOverflowReputation } from '../components/stats/StackOverflowReputation'
 
 const DashboardPage = () => {
   return (
@@ -19,6 +20,7 @@ const DashboardPage = () => {
       <div className="mt-8">
         <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 items-stretch">
           <GithubStars />
+          <StackOverflowReputation />
         </div>
       </div>
     </Layout>

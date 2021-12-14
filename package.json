@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop -p $PORT",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
