@@ -1,10 +1,7 @@
-import { GatsbyFunctionRequest, GatsbyFunctionResponse } from 'gatsby'
+import type { VercelApiHandler } from '@vercel/node'
 import fetch from 'cross-fetch'
 
-export default async function handler(
-  req: GatsbyFunctionRequest,
-  res: GatsbyFunctionResponse
-) {
+const request: VercelApiHandler = async (req, res) => {
   const response = await fetch(
     `https://api.github.com/users/ocordova/repos?per_page=100`
   )
@@ -24,3 +21,5 @@ export default async function handler(
     stars
   })
 }
+
+export default request
