@@ -15,7 +15,7 @@ const components = {
 const BlogPost = ({ data }) => {
   const post = data.mdx
   const embeddedImagesLocal = post.frontmatter.embeddedImagesLocal
-  console.log(post.frontmatter.source)
+
   const SourceMarkup = ({ href }) => (
     <div className="text-sm text-colorized hover:text-gray-900 font-semibold">
       <a href={href} target="_blank" rel="noopener noreferrer">
