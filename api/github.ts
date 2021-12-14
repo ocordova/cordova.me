@@ -1,7 +1,7 @@
-import type { VercelApiHandler } from '@vercel/node'
+import { VercelRequest, VercelResponse } from '@vercel/node'
 import fetch from 'cross-fetch'
 
-const request: VercelApiHandler = async (req, res) => {
+const request = async (_req: VercelRequest, res: VercelResponse) => {
   const response = await fetch(
     `https://api.github.com/users/ocordova/repos?per_page=100`
   )
