@@ -17,6 +17,7 @@ export const WatchedShows = () => {
       iconColor="bg-blue-500"
       name="Watched shows"
       stat={shows}
+      to="https://trakt.tv/users/ocordova"
     />
   )
 }

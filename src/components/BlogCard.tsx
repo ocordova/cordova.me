@@ -7,10 +7,10 @@ export const BlogCard = ({ post }, ...more) => {
   return (
     <Link to={`/blog/${post.slug}`}>
       <div
-        className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden h-full"
+        className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden h-full hover:shadow-md"
         {...more}
       >
-        <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-44">
+        <div className="aspect-w-3 aspect-h-4 bg-gray-200 sm:aspect-none sm:h-44">
           <GatsbyImage
             className="w-full h-full object-center object-cover sm:w-full sm:h-full"
             image={image}

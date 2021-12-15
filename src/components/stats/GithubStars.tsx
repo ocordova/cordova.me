@@ -27,6 +27,7 @@ export const GithubStars = () => {
       iconColor="bg-github"
       name="GitHub stars"
       stat={stars}
+      to="https://github.com/ocordova"
     />
   )
 }

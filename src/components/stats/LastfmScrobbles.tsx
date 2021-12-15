@@ -26,6 +26,7 @@ export const LastfmScrobbles = () => {
       iconColor="bg-lastfm"
       name="Last.fm scrobbles"
       stat={scrobbles}
+      to="https://www.last.fm/user/ocordova"
     />
   )
 }

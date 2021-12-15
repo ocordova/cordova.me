@@ -28,6 +28,7 @@ export const StackOverflowReputation = () => {
       iconColor="bg-stackoverflow"
       name="Stack Overflow reputation"
       stat={reputation}
+      to="https://stackoverflow.com/users/3075569"
     />
   )
 }

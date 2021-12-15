@@ -28,6 +28,7 @@ export const FiverrRatings = () => {
       name="Fiverr rating"
       stat={rating}
       prevStat="out of 5"
+      to="https://www.fiverr.com/oscordova"
     />
   )
 }
