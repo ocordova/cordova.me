@@ -11,7 +11,9 @@ module.exports = {
       },
       boxShadow: {
         sm: '0px 2px 4px rgba(102,102,102,0.1)',
-        md: '0 5px 10px rgba(102,102,102,0.12)'
+        md: '0 5px 10px rgba(102,102,102,0.12)',
+        lg: '0 8px 24px rgba(102,102,102,0.12)',
+        xl: '0 30px 60px rgba(102,102,102,0.12)'
       },
       typography: {
         DEFAULT: {

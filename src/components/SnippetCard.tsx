@@ -70,7 +70,7 @@ export const SnippetCard = ({ snippet }, ...more) => {
   return (
     <Link to={`/snippets/${snippet.slug}`}>
       <div
-        className="w-full bg-white border border-gray-200 rounded-lg flex items-center justify-between p-6 space-x-6 hover:shadow-md"
+        className="w-full bg-white border border-gray-200 rounded-lg flex items-center justify-between p-6 space-x-6 hover:shadow-lg"
         {...more}
       >
         <div className="flex-1 truncate">

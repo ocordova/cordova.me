@@ -16,7 +16,7 @@ export const StatCard = ({
 
   return (
     <a href={to} target="_blank" rel="noopener noreferrer">
-      <div className="relative w-full bg-white border border-gray-200 rounded-lg flex items-center justify-between p-4 space-x-4 hover:shadow-md">
+      <div className="relative w-full bg-white border border-gray-200 rounded-lg flex items-center justify-between p-4 space-x-4 hover:shadow-lg">
         <div className={classNames(...[iconStyle.base, iconColor])}>
           <Icon />
         </div>
