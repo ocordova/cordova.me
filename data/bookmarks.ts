@@ -2,6 +2,11 @@ import { Bookmark } from '../src/types'
 
 export const bookmarks: Array<Bookmark> = [
   {
+    title: 'Shadow Palette Generator',
+    description: 'Create a set of lush, realistic CSS shadows.',
+    url: 'https://www.joshwcomeau.com/shadow-palette/'
+  },
+  {
     title: 'Devhints',
     description: 'Collection of cheatsheets',
     url: 'https://devhints.io/'
