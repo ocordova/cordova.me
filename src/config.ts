@@ -16,6 +16,10 @@ export const mainNav = [
     to: '/dashboard'
   },
   {
+    text: 'Bookmarks',
+    to: '/bookmarks'
+  },
+  {
     text: 'Snippets',
     to: '/snippets'
   }

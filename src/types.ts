@@ -18,3 +18,9 @@ export type Trakt = {
   watchedMovies: number
   watchedShows: number
 }
+
+export type Bookmark = {
+  title: string
+  description: string
+  url: string
+}
