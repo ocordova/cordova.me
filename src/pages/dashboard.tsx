@@ -4,6 +4,7 @@ import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { GithubStars } from '../components/stats/GithubStars'
 import { StackOverflowReputation } from '../components/stats/StackOverflowReputation'
+import { LastfmScrobbles } from '../components/stats/LastfmScrobbles'
 
 const DashboardPage = () => {
   return (
@@ -21,6 +22,7 @@ const DashboardPage = () => {
         <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 items-stretch">
           <GithubStars />
           <StackOverflowReputation />
+          <LastfmScrobbles />
         </div>
       </div>
     </Layout>

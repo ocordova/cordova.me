@@ -5,3 +5,7 @@ export type GitHub = {
 export type StackOverflow = {
   reputation: number
 }
+
+export type Lastfm = {
+  scrobbles: number
+}
