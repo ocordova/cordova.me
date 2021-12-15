@@ -56,6 +56,14 @@ const IndexPage = () => {
                 rel="noopener noreferrer"
               >
                 Oh My Zsh
+              </a>{' '}
+              /{' '}
+              <a
+                href="https://fig.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fig
               </a>
             </li>
           </ul>
