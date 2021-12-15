@@ -6,6 +6,8 @@ import { GithubStars } from '../components/stats/GithubStars'
 import { StackOverflowReputation } from '../components/stats/StackOverflowReputation'
 import { LastfmScrobbles } from '../components/stats/LastfmScrobbles'
 import { FiverrRatings } from '../components/stats/FiverrRatings'
+import { WatchedMovies } from '../components/stats/WatchedMovies'
+import { WatchedShows } from '../components/stats/WatchedShows'
 
 const DashboardPage = () => {
   return (
@@ -25,6 +27,8 @@ const DashboardPage = () => {
           <StackOverflowReputation />
           <LastfmScrobbles />
           <FiverrRatings />
+          <WatchedMovies />
+          <WatchedShows />
         </div>
       </div>
     </Layout>

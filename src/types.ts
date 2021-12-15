@@ -13,3 +13,8 @@ export type Lastfm = {
 export type Fiverr = {
   rating: number
 }
+
+export type Trakt = {
+  watchedMovies: number
+  watchedShows: number
+}
