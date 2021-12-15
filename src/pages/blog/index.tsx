@@ -11,11 +11,9 @@ const BlogPage = ({ data }) => {
       <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
         Blog
       </h1>
-      <div className="prose max-w-none mt-8">
-        <p>
-          You can follow this blog posts via <Link to={'/feed.xml'}>RSS</Link>.
-        </p>
-      </div>
+      <p className="text-gray-600 mt-4">
+        You can follow this blog posts via <Link to={'/feed.xml'}>RSS</Link>.
+      </p>
       <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 items-stretch">
         {data.allMdx.nodes.map((node) => (
           <BlogCard post={node} key={node.id} />

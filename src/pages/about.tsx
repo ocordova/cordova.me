@@ -10,7 +10,7 @@ const IndexPage = () => {
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
           About
         </h1>
-        <div className="prose max-w-none mt-8">
+        <div className="prose max-w-none mt-4">
           <p>
             I’m a Full Stack Engineer based in Mexico City, experienced in both
             front-end and back-end development.

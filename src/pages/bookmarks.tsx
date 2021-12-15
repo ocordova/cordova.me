@@ -13,11 +13,9 @@ const BookmarksPage = () => {
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
           Bookmarks
         </h1>
-        <div className="prose max-w-none mt-2">
-          <p>
-            Collection of tools and fun websites, I hope you found them useful.
-          </p>
-        </div>
+        <p className="text-gray-600 mt-4">
+          Collection of tools and fun websites, I hope you found them useful.
+        </p>
       </div>
       <div className="mt-8">
         <ul role="list" className="divide-y divide-gray-200">

@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-gray-900">
           Óscar Córdova
         </h1>
-        <p className="text-gray-600 mt-2">
+        <p className="text-gray-600 mt-4">
           Full Stack Engineer based in Mexico City
         </p>
         <div className="flex items-center justify-between space-x-4 mt-10">
