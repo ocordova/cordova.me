@@ -5,6 +5,7 @@ import { Seo } from '../components/Seo'
 import { GithubStars } from '../components/stats/GithubStars'
 import { StackOverflowReputation } from '../components/stats/StackOverflowReputation'
 import { LastfmScrobbles } from '../components/stats/LastfmScrobbles'
+import { FiverrRatings } from '../components/stats/FiverrRatings'
 
 const DashboardPage = () => {
   return (
@@ -23,6 +24,7 @@ const DashboardPage = () => {
           <GithubStars />
           <StackOverflowReputation />
           <LastfmScrobbles />
+          <FiverrRatings />
         </div>
       </div>
     </Layout>

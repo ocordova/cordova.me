@@ -25,7 +25,7 @@ export const StackOverflowReputation = () => {
   return (
     <StatCard
       icon={icon}
-      iconColor="bg-yellow-500"
+      iconColor="bg-stackoverflow"
       name="Stack Overflow reputation"
       stat={reputation}
     />

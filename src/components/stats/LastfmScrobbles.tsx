@@ -23,7 +23,7 @@ export const LastfmScrobbles = () => {
   return (
     <StatCard
       icon={icon}
-      iconColor="bg-red-500"
+      iconColor="bg-lastfm"
       name="Last.fm scrobbles"
       stat={scrobbles}
     />

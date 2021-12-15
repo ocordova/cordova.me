@@ -9,3 +9,7 @@ export type StackOverflow = {
 export type Lastfm = {
   scrobbles: number
 }
+
+export type Fiverr = {
+  rating: number
+}

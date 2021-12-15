@@ -3,6 +3,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        fiverr: '#1dbf73',
+        lastfm: '#b90000',
+        github: '#333333',
+        stackoverflow: '#f48024'
+      },
       typography: {
         DEFAULT: {
           css: {

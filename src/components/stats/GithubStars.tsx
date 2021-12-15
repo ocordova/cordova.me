@@ -24,7 +24,7 @@ export const GithubStars = () => {
   return (
     <StatCard
       icon={icon}
-      iconColor="bg-gray-900"
+      iconColor="bg-github"
       name="GitHub stars"
       stat={stars}
     />

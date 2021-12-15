@@ -1,7 +1,7 @@
 import React from 'react'
 import { classNames } from '../utils/css'
 
-export const StatCard = ({ name, stat, icon: Icon, iconColor }) => {
+export const StatCard = ({ name, stat, prevStat, icon: Icon, iconColor }) => {
   const iconStyle = {
     base: 'text-white rounded-full inline-flex p-3 ring-4 ring-white'
   }
@@ -17,6 +17,11 @@ export const StatCard = ({ name, stat, icon: Icon, iconColor }) => {
         </div>
         <p className="mt-1 text-3xl font-semibold text-gray-900">
           {stat && stat ? stat.toLocaleString() : '~'}
+          {prevStat && (
+            <span className="ml-1 text-sm font-medium text-gray-500">
+              {prevStat}
+            </span>
+          )}
         </p>
       </div>
     </div>
