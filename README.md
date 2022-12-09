@@ -1,11 +1,1 @@
-# ocordova.me
-
-🏡 My personal site. Built with Gatsby.
-
-## Getting started
-
-Steps to run the project:
-
-```bash
-vercel dev
-```
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
