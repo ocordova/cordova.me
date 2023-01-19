@@ -9,10 +9,10 @@ export const Home = () => {
       <Container>
         <Wrapper>
           <div className="relative px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl pt-20 pb-20 sm:pt-40 sm:pb-40">
+            <div className="mx-auto pt-20 pb-20 sm:pt-40 sm:pb-40">
               <div className="text-center">
-                <h2 className="text-xl font-semibold text-gray-800 sm:text-2xl">
-                  Hello, I am Óscar Córdova
+                <h2 className="text-2xl font-semibold text-gray-800 sm:text-3xl">
+                  Óscar Córdova
                 </h2>
                 <h1
                   className={clsx(
@@ -22,8 +22,8 @@ export const Home = () => {
                 >
                   Product Manager
                 </h1>
-                <p className="text-lg leading-8 text-gray-600">
-                  Product Manager based in Mexico City
+                <p className="text-lg leading-8 text-gray-600 ">
+                  Driving success through strategic product management
                 </p>
                 <div className="mt-8 flex justify-center gap-x-4">
                   <Link

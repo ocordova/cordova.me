@@ -42,7 +42,7 @@ export const Toolbox = () => {
         <Wrapper>
           <SimpleLayout
             title="Toolbox"
-            intro="Here’s an extensive list of hard and software I use every day and other things I recommend"
+            intro="Here’s an extensive list of hardware and software I use every day and other things I recommend"
           >
             <div>
               {categories.map((category, index) => {
