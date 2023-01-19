@@ -1,8 +1,9 @@
+// @ts-nocheck
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { Button, Logo, NavLinks } from '.'
+import { Logo, NavLinks } from '.'
 
 function MenuIcon(props) {
   return (
@@ -33,6 +34,7 @@ function ChevronUpIcon(props) {
 function MobileNavLink({ children, ...props }) {
   return (
     <Popover.Button
+      as={Link}
       className="block rounded-xl px-3 py-2.5 text-base leading-7 tracking-tight text-gray-900 hover:bg-gray-100"
       {...props}
     >
