@@ -10,7 +10,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    formats: ['image/avif', 'image/webp', 'image/png', 'image/jpeg'],
+    formats: ['image/avif', 'image/webp'],
   },
 }
 
