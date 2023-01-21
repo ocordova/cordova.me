@@ -24,7 +24,7 @@ export function ArticleLayout({ children, meta, isRssFeed = false }) {
                 <span className="mr-2.5">Back to blog</span>
               </Link>
             </div>
-            <article className="mt-12">
+            <article className="mt-8">
               <header className="flex flex-col">
                 <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
                   {meta.title}

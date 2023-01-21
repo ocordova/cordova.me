@@ -57,7 +57,7 @@ export const Container = ({
         )}
       </Head>
       <Header />
-      <main className="px-6 sm:px-0">{children}</main>
+      <main className="mt-4 px-6 sm:px-0">{children}</main>
       <Footer />
     </>
   )

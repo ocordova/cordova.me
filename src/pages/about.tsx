@@ -32,7 +32,7 @@ export const About = () => {
           <div>
             <h1
               className={clsx(
-                'text-colorized text-4xl font-bold tracking-tight sm:text-5xl',
+                'text-colorized text-5xl font-bold tracking-tight sm:text-5xl',
                 randomBackgroundGradient()
               )}
             >
