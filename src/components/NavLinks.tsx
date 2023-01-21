@@ -19,8 +19,10 @@ export function NavLinks({}) {
           key={label}
           href={href}
           className={clsx(
-            'relative -my-2 -mx-3 rounded-lg border px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms]',
-            useRouter().pathname === href ? 'border-gray-200' : 'border-white'
+            'relative -my-2 -mx-3 rounded-lg border px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms] dark:text-gray-400 dark:hover:text-gray-100',
+            useRouter().pathname === href
+              ? 'border-gray-00 dark:border-gray-500'
+              : 'border-transparent dark:border-transparent'
           )}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -28,7 +30,7 @@ export function NavLinks({}) {
           <AnimatePresence>
             {hoveredIndex === index && (
               <motion.span
-                className="absolute inset-0 rounded-lg bg-gray-100"
+                className="absolute inset-0 rounded-lg bg-gray-100 dark:bg-gray-800/50"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { duration: 0.15 } }}

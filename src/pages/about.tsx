@@ -39,7 +39,7 @@ export const About = () => {
               Hello I'm Óscar!
             </h1>
           </div>
-          <div className="mt-6 space-y-4 text-justify text-base text-gray-600">
+          <div className="mt-6 space-y-4 text-justify text-base text-gray-600 dark:text-gray-400">
             <p>
               I am a Product Manager with over three years of freelance
               experience and over ten years of experience as a Full Stack
@@ -59,7 +59,7 @@ export const About = () => {
             </p>
           </div>
           <div>
-            <h2 className="mt-8 text-xl font-bold tracking-tight sm:text-2xl">
+            <h2 className="mt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-2xl">
               Career
             </h2>
             <div className="flow-root">
@@ -69,14 +69,14 @@ export const About = () => {
                     <div className="relative pb-6">
                       {jobIdx !== jobs.length - 1 ? (
                         <span
-                          className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                          className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
                           aria-hidden="true"
                         />
                       ) : null}
                       <div className="jobs-start relative flex space-x-3">
                         <div className="relative">
                           <img
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
+                            className="flex h-10 w-10 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900"
                             src={job.icon}
                             alt={job.company}
                           />
@@ -84,15 +84,15 @@ export const About = () => {
                         <div className="min-w-0 flex-1">
                           <div>
                             <div className="text-sm">
-                              <div className="font-bold text-gray-900">
+                              <div className="font-bold text-gray-900 dark:text-gray-50">
                                 {job.title}
                               </div>
                             </div>
-                            <p className="mt-0.5 text-sm text-gray-700">
+                            <p className="mt-0.5 text-sm text-gray-700 dark:text-gray-400">
                               {job.company} · {job.type}
                             </p>
                           </div>
-                          <div className="-mt-0.5 text-sm text-gray-500">
+                          <div className="-mt-0.5 text-sm text-gray-500 dark:text-gray-600">
                             <p>
                               <span>
                                 {format(parseISO(job.startDate), 'LLL yyyy')}
@@ -116,7 +116,7 @@ export const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="mt-8 text-xl font-bold tracking-tight sm:text-2xl">
+            <h2 className="mt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-2xl">
               Education
             </h2>
             <div className="flow-root">
@@ -126,14 +126,14 @@ export const About = () => {
                     <div className="relative pb-8">
                       {itemIdx !== education.length - 1 ? (
                         <span
-                          className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                          className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
                           aria-hidden="true"
                         />
                       ) : null}
                       <div className="relative flex items-start space-x-3">
                         <div className="relative">
                           <img
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400 ring-8 ring-white"
+                            className="flex h-10 w-10 items-center justify-center rounded-full ring-white dark:ring-gray-900"
                             src={item.icon}
                             alt={item.company}
                           />
@@ -141,15 +141,15 @@ export const About = () => {
                         <div className="min-w-0 flex-1">
                           <div>
                             <div className="text-sm">
-                              <div className="font-bold text-gray-900">
+                              <div className="font-bold text-gray-900 dark:text-gray-50">
                                 {item.title}
                               </div>
                             </div>
-                            <p className="mt-0.5 text-sm text-gray-700">
+                            <p className="mt-0.5 text-sm text-gray-700 dark:text-gray-400">
                               {item.company}
                             </p>
                           </div>
-                          <div className="-mt-0.5 text-sm text-gray-500">
+                          <div className="-mt-0.5 text-sm text-gray-500 dark:text-gray-500">
                             <p>
                               <span>
                                 {format(parseISO(item.startDate), 'LLL yyyy')}
@@ -182,13 +182,13 @@ export const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="mt-8 text-xl font-bold tracking-tight sm:text-2xl">
+            <h2 className="mt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-2xl">
               About this site
             </h2>
-            <p className="mt-4 text-base text-gray-600">
+            <p className="mt-4 text-base text-gray-400">
               In case you were wondering, this site is:
             </p>
-            <ul className="mt-4 list-inside list-disc pl-4 text-base text-gray-600">
+            <ul className="mt-4 list-inside list-disc pl-4 text-base text-gray-400">
               <li>
                 Carefully hand-coded with{' '}
                 <TextLink href="https://code.visualstudio.com/">

@@ -14,7 +14,7 @@ export function ArticleLayout({ children, meta, isRssFeed = false }) {
     <>
       <Container title={meta.title} description={meta.description}>
         <div className="xl:relative">
-          <div className="mx-auto max-w-2xl px-4 sm:px-0">
+          <div className="mx-auto max-w-2xl">
             <div className="flex">
               <Link
                 href="/articles"
@@ -24,7 +24,7 @@ export function ArticleLayout({ children, meta, isRssFeed = false }) {
                 <span className="mr-2.5">Back to blog</span>
               </Link>
             </div>
-            <article className="mt-12 px-8 sm:px-0">
+            <article className="mt-12">
               <header className="flex flex-col">
                 <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
                   {meta.title}

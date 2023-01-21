@@ -7,7 +7,7 @@ export function SimpleLayout({ title, intro, children }) {
       <header className="max-w-2xl">
         <h1
           className={clsx(
-            'text-colorized text-4xl font-bold tracking-tight dark:text-gray-100 sm:text-5xl',
+            'text-colorized text-4xl font-bold tracking-tight sm:text-5xl',
             randomBackgroundGradient()
           )}
         >

@@ -12,7 +12,7 @@ export const Books = () => {
           >
             <ul
               role="list"
-              className="mt-8 grid grid-cols-1 divide-y divide-gray-200"
+              className="mt-8 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-800"
             >
               {books.map((book) => (
                 <li key={book.title} className="flex py-8">
@@ -23,15 +23,15 @@ export const Books = () => {
                     <div className="sm:col-span-4">
                       <div className="space-y-3">
                         <div className="space-y-1">
-                          <h3 className="dark:text-whit text-xl font-bold tracking-tight text-gray-900">
+                          <h3 className="dark:text-whit text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
                             {book.title}
                           </h3>
-                          <p className="text-base font-medium text-gray-600">
+                          <p className="text-base font-medium text-gray-500 dark:text-gray-500">
                             by {book.author}
                           </p>
                         </div>
 
-                        <p className="text-justify text-sm text-gray-500">
+                        <p className="dark:text-gray-4000 text-justify text-sm text-gray-600">
                           {book.review}
                         </p>
                         <div className="space-x-3">
