@@ -100,7 +100,7 @@ export function Header() {
                             <MobileNavLink href="/articles">
                               Articles
                             </MobileNavLink>
-                            <MobileNavLink href="/tooblox">
+                            <MobileNavLink href="/toolbox">
                               Toolbox
                             </MobileNavLink>
                             <MobileNavLink href="/bookmarks">

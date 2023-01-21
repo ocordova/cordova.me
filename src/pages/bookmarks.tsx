@@ -14,7 +14,7 @@ export const Card = ({ title, description, url, icon, category }) => {
     [Category.article]: 'bg-purple-100 text-purple-800',
     [Category.video]: 'bg-pink-100 text-pink-800',
     [Category.tool]: 'bg-green-100 text-green-800',
-    [Category.resource]: 'bg-blue-100 text-blue-800',
+    [Category.resource]: 'bg-orange-100 text-orange-800',
   }
 
   return (
@@ -35,8 +35,7 @@ export const Card = ({ title, description, url, icon, category }) => {
               {category}
             </span>
           </div>
-          <h2 className="font-display mt-4 text-base text-gray-900 dark:text-white">
-            <span className="absolute -inset-px rounded-xl" />
+          <h2 className="mt-4 text-base font-semibold text-gray-900 dark:text-white">
             {title}
           </h2>
           <p className="mt-1 text-sm text-gray-700 dark:text-gray-400">
