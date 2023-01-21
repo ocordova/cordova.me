@@ -31,7 +31,7 @@ export const Books = () => {
                           </p>
                         </div>
 
-                        <p className="dark:text-gray-4000 text-justify text-sm text-gray-600">
+                        <p className="dark:text-gray-4000 text-justify text-sm text-gray-600 dark:text-gray-400">
                           {book.review}
                         </p>
                         <div className="space-x-3">
