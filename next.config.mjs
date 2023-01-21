@@ -9,6 +9,9 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    formats: ['image/avif', 'image/webp', 'image/png', 'image/jpeg'],
+  },
 }
 
 const withMDX = nextMDX({

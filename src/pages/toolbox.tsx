@@ -30,8 +30,8 @@ export const Toolbox = () => {
                   src={icon}
                   alt={name}
                   quality="100"
-                  height="80"
-                  width="80"
+                  height="88"
+                  width="88"
                 />
               ) : null}
             </div>
