@@ -17,7 +17,7 @@ export const Footer = () => {
               in Mexico
             </div>
             <div className="mt-6 flex flex-row justify-center md:mt-0 md:justify-start">
-              <div className="text-gray-400 transition-colors hover:text-gray-900 dark:hover:text-gray-100">
+              <div className="text-gray-500 transition-colors hover:text-gray-900 dark:hover:text-gray-100">
                 <a
                   href="https://github.com/ocordova/ocordova.me"
                   target="_blank"
