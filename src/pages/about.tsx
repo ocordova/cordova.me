@@ -3,7 +3,6 @@ import { Container, Wrapper, TextLink } from 'src/components/'
 import { jobs, education } from 'src/data/about'
 import clsx from 'clsx'
 import { randomBackgroundGradient } from '../lib/randomGradient'
-import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
 
 export const About = () => {
   const getDuration = (startDate, endDate) => {
@@ -56,6 +55,31 @@ export const About = () => {
               develop intuitive, user-centered products. In addition, I am
               skilled in product analytics and use data to inform decisions and
               measure success.
+            </p>
+            <p>
+              Outside of work, my hobbies include cooking, trying new
+              restaurants, watching movies and a lot of YouTube, tinkering with
+              technology, and reading about psychology.
+            </p>
+            <p>
+              I deleted my Twitter and Instagram account, but you can reach me
+              through{' '}
+              <TextLink
+                href="https://t.me/ocordova"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                telegram
+              </TextLink>{' '}
+              or{' '}
+              <TextLink
+                href="mailto:hola@ocordova.me"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                email me
+              </TextLink>
+              , like in the old days.
             </p>
           </div>
           <div>
@@ -185,28 +209,69 @@ export const About = () => {
             <h2 className="mt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-2xl">
               About this site
             </h2>
-            <p className="mt-4 text-base text-gray-400">
+            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
               In case you were wondering, this site is:
             </p>
-            <ul className="mt-4 list-inside list-disc pl-4 text-base text-gray-400">
+            <ul className="mt-4 list-inside list-disc pl-4 text-base text-gray-600 dark:text-gray-400">
               <li>
                 Carefully hand-coded with{' '}
-                <TextLink href="https://code.visualstudio.com/">
+                <TextLink
+                  href="https://code.visualstudio.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Visual Studio Code
                 </TextLink>
               </li>
               <li>
                 Styled with{' '}
-                <TextLink href="https://tailwindcss.com/">
+                <TextLink
+                  href="https://tailwindcss.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Tailwind CSS
                 </TextLink>
               </li>
               <li>
                 Iconified with{' '}
-                <TextLink href="https://heroicons.com/">Heroicons</TextLink>
+                <TextLink
+                  href="https://heroicons.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Heroicons
+                </TextLink>
               </li>
               <li>
-                Hosted on <TextLink href="https://vercel.com/">Vercel</TextLink>
+                Animated with{' '}
+                <TextLink
+                  href="https://framer.com/motion/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Framer Motion
+                </TextLink>
+              </li>
+              <li>
+                Hosted on{' '}
+                <TextLink
+                  href="https://vercel.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Vercel
+                </TextLink>
+              </li>
+              <li>
+                Tracking data with{' '}
+                <TextLink
+                  href="https://plausible.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Plausible
+                </TextLink>
               </li>
             </ul>
           </div>

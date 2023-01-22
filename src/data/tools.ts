@@ -50,18 +50,18 @@ export const categories = [
     name: 'Coding',
     tools: [
       {
-        name: 'Visual Studio Code',
-        description:
-          "After using Sublime for many years, I moved to VSCode like everybody else. It's fast, lightweight, and has a lot of extensions.",
-        url: 'https://code.visualstudio.com/',
-        icon: '/static/tools/vscode.png',
-      },
-      {
         name: 'Dracula Theme',
         description:
           'I love this dark theme. I use it in VSCode, Warp, Telegram, Slack, etc.',
         url: 'https://draculatheme.com/',
         icon: '/static/tools/dracula.png',
+      },
+      {
+        name: 'FiraCode',
+        description:
+          "Great monospaced font. It's easier to read and has ligatures.",
+        url: 'https://github.com/tonsky/FiraCode',
+        icon: '/static/tools/fira-code.png',
       },
       {
         name: 'GitHub Copilot',
@@ -70,12 +70,13 @@ export const categories = [
         url: 'https://copilot.github.com/',
         icon: '/static/tools/github-copilot.png',
       },
+
       {
-        name: 'FiraCode',
+        name: 'Visual Studio Code',
         description:
-          "Great monospaced font. It's easier to read and has ligatures.",
-        url: 'https://github.com/tonsky/FiraCode',
-        icon: '/static/tools/fira-code.png',
+          "After using Sublime for many years, I moved to VSCode like everybody else. It's fast, lightweight, and has a lot of extensions.",
+        url: 'https://code.visualstudio.com/',
+        icon: '/static/tools/vscode.png',
       },
     ],
   },
@@ -95,18 +96,18 @@ export const categories = [
     name: 'Design',
     tools: [
       {
-        name: 'Figma',
-        description:
-          'I use Figma for interface and web design; I use Adobe Creative Cloud for everything else.',
-        url: 'https://www.figma.com/',
-        icon: '/static/tools/figma.png',
-      },
-      {
         name: 'Adobe Creative Cloud',
         description:
           "I use Photoshop, Illustrator, InDesign and After Effects. I'm used to the Adobe shortcuts and makes my work faster.",
         url: 'https://www.adobe.com/creativecloud.html',
         icon: '/static/tools/adobe-creative-cloud.png',
+      },
+      {
+        name: 'Figma',
+        description:
+          'I use Figma for interface and web design; I use Adobe Creative Cloud for everything else.',
+        url: 'https://www.figma.com/',
+        icon: '/static/tools/figma.png',
       },
     ],
   },
@@ -114,18 +115,10 @@ export const categories = [
     name: 'Apps',
     tools: [
       {
-        name: 'Insomnia',
-        description:
-          "I prefer Insomnia over Postman. It's faster and has a better UI.",
-        url: 'https://insomnia.rest/',
-        icon: '/static/tools/insomnia.png',
-      },
-      {
-        name: 'Stoplight',
-        description:
-          "If you work with APIs and OpenAPI, this is a must-have; it's an excellent tool for managing your API documentation.",
-        url: 'https://stoplight.io/',
-        icon: '/static/tools/stoplight.png',
+        name: 'Cron',
+        description: 'Best calendar app for Mac and mobile.',
+        url: 'https://cron.com/',
+        icon: '/static/tools/cron.png',
       },
       {
         name: 'DaisyDisk',
@@ -135,19 +128,21 @@ export const categories = [
         icon: '/static/tools/daisy-disk.png',
       },
       {
-        name: 'Magnet',
-        description:
-          "I'm used to how Windows or GNOME manage their windows, and It helps me to organize my windows by dragging them to the edges or by using keyboard shortcuts.",
-        url: 'https://magnet.crowdcafe.com/',
-        icon: '/static/tools/magnet.png',
-      },
-      {
         name: 'Dashlane',
         description:
           'I prefer Dashlane over LastPass or 1Password for my password manager. It has, by far, better UI and UX.',
         url: 'https://www.dashlane.com/',
         icon: '/static/tools/dashlane.png',
       },
+
+      {
+        name: 'Insomnia',
+        description:
+          "I prefer Insomnia over Postman. It's faster and has a better UI.",
+        url: 'https://insomnia.rest/',
+        icon: '/static/tools/insomnia.png',
+      },
+
       {
         name: 'LinearMouse',
         description:
@@ -156,10 +151,18 @@ export const categories = [
         icon: '/static/tools/linear-mouse.png',
       },
       {
-        name: 'Cron',
-        description: 'Best calendar app for Mac and mobile.',
-        url: 'https://cron.com/',
-        icon: '/static/tools/cron.png',
+        name: 'Magnet',
+        description:
+          "I'm used to how Windows or GNOME manage their windows, and It helps me to organize my windows by dragging them to the edges or by using keyboard shortcuts.",
+        url: 'https://magnet.crowdcafe.com/',
+        icon: '/static/tools/magnet.png',
+      },
+      {
+        name: 'Stoplight',
+        description:
+          "If you work with APIs and OpenAPI, this is a must-have; it's an excellent tool for managing your API documentation.",
+        url: 'https://stoplight.io/',
+        icon: '/static/tools/stoplight.png',
       },
     ],
   },
@@ -167,25 +170,18 @@ export const categories = [
     name: 'Services',
     tools: [
       {
-        name: 'Linear',
-        description:
-          'Amazing issue tracker. I use it for my personal and freelance projects. Jira no longer exists for me.',
-        url: 'https://linear.app/',
-        icon: '/static/tools/linear.png',
-      },
-      {
-        name: 'Vercel',
-        description:
-          'The best developer experience. Here where I host all my websites.',
-        url: 'https://vercel.com/',
-        icon: '/static/tools/vercel.png',
-      },
-      {
         name: 'Cloudflare',
         description:
           'I use Cloudflare to manage my DNS and CDN for all my domains.',
         url: 'https://www.cloudflare.com/',
         icon: '/static/tools/cloudflare.png',
+      },
+
+      {
+        name: 'Goodreads',
+        description: 'I use Goodreads to track my books and discover new ones.',
+        url: 'https://www.goodreads.com/',
+        icon: '/static/tools/goodreads.png',
       },
       {
         name: 'Google Domains',
@@ -201,12 +197,7 @@ export const categories = [
         url: 'https://one.google.com/',
         icon: '/static/tools/google-one.png',
       },
-      {
-        name: 'Notion',
-        description: 'I use Notion for my personal and project notes.',
-        url: 'https://www.notion.so/',
-        icon: '/static/tools/notion.png',
-      },
+
       {
         name: 'Last.fm',
         description:
@@ -214,6 +205,29 @@ export const categories = [
         url: 'https://www.last.fm/',
         icon: '/static/tools/lastfm.png',
       },
+
+      {
+        name: 'Linear',
+        description:
+          'Amazing issue tracker. I use it for my personal and freelance projects. Jira no longer exists for me.',
+        url: 'https://linear.app/',
+        icon: '/static/tools/linear.png',
+      },
+      {
+        name: 'Notion',
+        description: 'I use Notion for my personal and project notes.',
+        url: 'https://www.notion.so/',
+        icon: '/static/tools/notion.png',
+      },
+
+      {
+        name: 'Plausible',
+        description:
+          'You can make informed decisions without cookies or personal data.',
+        url: 'https://plausible.io/',
+        icon: '/static/tools/plausible.png',
+      },
+
       {
         name: 'Trakt',
         description:
@@ -222,10 +236,11 @@ export const categories = [
         icon: '/static/tools/trakt.png',
       },
       {
-        name: 'Goodreads',
-        description: 'I use Goodreads to track my books and discover new ones.',
-        url: 'https://www.goodreads.com/',
-        icon: '/static/tools/goodreads.png',
+        name: 'Vercel',
+        description:
+          'The best developer experience. Here where I host all my websites.',
+        url: 'https://vercel.com/',
+        icon: '/static/tools/vercel.png',
       },
     ],
   },
@@ -264,18 +279,18 @@ export const categories = [
     name: 'Reading',
     tools: [
       {
-        name: 'Kindle Paperwhite (8 GB)',
-        description:
-          'It took me years to finally move to an e-reader. Fantastic for text books and long reads.',
-        url: 'https://www.amazon.com/Kindle-Paperwhite-adjustable-Ad-Supported/dp/B08KTZ8249',
-        icon: '/static/tools/kindle.png',
-      },
-      {
         name: 'Audible',
         description:
           "I like to listen to audiobooks while I do exercise or while I'm cooking.",
         url: 'https://www.audible.com/',
         icon: '/static/tools/audible.png',
+      },
+      {
+        name: 'Kindle Paperwhite (8 GB)',
+        description:
+          'It took me years to finally move to an e-reader. Fantastic for text books and long reads.',
+        url: 'https://www.amazon.com/Kindle-Paperwhite-adjustable-Ad-Supported/dp/B08KTZ8249',
+        icon: '/static/tools/kindle.png',
       },
     ],
   },
