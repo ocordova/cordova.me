@@ -1,3 +1,4 @@
+import { Constants } from '@/data/constants'
 import { Head, Html, Main, NextScript } from 'next/document'
 
 const modeScript = `
@@ -64,6 +65,13 @@ export default function Document() {
         />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        {Constants.isProduction && (
+          <script
+            defer
+            data-domain="ocordova.me"
+            src="https://plausible.io/js/script.js"
+          ></script>
+        )}
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
       </Head>
       <body className="flex h-full flex-col bg-white dark:bg-gray-900">
