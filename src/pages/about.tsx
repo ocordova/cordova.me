@@ -224,6 +224,16 @@ export const About = () => {
                 </TextLink>
               </li>
               <li>
+                Built with{' '}
+                <TextLink
+                  href="https://nextjs.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Next.js
+                </TextLink>
+              </li>
+              <li>
                 Styled with{' '}
                 <TextLink
                   href="https://tailwindcss.com/"
