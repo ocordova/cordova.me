@@ -8,7 +8,7 @@ export const Books = () => {
         <Wrapper>
           <SimpleLayout
             title="My personal favorites"
-            intro="Here are a few books I recommend. They helped me improve my product management skills."
+            intro="Here are a few books I highly recommend. They helped me improve my product management skills."
           >
             <ul
               role="list"
