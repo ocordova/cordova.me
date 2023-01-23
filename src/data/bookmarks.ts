@@ -15,6 +15,13 @@ interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'Stratechery',
+    url: 'https://stratechery.com/',
+    category: Category.resource,
+    description: 'Newsletter and podcast with insights on the tech industry',
+    icon: '/static/bookmarks/stratechery.png',
+  },
+  {
     title: 'The Product Manifesto',
     url: 'https://www.productmanifesto.com/',
     category: Category.resource,
