@@ -59,7 +59,7 @@ export const About = () => {
             <p>
               Outside of work, my hobbies include cooking, trying new
               restaurants, watching movies and a lot of YouTube, tinkering with
-              technology, and reading about psychology.
+              technology, and reading about cognitive psychology.
             </p>
             <p>
               I deleted my Twitter and Instagram account, but you can reach me
