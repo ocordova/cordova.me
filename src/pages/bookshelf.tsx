@@ -1,10 +1,10 @@
 import { Container, Wrapper, SimpleLayout, Button } from 'src/components/'
 import { books } from 'src/data/books'
 
-export const Library = () => {
+export const Bookshelf = () => {
   return (
     <>
-      <Container title="Library">
+      <Container title="Bookshelf">
         <Wrapper>
           <SimpleLayout
             title="My personal favorites"
@@ -59,4 +59,4 @@ export const Library = () => {
   )
 }
 
-export default Library
+export default Bookshelf
