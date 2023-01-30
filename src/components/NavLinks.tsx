@@ -13,7 +13,7 @@ export function NavLinks({}) {
         ['Articles', '/articles'],
         ['Toolbox', '/toolbox'],
         ['Bookmarks', '/bookmarks'],
-        ['Books', '/books'],
+        ['Library', '/library'],
       ].map(([label, href], index) => (
         <Link
           key={label}

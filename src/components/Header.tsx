@@ -176,7 +176,9 @@ export function Header() {
                             <MobileNavLink href="/bookmarks">
                               Bookmarks
                             </MobileNavLink>
-                            <MobileNavLink href="/books">Books</MobileNavLink>
+                            <MobileNavLink href="/library">
+                              Library
+                            </MobileNavLink>
                           </div>
                           <div className="mt-8">
                             <ModeToggle />
