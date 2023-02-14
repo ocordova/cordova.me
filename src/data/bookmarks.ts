@@ -15,6 +15,14 @@ interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'Untools',
+    url: 'https://untools.co/',
+    category: Category.resource,
+    description:
+      'Collection of thinking tools and frameworks to help you solve problems, make decisions and understand systems.',
+    icon: '/static/bookmarks/untools.png',
+  },
+  {
     title: 'Stratechery',
     url: 'https://stratechery.com/',
     category: Category.resource,
