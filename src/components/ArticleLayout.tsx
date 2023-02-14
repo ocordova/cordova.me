@@ -46,7 +46,7 @@ export function ArticleLayout({ children, meta, isRssFeed = false }) {
                   />
                 </div>
               )}
-              <Prose className="mt-4">{children}</Prose>
+              <Prose className="mt-4 text-justify">{children}</Prose>
             </article>
           </div>
         </div>
