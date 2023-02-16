@@ -15,6 +15,14 @@ interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'Why smaller websites shouldn’t bother with A/B testing',
+    url: 'https://uxplanet.org/why-smaller-websites-shouldnt-bother-with-a-b-testing-5f28b8b1a14d',
+    category: Category.article,
+    description:
+      'A/B testing is a great tool to improve your product, but it is not always the best option.',
+    icon: '/static/bookmarks/uxplanet.png',
+  },
+  {
     title: 'Untools',
     url: 'https://untools.co/',
     category: Category.resource,
