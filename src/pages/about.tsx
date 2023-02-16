@@ -62,14 +62,22 @@ export const About = () => {
               technology, and reading about cognitive psychology.
             </p>
             <p>
-              I deleted my Twitter and Instagram account, but you can reach me
-              through{' '}
+              I'm trying to post regularly on{' '}
+              <TextLink
+                href="https://www.tiktok.com/@ocordova"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                TikTok
+              </TextLink>
+              , and I deleted my Twitter and Instagram accounts, but if you want
+              to reach me through{' '}
               <TextLink
                 href="https://t.me/ocordova"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                telegram
+                Telegram
               </TextLink>{' '}
               or{' '}
               <TextLink
