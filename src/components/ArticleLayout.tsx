@@ -26,7 +26,7 @@ export function ArticleLayout({ children, meta, isRssFeed = false }) {
             </div>
             <article className="mt-8">
               <header className="flex flex-col">
-                <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
+                <h1 className="mt-4 font-serif text-2xl font-medium tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl">
                   {meta.title}
                 </h1>
                 <time
@@ -36,17 +36,7 @@ export function ArticleLayout({ children, meta, isRssFeed = false }) {
                   <span>{formatDate(meta.date)}</span>
                 </time>
               </header>
-              {meta.cover && (
-                <div className="w-fullaspect-w-3 aspect-h-4 sm:aspect-none relative mt-4 h-[250px]">
-                  <Image
-                    className="rounded-lg object-cover"
-                    src={meta.cover}
-                    fill
-                    alt={meta.coverAlt}
-                  />
-                </div>
-              )}
-              <Prose className="mt-4 text-justify">{children}</Prose>
+              <Prose className="mt-8 text-justify">{children}</Prose>
             </article>
           </div>
         </div>

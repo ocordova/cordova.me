@@ -35,7 +35,7 @@ function MobileNavLink({ children, ...props }) {
   return (
     <Popover.Button
       as={Link}
-      className="block rounded-xl px-3 py-2.5 text-base leading-7 tracking-tight text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900"
+      className="block rounded-lg px-3 py-2.5 text-base leading-7 tracking-tight text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-900"
       {...props}
     >
       {children}
@@ -104,8 +104,8 @@ function ModeToggle() {
       className="group rounded-full px-3 py-2 backdrop-blur transition"
       onClick={toggleMode}
     >
-      <SunIcon className="h-6 w-6 fill-gray-100 stroke-gray-500 transition group-hover:fill-gray-200 group-hover:stroke-gray-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-pink-50 [@media(prefers-color-scheme:dark)]:stroke-pink-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-pink-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-pink-600" />
-      <MoonIcon className="hidden h-6 w-6 fill-gray-700 stroke-gray-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-gray-400 [@media_not_(prefers-color-scheme:dark)]:fill-pink-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-pink-500" />
+      <SunIcon className="h-6 w-6 fill-gray-100 stroke-gray-500 transition group-hover:fill-gray-200 group-hover:stroke-gray-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-gray-50 [@media(prefers-color-scheme:dark)]:stroke-gray-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-gray-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-gray-600" />
+      <MoonIcon className="hidden h-6 w-6 fill-gray-700 stroke-gray-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-gray-400 [@media_not_(prefers-color-scheme:dark)]:fill-gray-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-gray-500" />
     </button>
   )
 }

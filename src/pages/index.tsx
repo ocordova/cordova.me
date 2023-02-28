@@ -10,35 +10,31 @@ export const Home = () => {
         <Wrapper>
           <div className="mx-auto pt-20 pb-20 sm:pt-40 sm:pb-40">
             <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-50 sm:text-3xl">
+              <h2 className="text-xl font-normal text-gray-600 dark:text-gray-50 sm:text-2xl">
                 Óscar Córdova
               </h2>
               <h1
                 className={clsx(
-                  'text-colorized text-5xl font-bold leading-tight tracking-tight sm:text-6xl sm:leading-snug',
-                  randomBackgroundGradient()
+                  'font-serif text-4xl font-normal leading-tight tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-snug'
                 )}
               >
                 Product Manager
               </h1>
-              <p className="text-lg leading-8 text-gray-600 dark:text-gray-400">
-                Driving success through strategic product management
+              <p className="text-base leading-8 text-gray-600 dark:text-gray-400">
+                Problems solver, not a features builder
               </p>
               <div className="mt-8 flex justify-center gap-x-4">
                 <Link
                   href="/about"
-                  className="group relative h-full rounded-xl border border-transparent"
+                  className="inline-flex items-center rounded-lg border border-transparent px-4 py-1.5 text-base font-semibold text-gray-700 transition-colors hover:border-gray-400 dark:text-gray-100 "
                 >
-                  <div className="absolute -inset-px rounded-xl border-2 border-transparent opacity-0 transition-opacity delay-75 [background:linear-gradient(var(--quick-links-hover-bg,theme(colors.white)),var(--quick-links-hover-bg,theme(colors.white)))_padding-box,linear-gradient(to_top,theme(colors.purple.500),theme(colors.pink.500),theme(colors.pink.600))_border-box] group-hover:opacity-100 dark:[--quick-links-hover-bg:theme(colors.gray.900)]" />
-                  <div className="relative rounded-xl px-4 py-1.5 text-base font-semibold text-gray-700 dark:text-gray-200">
-                    Learn more
-                    <span
-                      className="ml-1.5 text-gray-500 dark:text-gray-100"
-                      aria-hidden="true"
-                    >
-                      &rarr;
-                    </span>
-                  </div>
+                  Learn more
+                  <span
+                    className="ml-1.5 text-gray-500 dark:text-gray-100"
+                    aria-hidden="true"
+                  >
+                    &rarr;
+                  </span>
                 </Link>
               </div>
             </div>

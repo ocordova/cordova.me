@@ -31,8 +31,7 @@ export const About = () => {
           <div>
             <h1
               className={clsx(
-                'text-colorized text-5xl font-bold tracking-tight sm:text-5xl',
-                randomBackgroundGradient()
+                'font-serif text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl'
               )}
             >
               Hello I'm Óscar!
@@ -91,7 +90,7 @@ export const About = () => {
             </p>
           </div>
           <div>
-            <h2 className="mt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-xl font-medium tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl">
               Career
             </h2>
             <div className="flow-root">
@@ -116,7 +115,7 @@ export const About = () => {
                         <div className="min-w-0 flex-1">
                           <div>
                             <div className="text-sm">
-                              <div className="font-bold text-gray-900 dark:text-gray-50">
+                              <div className="font-semibold text-gray-900 dark:text-gray-50">
                                 {job.title}
                               </div>
                             </div>
@@ -148,7 +147,7 @@ export const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="mt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-xl font-medium tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl">
               Education
             </h2>
             <div className="flow-root">
@@ -173,7 +172,7 @@ export const About = () => {
                         <div className="min-w-0 flex-1">
                           <div>
                             <div className="text-sm">
-                              <div className="font-bold text-gray-900 dark:text-gray-50">
+                              <div className="font-semibold text-gray-900 dark:text-gray-50">
                                 {item.title}
                               </div>
                             </div>
@@ -214,7 +213,7 @@ export const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="mt-8 text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-xl font-medium tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl">
               About this site
             </h2>
             <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
