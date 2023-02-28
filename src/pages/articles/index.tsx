@@ -14,7 +14,7 @@ export const Articles = ({ articles }) => {
             title="Product development, management & design"
             intro="Well, I’m starting fresh. I am switching my blog posts from software development to product-related articles."
           >
-            <h2 className="mt-8 font-serif text-xl font-medium tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl">
               All articles
             </h2>
             <ul
