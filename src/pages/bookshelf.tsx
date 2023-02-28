@@ -23,10 +23,10 @@ export const Bookshelf = () => {
                     <div className="sm:col-span-4">
                       <div className="space-y-3">
                         <div className="space-y-1">
-                          <h3 className="dark:text-whit text-xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
+                          <h3 className="dark:text-whit text-lg font-semibold tracking-tight text-gray-900 dark:text-gray-50">
                             {book.title}
                           </h3>
-                          <p className="text-base font-medium text-gray-500 dark:text-gray-500">
+                          <p className="text-sm font-medium text-gray-500 dark:text-gray-500">
                             by {book.author}
                           </p>
                         </div>
