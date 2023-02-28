@@ -21,7 +21,7 @@ export const Home = () => {
                 Product Manager
               </h1>
               <p className="text-base leading-8 text-gray-600 dark:text-gray-400">
-                Problems solver, not a features builder
+                Problem solver. Not feature builder.
               </p>
               <div className="mt-8 flex justify-center gap-x-4">
                 <Link
