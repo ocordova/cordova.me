@@ -10,7 +10,7 @@ export const Home = () => {
         <Wrapper>
           <div className="mx-auto pt-20 pb-20 sm:pt-40 sm:pb-40">
             <div className="text-center">
-              <h2 className="text-xl font-normal text-gray-600 dark:text-gray-50 sm:text-2xl">
+              <h2 className="text-xl font-normal text-gray-600 dark:text-gray-400 sm:text-2xl">
                 Óscar Córdova
               </h2>
               <h1
