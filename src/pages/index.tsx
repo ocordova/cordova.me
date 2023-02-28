@@ -15,7 +15,7 @@ export const Home = () => {
               </h2>
               <h1
                 className={clsx(
-                  'font-serif text-4xl font-normal leading-tight tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-snug'
+                  'font-serif text-4xl font-normal leading-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-snug'
                 )}
               >
                 Product Manager
@@ -26,7 +26,7 @@ export const Home = () => {
               <div className="mt-8 flex justify-center gap-x-4">
                 <Link
                   href="/about"
-                  className="inline-flex items-center rounded-lg border border-transparent px-4 py-1.5 text-base font-semibold text-gray-700 transition-colors hover:border-gray-400 dark:text-gray-100 "
+                  className="inline-flex items-center rounded-lg border border-transparent px-4 py-1.5 text-sm font-semibold text-gray-700 transition-colors hover:border-gray-400 dark:text-gray-100 "
                 >
                   Learn more
                   <span
