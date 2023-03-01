@@ -39,38 +39,37 @@ export const About = () => {
           </div>
           <div className="mt-6 space-y-4 text-justify text-base text-gray-600 dark:text-gray-400">
             <p>
-              I am a Product Manager with over three years of freelance
-              experience and over ten years of experience as a Full Stack
-              Engineer and in Tech Management roles.
+              I am a Product Manager with over 3 years of experience as a
+              freelance product manager and 11 years in project management, tech
+              leadership, and full-stack developer.
             </p>
             <p>
-              I am a results-driven product manager with a strong product
-              strategy, planning, and design background. I have a proven track
-              record of leading cross-functional teams to deliver successful
-              products that meet customer needs and achieve business results.
+              I'm passionate about product discovery and solving real-world
+              problems. I firmly believe that successful products are built by
+              deeply understanding user needs and problems. Therefore, modern
+              product discovery is critical to achieving this.{' '}
             </p>
             <p>
-              My experience in design thinking and user research allows me to
-              develop intuitive, user-centered products. In addition, I am
-              skilled in product analytics and use data to inform decisions and
-              measure success.
+              My product management approach focuses on continuous discovery and
+              delivery through user feedback and research. I believe that by
+              constantly exploring new ideas, experimenting with new features,
+              and testing hypotheses, we can create a successful product that
+              meets the needs of our users.
             </p>
             <p>
-              Outside of work, my hobbies include cooking, trying new
-              restaurants, watching movies and a lot of YouTube, tinkering with
-              technology, and reading about cognitive psychology.
+              Outside of work, my hobbies include:
+              <ul className="mt-4 list-inside list-disc pl-4 text-base text-gray-600 dark:text-gray-400 md:columns-2">
+                <li>Cooking</li>
+                <li>Programming</li>
+                <li>Trying new restaurants</li>
+                <li>Tinkering with technology</li>
+                <li>Watching movies and a lot of YouTube</li>
+                <li>Reading about cognitive psychology</li>
+              </ul>
             </p>
             <p>
-              I'm trying to post regularly on{' '}
-              <TextLink
-                href="https://www.tiktok.com/@ocordova"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                TikTok
-              </TextLink>
-              , and I deleted my Twitter and Instagram accounts, but if you want
-              to reach me through{' '}
+              I deleted my Twitter and Instagram accounts. However, if you wish
+              to get in touch, you can do it via{' '}
               <TextLink
                 href="https://t.me/ocordova"
                 target="_blank"
