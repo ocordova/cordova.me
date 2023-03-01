@@ -34,14 +34,14 @@ export const About = () => {
                 'font-serif text-3xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-3xl'
               )}
             >
-              Hello I'm Óscar!
+              Hello I'm Ós!
             </h1>
           </div>
           <div className="mt-6 space-y-4 text-justify text-base text-gray-600 dark:text-gray-400">
             <p>
-              I am a Product Manager with over 3 years of experience as a
-              freelance product manager and 11 years in project management, tech
-              leadership, and full-stack developer.
+              I have over 3 years of experience as a freelance Product Manager
+              and 11 years of experience in project management, tech leadership,
+              and full-stack development.{' '}
             </p>
             <p>
               I'm passionate about product discovery and solving real-world
