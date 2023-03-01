@@ -24,7 +24,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 text-base"
                 >
-                  <CodeBracketIcon className="h-4 w-4" />{' '}
+                  <CodeBracketIcon className="h-5 w-5" />{' '}
                   <span className="text-sm md:hidden">Source code</span>
                 </a>
               </div>

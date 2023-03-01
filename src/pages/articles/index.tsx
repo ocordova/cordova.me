@@ -14,7 +14,7 @@ export const Articles = ({ articles }) => {
             title="Product development, management & design"
             intro="Well, I’m starting fresh. I am switching my blog posts from software development to product-related articles."
           >
-            <h2 className="mt-8 font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
               All articles
             </h2>
             <ul
@@ -22,21 +22,16 @@ export const Articles = ({ articles }) => {
               className="mt-4 grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-1"
             >
               {articles.map((article) => (
-                <Link href={`/articles/${article.slug}`}>
-                  <article
-                    key={article.id}
-                    className="flex max-w-xl flex-col items-start justify-between"
-                  >
-                    <div className="flex items-center gap-x-4 text-xs">
+                <article className="md:grid md:grid-cols-4 md:items-baseline">
+                  <div className="group relative flex flex-col items-start md:col-span-3">
+                    <Link href={`/articles/${article.slug}`}>
                       <time
                         dateTime={article.datetime}
-                        className="text-gray-500 dark:text-gray-500"
+                        className="relative z-10 order-first mt-1 mb-3 flex items-center text-sm text-gray-500 dark:text-gray-500 md:hidden"
                       >
                         {article.date}
                       </time>
-                    </div>
-                    <div className="group relative">
-                      <h3 className="mt-2 text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
+                      <h3 className="text-base font-medium leading-6 text-gray-900 dark:text-gray-100">
                         <a href={article.href}>
                           <span className="absolute inset-0" />
                           {article.title}
@@ -45,9 +40,15 @@ export const Articles = ({ articles }) => {
                       <p className="line-clamp-3 mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">
                         {article.description}
                       </p>
-                    </div>
-                  </article>
-                </Link>
+                    </Link>
+                  </div>
+                  <time
+                    dateTime={article.datetime}
+                    className="relative z-10 order-first mt-1 mb-3 flex hidden items-center text-sm text-gray-500 dark:text-gray-500 md:block"
+                  >
+                    {article.date}
+                  </time>
+                </article>
               ))}
             </ul>
           </SimpleLayout>

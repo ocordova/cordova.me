@@ -26,12 +26,12 @@ export function ArticleLayout({ children, meta, isRssFeed = false }) {
             </div>
             <article className="mt-8">
               <header className="flex flex-col">
-                <h1 className="mt-4 font-serif text-2xl font-medium tracking-wide text-gray-800 dark:text-gray-100 sm:text-3xl">
+                <h1 className="font-serif text-2xl font-medium tracking-wide text-gray-800 dark:text-gray-100 sm:text-3xl">
                   {meta.title}
                 </h1>
                 <time
                   dateTime={meta.date}
-                  className="order-first flex items-center text-sm text-gray-500 dark:text-gray-500"
+                  className="mt-3 flex items-center text-sm text-gray-500 dark:text-gray-500"
                 >
                   <span>{formatDate(meta.date)}</span>
                 </time>

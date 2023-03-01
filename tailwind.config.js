@@ -128,7 +128,7 @@ module.exports = {
           // Inline elements
           a: {
             color: 'var(--tw-primary)',
-            fontWeight: theme('fontWeight.semibold'),
+            fontWeight: theme('fontWeight.normal'),
             textDecoration: 'underline',
             textDecorationColor: 'var(--tw-prose-primarye)',
             transitionProperty: 'color, text-decoration-color',

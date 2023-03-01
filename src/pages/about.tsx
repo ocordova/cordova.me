@@ -90,7 +90,7 @@ export const About = () => {
             </p>
           </div>
           <div>
-            <h2 className="mt-8 font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
               Career
             </h2>
             <div className="flow-root">
@@ -147,7 +147,7 @@ export const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="mt-8 font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
               Education
             </h2>
             <div className="flow-root">
@@ -213,7 +213,7 @@ export const About = () => {
             </div>
           </div>
           <div>
-            <h2 className="mt-8 font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl">
+            <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
               About this site
             </h2>
             <p className="mt-4 text-base text-gray-600 dark:text-gray-400">

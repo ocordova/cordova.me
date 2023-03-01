@@ -8,7 +8,7 @@ export const TextLink = ({ href, newWindow, children, target, rel }: any) => {
       target={target}
       rel={rel}
       {...(newWindow ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="text-gray-900 underline hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-200"
+      className="text-gray-900 underline hover:text-gray-700 dark:text-gray-100 dark:hover:text-gray-300"
     >
       <div className="inline-flex items-center">{children}</div>
     </Link>
