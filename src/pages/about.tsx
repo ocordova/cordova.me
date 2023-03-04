@@ -260,16 +260,6 @@ export const About = () => {
                 </TextLink>
               </li>
               <li>
-                Animated with{' '}
-                <TextLink
-                  href="https://framer.com/motion/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Framer Motion
-                </TextLink>
-              </li>
-              <li>
                 Hosted on{' '}
                 <TextLink
                   href="https://vercel.com/"
