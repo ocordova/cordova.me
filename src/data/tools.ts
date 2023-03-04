@@ -176,13 +176,6 @@ export const categories = [
         url: 'https://www.cloudflare.com/',
         icon: '/static/tools/cloudflare.png',
       },
-
-      {
-        name: 'Goodreads',
-        description: 'I use Goodreads to track my books and discover new ones.',
-        url: 'https://www.goodreads.com/',
-        icon: '/static/tools/goodreads.png',
-      },
       {
         name: 'Google Domains',
         description:
@@ -197,7 +190,13 @@ export const categories = [
         url: 'https://one.google.com/',
         icon: '/static/tools/google-one.png',
       },
-
+      {
+        name: 'Grammarly',
+        description:
+          'It improved my writing skills significantly, and I highly recommend it to non-native English speakers like me.',
+        url: 'https://www.grammarly.com/',
+        icon: '/static/tools/grammarly.webp',
+      },
       {
         name: 'Last.fm',
         description:
@@ -205,7 +204,6 @@ export const categories = [
         url: 'https://www.last.fm/',
         icon: '/static/tools/lastfm.png',
       },
-
       {
         name: 'Linear',
         description:
@@ -214,12 +212,17 @@ export const categories = [
         icon: '/static/tools/linear.png',
       },
       {
+        name: 'Literal',
+        description: 'I use Literal to track my books and discover new ones.',
+        url: 'https://literal.club/',
+        icon: '/static/tools/literal.webp',
+      },
+      {
         name: 'Notion',
         description: 'I use Notion for my personal and project notes.',
         url: 'https://www.notion.so/',
         icon: '/static/tools/notion.png',
       },
-
       {
         name: 'Plausible',
         description:
