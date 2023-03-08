@@ -45,11 +45,12 @@ export const bookmarks: Bookmark[] = [
     icon: '/static/bookmarks/the-product-manifesto.png',
   },
   {
-    title: 'Make My Persona',
-    url: 'https://www.hubspot.com/make-my-persona',
-    category: Category.tool,
-    description: 'Create a buyer persona for your product',
-    icon: '/static/bookmarks/make-my-persona.png',
+    title: 'Ditch your personas. Here are 17 alternatives you can use',
+    url: 'https://medium.com/angi-studio/ditch-your-personas-here-are-17-alternatives-you-can-use-44a285840e5d',
+    category: Category.article,
+    description:
+      'Alternative tools to help segment your data and communicate research-findings',
+    icon: '/static/bookmarks/medium.svg',
   },
   {
     title: 'Startup Failure Rate',
