@@ -23,6 +23,13 @@ export const bookmarks: Bookmark[] = [
     icon: '/static/bookmarks/uxplanet.png',
   },
   {
+    title: 'The Product Manifesto',
+    url: 'https://www.productmanifesto.com/',
+    category: Category.resource,
+    description: '10 principles for building better products',
+    icon: '/static/bookmarks/the-product-manifesto.png',
+  },
+  {
     title: 'Untools',
     url: 'https://untools.co/',
     category: Category.resource,
@@ -36,13 +43,6 @@ export const bookmarks: Bookmark[] = [
     category: Category.resource,
     description: 'Newsletter and podcast with insights on the tech industry',
     icon: '/static/bookmarks/stratechery.png',
-  },
-  {
-    title: 'The Product Manifesto',
-    url: 'https://www.productmanifesto.com/',
-    category: Category.resource,
-    description: '10 principles for building better products',
-    icon: '/static/bookmarks/the-product-manifesto.png',
   },
   {
     title: 'Ditch your personas. Here are 17 alternatives you can use',
@@ -59,6 +59,13 @@ export const bookmarks: Bookmark[] = [
     description:
       '90% of startups fail. In this article, they analyze where this percentage comes from and the main reasons why.',
     icon: '/static/bookmarks/failory.png',
+  },
+  {
+    title: 'UX Methods Bank',
+    url: 'https://uxmastery.com/resources/techniques/',
+    category: Category.resource,
+    description: 'Collection of UX methods and techniques',
+    icon: '/static/bookmarks/uxmastery.png',
   },
   {
     title: 'Design Thinking toolkit',
@@ -83,6 +90,13 @@ export const bookmarks: Bookmark[] = [
     description:
       'Zeno Rocha talks about the history and future of developer-first products',
     icon: '/static/bookmarks/zeno-rocha.png',
+  },
+  {
+    title: 'UX Design Methods & Deliverables',
+    url: 'https://uxdesign.cc/ux-design-methods-deliverables-657f54ce3c7d',
+    category: Category.article,
+    description: 'List of most common UX methods and deliverables',
+    icon: '/static/bookmarks/uxdesign.jpeg',
   },
   {
     title: 'Sample Size Calculator',
