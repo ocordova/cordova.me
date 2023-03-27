@@ -15,6 +15,14 @@ interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'Becoming A Product-Driven, Not A Sales-Driven, Company',
+    url: 'https://www.forbes.com/sites/forbesbusinesscouncil/2020/08/28/becoming-a-product-driven-not-a-sales-driven-company/?sh=6e3ffb177fa8',
+    category: Category.article,
+    description:
+      'Explores  the importance of being a product-driven company rather than a sales-driven one for long-term success.',
+    icon: '/static/bookmarks/forbes.svg',
+  },
+  {
     title: 'Why smaller websites shouldn’t bother with A/B testing',
     url: 'https://uxplanet.org/why-smaller-websites-shouldnt-bother-with-a-b-testing-5f28b8b1a14d',
     category: Category.article,
