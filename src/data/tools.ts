@@ -98,7 +98,7 @@ export const categories = [
       {
         name: 'Adobe Creative Cloud',
         description:
-          "I use Photoshop, Illustrator, InDesign and After Effects. I'm used to the Adobe shortcuts and makes my work faster.",
+          "I use Photoshop, Illustrator, InDesign and After Effects. I'm used to the Adobe shortcuts and makes me work faster.",
         url: 'https://www.adobe.com/creativecloud.html',
         icon: '/static/tools/adobe-creative-cloud.png',
       },
@@ -164,11 +164,25 @@ export const categories = [
         url: 'https://stoplight.io/',
         icon: '/static/tools/stoplight.png',
       },
+      {
+        name: 'TickTick',
+        description:
+          'My current choice for to-do lists. It has a great UI and UX.',
+        url: 'https://ticktick.com/',
+        icon: '/static/tools/tick_tick.png',
+      },
     ],
   },
   {
     name: 'Services',
     tools: [
+      {
+        name: 'Algolia',
+        description:
+          'When it comes to incorporating search capabilities into any project, my go-to option is always the same.',
+        url: 'https://www.algolia.com/',
+        icon: '/static/tools/algolia.png',
+      },
       {
         name: 'Cloudflare',
         description:
@@ -195,7 +209,7 @@ export const categories = [
         description:
           'It improved my writing skills significantly, and I highly recommend it to non-native English speakers like me.',
         url: 'https://www.grammarly.com/',
-        icon: '/static/tools/grammarly.webp',
+        icon: '/static/tools/grammarly.png',
       },
       {
         name: 'Last.fm',
