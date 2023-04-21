@@ -69,7 +69,7 @@ export default function Document() {
           <script
             defer
             data-domain="ocordova.me"
-            src="https://plausible.io/js/script.js"
+            src="https://plausible.io/js/script.outbound-links.j"
           ></script>
         )}
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
