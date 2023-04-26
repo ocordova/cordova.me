@@ -20,8 +20,8 @@ export const Toolbox = () => {
 
   const Tool = ({ name, url, icon, children }) => {
     return (
-      <Link href={url} target="_blank" rel="noopener noreferrer">
-        <div className="group relative h-full rounded-lg border border-transparent border-gray-200 transition-colors hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-500">
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <div className="group relative h-full rounded-lg border border-gray-200 border-transparent transition-colors hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-500">
           <div className="relative overflow-hidden rounded-lg p-4">
             <div className="flex h-20 w-full items-center justify-center">
               {icon ? (
@@ -44,7 +44,7 @@ export const Toolbox = () => {
             </div>
           </div>
         </div>
-      </Link>
+      </a>
     )
   }
 
