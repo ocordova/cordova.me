@@ -22,12 +22,15 @@ export const Articles = ({ articles }) => {
               className="mt-4 grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-1"
             >
               {articles.map((article) => (
-                <article className="md:grid md:grid-cols-4 md:items-baseline">
+                <article
+                  key={article.slug}
+                  className="md:grid md:grid-cols-4 md:items-baseline"
+                >
                   <div className="group relative flex flex-col items-start md:col-span-3">
                     <Link href={`/articles/${article.slug}`}>
                       <time
                         dateTime={article.datetime}
-                        className="relative z-10 order-first mt-1 mb-3 flex items-center text-sm text-gray-500 dark:text-gray-500 md:hidden"
+                        className="relative z-10 order-first mb-3 mt-1 flex items-center text-sm text-gray-500 dark:text-gray-500 md:hidden"
                       >
                         {article.date}
                       </time>
@@ -37,14 +40,14 @@ export const Articles = ({ articles }) => {
                           {article.title}
                         </a>
                       </h3>
-                      <p className="line-clamp-3 mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">
+                      <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
                         {article.description}
                       </p>
                     </Link>
                   </div>
                   <time
                     dateTime={article.datetime}
-                    className="relative z-10 order-first mt-1 mb-3 flex hidden items-center text-sm text-gray-500 dark:text-gray-500 md:block"
+                    className="relative z-10 order-first mb-3 mt-1 flex hidden items-center text-sm text-gray-500 dark:text-gray-500 md:block"
                   >
                     {article.date}
                   </time>

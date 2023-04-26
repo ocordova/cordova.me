@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import '../styles/tailwind.css'
 import 'focus-visible'
-import { Inter, Bitter } from '@next/font/google'
+import { Inter, Bitter } from 'next/font/google'
 
 const inter = Inter({
   subsets: ['latin'],
