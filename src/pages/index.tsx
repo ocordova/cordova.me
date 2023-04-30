@@ -1,27 +1,23 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { Container, Wrapper } from 'src/components/'
-import { randomBackgroundGradient } from 'src/lib/randomGradient'
 
 export const Home = () => {
   return (
     <>
       <Container>
         <Wrapper>
-          <div className="mx-auto pt-20 pb-20 sm:pt-40 sm:pb-40">
+          <div className="mx-auto pb-20 pt-20 sm:pb-40 sm:pt-40">
             <div className="text-center">
-              <h2 className="text-xl font-normal text-gray-600 dark:text-gray-400 sm:text-2xl">
-                Óscar Córdova
-              </h2>
               <h1
                 className={clsx(
                   'font-serif text-4xl font-normal leading-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-snug'
                 )}
               >
-                Product Manager
+                Óscar Córdova
               </h1>
               <p className="text-base leading-8 text-gray-600 dark:text-gray-400">
-                Problem solver. Not feature builder.
+                Product-Driven Full Stack Developer
               </p>
               <div className="mt-8 flex justify-center gap-x-4">
                 <Link

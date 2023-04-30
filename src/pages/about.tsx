@@ -2,7 +2,6 @@ import { parseISO, format, intervalToDuration } from 'date-fns'
 import { Container, Wrapper, TextLink } from 'src/components/'
 import { jobs, education } from 'src/data/about'
 import clsx from 'clsx'
-import { randomBackgroundGradient } from '../lib/randomGradient'
 
 export const About = () => {
   const getDuration = (startDate, endDate) => {
@@ -99,7 +98,7 @@ export const About = () => {
                     <div className="relative pb-6">
                       {jobIdx !== jobs.length - 1 ? (
                         <span
-                          className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
+                          className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
                           aria-hidden="true"
                         />
                       ) : null}
@@ -156,7 +155,7 @@ export const About = () => {
                     <div className="relative pb-8">
                       {itemIdx !== education.length - 1 ? (
                         <span
-                          className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
+                          className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
                           aria-hidden="true"
                         />
                       ) : null}
