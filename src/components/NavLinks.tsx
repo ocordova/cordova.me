@@ -10,7 +10,7 @@ export function NavLinks({}) {
     <>
       {[
         ['About', '/about'],
-        ['Articles', '/articles'],
+        ['Writing', '/writing'],
         ['Toolbox', '/toolbox'],
         ['Bookmarks', '/bookmarks'],
         ['Bookshelf', '/bookshelf'],
@@ -19,7 +19,7 @@ export function NavLinks({}) {
           key={label}
           href={href}
           className={clsx(
-            'relative -my-2 -mx-3 rounded-lg border px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms] dark:text-gray-400 dark:hover:text-gray-100',
+            'relative -mx-3 -my-2 rounded-lg border px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-[0ms] dark:text-gray-400 dark:hover:text-gray-100',
             useRouter().pathname === href
               ? 'border-gray-00 dark:border-gray-500'
               : 'border-transparent dark:border-transparent'

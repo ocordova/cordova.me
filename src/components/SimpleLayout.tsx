@@ -1,6 +1,4 @@
 import clsx from 'clsx'
-import { randomBackgroundGradient } from 'src/lib/randomGradient'
-
 export function SimpleLayout({ title, intro, children }) {
   return (
     <>
