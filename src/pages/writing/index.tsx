@@ -14,7 +14,7 @@ export const Articles = ({ articles }) => {
           >
             <ul
               role="list"
-              className="mt-4 grid grid-cols-1 gap-x-12 gap-y-8 sm:grid-cols-1"
+              className="mt-6 grid grid-cols-1 gap-x-12 gap-y-4 sm:grid-cols-1"
             >
               {articles.map((article) => (
                 <article
@@ -23,19 +23,13 @@ export const Articles = ({ articles }) => {
                 >
                   <div className="group relative flex flex-col items-start md:col-span-3">
                     <Link href={`/writing/${article.slug}`}>
-                      <time
-                        dateTime={article.datetime}
-                        className="md relative z-10 order-first mb-3 mt-1 flex items-center text-sm text-gray-500 dark:text-gray-500"
-                      >
-                        {article.date}
-                      </time>
-                      <h3 className="text-base font-medium leading-6 text-gray-900 dark:text-gray-100">
+                      <h3 className="font-serif text-sm font-medium text-gray-900 dark:text-gray-100 sm:text-base">
                         <a href={article.href}>
                           <span className="absolute inset-0" />
                           {article.title}
                         </a>
                       </h3>
-                      <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
+                      <p className="mt-1 line-clamp-3 font-sans text-sm leading-6 text-gray-600 dark:text-gray-400">
                         {article.description}
                       </p>
                     </Link>
