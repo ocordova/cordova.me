@@ -1,6 +1,5 @@
 import { parseISO, format, intervalToDuration } from 'date-fns'
 import { Container, Wrapper, TextLink } from 'src/components/'
-import { jobs, education } from 'src/data/about'
 import clsx from 'clsx'
 
 export const About = () => {
@@ -30,13 +29,13 @@ export const About = () => {
           <div>
             <h1
               className={clsx(
-                'font-serif text-3xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-3xl'
+                'font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl'
               )}
             >
               Hello I'm Ós!
             </h1>
           </div>
-          <div className="mt-6 space-y-4 text-justify text-base text-gray-600 dark:text-gray-400">
+          <div className="mt-4 space-y-4 text-justify font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
             <p>
               I have over 3 years of experience as a freelance Product Manager
               and 11 years of experience in project management, tech leadership,
@@ -55,17 +54,15 @@ export const About = () => {
               and testing hypotheses, we can create a successful product that
               meets the needs of our users.
             </p>
-            <p>
-              Outside of work, my hobbies include:
-              <ul className="mt-4 list-inside list-disc pl-4 text-base text-gray-600 dark:text-gray-400 md:columns-2">
-                <li>Cooking</li>
-                <li>Programming</li>
-                <li>Trying new restaurants</li>
-                <li>Tinkering with technology</li>
-                <li>Watching movies and a lot of YouTube</li>
-                <li>Reading about cognitive psychology</li>
-              </ul>
-            </p>
+            <p>Outside of work, my hobbies include:</p>
+            <ul className="mt-4 list-inside list-disc pl-4 text-gray-600 dark:text-gray-400 md:columns-2">
+              <li>Cooking</li>
+              <li>Programming</li>
+              <li>Trying new restaurants</li>
+              <li>Tinkering with technology</li>
+              <li>Watching movies and a lot of YouTube</li>
+              <li>Reading about cognitive psychology</li>
+            </ul>
             <p>
               I deleted my Twitter and Instagram accounts. However, if you wish
               to get in touch, you can do it via{' '}
@@ -89,135 +86,12 @@ export const About = () => {
           </div>
           <div>
             <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
-              Career
-            </h2>
-            <div className="flow-root">
-              <ul role="list" className="mt-8">
-                {jobs.map((job, jobIdx) => (
-                  <li key={jobIdx}>
-                    <div className="relative pb-6">
-                      {jobIdx !== jobs.length - 1 ? (
-                        <span
-                          className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
-                          aria-hidden="true"
-                        />
-                      ) : null}
-                      <div className="jobs-start relative flex space-x-3">
-                        <div className="relative">
-                          <img
-                            className="flex h-10 w-10 items-center justify-center rounded-full ring-8 ring-white dark:ring-gray-900"
-                            src={job.icon}
-                            alt={job.company}
-                          />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <div>
-                            <div className="text-sm">
-                              <div className="font-semibold text-gray-900 dark:text-gray-50">
-                                {job.title}
-                              </div>
-                            </div>
-                            <p className="mt-0.5 text-sm text-gray-700 dark:text-gray-400">
-                              {job.company} · {job.type}
-                            </p>
-                          </div>
-                          <div className="-mt-0.5 text-sm text-gray-500 dark:text-gray-600">
-                            <p>
-                              <span>
-                                {format(parseISO(job.startDate), 'LLL yyyy')}
-                              </span>{' '}
-                              <span> – </span>{' '}
-                              <span>
-                                {' '}
-                                {job.endDate
-                                  ? format(parseISO(job.endDate), 'LLL yyyy')
-                                  : 'Present'}{' '}
-                              </span>
-                              ({getDuration(job.startDate, job.endDate)})
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
-              Education
-            </h2>
-            <div className="flow-root">
-              <ul role="list" className="mt-6">
-                {education.map((item, itemIdx) => (
-                  <li key={itemIdx}>
-                    <div className="relative pb-8">
-                      {itemIdx !== education.length - 1 ? (
-                        <span
-                          className="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-gray-700"
-                          aria-hidden="true"
-                        />
-                      ) : null}
-                      <div className="relative flex items-start space-x-3">
-                        <div className="relative">
-                          <img
-                            className="flex h-10 w-10 items-center justify-center rounded-full ring-white dark:ring-gray-900"
-                            src={item.icon}
-                            alt={item.company}
-                          />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <div>
-                            <div className="text-sm">
-                              <div className="font-semibold text-gray-900 dark:text-gray-50">
-                                {item.title}
-                              </div>
-                            </div>
-                            <p className="mt-0.5 text-sm text-gray-700 dark:text-gray-400">
-                              {item.company}
-                            </p>
-                          </div>
-                          <div className="-mt-0.5 text-sm text-gray-500 dark:text-gray-500">
-                            <p>
-                              <span>
-                                {format(parseISO(item.startDate), 'LLL yyyy')}
-                              </span>{' '}
-                              <span> – </span>{' '}
-                              <span>
-                                {' '}
-                                {item.endDate
-                                  ? format(parseISO(item.endDate), 'LLL yyyy')
-                                  : 'Present'}{' '}
-                              </span>
-                              ({getDuration(item.startDate, item.endDate)})
-                            </p>
-                          </div>
-                          {item.certificateUrl ? (
-                            <div className="text-sm text-gray-700">
-                              <p>
-                                <TextLink href={item.certificateUrl} newWindow>
-                                  View certificate
-                                </TextLink>
-                              </p>
-                            </div>
-                          ) : null}
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
               About this site
             </h2>
-            <p className="mt-4 text-base text-gray-600 dark:text-gray-400">
+            <p className="mt-4 font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
               In case you were wondering, this site is:
             </p>
-            <ul className="mt-4 list-inside list-disc pl-4 text-base text-gray-600 dark:text-gray-400">
+            <ul className="mt-4 list-inside list-disc pl-4 font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
               <li>
                 Carefully hand-coded with{' '}
                 <TextLink
