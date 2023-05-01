@@ -10,7 +10,7 @@ export function SimpleLayout({ title, intro, children }) {
         >
           {title}
         </h1>
-        <p className="mt-4 font-serif text-base text-gray-600 dark:text-gray-400">
+        <p className="mt-2 font-serif text-base text-gray-600 dark:text-gray-400">
           {intro}
         </p>
       </header>

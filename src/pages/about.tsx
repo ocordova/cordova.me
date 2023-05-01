@@ -35,7 +35,7 @@ export const About = () => {
               Hello I'm Ós!
             </h1>
           </div>
-          <div className="mt-4 space-y-4 text-justify font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+          <div className="mt-2 space-y-4 text-justify font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
             <p>
               I have over 3 years of experience as a freelance Product Manager
               and 11 years of experience in project management, tech leadership,
@@ -88,7 +88,7 @@ export const About = () => {
             <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
               About this site
             </h2>
-            <p className="mt-4 font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+            <p className="mt-2 font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
               In case you were wondering, this site is:
             </p>
             <ul className="mt-4 list-inside list-disc pl-4 font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
