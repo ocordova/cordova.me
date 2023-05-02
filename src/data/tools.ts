@@ -212,6 +212,12 @@ export const categories = [
         icon: '/static/tools/grammarly.png',
       },
       {
+        name: 'hCaptcha',
+        description: 'Privacy-focused alternative to Google reCAPTCHA.',
+        url: 'https://www.hcaptcha.com/',
+        icon: '/static/tools/hcaptcha.svg',
+      },
+      {
         name: 'Last.fm',
         description:
           'I love to see my music stats. I use Last.fm to track my music listening habits.',
