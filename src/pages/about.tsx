@@ -29,7 +29,7 @@ export const About = () => {
           <div>
             <h1
               className={clsx(
-                'font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl'
+                'font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl'
               )}
             >
               Hello I'm Ós!
@@ -37,22 +37,24 @@ export const About = () => {
           </div>
           <div className="mt-2 space-y-4 text-justify font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
             <p>
-              I have over 3 years of experience as a freelance Product Manager
-              and 11 years of experience in project management, tech leadership,
-              and full-stack development.{' '}
+              I'm a software engineer with a passion for product development and
+              user experience. I'm currently working as a Full Stack Engineer
+              and Product Manager.
             </p>
             <p>
-              I'm passionate about product discovery and solving real-world
-              problems. I firmly believe that successful products are built by
-              deeply understanding user needs and problems. Therefore, modern
-              product discovery is critical to achieving this.{' '}
-            </p>
-            <p>
-              My product management approach focuses on continuous discovery and
-              delivery through user feedback and research. I believe that by
+              My product development approach focuses on continuous discovery
+              and delivery through user feedback and research. I believe that by
               constantly exploring new ideas, experimenting with new features,
               and testing hypotheses, we can create a successful product that
               meets the needs of our users.
+            </p>
+            <p>
+              My future goal is to create an NGO where I can apply my product
+              and technology knowledge and experience to solve real-world
+              problems, such as those faced by artisan and indigenous
+              communities in my country. I'm still researching and gaining
+              insights into the problem space, but I'm confident that I'll find
+              a way to help.
             </p>
             <p>Outside of work, my hobbies include:</p>
             <ul className="mt-4 list-inside list-disc pl-4 text-gray-600 dark:text-gray-400 md:columns-2">
@@ -64,8 +66,8 @@ export const About = () => {
               <li>Reading about cognitive psychology</li>
             </ul>
             <p>
-              I deleted my Twitter and Instagram accounts. However, if you wish
-              to get in touch, you can do it via{' '}
+              I retired from traditional social media. However, if you wish to
+              get in touch, you can do it via{' '}
               <TextLink
                 href="https://t.me/ocordova"
                 target="_blank"

@@ -9,8 +9,8 @@ export const Articles = ({ articles }) => {
       <Container title="Writing">
         <Wrapper>
           <SimpleLayout
-            title="Product development, management & design"
-            intro="Well, I’m starting fresh. I am switching my blog posts from software development to product-related articles."
+            title="Product & Software Development"
+            intro="You can read about my thoughts on product development and web design."
           >
             <ul
               role="list"
