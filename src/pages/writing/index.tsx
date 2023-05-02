@@ -24,10 +24,8 @@ export const Articles = ({ articles }) => {
                   <div className="group relative flex flex-col items-start md:col-span-3">
                     <Link href={`/writing/${article.slug}`}>
                       <h3 className="font-serif text-sm font-medium text-gray-900 dark:text-gray-100 sm:text-base">
-                        <a href={article.href}>
-                          <span className="absolute inset-0" />
-                          {article.title}
-                        </a>
+                        <span className="absolute inset-0" />
+                        {article.title}
                       </h3>
                       <p className="mt-1 line-clamp-3 font-sans text-sm leading-6 text-gray-600 dark:text-gray-400">
                         {article.description}
