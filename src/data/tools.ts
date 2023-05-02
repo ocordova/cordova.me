@@ -20,7 +20,7 @@ export const categories = [
         name: 'Samsung 34" Monitor Ultra WQHD',
         description:
           'Easier to work with two windows or more side by side. Perfect for frontend development and design',
-        url: 'https://www.samsung.com/mx/business/monitors/premium-led-monitor-sj550wq/ls34j550wqlxzx/',
+        url: 'https://www.samsung.com/us/computing/monitors/uhd-and-wqhd/34-sj55w-ultra-wqhd-monitor-ls34j550wqnxza/',
         icon: '/static/tools/samsung-monitor.png',
       },
       {

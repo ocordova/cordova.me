@@ -5,15 +5,22 @@ export enum Category {
   video = 'video',
 }
 
-interface Bookmark {
+export interface Bookmark {
   title: string
   url: string
   category: Category
   description: string
-  icon: string
+  icon?: string
 }
 
 export const bookmarks: Bookmark[] = [
+  {
+    title: 'Just for Fun. No, Really.',
+    url: 'https://justforfunnoreally.dev/',
+    category: Category.resource,
+    description:
+      'A little website to explain that sometimes we just like to have fun!',
+  },
   {
     title: 'Becoming A Product-Driven, Not A Sales-Driven, Company',
     url: 'https://www.forbes.com/sites/forbesbusinesscouncil/2020/08/28/becoming-a-product-driven-not-a-sales-driven-company/?sh=6e3ffb177fa8',
@@ -74,14 +81,6 @@ export const bookmarks: Bookmark[] = [
     category: Category.resource,
     description: 'Collection of UX methods and techniques',
     icon: '/static/bookmarks/uxmastery.png',
-  },
-  {
-    title: 'Design Thinking toolkit',
-    url: 'https://www.innovationchampions.com.au/',
-    category: Category.resource,
-    description:
-      'Identify which state your idea is currently in, then choose the tools you will need to move forward.',
-    icon: '/static/bookmarks/design-thinking-toolkit.png',
   },
   {
     title: 'UX Project Checklist',
