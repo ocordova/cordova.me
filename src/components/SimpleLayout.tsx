@@ -5,7 +5,7 @@ export function SimpleLayout({ title, intro, children }) {
       <header className="max-w-2xl">
         <h1
           className={clsx(
-            'font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl'
+            'font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl'
           )}
         >
           {title}

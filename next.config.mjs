@@ -12,6 +12,15 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/blog/telegram-bot-with-apps-script',
+        destination: '/writing/telegram-bot-with-apps-script',
+        permanent: true,
+      },
+    ]
+  }
 }
 
 const withMDX = nextMDX({
