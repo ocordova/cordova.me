@@ -3,20 +3,22 @@ import { Container, Wrapper, SimpleLayout } from 'src/components/'
 import { LinkIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 
-import { bookmarks, Category } from 'src/data/bookmarks'
+import { Bookmark, bookmarks, Category } from 'src/data/bookmarks'
 import clsx from 'clsx'
 import { useState } from 'react'
 
-export const Card = ({ title, description, url, icon, category }) => {
+export const Card = ({ title, description, url, icon, category }: Bookmark) => {
   const { hostname } = new URL(url)
 
   return (
     <Link href={url} target="_blank" rel="noopener noreferrer">
-      <div className="group relative h-full rounded-lg border border-transparent border-gray-200 transition-colors hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-500 ">
+      <div className="group relative h-full rounded-lg border border-gray-200 border-transparent transition-colors hover:border-gray-400 dark:border-gray-800 dark:hover:border-gray-500 ">
         <div className="relative overflow-hidden rounded-lg p-6">
           <div className="flex w-full items-center justify-between">
             <div className="relative h-8 w-8 object-cover">
-              <Image src={icon} alt={title} fill className="rounded-full" />
+              {icon ? (
+                <Image src={icon} alt={title} fill className="rounded-full" />
+              ) : null}
             </div>
             <span
               className={clsx(
