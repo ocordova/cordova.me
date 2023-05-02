@@ -8,7 +8,7 @@ export const Bookshelf = () => {
         <Wrapper>
           <SimpleLayout
             title="My personal favorites"
-            intro="Here are a few books I highly recommend. They helped me improve my product management skills."
+            intro="Here are a few books I highly recommend that helped me improve my product management and software development skills."
           >
             <ul
               role="list"
@@ -16,11 +16,11 @@ export const Bookshelf = () => {
             >
               {books.map((book) => (
                 <li key={book.title} className="flex py-8">
-                  <div className="space-y-4 sm:grid sm:grid-cols-6 sm:items-start sm:gap-4 sm:space-y-0">
-                    <div className="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 w-32 sm:col-span-2 sm:w-48">
+                  <div className="space-y-4 sm:grid sm:grid-cols-8 sm:items-start sm:gap-4 sm:space-y-0">
+                    <div className="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 w-32 sm:col-span-2 sm:w-40">
                       <img className="object-cover" src={book.cover} alt="" />
                     </div>
-                    <div className="sm:col-span-4">
+                    <div className="sm:col-span-6 sm:ml-2">
                       <div className="space-y-3">
                         <div className="space-y-1">
                           <h3 className="font-serif text-base font-medium text-gray-900 dark:text-gray-50 sm:text-lg">
