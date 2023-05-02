@@ -8,7 +8,7 @@ export const Toolbox = () => {
   const ToolsSection = ({ title, children }) => {
     return (
       <section>
-        <h2 className="font-sans text-base font-semibold tracking-wide text-gray-900 dark:text-gray-50 sm:text-lg">
+        <h2 className="sticky top-0 z-10 bg-white/80 py-2 font-sans text-base font-semibold tracking-wide text-gray-900 backdrop-blur-sm dark:bg-gray-900/80 dark:text-gray-50 sm:text-lg">
           {title}
         </h2>
         <ul role="list" className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
