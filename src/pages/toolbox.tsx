@@ -26,9 +26,9 @@ export const Toolbox = () => {
             <div className="flex h-20 w-full items-center justify-center">
               {icon ? (
                 <Image
+                  quality={100}
                   src={icon}
                   alt={name}
-                  quality="100"
                   height="88"
                   width="88"
                 />
