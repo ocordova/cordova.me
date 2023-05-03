@@ -17,7 +17,14 @@ export const Card = ({ title, description, url, icon, category }: Bookmark) => {
           <div className="flex w-full items-center justify-between">
             <div className="relative h-8 w-8 object-cover">
               {icon ? (
-                <Image src={icon} alt={title} fill className="rounded-full" />
+                <Image
+                  quality={100}
+                  width={32}
+                  height={32}
+                  src={icon}
+                  alt={title}
+                  className="rounded-full"
+                />
               ) : null}
             </div>
             <span

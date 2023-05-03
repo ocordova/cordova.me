@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Container, Wrapper, SimpleLayout, Button } from 'src/components/'
 import { books } from 'src/data/books'
 
@@ -18,7 +19,14 @@ export const Bookshelf = () => {
                 <li key={book.title} className="flex py-8">
                   <div className="space-y-4 sm:grid sm:grid-cols-8 sm:items-start sm:gap-4 sm:space-y-0">
                     <div className="aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4 w-32 sm:col-span-2 sm:w-40">
-                      <img className="object-cover" src={book.cover} alt="" />
+                      <Image
+                        quality={100}
+                        width={160}
+                        height={140}
+                        className="object-cover"
+                        src={book.cover}
+                        alt=""
+                      />
                     </div>
                     <div className="sm:col-span-6 sm:ml-2">
                       <div className="space-y-3">
