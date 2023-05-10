@@ -17,7 +17,7 @@ export const Home = () => {
                 Óscar Córdova
               </h1>
               <p className="font-serif text-base leading-8 text-gray-600 dark:text-gray-400 sm:text-lg">
-                Product-Driven Full Stack Developer
+                Product-Driven Software Engineer
               </p>
               <div className="mt-8 flex justify-center gap-x-4">
                 <Link
