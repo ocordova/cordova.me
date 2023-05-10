@@ -7,46 +7,6 @@ export interface Tool {
 
 export const categories = [
   {
-    name: 'Setup',
-    tools: [
-      {
-        name: 'MacBook Air M1 (2020)',
-        description:
-          'The M1 chip is fantastic. It has plenty of power to run all the apps I need, even Adobe CS and Android Studio.',
-        url: 'https://www.apple.com/mx/shop/buy-mac/macbook-air/m1-chip',
-        icon: '/static/tools/macbook-air-m1.png',
-      },
-      {
-        name: 'Samsung 34" Monitor Ultra WQHD',
-        description:
-          'Easier to work with two windows or more side by side. Perfect for frontend development and design',
-        url: 'https://www.samsung.com/us/computing/monitors/uhd-and-wqhd/34-sj55w-ultra-wqhd-monitor-ls34j550wqnxza/',
-        icon: '/static/tools/samsung-monitor.png',
-      },
-      {
-        name: 'Apple Magic Trackpad',
-        description:
-          "I got used to the gestures on my MacBook. It's a bit expensive, but it's worth it.",
-        url: 'https://www.apple.com/shop/product/MMMP3AM/A/magic-trackpad-black-multi-touch-surface',
-        icon: '/static/tools/apple-magic-trackpad.png',
-      },
-      {
-        name: 'Apple Magic Keyboard',
-        description:
-          "I'm not demanding when it comes to keyboards, and this one is comfortable to type, quiet, and combines well with the trackpad :P",
-        url: 'https://www.apple.com/shop/product/MK2A3E/A/magic-keyboard-spanish',
-        icon: '/static/tools/apple-magic-keyboard.png',
-      },
-      {
-        name: 'Anker 533 USB-C Hub (5-in-1, Slim)',
-        description:
-          'All I need in one place. I can connect my monitor, external hard drive and ethernet cable.',
-        url: 'https://www.anker.com/products/a8338',
-        icon: '/static/tools/anker-usb-c-hub.png',
-      },
-    ],
-  },
-  {
     name: 'Coding',
     tools: [
       {
@@ -156,6 +116,13 @@ export const categories = [
           "I'm used to how Windows or GNOME manage their windows, and It helps me to organize my windows by dragging them to the edges or by using keyboard shortcuts.",
         url: 'https://magnet.crowdcafe.com/',
         icon: '/static/tools/magnet.png',
+      },
+      {
+        name: 'Obsidian',
+        description:
+          'I use it to take notes and its great to organize and manage user and market research.',
+        url: 'https://obsidian.md/',
+        icon: '/static/tools/obsidian.png',
       },
       {
         name: 'Stoplight',
@@ -283,6 +250,46 @@ export const categories = [
           'I use it to take screenshots of my screen, edit them and share them. Perfect for designers and front-end developers.',
         url: 'https://shottr.cc/',
         icon: '/static/tools/shottr.png',
+      },
+    ],
+  },
+  {
+    name: 'Setup',
+    tools: [
+      {
+        name: 'MacBook Air M1 (2020)',
+        description:
+          'The M1 chip is fantastic. It has plenty of power to run all the apps I need, even Adobe CS and Android Studio.',
+        url: 'https://www.apple.com/mx/shop/buy-mac/macbook-air/m1-chip',
+        icon: '/static/tools/macbook-air-m1.png',
+      },
+      {
+        name: 'Samsung 34" Monitor Ultra WQHD',
+        description:
+          'Easier to work with two windows or more side by side. Perfect for frontend development and design',
+        url: 'https://www.samsung.com/us/computing/monitors/uhd-and-wqhd/34-sj55w-ultra-wqhd-monitor-ls34j550wqnxza/',
+        icon: '/static/tools/samsung-monitor.png',
+      },
+      {
+        name: 'Apple Magic Trackpad',
+        description:
+          "I got used to the gestures on my MacBook. It's a bit expensive, but it's worth it.",
+        url: 'https://www.apple.com/shop/product/MMMP3AM/A/magic-trackpad-black-multi-touch-surface',
+        icon: '/static/tools/apple-magic-trackpad.png',
+      },
+      {
+        name: 'Apple Magic Keyboard',
+        description:
+          "I'm not demanding when it comes to keyboards, and this one is comfortable to type, quiet, and combines well with the trackpad :P",
+        url: 'https://www.apple.com/shop/product/MK2A3E/A/magic-keyboard-spanish',
+        icon: '/static/tools/apple-magic-keyboard.png',
+      },
+      {
+        name: 'Anker 533 USB-C Hub (5-in-1, Slim)',
+        description:
+          'All I need in one place. I can connect my monitor, external hard drive and ethernet cable.',
+        url: 'https://www.anker.com/products/a8338',
+        icon: '/static/tools/anker-usb-c-hub.png',
       },
     ],
   },
