@@ -138,6 +138,12 @@ export const categories = [
         url: 'https://ticktick.com/',
         icon: '/static/tools/tick_tick.png',
       },
+      {
+        name: 'TomatoBar',
+        description: 'When I find hard to focus, I use the Pomodoro technique.',
+        url: 'https://github.com/ivoronin/TomatoBar',
+        icon: '/static/tools/tomato-bar.png',
+      },
     ],
   },
   {
