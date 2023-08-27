@@ -17,9 +17,7 @@ export const About = () => {
           </div>
           <div className="mt-2 space-y-4 text-justify font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
             <p>
-              I'm a software engineer with a passion for product development and
-              user experience. I'm currently working as a Full Stack Engineer
-              and Product Manager.
+              I'm a Product Manager with a background in Software Engineering.
             </p>
             <p>
               My product development approach focuses on continuous discovery
@@ -29,20 +27,18 @@ export const About = () => {
               meets the needs of our users.
             </p>
             <p>
-              My future goal is to create an NGO where I can apply my product
-              and technology knowledge and experience to solve real-world
-              problems, such as those faced by artisan and indigenous
-              communities in my country. I'm still researching and gaining
-              insights into the problem space, but I'm confident that I'll find
-              a way to help.
+              In the future, I hope to start an NGO. I want to use my skills to
+              help solve problems for artisan and indigenous groups in my
+              country. I'm still looking into the best ways to do this, but I'm
+              sure I'll figure it out.
             </p>
-            <p>Outside of work, my hobbies include:</p>
+            <p>Outside of work, here's what I like to do:</p>
             <ul className="mt-4 list-inside list-disc pl-4 text-gray-600 dark:text-gray-400 md:columns-2">
-              <li>Cooking</li>
-              <li>Programming</li>
-              <li>Trying new restaurants</li>
-              <li>Tinkering with technology</li>
-              <li>Watching movies and a lot of YouTube</li>
+              <li>Cook</li>
+              <li>Code</li>
+              <li>Explore diverse cuisines</li>
+              <li>Tinkering with tech</li>
+              <li>Watch movies and lots of YouTube</li>
               <li>Reading about cognitive psychology</li>
             </ul>
             <p>

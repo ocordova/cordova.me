@@ -9,15 +9,18 @@ export const Home = () => {
         <Wrapper>
           <div className="mx-auto pb-20 pt-20 sm:pb-40 sm:pt-40">
             <div className="text-center">
+              <h2 className="text-xl font-normal text-gray-600 dark:text-gray-400 sm:text-2xl">
+                Óscar Córdova
+              </h2>
               <h1
                 className={clsx(
                   'font-serif text-4xl font-normal leading-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-snug'
                 )}
               >
-                Óscar Córdova
+                Product Manager
               </h1>
-              <p className="font-serif text-base leading-8 text-gray-600 dark:text-gray-400 sm:text-lg">
-                Product-Driven Software Engineer
+              <p className="text-base leading-8 text-gray-600 dark:text-gray-400">
+                Problem solver. Not feature builder.
               </p>
               <div className="mt-8 flex justify-center gap-x-4">
                 <Link
