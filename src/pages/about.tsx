@@ -27,10 +27,11 @@ export const About = () => {
               meets the needs of our users.
             </p>
             <p>
-              In the future, I hope to start an NGO. I want to use my skills to
-              help solve problems for artisan and indigenous groups in my
-              country. I'm still looking into the best ways to do this, but I'm
-              sure I'll figure it out.
+              I'm committed to defending and celebrating the legacies of Mexican
+              farmers and our rich food traditions, with an aspiration to bring
+              their flavors and culture to tables across my country. I'm
+              actively seeking ways to leverage my skills in this endeavor,
+              ensuring their stories and contributions continue to resonate.
             </p>
             <p>Outside of work, here's what I like to do:</p>
             <ul className="mt-4 list-inside list-disc pl-4 text-gray-600 dark:text-gray-400 md:columns-2">
