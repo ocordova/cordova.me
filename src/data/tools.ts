@@ -26,7 +26,7 @@ export const categories = [
       {
         name: 'GitHub Copilot',
         description:
-          'The code completion is impressive. It helps you code faster, write tests and learn new things.',
+          'The code completion is impressive, helping you code faster, write tests, and learn new things.',
         url: 'https://copilot.github.com/',
         icon: '/static/tools/github-copilot.png',
       },
@@ -34,7 +34,7 @@ export const categories = [
       {
         name: 'Visual Studio Code',
         description:
-          "After using Sublime for many years, I moved to VSCode like everybody else. It's fast, lightweight, and has a lot of extensions.",
+          "After using Sublime for many years, I switched to VSCode like everyone else. It's fast, lightweight, and has numerous extensions.",
         url: 'https://code.visualstudio.com/',
         icon: '/static/tools/vscode.png',
       },
@@ -46,7 +46,7 @@ export const categories = [
       {
         name: 'Warp',
         description:
-          "I used to use Hyper with Fig, but a friend recommended Warp. It's fast, easy scrolling, and bookmarks management.",
+          "I used to use Hyper with Fig, but a friend recommended Warp. It's fast, has smooth scrolling, and offers efficient bookmark management.",
         url: 'https://warp.dev/',
         icon: '/static/tools/warp.png',
       },
@@ -65,7 +65,7 @@ export const categories = [
       {
         name: 'Figma',
         description:
-          'I use Figma for interface and web design; I use Adobe Creative Cloud for everything else.',
+          'I use Figma for interface and web design and Adobe Creative Cloud for everything else.',
         url: 'https://www.figma.com/',
         icon: '/static/tools/figma.png',
       },
@@ -83,14 +83,14 @@ export const categories = [
       {
         name: 'DaisyDisk',
         description:
-          'I use this app to clean my Mac. It shows the size of each folder and files in your Mac.',
+          'I use this app to clean my Mac, which displays the sizes of folders and files.',
         url: 'https://daisydiskapp.com/',
         icon: '/static/tools/daisy-disk.png',
       },
       {
         name: 'Dashlane',
         description:
-          'I prefer Dashlane over LastPass or 1Password for my password manager. It has, by far, better UI and UX.',
+          'I prefer Dashlane over LastPass and 1Password for my password manager due to its superior UI and UX.',
         url: 'https://www.dashlane.com/',
         icon: '/static/tools/dashlane.png',
       },
@@ -106,21 +106,21 @@ export const categories = [
       {
         name: 'LinearMouse',
         description:
-          'It helps me adjust the speed and acceleration of my mouse beyond the limits of the Mac Settings without using the terminal.',
+          "It helps me adjust my mouse's speed and acceleration beyond Mac's settings without using the terminal.",
         url: 'https://linearmouse.app/',
         icon: '/static/tools/linear-mouse.png',
       },
       {
         name: 'Magnet',
         description:
-          "I'm used to how Windows or GNOME manage their windows, and It helps me to organize my windows by dragging them to the edges or by using keyboard shortcuts.",
+          "I'm used to how Windows or GNOME manage their windows, , and it helps me organize them by dragging to the edges or using keyboard shortcuts.",
         url: 'https://magnet.crowdcafe.com/',
         icon: '/static/tools/magnet.png',
       },
       {
         name: 'Obsidian',
         description:
-          'I use it to take notes and its great to organize and manage user and market research.',
+          "I use it to take notes, and it's great for organizing and managing user and market research.",
         url: 'https://obsidian.md/',
         icon: '/static/tools/obsidian.png',
       },
