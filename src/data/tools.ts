@@ -224,6 +224,13 @@ export const categories = [
         icon: '/static/tools/notion.png',
       },
       {
+        name: 'Odoo',
+        description:
+          'A comprehensive and efficient solution for managing various aspects of business operations, from accounting, inventory, and manufacturing to HR.',
+        url: 'https://www.odoo.com/',
+        icon: '/static/tools/odoo.webp',
+      },
+      {
         name: 'Plausible',
         description:
           'You can make informed decisions without cookies or personal data.',
