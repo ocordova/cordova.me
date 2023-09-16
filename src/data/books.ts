@@ -10,6 +10,19 @@ interface Book {
 
 export const books: Book[] = [
   {
+    title: 'Simple Numbers, Straight Talk, Big Profits!',
+    author: 'Greg Crabtre',
+    cover: '/static/books/simple-numbers-straight-talk-big-profits.jpeg',
+    goodReadsUrl:
+      'https://www.goodreads.com/book/show/12661583-simple-numbers-straight-talk-big-profits',
+    amazonUrl:
+      'https://www.amazon.com/Simple-Numbers-Straight-Talk-Profits/dp/1608320561',
+    literalUrl:
+      'https://literal.club/book/simple-numbers-straight-talk-big-profits-b7wgh',
+    review:
+      'A fantastic book for gaining insight into the financial aspects of a business and the key financial indicators to evaluate the overall health of the business.',
+  },
+  {
     title:
       'Continuous Discovery Habits: Discover Products that Create Customer Value and Business Value',
     author: 'Teresa Torres',

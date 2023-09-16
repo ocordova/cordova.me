@@ -132,6 +132,13 @@ export const categories = [
         icon: '/static/tools/stoplight.png',
       },
       {
+        name: 'tldraw',
+        description:
+          'My go to tool for whiteboarding. I used to use Excalidraw.',
+        url: 'https://tldraw.com/',
+        icon: '/static/tools/tldraw.svg',
+      },
+      {
         name: 'TickTick',
         description:
           'My current choice for to-do lists. It has a great UI and UX.',
@@ -223,7 +230,13 @@ export const categories = [
         url: 'https://plausible.io/',
         icon: '/static/tools/plausible.png',
       },
-
+      {
+        name: 'Shopify',
+        description:
+          'My preferred e-commerce option, Hydrogen/Remix, offers the best developer experience for frontend development.',
+        url: 'https://www.shopify.com/',
+        icon: '/static/tools/shopify.svg',
+      },
       {
         name: 'Trakt',
         description:
