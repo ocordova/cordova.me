@@ -32,7 +32,7 @@ export const books: Book[] = [
     amazonUrl: 'https://www.amazon.com/dp/B09XYX49KX',
     literalUrl: 'https://literal.club/book/continuous-discovery-habits-3yeeo',
     review:
-      'highlights the significance of cross-functional teams, weekly customer interviews, and utilizing feedback to improve product ideas. It also offers useful advice on managing and maximizing the value of these interviews.',
+      'Highlights the significance of cross-functional teams, weekly customer interviews, and using The Opportunity Solution Tree tool to connect business goals, customer needs, and ideas for experimentation.',
   },
   {
     title: '14 Habits of Highly Productive Developers',
