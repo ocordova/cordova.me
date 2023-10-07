@@ -10,6 +10,16 @@ interface Book {
 
 export const books: Book[] = [
   {
+    title: 'Build: An Unorthodox Guide to Making Things Worth Making',
+    author: 'Tony Fadell',
+    cover: '/static/books/build.jpeg',
+    goodReadsUrl: 'https://www.goodreads.com/book/show/59696349-build',
+    amazonUrl: 'https://www.amazon.com/gp/product/1787634116/',
+    literalUrl: 'https://literal.club/book/tony-fadell-build-78c5y',
+    review:
+      "A fantastic fusion of autobiography, startup savvy, and professional insights. It's a guide to crafting ideas, nurturing teams, and building customer-driven products and successful organizations.",
+  },
+  {
     title: 'Simple Numbers, Straight Talk, Big Profits!',
     author: 'Greg Crabtre',
     cover: '/static/books/simple-numbers-straight-talk-big-profits.jpeg',

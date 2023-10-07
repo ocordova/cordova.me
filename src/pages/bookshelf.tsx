@@ -56,7 +56,11 @@ export const Bookshelf = () => {
                           >
                             Goodreads
                           </Button>
-                          <Button href={book.amazonUrl} variant="outline">
+                          <Button
+                            href={book.amazonUrl}
+                            variant="outline"
+                            target="_blank"
+                          >
                             Amazon
                           </Button>
                         </div>
