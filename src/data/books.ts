@@ -17,7 +17,7 @@ export const books: Book[] = [
     amazonUrl: 'https://www.amazon.com/gp/product/1787634116/',
     literalUrl: 'https://literal.club/book/tony-fadell-build-78c5y',
     review:
-      "A fantastic fusion of autobiography, startup savvy, and professional insights. It's a guide to crafting ideas, nurturing teams, and building customer-driven products and successful organizations.",
+      "A captivating fusion of autobiography, startup savvy, and professional insights. It's a guide to crafting ideas, nurturing teams, and building customer-driven products and successful organizations.",
   },
   {
     title: 'Simple Numbers, Straight Talk, Big Profits!',
