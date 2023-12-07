@@ -15,6 +15,14 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'The Dangerous Animals of Product Management',
+    url: 'https://www.productboard.com/blog/dangerous-animals-product-management-infographic/',
+    category: Category.article,
+    description:
+      'A humorous take on the different types of animals you might encounter in product management.',
+    icon: '/static/bookmarks/productboard.svg',
+  },
+  {
     title: 'Just for Fun. No, Really.',
     url: 'https://justforfunnoreally.dev/',
     category: Category.resource,
