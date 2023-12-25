@@ -15,6 +15,14 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'How to Write a Product Strategy in 1 Day / 1 Week / 1 Month',
+    url: 'https://www.news.aakashg.com/p/strategy-in-1-day-week-month',
+    category: Category.article,
+    description:
+      'A step-by-step guide to writing a product strategy in 1 day / 1 week / 1 month',
+    icon: '/static/bookmarks/aakashg.png',
+  },
+  {
     title: 'The Dangerous Animals of Product Management',
     url: 'https://www.productboard.com/blog/dangerous-animals-product-management-infographic/',
     category: Category.article,
