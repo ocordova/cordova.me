@@ -68,7 +68,7 @@ export default function Document() {
         {Constants.isProduction && (
           <script
             defer
-            data-domain="ocordova.me"
+            data-domain="oscordova.me"
             src="https://plausible.io/js/script.outbound-links.js"
           ></script>
         )}
