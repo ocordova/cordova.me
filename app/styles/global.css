@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#__next {
+  min-height: 100%;
+}
+
+::selection {
+  background-color: #354150;
+  color: white;
+}
+
+:root {
+  --sh-class: #2d5e9d;
+  --sh-identifier: #171d25;
+  --sh-sign: #8996a3;
+  --sh-string: #007f7a;
+  --sh-keyword: #e02518;
+  --sh-comment: #a19595;
+  --sh-jsxliterals: #6266d1;
+  --sh-jsxidentifiers: #e45649;
+  --sh-jsxproperty: #c18401;
+  --sh-jsxpropertyaccess: #0184bc;
+  --sh-jsxpropertyaccessstring: #4078f2;
+  --sh-jsxstring: #50a14f;
+  --sh-jsxtext: #a0a1a7;
+  --sh-jsxattribute: #986801;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sh-class: #4c97f8;
+    --sh-identifier: white;
+    --sh-keyword: #f47067;
+    --sh-string: #0fa295;
+    --sh-comment: #6a737d;
+    --sh-jsxliterals: #dcbdfb;
+    --sh-jsxidentifiers: #ff5874;
+    --sh-jsxproperty: #e3b341;
+    --sh-jsxpropertyaccess: #75b5aa;
+    --sh-jsxpropertyaccessstring: #8dcff0;
+    --sh-jsxstring: #98c379;
+    --sh-jsxtext: #dcdfe4;
+    --sh-jsxattribute: #e3b341;
+  }
+}
