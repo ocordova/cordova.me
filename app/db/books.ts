@@ -10,6 +10,15 @@ interface Book {
 
 export const books: Book[] = [
   {
+    title: 'Product-Led Growth: How to Build a Product That Sells Itself',
+    author: 'Wes Bush',
+    cover: '/static/books/product-led-growth.jpg',
+    goodReadsUrl: 'https://www.goodreads.com/book/show/46033247-product-led-growth',
+    amazonUrl: 'https://www.amazon.com/gp/product/B07P6288ZF',
+    literalUrl: 'https://literal.club/ocordova/book/product-led-growth-zvam1',
+    review: 'This comprehensive guide places emphasis on go-to-market strategy essentials such as value perception, channel strategy, pricing, and selling tactics, with a specific focus on SaaS companies.',
+  },
+  {
     title: "Build: An Unorthodox Guide to Making Things Worth Making",
     author: "Tony Fadell",
     cover: "/static/books/build.jpeg",
