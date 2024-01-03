@@ -50,7 +50,7 @@ export default function AboutPage() {
           </TextLink>{" "}
           or{" "}
           <TextLink
-            href="mailto:hola@ocordova.me"
+            href="mailto:oscordovat@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
