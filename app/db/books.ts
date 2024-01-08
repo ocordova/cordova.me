@@ -29,6 +29,15 @@ export const books: Book[] = [
       "A captivating fusion of autobiography, startup savvy, and professional insights. It's a guide to crafting ideas, nurturing teams, and building customer-driven products and successful organizations.",
   },
   {
+    title: 'Articulating Design Decisions: Communicate with Stakeholders, Keep Your Sanity, and Deliver the Best User Experience',
+    author: 'Tom Greever',
+    cover: '/static/books/articulating-design-decisions.jpg',
+    goodReadsUrl: 'https://www.goodreads.com/book/show/25520974-articulating-design-decisions',
+    amazonUrl: 'https://www.amazon.com/Articulating-Design-Decisions-Communicate-Stakeholders/dp/B092R9P4PN/',
+    literalUrl: 'https://literal.club/book/articulating-design-decisions-n3za3',
+    review: "The book highlights the universal skill of effectively conveying the 'why' behind decisions, fostering understanding and buy-in. Greever's approach, from design, seamlessly fits any role where communication and collaboration are key.",
+  },
+  {
     title: "Simple Numbers, Straight Talk, Big Profits!",
     author: "Greg Crabtre",
     cover: "/static/books/simple-numbers-straight-talk-big-profits.jpeg",

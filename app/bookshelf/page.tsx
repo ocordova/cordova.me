@@ -38,7 +38,7 @@ export default function BookshelfPage() {
                   <p className="dark:text-gray-4000 text-justify font-sans text-sm text-gray-600 dark:text-gray-400">
                     {book.review}
                   </p>
-                  <div className="space-x-3">
+                  <div className="space-x-3 pt-2">
                     <Button
                       href={book.literalUrl}
                       variant="outline"
