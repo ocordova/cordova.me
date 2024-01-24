@@ -15,11 +15,25 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'Introduction to Modern Product Discovery - Teresa Torres',
+    url: 'https://www.youtube.com/watch?v=l7-5x0ra2tc',
+    category: Category.video,
+    description: 'Explains the changes seen in the product discovery in the last years, and still relevant today.',
+    icon: '/static/bookmarks/productized.jpg',
+  },
+  {
+    title: 'What is Jobs-to-be-Done? - Tony Ulwick',
+    url: 'https://www.youtube.com/watch?v=Et4H4Ty1qhQ',
+    category: Category.video,
+    description: 'A short video summarizing the Jobs-to-be-Done framework.',
+    icon: '/static/bookmarks/strategyn.jpg',
+  },
+  {
     title: "How to Write a Product Strategy in 1 Day / 1 Week / 1 Month",
     url: "https://www.news.aakashg.com/p/strategy-in-1-day-week-month",
     category: Category.article,
     description:
-      "A step-by-step guide to writing a product strategy in 1 day / 1 week / 1 month",
+      "A step-by-step guide to writing a product strategy in 1 day / 1 week / 1 month.",
     icon: "/static/bookmarks/aakashg.png",
   },
   {
