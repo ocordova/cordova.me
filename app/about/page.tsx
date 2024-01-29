@@ -14,9 +14,9 @@ export default function AboutPage() {
         </h1>
       </div>
       <div className="mt-2 space-y-4 text-justify font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
-        <p>I'm a Product Manager with a background in Software Engineering.</p>
+        <p>I'm a Software Engineer by day and a Product Manager by night.</p>
         <p>
-          My product development approach focuses on continuous discovery and
+          My approach focuses on continuous discovery and
           delivery through user feedback and research. I believe that by
           constantly exploring new ideas, experimenting with new features, and
           testing hypotheses, we can create a successful product that meets the
