@@ -1,9 +1,8 @@
 "use client"
-import { CodeBracketIcon } from "@heroicons/react/20/solid";
-import { HeartIcon } from "@heroicons/react/24/outline";
 import { Wrapper } from ".";
 import { TooltipContent, TooltipProvider, TooltipTrigger, Tooltip } from "./ui/tooltip";
 import { Separator } from "./ui/separator";
+import { GitHubLogoIcon, HeartIcon } from "@radix-ui/react-icons";
 
 export const Footer = () => {
   return (
@@ -29,7 +28,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 text-base"
                 >
-                  <CodeBracketIcon className="h-5 w-5" />
+                  <GitHubLogoIcon className="h-5 w-5" />
                 </a>
                 </TooltipTrigger>
                 <TooltipContent>

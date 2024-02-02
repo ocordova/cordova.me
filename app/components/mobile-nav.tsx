@@ -8,7 +8,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 import { cn } from "@/lib/utils"
 import { ScrollArea } from './ui/scroll-area'
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet"
-import { Logo } from "./Logo"
+import { Logo } from "./logo"
 import { Button } from "./ui/button"
 
 export function MobileNav() {
