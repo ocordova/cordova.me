@@ -1,33 +1,23 @@
-import clsx from "clsx";
 import Link from "next/link";
+import { Button } from "./components/ui/button";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export default function Page() {
   return (
     <div className="mx-auto pb-20 pt-20 sm:pb-40 sm:pt-40">
       <div className="text-center">
-        <h1
-          className={clsx(
-            "font-serif text-4xl font-normal leading-tight text-gray-900 dark:text-gray-100 sm:text-5xl sm:leading-snug",
-          )}
-        >
+        <h1 className="font-serif text-4xl font-normal leading-tight text-primary sm:text-5xl sm:leading-snug">
           Óscar Córdova
         </h1>
-        <p className="text-base leading-8 text-gray-600 dark:text-gray-400">
+        <p className="text-base leading-8 text-muted-foreground">
           Problem solver. Not feature builder.
         </p>
         <div className="mt-8 flex justify-center gap-x-4">
-          <Link
-            href="/about"
-            className="inline-flex items-center rounded-lg border border-transparent px-4 py-1.5 text-sm font-semibold text-gray-700 transition-colors hover:border-gray-400 dark:text-gray-100 "
-          >
-            Learn more
-            <span
-              className="ml-1.5 text-gray-500 dark:text-gray-100"
-              aria-hidden="true"
-            >
-              &rarr;
-            </span>
-          </Link>
+            <Link href="/about">
+              <Button variant="ghost">
+                Learn more <ArrowRightIcon className="w-4 h-4 ml-1.5" />
+              </Button>
+            </Link>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { Inter, Bitter } from "next/font/google";
 import { CONSTANTS } from "@/db/constants";
 import { Metadata } from "next";
 import Script from "next/script";
-import { Footer, Header, Wrapper } from "./components";
+import { Footer, Header, ThemeProvider, Wrapper } from "./components";
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONSTANTS.baseUrl),
@@ -68,40 +68,6 @@ const bitter = Bitter({
   variable: "--bitter-font",
 });
 
-const modeScript = `
-  let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-  updateMode()
-  darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
-  window.addEventListener('storage', updateModeWithoutTransitions)
-
-  function updateMode() {
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = window.localStorage.isDarkMode === 'true' || (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
-
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
-    }
-  }
-
-  function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none')
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none')
-    }, 0)
-  }
-
-  function updateModeWithoutTransitions() {
-    disableTransitionsTemporarily()
-    updateMode()
-  }
-`;
 
 export default function RootLayout({
   children,
@@ -113,12 +79,14 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${bitter.variable} h-full antialiased`}
     >
-      <body className="flex h-full flex-col bg-white dark:bg-gray-900">
+      <body className="flex h-full flex-col bg-background text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <Header />
         <main className="mt-4 px-6 sm:px-0">
           <Wrapper>{children}</Wrapper>
         </main>
         <Footer />
+        </ThemeProvider>
       </body>
       {CONSTANTS.isProduction && (
         <Script
@@ -127,7 +95,6 @@ export default function RootLayout({
           src="https://plausible.io/js/script.outbound-links.js"
         ></Script>
       )}
-      <Script dangerouslySetInnerHTML={{ __html: modeScript }} />
     </html>
   );
 }
