@@ -19,9 +19,12 @@ export function ArticleLayout({
       <div className="xl:relative">
         <div className="mx-auto max-w-2xl">
           {back ? (
-             <Link href="/writing" className="flex justify-start items-center text-sm text-muted-foreground hover:text-muted-foreground/70">
-             <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back
-           </Link>
+            <Link
+              href="/writing"
+              className="flex justify-start items-center text-sm text-muted-foreground hover:text-muted-foreground/70"
+            >
+              <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back
+            </Link>
           ) : null}
           <article className="mt-8">
             <header className="flex flex-col">

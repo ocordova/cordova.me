@@ -10,10 +10,7 @@ export default function BookshelfPage() {
       title="My personal favorites"
       intro="Here are a few books I highly recommend that helped me improve my product management and software development skills."
     >
-      <ul
-        role="list"
-        className="mt-8 grid grid-cols-1"
-      >
+      <ul role="list" className="mt-8 grid grid-cols-1">
         {books.map((book) => (
           <li key={book.title} className="flex py-8">
             <div className="space-y-4 sm:grid sm:grid-cols-8 sm:items-start sm:gap-4 sm:space-y-0">
@@ -41,35 +38,19 @@ export default function BookshelfPage() {
                     {book.review}
                   </p>
                   <div className="pt-2 ">
-                    <a
-                                          href={book.literalUrl}
-                            
-                                          target="_blank">
-                    
-                    <Button variant="link" className="text-foreground/60"
-
->
-                      Literal <ArrowTopRightIcon />
-                    </Button>
-                      </a>
-                    <a
-                      href={book.goodReadsUrl}
-
-                      target="_blank"
-                    >
+                    <a href={book.literalUrl} target="_blank">
                       <Button variant="link" className="text-foreground/60">
-                        
-                      Goodreads <ArrowTopRightIcon />
+                        Literal <ArrowTopRightIcon />
                       </Button>
                     </a>
-                    <a
-                      href={book.amazonUrl}
-
-                      target="_blank"
-                    >
+                    <a href={book.goodReadsUrl} target="_blank">
                       <Button variant="link" className="text-foreground/60">
-
-                      Amazon <ArrowTopRightIcon />
+                        Goodreads <ArrowTopRightIcon />
+                      </Button>
+                    </a>
+                    <a href={book.amazonUrl} target="_blank">
+                      <Button variant="link" className="text-foreground/60">
+                        Amazon <ArrowTopRightIcon />
                       </Button>
                     </a>
                   </div>

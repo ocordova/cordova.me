@@ -3,9 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   darkMode: ["class"],
-  purge: [
-    './app/**/*.{ts,tsx}',
-  ],
+  content: ["./app/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -76,5 +74,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};

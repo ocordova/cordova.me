@@ -23,17 +23,14 @@ const Card = ({ title, description, url, icon, category }: Bookmark) => {
                 />
               ) : null}
             </div>
-            <span
-              className="borderinline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium capitalize">
+            <span className="borderinline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium capitalize">
               {category}
             </span>
           </div>
           <h2 className="mt-4 font-serif text-base font-semibold text-foreground">
             {title}
           </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {description}
-          </p>
+          <p className="mt-1 text-sm text-muted-foreground">{description}</p>
           <p className="relative z-10 mt-6 flex text-sm font-medium text-muted-foreground">
             <Link2Icon className="h-4 w-4 flex-none" />
             <span className="ml-2">{hostname}</span>

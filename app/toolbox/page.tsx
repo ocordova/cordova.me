@@ -35,9 +35,7 @@ const Tool = ({ name, url, icon, children }) => {
             <h2 className="mt-4 font-serif text-base font-semibold text-foreground">
               {name}
             </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {children}
-            </p>
+            <p className="mt-1 text-sm text-muted-foreground">{children}</p>
           </div>
         </div>
       </div>

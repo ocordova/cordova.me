@@ -1,6 +1,11 @@
-"use client"
+"use client";
 import { Wrapper } from ".";
-import { TooltipContent, TooltipProvider, TooltipTrigger, Tooltip } from "./ui/tooltip";
+import {
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+  Tooltip,
+} from "./ui/tooltip";
 import { Separator } from "./ui/separator";
 import { GitHubLogoIcon, HeartIcon } from "@radix-ui/react-icons";
 
@@ -20,22 +25,24 @@ export const Footer = () => {
               in Mexico
             </div>
             <div className="mt-6 flex flex-row justify-center md:mt-0 md:justify-start">
-            <TooltipProvider>
-  <Tooltip> <TooltipTrigger>
-                <a
-                  href="https://github.com/ocordova/ocordova.me"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 text-base"
-                >
-                  <GitHubLogoIcon className="h-5 w-5" />
-                </a>
-                </TooltipTrigger>
-                <TooltipContent>
-      <p>View source code</p>
-    </TooltipContent>
+              <TooltipProvider>
+                <Tooltip>
+                  {" "}
+                  <TooltipTrigger>
+                    <a
+                      href="https://github.com/ocordova/ocordova.me"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center space-x-2 text-base"
+                    >
+                      <GitHubLogoIcon className="h-5 w-5" />
+                    </a>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>View source code</p>
+                  </TooltipContent>
                 </Tooltip>
-</TooltipProvider>
+              </TooltipProvider>
             </div>
           </div>
         </div>

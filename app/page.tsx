@@ -13,11 +13,11 @@ export default function Page() {
           Problem solver. Not feature builder.
         </p>
         <div className="mt-8 flex justify-center gap-x-4">
-            <Link href="/about">
-              <Button variant="ghost">
-                Learn more <ArrowRightIcon className="w-4 h-4 ml-1.5" />
-              </Button>
-            </Link>
+          <Link href="/about">
+            <Button variant="ghost">
+              Learn more <ArrowRightIcon className="w-4 h-4 ml-1.5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

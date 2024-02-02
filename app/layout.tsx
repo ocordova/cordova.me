@@ -68,7 +68,6 @@ const bitter = Bitter({
   variable: "--bitter-font",
 });
 
-
 export default function RootLayout({
   children,
 }: {
@@ -81,11 +80,11 @@ export default function RootLayout({
     >
       <body className="flex h-full flex-col bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <Header />
-        <main className="px-6 sm:px-0">
-          <Wrapper>{children}</Wrapper>
-        </main>
-        <Footer />
+          <Header />
+          <main className="px-6 sm:px-0">
+            <Wrapper>{children}</Wrapper>
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
       {CONSTANTS.isProduction && (

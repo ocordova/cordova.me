@@ -1,6 +1,12 @@
 "use client";
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Category } from "@/db/bookmarks";
 import { getSearchParam } from "@/lib/params";
 import { cn } from "@/lib/utils";
@@ -63,15 +69,15 @@ export default function FilterBookmarks() {
           value={currentType || "all"}
           onValueChange={(value) => handleTypeChange(value)}
         >
-           <SelectTrigger className="w-[140px]">
-        <SelectValue />
-      </SelectTrigger>
+          <SelectTrigger className="w-[140px]">
+            <SelectValue />
+          </SelectTrigger>
           <SelectContent>
-          {tabs.map((tab) => (
-            <SelectItem key={tab.name} value={tab.type}>
-              {tab.name}
-            </SelectItem>
-          ))}
+            {tabs.map((tab) => (
+              <SelectItem key={tab.name} value={tab.type}>
+                {tab.name}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
       </div>

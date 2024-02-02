@@ -4,19 +4,18 @@ export default function AboutPage() {
   return (
     <>
       <div>
-      <h1
-          className="font-serif text-xl font-medium tracking-tight text-forground sm:text-2xl"
-        >
+        <h1 className="font-serif text-xl font-medium tracking-tight text-forground sm:text-2xl">
           Hello I'm Ós!
         </h1>
 
-        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">I'm a Software Engineer by day and a Product Manager by night.</p>
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
-          My approach focuses on continuous discovery and
-          delivery through user feedback and research. I believe that by
-          constantly exploring new ideas, experimenting with new features, and
-          testing hypotheses, we can create a successful product that meets the
-          needs of our users.
+          I'm a Software Engineer by day and a Product Manager by night.
+        </p>
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
+          My approach focuses on continuous discovery and delivery through user
+          feedback and research. I believe that by constantly exploring new
+          ideas, experimenting with new features, and testing hypotheses, we can
+          create a successful product that meets the needs of our users.
         </p>
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
           I'm committed to defending and celebrating the legacies of Mexican
@@ -25,7 +24,9 @@ export default function AboutPage() {
           seeking ways to leverage my skills in this endeavor, ensuring their
           stories and contributions continue to resonate.
         </p>
-        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">Outside of work, here's what I like to do:</p>
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
+          Outside of work, here's what I like to do:
+        </p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2 font-serif md:columns-2">
           <li>Cook</li>
           <li>Code</li>
@@ -91,14 +92,15 @@ export default function AboutPage() {
               rel="noopener noreferrer"
             >
               Tailwind CSS
-            </TextLink> {" "} & {" "}
+            </TextLink>{" "}
+            &{" "}
             <TextLink
               href="https://ui.shadcn.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              shadcn/ui 
-              </TextLink>
+              shadcn/ui
+            </TextLink>
           </li>
           <li>
             Iconified with{" "}
