@@ -46,7 +46,7 @@ const Card = ({ title, description, url, icon, category }: Bookmark) => {
 
 export default function BookMarksData({ data }: { data: Bookmark[] }) {
   return (
-    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-1">
       {data.map((bookmark) => {
         return <Card key={bookmark.title} {...bookmark} />;
       })}
