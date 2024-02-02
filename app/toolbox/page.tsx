@@ -5,7 +5,7 @@ import Image from "next/image";
 const ToolsSection = ({ title, children }) => {
   return (
     <section>
-      <h2 className="sticky top-0 z-10 bg-white/80 py-2 font-sans text-base font-semibold tracking-wide text-gray-900 backdrop-blur-sm dark:bg-gray-900/80 dark:text-gray-50 sm:text-lg">
+      <h2 className="sticky top-0 z-10 py-2 font-sans text-base font-semibold tracking-wide text-foreground backdrop-blur-sm sm:text-lg">
         {title}
       </h2>
       <ul role="list" className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -18,7 +18,7 @@ const ToolsSection = ({ title, children }) => {
 const Tool = ({ name, url, icon, children }) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
-      <div className="group relative h-full rounded-lg border border-gray-100 border-transparent transition-colors hover:border-gray-300 dark:border-gray-800 dark:hover:border-gray-500">
+      <div className="group relative h-full rounded-lg border border-transparent transition-colors hover:border-border">
         <div className="relative overflow-hidden rounded-lg p-4">
           <div className="flex h-20 w-full items-center justify-center">
             {icon ? (
@@ -32,10 +32,10 @@ const Tool = ({ name, url, icon, children }) => {
             ) : null}
           </div>
           <div className="text-center">
-            <h2 className="mt-4 font-serif text-base font-semibold text-gray-900 dark:text-gray-50">
+            <h2 className="mt-4 font-serif text-base font-semibold text-foreground">
               {name}
             </h2>
-            <p className="mt-1 text-sm text-gray-700 dark:text-gray-400">
+            <p className="mt-1 text-sm text-muted-foreground">
               {children}
             </p>
           </div>
