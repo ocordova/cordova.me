@@ -3,7 +3,6 @@ import Link from "next/link";
 import { CustomMDX, Prose } from ".";
 import { formatDate } from "@/lib/formatDate";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
-import { Button } from "./ui/button";
 
 export function ArticleLayout({
   children,
