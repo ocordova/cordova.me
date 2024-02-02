@@ -1,4 +1,4 @@
-export { ArticleLayout } from "./ArticleLayout";
+export { ArticleLayout } from "./article-layout";
 export { Button } from "./Button";
 export { Footer } from "./footer";
 export { Header } from "./header";
@@ -10,6 +10,6 @@ export { SimpleLayout } from "./SimpleLayout";
 export { TextLink } from "./text-link";
 export {ThemeProvider} from "./theme-provider";
 export { CustomMDX } from "./CustomMDX";
-export { Wrapper } from "./Wrapper";
+export { Wrapper } from "./wrapper";
 export {ModeToggle} from "./mode-toggle";
 export {MobileNav} from "./mobile-nav";
