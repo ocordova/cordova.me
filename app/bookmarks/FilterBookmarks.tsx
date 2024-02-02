@@ -1,8 +1,15 @@
 "use client";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Category } from "@/db/bookmarks";
 import { getSearchParam } from "@/lib/params";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function FilterBookmarks() {
@@ -15,7 +22,7 @@ export default function FilterBookmarks() {
     {
       name: "All",
       category: null,
-      type: "",
+      type: "all",
     },
     {
       name: "Articles",
@@ -41,7 +48,7 @@ export default function FilterBookmarks() {
 
   const handleTypeChange = (type: string) => {
     const nextParams = new URLSearchParams(searchParams);
-    if (type === "") {
+    if (type === "all") {
       nextParams.delete("type");
       router.replace(`${pathname}`);
       return;
@@ -56,19 +63,23 @@ export default function FilterBookmarks() {
         <label htmlFor="tabs" className="sr-only">
           Select a tab
         </label>
-        <select
-          id="tabs"
+        <Select
           name="tabs"
-          className="block w-full rounded-md border-gray-300 focus:border-gray-500 focus:ring-gray-500"
-          defaultValue={""}
-          onChange={(e) => handleTypeChange(e.target.value)}
+          defaultValue={currentType || "all"}
+          value={currentType || "all"}
+          onValueChange={(value) => handleTypeChange(value)}
         >
-          {tabs.map((tab) => (
-            <option key={tab.name} value={tab.type}>
-              {tab.name}
-            </option>
-          ))}
-        </select>
+          <SelectTrigger className="w-[140px]">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {tabs.map((tab) => (
+              <SelectItem key={tab.name} value={tab.type}>
+                {tab.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
       <div className="hidden sm:block">
         <nav className="flex space-x-4" aria-label="Tabs">
@@ -76,11 +87,11 @@ export default function FilterBookmarks() {
             <div
               key={tab.name}
               onClick={() => handleTypeChange(tab.type)}
-              className={clsx(
-                currentType == tab.type
-                  ? "border border-gray-300 bg-gray-100 text-gray-800 dark:border-gray-800 dark:bg-gray-500/10 dark:text-gray-200"
-                  : "text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300",
-                "cursor-pointer rounded-md px-4 py-1.5 text-sm font-medium",
+              className={cn(
+                currentType == tab.type || (!currentType && tab.type === "all")
+                  ? "border"
+                  : "",
+                "cursor-pointer rounded-md px-4 py-1.5 text-sm font-medium text-foreground",
               )}
             >
               {tab.name}

@@ -7,7 +7,7 @@ export const TextLink = ({ href, newWindow, children, target, rel }: any) => {
       {...(newWindow ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       target={target}
       rel={rel}
-      className="text-gray-600 underline decoration-gray-400 underline-offset-[3px] hover:decoration-gray-900 dark:text-gray-400"
+      className="underline underline-offset-4 hover:no-underline text-foreground/80"
     >
       {children}
     </Link>

@@ -10,13 +10,15 @@ interface Book {
 
 export const books: Book[] = [
   {
-    title: 'Product-Led Growth: How to Build a Product That Sells Itself',
-    author: 'Wes Bush',
-    cover: '/static/books/product-led-growth.jpg',
-    goodReadsUrl: 'https://www.goodreads.com/book/show/46033247-product-led-growth',
-    amazonUrl: 'https://www.amazon.com/gp/product/B07P6288ZF',
-    literalUrl: 'https://literal.club/ocordova/book/product-led-growth-zvam1',
-    review: 'This comprehensive guide places emphasis on go-to-market strategy essentials such as value perception, channel strategy, pricing, and selling tactics, with a specific focus on SaaS companies.',
+    title: "Product-Led Growth: How to Build a Product That Sells Itself",
+    author: "Wes Bush",
+    cover: "/static/books/product-led-growth.jpg",
+    goodReadsUrl:
+      "https://www.goodreads.com/book/show/46033247-product-led-growth",
+    amazonUrl: "https://www.amazon.com/gp/product/B07P6288ZF",
+    literalUrl: "https://literal.club/ocordova/book/product-led-growth-zvam1",
+    review:
+      "This comprehensive guide places emphasis on go-to-market strategy essentials such as value perception, channel strategy, pricing, and selling tactics, with a specific focus on SaaS companies.",
   },
   {
     title: "Build: An Unorthodox Guide to Making Things Worth Making",
@@ -29,13 +31,17 @@ export const books: Book[] = [
       "A captivating fusion of autobiography, startup savvy, and professional insights. It's a guide to crafting ideas, nurturing teams, and building customer-driven products and successful organizations.",
   },
   {
-    title: 'Articulating Design Decisions: Communicate with Stakeholders, Keep Your Sanity, and Deliver the Best User Experience',
-    author: 'Tom Greever',
-    cover: '/static/books/articulating-design-decisions.jpg',
-    goodReadsUrl: 'https://www.goodreads.com/book/show/25520974-articulating-design-decisions',
-    amazonUrl: 'https://www.amazon.com/Articulating-Design-Decisions-Communicate-Stakeholders/dp/B092R9P4PN/',
-    literalUrl: 'https://literal.club/book/articulating-design-decisions-n3za3',
-    review: "The book highlights the universal skill of effectively conveying the 'why' behind decisions, fostering understanding and buy-in. Greever's approach, from design, seamlessly fits any role where communication and collaboration are key.",
+    title:
+      "Articulating Design Decisions: Communicate with Stakeholders, Keep Your Sanity, and Deliver the Best User Experience",
+    author: "Tom Greever",
+    cover: "/static/books/articulating-design-decisions.jpg",
+    goodReadsUrl:
+      "https://www.goodreads.com/book/show/25520974-articulating-design-decisions",
+    amazonUrl:
+      "https://www.amazon.com/Articulating-Design-Decisions-Communicate-Stakeholders/dp/B092R9P4PN/",
+    literalUrl: "https://literal.club/book/articulating-design-decisions-n3za3",
+    review:
+      "The book highlights the universal skill of effectively conveying the 'why' behind decisions, fostering understanding and buy-in. Greever's approach, from design, seamlessly fits any role where communication and collaboration are key.",
   },
   {
     title: "Simple Numbers, Straight Talk, Big Profits!",

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowSmallLeftIcon } from "@heroicons/react/20/solid";
 
 import { CustomMDX, Prose } from ".";
 import { formatDate } from "@/lib/formatDate";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
 
 export function ArticleLayout({
   children,
@@ -19,24 +19,21 @@ export function ArticleLayout({
       <div className="xl:relative">
         <div className="mx-auto max-w-2xl">
           {back ? (
-            <div className="flex">
-              <Link
-                href="/writing"
-                className="flex text-sm font-medium text-gray-500 hover:text-gray-700"
-              >
-                <ArrowSmallLeftIcon className="h-6 w-6 flex-none" />
-                <span className="mr-2.5">Back to writing</span>
-              </Link>
-            </div>
+            <Link
+              href="/writing"
+              className="flex justify-start items-center text-sm text-muted-foreground hover:text-muted-foreground/70"
+            >
+              <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back
+            </Link>
           ) : null}
           <article className="mt-8">
             <header className="flex flex-col">
-              <h1 className="font-serif text-2xl font-medium tracking-wide text-gray-800 dark:text-gray-100 sm:text-3xl">
+              <h1 className="font-serif text-2xl font-medium tracking-wide text-foreground sm:text-3xl">
                 {meta.title}
               </h1>
               <time
                 dateTime={meta.date}
-                className="mt-3 flex items-center text-sm text-gray-500 dark:text-gray-500"
+                className="mt-3 flex items-center text-sm text-muted-foreground"
               >
                 <span>{formatDate(meta.date)}</span>
               </time>
