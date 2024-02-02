@@ -1,36 +1,32 @@
-import { TextLink, Wrapper } from "@/components";
-import clsx from "clsx";
+import { TextLink } from "@/components";
 
 export default function AboutPage() {
   return (
-    <Wrapper>
+    <>
       <div>
-        <h1
-          className={clsx(
-            "font-serif text-xl font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-2xl",
-          )}
+      <h1
+          className="font-serif text-xl font-medium tracking-tight text-forground sm:text-2xl"
         >
           Hello I'm Ós!
         </h1>
-      </div>
-      <div className="mt-2 space-y-4 text-justify font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
-        <p>I'm a Software Engineer by day and a Product Manager by night.</p>
-        <p>
+
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">I'm a Software Engineer by day and a Product Manager by night.</p>
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
           My approach focuses on continuous discovery and
           delivery through user feedback and research. I believe that by
           constantly exploring new ideas, experimenting with new features, and
           testing hypotheses, we can create a successful product that meets the
           needs of our users.
         </p>
-        <p>
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
           I'm committed to defending and celebrating the legacies of Mexican
           farmers and our rich food traditions, with an aspiration to bring
           their flavors and culture to tables across my country. I'm actively
           seeking ways to leverage my skills in this endeavor, ensuring their
           stories and contributions continue to resonate.
         </p>
-        <p>Outside of work, here's what I like to do:</p>
-        <ul className="mt-4 list-inside list-disc pl-4 text-gray-600 dark:text-gray-400 md:columns-2">
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">Outside of work, here's what I like to do:</p>
+        <ul className="my-6 ml-6 list-disc [&>li]:mt-2 font-serif md:columns-2">
           <li>Cook</li>
           <li>Code</li>
           <li>Explore diverse cuisines</li>
@@ -38,7 +34,7 @@ export default function AboutPage() {
           <li>Watch movies and lots of YouTube</li>
           <li>Reading about cognitive psychology</li>
         </ul>
-        <p>
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
           I retired from traditional social media. However, if you wish to get
           in touch, you can do it via{" "}
           <TextLink
@@ -60,13 +56,13 @@ export default function AboutPage() {
         </p>
       </div>
       <div>
-        <h2 className="mt-8 font-serif text-lg font-medium tracking-wide text-gray-900 dark:text-gray-100 sm:text-xl">
+        <h2 className="mt-8 font-serif text-lg font-medium tracking-tight text-forground sm:text-xl">
           About this site
         </h2>
-        <p className="mt-2 font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
           In case you were wondering, this site is:
         </p>
-        <ul className="mt-4 list-inside list-disc pl-4 font-serif text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+        <ul className="my-6 ml-6 list-disc [&>li]:mt-2 font-serif">
           <li>
             Carefully hand-coded with{" "}
             <TextLink
@@ -95,16 +91,23 @@ export default function AboutPage() {
               rel="noopener noreferrer"
             >
               Tailwind CSS
-            </TextLink>
+            </TextLink> {" "} & {" "}
+            <TextLink
+              href="https://ui.shadcn.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              shadcn/ui 
+              </TextLink>
           </li>
           <li>
             Iconified with{" "}
             <TextLink
-              href="https://heroicons.com/"
+              href="https://www.radix-ui.com/icons"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Heroicons
+              Radix Icons
             </TextLink>
           </li>
           <li>
@@ -129,6 +132,6 @@ export default function AboutPage() {
           </li>
         </ul>
       </div>
-    </Wrapper>
+    </>
   );
 }

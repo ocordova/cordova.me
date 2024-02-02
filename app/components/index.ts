@@ -7,7 +7,7 @@ export { MainNav } from "./main-nav";
 export { Prose } from "./Prose";
 export { Section } from "./Section";
 export { SimpleLayout } from "./SimpleLayout";
-export { TextLink } from "./TextLink";
+export { TextLink } from "./text-link";
 export {ThemeProvider} from "./theme-provider";
 export { CustomMDX } from "./CustomMDX";
 export { Wrapper } from "./Wrapper";
