@@ -15,6 +15,13 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: 'We Don’t Sell Saddles Here - Stewart Butterfield',
+    url: 'https://medium.com/@stewart/we-dont-sell-saddles-here-4c59524d650d',
+    category: Category.article,
+    description: "Butterfield's memo outlines Slack's vision and philosophy, emphasizing a customer-centric approach and a focus on user experience in product development.",
+    icon: '/static/bookmarks/medium.svg'
+  },
+  {
     title: "Introduction to Modern Product Discovery - Teresa Torres",
     url: "https://www.youtube.com/watch?v=l7-5x0ra2tc",
     category: Category.video,
