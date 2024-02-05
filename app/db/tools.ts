@@ -10,18 +10,17 @@ export const categories = [
     name: "Coding",
     tools: [
       {
+        name: "0xProto",
+        description: 'I love that in this font the ligatures does not deform the shape of the characters.',
+        url: 'https://github.com/0xType/0xProto',
+        icon: '/static/tools/0xproto.png'
+      },
+      {
         name: "Dracula Theme",
         description:
           "I love this dark theme. I use it in VSCode, Warp, Telegram, Slack, etc.",
         url: "https://draculatheme.com/",
         icon: "/static/tools/dracula.png",
-      },
-      {
-        name: "FiraCode",
-        description:
-          "Great monospaced font. It's easier to read and has ligatures.",
-        url: "https://github.com/tonsky/FiraCode",
-        icon: "/static/tools/fira-code.png",
       },
       {
         name: "GitHub Copilot",
