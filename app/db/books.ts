@@ -21,6 +21,18 @@ export const books: Book[] = [
       "This comprehensive guide places emphasis on go-to-market strategy essentials such as value perception, channel strategy, pricing, and selling tactics, with a specific focus on SaaS companies.",
   },
   {
+    title:
+      "Continuous Discovery Habits: Discover Products that Create Customer Value and Business Value",
+    author: "Teresa Torres",
+    cover: "/static/books/continuous-discovery-habits.jpg",
+    goodReadsUrl:
+      "https://www.goodreads.com/book/show/58046715-continuous-discovery-habits",
+    amazonUrl: "https://www.amazon.com/dp/B09XYX49KX",
+    literalUrl: "https://literal.club/book/continuous-discovery-habits-3yeeo",
+    review:
+      "Highlights the significance of cross-functional teams, weekly customer interviews, and using The Opportunity Solution Tree tool to connect business goals, customer needs, and ideas for experimentation.",
+  },
+  {
     title: "Build: An Unorthodox Guide to Making Things Worth Making",
     author: "Tony Fadell",
     cover: "/static/books/build.jpeg",
@@ -55,18 +67,6 @@ export const books: Book[] = [
       "https://literal.club/book/simple-numbers-straight-talk-big-profits-b7wgh",
     review:
       "A fantastic book for gaining insight into the financial aspects of a business and the key financial indicators to evaluate the overall health of the business.",
-  },
-  {
-    title:
-      "Continuous Discovery Habits: Discover Products that Create Customer Value and Business Value",
-    author: "Teresa Torres",
-    cover: "/static/books/continuous-discovery-habits.jpg",
-    goodReadsUrl:
-      "https://www.goodreads.com/book/show/58046715-continuous-discovery-habits",
-    amazonUrl: "https://www.amazon.com/dp/B09XYX49KX",
-    literalUrl: "https://literal.club/book/continuous-discovery-habits-3yeeo",
-    review:
-      "Highlights the significance of cross-functional teams, weekly customer interviews, and using The Opportunity Solution Tree tool to connect business goals, customer needs, and ideas for experimentation.",
   },
   {
     title: "14 Habits of Highly Productive Developers",
