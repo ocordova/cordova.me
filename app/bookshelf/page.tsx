@@ -1,7 +1,7 @@
 import { SimpleLayout } from "@/components";
 import { Button } from "@/components/ui/button";
 import { books } from "@/db/books";
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
 export default function BookshelfPage() {
@@ -40,17 +40,17 @@ export default function BookshelfPage() {
                   <div className="pt-2 ">
                     <a href={book.literalUrl} target="_blank">
                       <Button variant="link" className="text-foreground/60">
-                        Literal <ArrowTopRightIcon />
+                        Literal <ExternalLink size={14}  className="ml-1.5"/>
                       </Button>
                     </a>
                     <a href={book.goodReadsUrl} target="_blank">
                       <Button variant="link" className="text-foreground/60">
-                        Goodreads <ArrowTopRightIcon />
+                        Goodreads <ExternalLink size={14}  className="ml-1.5"/>
                       </Button>
                     </a>
                     <a href={book.amazonUrl} target="_blank">
                       <Button variant="link" className="text-foreground/60">
-                        Amazon <ArrowTopRightIcon />
+                        Amazon <ExternalLink size={14}  className="ml-1.5"/>
                       </Button>
                     </a>
                   </div>

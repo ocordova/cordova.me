@@ -101,11 +101,11 @@ export default function AboutPage() {
           <li>
             Iconified with{" "}
             <TextLink
-              href="https://www.radix-ui.com/icons"
+              href="https://lucide.dev/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Radix Icons
+              Lucide
             </TextLink>
           </li>
           <li>

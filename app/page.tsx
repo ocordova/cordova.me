@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "./components/ui/button";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { ArrowRight } from "lucide-react";
 
 export default function Page() {
   return (
@@ -15,7 +15,7 @@ export default function Page() {
         <div className="mt-8 flex justify-center gap-x-4">
           <Link href="/about">
             <Button variant="ghost">
-              Learn more <ArrowRightIcon className="w-4 h-4 ml-1.5" />
+              Learn more <ArrowRight size={14} className="ml-2" />
             </Button>
           </Link>
         </div>

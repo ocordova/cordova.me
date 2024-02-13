@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { CustomMDX, Prose } from ".";
 import { formatDate } from "@/lib/formatDate";
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { ArrowLeft } from "lucide-react";
 
 export function ArticleLayout({
   children,
@@ -23,7 +23,7 @@ export function ArticleLayout({
               href="/writing"
               className="flex justify-start items-center text-sm text-muted-foreground hover:text-muted-foreground/70"
             >
-              <ArrowLeftIcon className="w-4 h-4 mr-1.5" /> Back
+              <ArrowLeft size={14} className="mr-1.5" /> Back
             </Link>
           ) : null}
           <article className="mt-8">

@@ -3,13 +3,13 @@
 import * as React from "react";
 import Link, { LinkProps } from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Logo } from "./logo";
 import { Button } from "./ui/button";
+import { Menu } from "lucide-react";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -21,7 +21,7 @@ export function MobileNav() {
           variant="ghost"
           className="px-3 md:hidden"
         >
-          <HamburgerMenuIcon className="w-4 h-4" />
+          <Menu size={22} />
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>

@@ -1,8 +1,7 @@
 import { Bookmark } from "@/db/bookmarks";
+import { Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { Link2Icon } from "@radix-ui/react-icons";
 
 const Card = ({ title, description, url, icon, category }: Bookmark) => {
   const { hostname } = new URL(url);
@@ -32,7 +31,7 @@ const Card = ({ title, description, url, icon, category }: Bookmark) => {
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">{description}</p>
           <p className="relative z-10 mt-6 flex text-sm font-medium text-muted-foreground">
-            <Link2Icon className="h-4 w-4 flex-none" />
+            <LinkIcon size={14} className="flex-none" />
             <span className="ml-2">{hostname}</span>
           </p>
         </div>
