@@ -15,11 +15,12 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
-    title: 'We Don’t Sell Saddles Here - Stewart Butterfield',
-    url: 'https://medium.com/@stewart/we-dont-sell-saddles-here-4c59524d650d',
+    title: "Stick to boring architecture for as long as possible - Addy Osmani",
+    url: "https://addyo.substack.com/p/stick-to-boring-architecture-for",
     category: Category.article,
-    description: "Butterfield's memo outlines Slack's vision and philosophy, emphasizing a customer-centric approach and a focus on user experience in product development.",
-    icon: '/static/bookmarks/medium.svg'
+    description:
+      "Prioritize value over novelty in tech choices. Build on stable foundations and innovate strategically.",
+    icon: "/static/bookmarks/addyo.webp",
   },
   {
     title: "Introduction to Modern Product Discovery - Teresa Torres",
@@ -28,6 +29,13 @@ export const bookmarks: Bookmark[] = [
     description:
       "Explains the changes seen in the product discovery in the last years, and still relevant today.",
     icon: "/static/bookmarks/productized.jpg",
+  },
+  {
+    title: 'We Don’t Sell Saddles Here - Stewart Butterfield',
+    url: 'https://medium.com/@stewart/we-dont-sell-saddles-here-4c59524d650d',
+    category: Category.article,
+    description: "Butterfield's memo outlines Slack's vision and philosophy, emphasizing a customer-centric approach and a focus on user experience in product development.",
+    icon: '/static/bookmarks/medium.svg'
   },
   {
     title: "What is Jobs-to-be-Done? - Tony Ulwick",
