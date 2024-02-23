@@ -10,7 +10,7 @@ export default function Page() {
           Óscar Córdova
         </h1>
         <p className="text-base leading-8 text-muted-foreground">
-        Customer-Obsessed Product Engineer
+          Customer-Obsessed Product Engineer
         </p>
         <div className="mt-8 flex justify-center gap-x-4">
           <Link href="/about">

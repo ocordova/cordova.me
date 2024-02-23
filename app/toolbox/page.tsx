@@ -1,8 +1,15 @@
 import { SimpleLayout } from "@/components";
 import { categories } from "@/db/tools";
 import Image from "next/image";
+import React, { ReactNode } from "react";
 
-const ToolsSection = ({ title, children }) => {
+const ToolsSection = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) => {
   return (
     <section>
       <h2 className="sticky top-0 z-10 py-2 font-sans text-base font-semibold tracking-wide text-foreground backdrop-blur-sm sm:text-lg">
@@ -15,7 +22,17 @@ const ToolsSection = ({ title, children }) => {
   );
 };
 
-const Tool = ({ name, url, icon, children }) => {
+const Tool = ({
+  name,
+  url,
+  icon,
+  children,
+}: {
+  name: string;
+  url: string;
+  icon?: string;
+  children: ReactNode;
+}) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
       <div className="group relative h-full rounded-lg border border-transparent transition-colors hover:border-border">

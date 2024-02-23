@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
+
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-
 
 import { cn } from "@/lib/utils";
 import { Check, ChevronRight, Dot } from "lucide-react";
@@ -107,7 +108,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <DropdownMenuPrimitive.ItemIndicator>
-        <Check size={18}/>
+        <Check size={18} />
       </DropdownMenuPrimitive.ItemIndicator>
     </span>
     {children}

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function WritingPage() {
-  let articles = getWritingArticles().sort((a, b) => {
+  const articles = getWritingArticles().sort((a, b) => {
     return a.metadata.date > b.metadata.date ? -1 : 1;
   });
 

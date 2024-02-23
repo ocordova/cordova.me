@@ -4,12 +4,22 @@ import { CustomMDX, Prose } from ".";
 import { formatDate } from "@/lib/formatDate";
 import { ArrowLeft } from "lucide-react";
 
+interface ArticleLayoutProps {
+  children: string;
+  meta: {
+    title: string;
+    date: string;
+  };
+  isRssFeed?: boolean;
+  back?: boolean;
+}
+
 export function ArticleLayout({
   children,
   meta,
   isRssFeed = false,
   back = true,
-}) {
+}: ArticleLayoutProps) {
   if (isRssFeed) {
     return children;
   }
@@ -39,7 +49,7 @@ export function ArticleLayout({
               </time>
             </header>
             <Prose className="mt-8 text-justify">
-              {<CustomMDX source={children} />}
+              {<CustomMDX source={children} scope={{}} />}
             </Prose>
           </article>
         </div>

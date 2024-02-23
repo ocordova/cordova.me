@@ -31,11 +31,12 @@ export const bookmarks: Bookmark[] = [
     icon: "/static/bookmarks/productized.jpg",
   },
   {
-    title: 'We Don’t Sell Saddles Here - Stewart Butterfield',
-    url: 'https://medium.com/@stewart/we-dont-sell-saddles-here-4c59524d650d',
+    title: "We Don’t Sell Saddles Here - Stewart Butterfield",
+    url: "https://medium.com/@stewart/we-dont-sell-saddles-here-4c59524d650d",
     category: Category.article,
-    description: "Butterfield's memo outlines Slack's vision and philosophy, emphasizing a customer-centric approach and a focus on user experience in product development.",
-    icon: '/static/bookmarks/medium.svg'
+    description:
+      "Butterfield's memo outlines Slack's vision and philosophy, emphasizing a customer-centric approach and a focus on user experience in product development.",
+    icon: "/static/bookmarks/medium.svg",
   },
   {
     title: "What is Jobs-to-be-Done? - Tony Ulwick",

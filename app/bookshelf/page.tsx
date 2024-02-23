@@ -38,19 +38,23 @@ export default function BookshelfPage() {
                     {book.review}
                   </p>
                   <div className="pt-2 ">
-                    <a href={book.literalUrl} target="_blank">
+                    <a href={book.literalUrl} target="_blank" rel="noreferrer">
                       <Button variant="link" className="text-foreground/60">
-                        Literal <ExternalLink size={14}  className="ml-1.5"/>
+                        Literal <ExternalLink size={14} className="ml-1.5" />
                       </Button>
                     </a>
-                    <a href={book.goodReadsUrl} target="_blank">
+                    <a
+                      href={book.goodReadsUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <Button variant="link" className="text-foreground/60">
-                        Goodreads <ExternalLink size={14}  className="ml-1.5"/>
+                        Goodreads <ExternalLink size={14} className="ml-1.5" />
                       </Button>
                     </a>
-                    <a href={book.amazonUrl} target="_blank">
+                    <a href={book.amazonUrl} target="_blank" rel="noreferrer">
                       <Button variant="link" className="text-foreground/60">
-                        Amazon <ExternalLink size={14}  className="ml-1.5"/>
+                        Amazon <ExternalLink size={14} className="ml-1.5" />
                       </Button>
                     </a>
                   </div>

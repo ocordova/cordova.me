@@ -1,5 +1,5 @@
 {
-  "name": "tailwindui-pocket",
+  "name": "ocordova",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -44,6 +44,7 @@
     "tailwind-merge": "^2.2.1",
     "tailwindcss": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
+    "typescript-eslint": "^7.0.2",
     "use-debounce": "^10.0.0"
   },
   "devDependencies": {

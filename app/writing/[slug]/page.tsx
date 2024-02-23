@@ -7,12 +7,14 @@ import { CONSTANTS } from "@/db/constants";
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
-  let article = getWritingArticles().find((post) => post.slug === params.slug);
+  const article = getWritingArticles().find(
+    (post) => post.slug === params.slug,
+  );
   if (!article) {
     return;
   }
 
-  let { title, date, description } = article.metadata;
+  const { title, date, description } = article.metadata;
 
   return {
     title,
@@ -32,8 +34,10 @@ export async function generateMetadata({
   };
 }
 
-export default function Article({ params }) {
-  let article = getWritingArticles().find((post) => post.slug === params.slug);
+export default function Article({ params }: { params: { slug: string } }) {
+  const article = getWritingArticles().find(
+    (post) => post.slug === params.slug,
+  );
 
   if (!article) {
     notFound();

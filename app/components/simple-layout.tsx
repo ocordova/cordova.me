@@ -1,4 +1,12 @@
-export function SimpleLayout({ title, intro, children }) {
+export function SimpleLayout({
+  title,
+  intro,
+  children,
+}: {
+  title: string;
+  intro: string;
+  children: React.ReactNode;
+}) {
   return (
     <>
       <header className="max-w-2xl">

@@ -4,12 +4,12 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import React from "react";
 
-function CustomLink(props) {
-  let href = props.href;
+function CustomLink(props: { href: string; children: React.ReactNode }) {
+  const href = props.href;
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} {...props}>
+      <Link {...props} href={href}>
         {props.children}
       </Link>
     );
@@ -22,22 +22,32 @@ function CustomLink(props) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+function RoundedImage(props: React.ComponentProps<typeof Image>) {
+  return <Image className="rounded-lg" {...props} />;
 }
 
-function Code({ children, ...props }) {
-  let codeHTML = highlight(children);
+interface CodeProps {
+  children: React.ReactNode;
+}
+
+function Code({ children, ...props }: CodeProps) {
+  const codeHTML = highlight(children as string);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
-let components = {
+const components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
 };
 
-export function CustomMDX(props) {
+interface CustomMDXProps {
+  components?: Record<string, React.ComponentType>;
+  source: string;
+  scope: Record<string, unknown>;
+}
+
+export function CustomMDX(props: CustomMDXProps) {
   return (
     <MDXRemote
       {...props}

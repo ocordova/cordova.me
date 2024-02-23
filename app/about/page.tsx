@@ -5,23 +5,27 @@ export default function AboutPage() {
     <>
       <div>
         <h1 className="font-serif text-xl font-medium tracking-tight text-forground sm:text-2xl">
-          Hello I'm Ós!
+          Hello I&apos;m Ós!
         </h1>
 
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
-        I'm a Software Engineer by day and a Product Manager by night, dedicated to crafting user-centric solutions
-        through the fusion of software engineering and empathetic design. By leveraging in-person interviews and data analysis, 
-        I continuously discover and deliver impactful outcomes with a less output-driven approach, prioritizing quality and 
-        collaboration in dynamic environments.
+          I&apos;m a Software Engineer by day and a Product Manager by night,
+          dedicated to crafting user-centric solutions through the fusion of
+          software engineering and empathetic design. By leveraging in-person
+          interviews and data analysis, I continuously discover and deliver
+          impactful outcomes with a less output-driven approach, prioritizing
+          quality and collaboration in dynamic environments.
         </p>
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
-        Outside of my professional roles, I am committed to defending and celebrating the legacies of Mexican farmers 
-        and our rich food traditions. I am currently working on solutions in this space, aiming to bring their flavors and 
-        culture to tables across my country. Leveraging my skills, I strive to ensure their stories and contributions continue 
-        to resonate.
+          Outside of my professional roles, I am committed to defending and
+          celebrating the legacies of Mexican farmers and our rich food
+          traditions. I am currently working on solutions in this space, aiming
+          to bring their flavors and culture to tables across my country.
+          Leveraging my skills, I strive to ensure their stories and
+          contributions continue to resonate.
         </p>
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify font-serif">
-        In my free time, here's what I enjoy:
+          In my free time, here&apos;s what I enjoy:
         </p>
         <ul className="my-3 ml-6 list-disc [&>li]:mt-2 font-serif md:columns-2">
           <li>Cook</li>

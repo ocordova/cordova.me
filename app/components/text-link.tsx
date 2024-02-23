@@ -1,6 +1,18 @@
 import Link from "next/link";
 
-export const TextLink = ({ href, newWindow, children, target, rel }: any) => {
+export const TextLink = ({
+  href,
+  newWindow,
+  children,
+  target,
+  rel,
+}: {
+  href: string;
+  newWindow?: boolean;
+  children: React.ReactNode;
+  target?: string;
+  rel?: string;
+}) => {
   return (
     <Link
       href={href}

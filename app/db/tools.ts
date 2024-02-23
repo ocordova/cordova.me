@@ -11,9 +11,10 @@ export const categories = [
     tools: [
       {
         name: "0xProto",
-        description: 'I love that in this font the ligatures does not deform the shape of the characters.',
-        url: 'https://github.com/0xType/0xProto',
-        icon: '/static/tools/0xproto.png'
+        description:
+          "I love that in this font the ligatures does not deform the shape of the characters.",
+        url: "https://github.com/0xType/0xProto",
+        icon: "/static/tools/0xproto.png",
       },
       {
         name: "Dracula Theme",
