@@ -38,7 +38,7 @@ export function ArticleLayout({
           ) : null}
           <article className="mt-8">
             <header className="flex flex-col">
-              <h1 className="font-serif text-2xl font-medium tracking-wide text-foreground sm:text-3xl">
+              <h1 className="text-2xl font-medium tracking-wide text-foreground sm:text-3xl">
                 {meta.title}
               </h1>
               <time

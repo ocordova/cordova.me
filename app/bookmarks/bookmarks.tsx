@@ -26,7 +26,7 @@ const Card = ({ title, description, url, icon, category }: Bookmark) => {
               {category}
             </span>
           </div>
-          <h2 className="mt-4 font-serif text-base font-semibold text-foreground">
+          <h2 className="mt-4 text-base font-semibold text-foreground">
             {title}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">{description}</p>

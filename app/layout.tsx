@@ -1,10 +1,11 @@
 import "./styles/global.css";
 import "focus-visible";
-import { Inter, Bitter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google";
 import { CONSTANTS } from "@/db/constants";
 import { Metadata } from "next";
 import Script from "next/script";
 import { Footer, Header, ThemeProvider, Wrapper } from "./components";
+import { cn } from "./lib/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONSTANTS.baseUrl),
@@ -58,14 +59,9 @@ export const metadata: Metadata = {
   ],
 };
 
-const inter = Inter({
+export const fontSans = FontSans({
   subsets: ["latin"],
-  variable: "--inter-font",
-});
-
-const bitter = Bitter({
-  subsets: ["latin"],
-  variable: "--bitter-font",
+  variable: "--font-sans",
 });
 
 export default function RootLayout({
@@ -74,11 +70,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${bitter.variable} h-full antialiased`}
-    >
-      <body className="flex h-full flex-col bg-background text-foreground">
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+        )}
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <main className="px-6 sm:px-0">

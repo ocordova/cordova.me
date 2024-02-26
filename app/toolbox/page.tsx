@@ -49,7 +49,7 @@ const Tool = ({
             ) : null}
           </div>
           <div className="text-center">
-            <h2 className="mt-4 font-serif text-base font-semibold text-foreground">
+            <h2 className="mt-4 text-base font-semibold text-foreground">
               {name}
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">{children}</p>
