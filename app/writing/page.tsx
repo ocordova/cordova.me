@@ -14,6 +14,8 @@ export default function WritingPage() {
     return a.metadata.date > b.metadata.date ? -1 : 1;
   });
 
+  console.log(articles);
+
   return (
     <SimpleLayout
       title="Product & Software Development"
@@ -21,10 +23,9 @@ export default function WritingPage() {
     >
       <ul role="list" className="mt-8 space-y-4">
         {articles.map((article) => (
-          <article key={article.slug}>
-            <Link href={`/writing/${article.slug}`}>
+          <Link key={article.slug} href={`/writing/${article.slug}`}>
+            <article>
               <h3 className="font-serif text-sm font-medium text-gray-900 dark:text-gray-100 sm:text-base">
-                <span className="absolute inset-0" />
                 {article.metadata.title}
               </h3>
               <time
@@ -33,8 +34,8 @@ export default function WritingPage() {
               >
                 {article.metadata.date}
               </time>
-            </Link>
-          </article>
+            </article>
+          </Link>
         ))}
       </ul>
     </SimpleLayout>
