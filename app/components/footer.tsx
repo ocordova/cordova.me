@@ -7,12 +7,6 @@ export const Footer = () => {
       <Wrapper>
         <div className="flex justify-between items-center">
           <nav className="flex items-center gap-6 text-sm">
-            <a
-              href="https://github.com/ocordova"
-              className="text-sm transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              GitHub
-            </a>
             <Link
               className="text-sm transition-colors hover:text-foreground/80 text-foreground/60"
               href="/colophon"

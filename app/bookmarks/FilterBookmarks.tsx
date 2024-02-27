@@ -61,7 +61,7 @@ export default function FilterBookmarks() {
     <div className="flex w-full items-center justify-center">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="ml-auto">
+          <Button variant="ghost" className="ml-auto font-normal">
             Filter <ChevronDown className="ml-2 h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
