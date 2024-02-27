@@ -10,9 +10,7 @@ const Book = ({ title, author }: { title: string; author: string }) => {
         <div className="min-w-0 flex-auto">
           <div className="flex items-center gap-x-3">
             <h2 className="min-w-0 text-sm leading-6">
-              <span className="flex gap-x-2 truncate">
-                <span>{title}</span>
-              </span>
+              <span className="flex gap-x-2 truncate">{title}</span>
             </h2>
           </div>
           <div className="mt-2flex items-center text-xs leading-5 text-muted-foreground">
@@ -31,9 +29,7 @@ const LatestActivity = () => {
   return (
     <section className="mt-16">
       <div className="my-4 flex items-center justify-between">
-        <h2 className="font-medium tracking-tight text-forground">
-          Latest activity
-        </h2>
+        <h2 className="font-medium tracking-tight text-forground">Activity</h2>
         <Link href="/thoughts">
           <Button
             variant="ghost"

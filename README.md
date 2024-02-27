@@ -1,4 +1,4 @@
-# ocordova.me
+# cordova.me
 
 🏡 My personal site. Built with Next.js, Tailwind, Prisma and Vercel
 

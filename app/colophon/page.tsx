@@ -3,10 +3,8 @@ import { TextLink } from "@/components";
 export default function AboutPage() {
   return (
     <>
-      <div>
-        <h2 className="mt-8 text-lg font-medium tracking-tight text-forground sm:text-xl">
-          Colophon
-        </h2>
+      <div className="text-sm">
+        <h1 className="mt-8 font-semibold">Colophon</h1>
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
           In case you were wondering, this site is:
         </p>
@@ -20,6 +18,7 @@ export default function AboutPage() {
             >
               Visual Studio Code
             </TextLink>
+            .
           </li>
           <li>
             Built with{" "}
@@ -30,6 +29,7 @@ export default function AboutPage() {
             >
               Next.js
             </TextLink>
+            .
           </li>
           <li>
             Styled with{" "}
@@ -48,6 +48,7 @@ export default function AboutPage() {
             >
               shadcn/ui
             </TextLink>
+            .
           </li>
           <li>
             Iconified with{" "}
@@ -58,6 +59,7 @@ export default function AboutPage() {
             >
               Lucide
             </TextLink>
+            .
           </li>
           <li>
             Hosted on{" "}
@@ -68,6 +70,7 @@ export default function AboutPage() {
             >
               Vercel
             </TextLink>
+            .
           </li>
           <li>
             Tracking data with{" "}
@@ -78,8 +81,21 @@ export default function AboutPage() {
             >
               Plausible
             </TextLink>
+            .
           </li>
         </ul>
+
+        <p className="leading-7 mt-6 text-justify">
+          The source code is available on{" "}
+          <TextLink
+            href="https://github.com/ocordova/cordova.me"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </TextLink>
+          .
+        </p>
       </div>
     </>
   );

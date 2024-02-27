@@ -14,7 +14,7 @@ export const categories = [
         description:
           "I love that in this font the ligatures does not deform the shape of the characters.",
         url: "https://github.com/0xType/0xProto",
-        icon: "/static/tools/0xproto.png",
+        icon: "/static/tools/0xProto.png",
       },
       {
         name: "Dracula Theme",

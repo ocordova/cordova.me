@@ -1,38 +1,24 @@
-"use client";
-
+import { bookmarks } from "@/db/bookmarks";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { ArrowUpRight } from "lucide-react";
 
-const Bookmark = ({
-  title,
-  namespace,
-  href,
-}: {
-  title: string;
-  href: string;
-  namespace: string;
-}) => {
+const Bookmark = ({ title, url }: { title: string; url: string }) => {
   return (
-    <Link href={href}>
-      <li className="group relative flex items-center transition-all duration-200 py-2 p-4 -mx-3 rounded-md cursor-pointer hover:bg-accent">
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <li className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80">
         <div className="min-w-0 flex-auto">
           <div className="flex items-center gap-x-4">
-            <h2 className="min-w-0 text-sm leading-6">
-              <span className="truncate">{title}</span>
-            </h2>
-            <span className="text-muted-foreground text-xs">{namespace}</span>
+            <h3 className="min-w-0 text-sm leading-6">{title}</h3>
           </div>
         </div>
-        <div className="invisible group-hover:visible">
-          <ArrowUpRight size={18} className="text-muted-foreground" />
-        </div>
       </li>
-    </Link>
+    </a>
   );
 };
 
 const Bookmarks = () => {
+  const latestTwoBookmarks = bookmarks.slice(0, 2);
+
   return (
     <section>
       <div className="mt-16 flex items-center justify-between">
@@ -48,16 +34,13 @@ const Bookmarks = () => {
         </Link>
       </div>
       <ul className="mt-2">
-        <Bookmark
-          title="Lorem ipusm dolor sit amter"
-          href="/thoughts/1"
-          namespace="Thought"
-        />
-        <Bookmark
-          title="Lorem ipusm dolor sit amter"
-          href="/thoughts/1"
-          namespace="Thought"
-        />
+        {latestTwoBookmarks.map((bookmark) => (
+          <Bookmark
+            key={bookmark.title}
+            title={bookmark.title}
+            url={bookmark.url}
+          />
+        ))}
       </ul>
     </section>
   );

@@ -4,16 +4,14 @@ export function SimpleLayout({
   children,
 }: {
   title: string;
-  intro: string;
+  intro?: string;
   children: React.ReactNode;
 }) {
   return (
     <>
       <header className="max-w-2xl">
-        <h1 className="text-xl font-medium tracking-tight text-forground sm:text-2xl">
-          {title}
-        </h1>
-        <p className="mt-2 text-base text-muted-foreground">{intro}</p>
+        <h1 className="font-semibold">{title}</h1>
+        {intro && <p className="text-sm text-muted-foreground">{intro}</p>}
       </header>
       <div className="mt-4 sm:mt-8">{children}</div>
     </>

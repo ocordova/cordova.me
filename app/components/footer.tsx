@@ -1,23 +1,33 @@
-"use client";
-import { Wrapper } from ".";
-
-import { Separator } from "./ui/separator";
-
 import Link from "next/link";
+import { ModeToggle, Wrapper } from ".";
 
 export const Footer = () => {
   return (
-    <footer className="mt-8">
+    <footer className="px-6 py-20">
       <Wrapper>
-        <Separator />
-        <div className="text-muted-foreground text-sm">
-          <div className="flex flex-col items-center pt-4 pb-12 md:flex-row md:justify-between md:pt-2">
-            <div className="mt-6 flex flex-row items-center justify-center text-sm sm:justify-start md:mt-0"></div>
-            <div className="mt-6 flex flex-row justify-center md:mt-0 md:justify-start">
-              <Link href="/colophon">Colophon</Link>
-            </div>
+        <div className="flex justify-between items-center">
+          <nav className="flex items-center gap-6 text-sm">
+            <a
+              href="https://github.com/ocordova"
+              className="text-sm transition-colors hover:text-foreground/80 text-foreground/60"
+            >
+              GitHub
+            </a>
+            <Link
+              className="text-sm transition-colors hover:text-foreground/80 text-foreground/60"
+              href="/colophon"
+            >
+              Colophon
+            </Link>
+          </nav>
+          <div className="flex justify-end items-center">
+            <ModeToggle />
           </div>
         </div>
+        <blockquote className="mt-2 text-xs leading-6 text-muted-foreground">
+          “He who is not satisfied with a little is satisfied with nothing.“ –
+          Epicurus
+        </blockquote>
       </Wrapper>
     </footer>
   );

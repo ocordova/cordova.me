@@ -1,21 +1,15 @@
-"use client";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { ArrowRight } from "lucide-react";
+import { getThoughts } from "@/db/thoughts";
 
 const Thought = ({ title, href }: { title: string; href: string }) => {
   return (
     <Link href={href}>
-      <li className="group relative flex items-center transition-all duration-200 py-2 p-4 -mx-3 rounded-md cursor-pointer hover:bg-accent">
+      <li className="group relative flex rounded-md items-center transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80">
         <div className="min-w-0 flex-auto">
           <div className="flex items-center gap-x-3">
-            <h2 className="min-w-0 text-sm leading-6">
-              <span className="truncate">{title}</span>
-            </h2>
+            <h2 className="min-w-0 text-sm leading-6">{title}</h2>
           </div>
-        </div>
-        <div className="invisible group-hover:visible">
-          <ArrowRight size={18} className="text-muted-foreground" />
         </div>
       </li>
     </Link>
@@ -23,6 +17,10 @@ const Thought = ({ title, href }: { title: string; href: string }) => {
 };
 
 const LatestThoughts = () => {
+  const thoughts = getThoughts().sort((a, b) => {
+    return a.metadata.date > b.metadata.date ? -1 : 1;
+  });
+
   return (
     <section className="mt-16">
       <div className="mt-16 flex items-center justify-between">
@@ -38,8 +36,13 @@ const LatestThoughts = () => {
         </Link>
       </div>
       <ul className="mt-2">
-        <Thought title="Lorem ipusm dolor sit amter" href="/thoughts/1" />
-        <Thought title="Lorem ipusm dolor sit amter" href="/thoughts/1" />
+        {thoughts.slice(0, 2).map((thought) => (
+          <Thought
+            key={thought.slug}
+            title={thought.metadata.title}
+            href={`/thoughts/${thought.slug}`}
+          />
+        ))}
       </ul>
     </section>
   );

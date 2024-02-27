@@ -8,7 +8,12 @@ export const Prose = ({
   className?: string;
 }) => {
   return (
-    <div className={cn(className, "prose-neutral prose dark:prose-invert")}>
+    <div
+      className={cn(
+        className,
+        "prose-sm prose-neutral prose dark:prose-invert",
+      )}
+    >
       {children}
     </div>
   );
