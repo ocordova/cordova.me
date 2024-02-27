@@ -1,51 +1,46 @@
+import { Badge } from "@/components/ui/badge";
 import { Bookmark } from "@/db/bookmarks";
-import { Link as LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = ({ title, description, url, icon, category }: Bookmark) => {
-  const { hostname } = new URL(url);
+const Item = ({ title, description, url, icon, category }: Bookmark) => {
   return (
-    <Link href={url} target="_blank" rel="noopener noreferrer">
-      <div className="group relative h-full rounded-lg border  border-transparent transition-colors hover:border-border">
-        <div className="relative overflow-hidden rounded-lg p-6">
-          <div className="flex w-full items-center justify-between">
-            <div className="relative h-8 w-8 object-cover">
-              {icon ? (
-                <Image
-                  quality={100}
-                  width={32}
-                  height={32}
-                  src={icon}
-                  alt={title}
-                  className="rounded-full"
-                />
-              ) : null}
-            </div>
-            <span className="borderinline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium capitalize">
+    <li className="group -mx-3">
+      <Link href={url} target="_blank" rel="noopener noreferrer">
+        <div className="p-3 hover:bg-accent/80 rounded-md transition-all duration-200">
+          <div className="flex items-center justify-between gap-x-2">
+            {icon ? (
+              <Image
+                quality={100}
+                width={28}
+                height={28}
+                src={icon}
+                alt={title}
+                className="flex-none rounded-full"
+              />
+            ) : (
+              <div></div>
+            )}
+            <Badge variant="secondary" className="flex-none font-normal">
               {category}
-            </span>
+            </Badge>
           </div>
-          <h2 className="mt-4 font-serif text-base font-semibold text-foreground">
+          <h3 className="mt-3 flex-auto truncate text-sm font-semibold leading-6">
             {title}
-          </h2>
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">{description}</p>
-          <p className="relative z-10 mt-6 flex text-sm font-medium text-muted-foreground">
-            <LinkIcon size={14} className="flex-none" />
-            <span className="ml-2">{hostname}</span>
-          </p>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </li>
   );
 };
 
 export default function BookMarksData({ data }: { data: Bookmark[] }) {
   return (
-    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-1">
+    <ul role="list" className="mt-4 space-y-2">
       {data.map((bookmark) => {
-        return <Card key={bookmark.title} {...bookmark} />;
+        return <Item key={bookmark.title} {...bookmark} />;
       })}
-    </div>
+    </ul>
   );
 }

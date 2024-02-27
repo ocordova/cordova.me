@@ -48,6 +48,6 @@ function getMDXData(dir) {
   });
 }
 
-export function getWritingArticles() {
+export function getThoughts() {
   return getMDXData(path.join(process.cwd(), "content"));
 }

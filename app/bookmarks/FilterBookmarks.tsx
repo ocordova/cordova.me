@@ -1,15 +1,15 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Category } from "@/db/bookmarks";
 import { getSearchParam } from "@/lib/params";
-import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function FilterBookmarks() {
@@ -59,46 +59,29 @@ export default function FilterBookmarks() {
 
   return (
     <div className="flex w-full items-center justify-center">
-      <div className="sm:hidden">
-        <label htmlFor="tabs" className="sr-only">
-          Select a tab
-        </label>
-        <Select
-          name="tabs"
-          defaultValue={currentType || "all"}
-          value={currentType || "all"}
-          onValueChange={(value) => handleTypeChange(value)}
-        >
-          <SelectTrigger className="w-[140px]">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            {tabs.map((tab) => (
-              <SelectItem key={tab.name} value={tab.type}>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" className="ml-auto font-normal">
+            Filter <ChevronDown className="ml-2 h-4 w-4" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          {tabs.map((tab) => {
+            return (
+              <DropdownMenuCheckboxItem
+                key={tab.name}
+                checked={
+                  currentType == tab.type ||
+                  (!currentType && tab.type === "all")
+                }
+                onCheckedChange={() => handleTypeChange(tab.type)}
+              >
                 {tab.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="hidden sm:block">
-        <nav className="flex space-x-4" aria-label="Tabs">
-          {tabs.map((tab) => (
-            <div
-              key={tab.name}
-              onClick={() => handleTypeChange(tab.type)}
-              className={cn(
-                currentType == tab.type || (!currentType && tab.type === "all")
-                  ? "border"
-                  : "",
-                "cursor-pointer rounded-md px-4 py-1.5 text-sm font-medium text-foreground",
-              )}
-            >
-              {tab.name}
-            </div>
-          ))}
-        </nav>
-      </div>
+              </DropdownMenuCheckboxItem>
+            );
+          })}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }

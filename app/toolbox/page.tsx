@@ -12,10 +12,10 @@ const ToolsSection = ({
 }) => {
   return (
     <section>
-      <h2 className="sticky top-0 z-10 py-2 font-sans text-base font-semibold tracking-wide text-foreground backdrop-blur-sm sm:text-lg">
+      <h2 className="sticky top-0 z-10 py-2 font-medium tracking-tight text-forground bg-white">
         {title}
       </h2>
-      <ul role="list" className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <ul role="list" className="mt-4 space-y-2">
         {children}
       </ul>
     </section>
@@ -34,38 +34,32 @@ const Tool = ({
   children: ReactNode;
 }) => {
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer">
-      <div className="group relative h-full rounded-lg border border-transparent transition-colors hover:border-border">
-        <div className="relative overflow-hidden rounded-lg p-4">
-          <div className="flex h-20 w-full items-center justify-center">
+    <li className="group -mx-3">
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <div className="p-3 hover:bg-accent/80 rounded-md transition-all duration-200">
+          <div className="flex items-center justify-between gap-x-2">
             {icon ? (
               <Image
                 quality={100}
+                width={28}
+                height={28}
                 src={icon}
                 alt={name}
-                height="80"
-                width="80"
+                className="flex-none rounded-full"
               />
             ) : null}
+            <h3 className="flex-auto truncate text-sm font-semibold">{name}</h3>
           </div>
-          <div className="text-center">
-            <h2 className="mt-4 font-serif text-base font-semibold text-foreground">
-              {name}
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">{children}</p>
-          </div>
+          <p className="mt-2.5 text-sm text-muted-foreground">{children}</p>
         </div>
-      </div>
-    </a>
+      </a>
+    </li>
   );
 };
 
 export default function ToolboxPage() {
   return (
-    <SimpleLayout
-      title="Toolbox"
-      intro="Here’s an extensive list of hardware and software I use every day and other things I recommend."
-    >
+    <SimpleLayout title="Toolbox">
       <div className="space-y-8">
         {categories.map((category, index) => {
           return (

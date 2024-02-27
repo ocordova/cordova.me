@@ -21,10 +21,7 @@ export default function BookmarksPage(props: PageProps) {
   });
 
   return (
-    <SimpleLayout
-      title="My Saved Links"
-      intro="A collection of handpicked resources I find valuable."
-    >
+    <SimpleLayout title="Bookmarks">
       <FilterBookmarks />
       <BookMarksData data={filteredBookmarks} />
     </SimpleLayout>

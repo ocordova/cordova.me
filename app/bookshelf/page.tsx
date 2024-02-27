@@ -27,7 +27,7 @@ export default function BookshelfPage() {
               <div className="sm:col-span-6 sm:ml-2">
                 <div className="space-y-3">
                   <div className="space-y-1">
-                    <h3 className="font-serif text-base font-medium text-foreground sm:text-lg">
+                    <h3 className="text-base font-medium text-foreground sm:text-lg">
                       {book.title}
                     </h3>
                     <p className="text-sm font-medium text-muted-foreground">

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getWritingArticles } from "@/db/writing";
+import { getThoughts } from "@/db/thoughts";
 import { ArticleLayout } from "@/components";
 import type { Metadata } from "next";
 import { CONSTANTS } from "@/db/constants";
@@ -7,9 +7,7 @@ import { CONSTANTS } from "@/db/constants";
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
-  const article = getWritingArticles().find(
-    (post) => post.slug === params.slug,
-  );
+  const article = getThoughts().find((post) => post.slug === params.slug);
   if (!article) {
     return;
   }
@@ -35,9 +33,7 @@ export async function generateMetadata({
 }
 
 export default function Article({ params }: { params: { slug: string } }) {
-  const article = getWritingArticles().find(
-    (post) => post.slug === params.slug,
-  );
+  const article = getThoughts().find((post) => post.slug === params.slug);
 
   if (!article) {
     notFound();
