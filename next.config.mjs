@@ -15,7 +15,12 @@ const nextConfig = {
     return [
       {
         source: "/blog/telegram-bot-with-apps-script",
-        destination: "/writing/telegram-bot-with-apps-script",
+        destination: "/thoughts/telegram-bot-with-apps-script",
+        permanent: true,
+      },
+      {
+        source: "/writing/telegram-bot-with-apps-script",
+        destination: "/thoughts/telegram-bot-with-apps-script",
         permanent: true,
       },
     ];
