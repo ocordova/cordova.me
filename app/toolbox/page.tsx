@@ -12,7 +12,7 @@ const ToolsSection = ({
 }) => {
   return (
     <section>
-      <h2 className="sticky top-0 z-10 py-2 font-medium tracking-tight text-forground bg-white">
+      <h2 className="sticky top-0 z-10 py-2 font-medium tracking-tight bg-background">
         {title}
       </h2>
       <ul role="list" className="mt-4 space-y-2">
