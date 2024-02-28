@@ -1,7 +1,13 @@
 import { SimpleLayout } from "@/components";
 import { categories } from "@/db/tools";
+import { Metadata } from "next";
 import Image from "next/image";
 import React, { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  title: "Toolbox",
+  description: "A collection of my favorite tools.",
+};
 
 const ToolsSection = ({
   title,

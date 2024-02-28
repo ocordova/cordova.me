@@ -4,7 +4,7 @@ import { getThoughts } from "@/db/thoughts";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Writing",
+  title: "Thoughts",
   description:
     "You can read about my thoughts on product development and web design.",
 };

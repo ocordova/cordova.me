@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import Bookmarks from "./components/bookmarks";
 import LatestThoughts from "./components/latest-thoughts";
+
+export const metadata: Metadata = {
+  title: "Óscar Córdova - Product Engineer",
+  description: "Software Engineer by day, Product Manager by night.",
+};
 
 export default function Page() {
   return (

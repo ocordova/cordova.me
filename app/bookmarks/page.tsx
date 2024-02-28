@@ -3,6 +3,12 @@ import { SimpleLayout } from "@/components";
 import { getSearchParam } from "@/lib/params";
 import BookMarksData from "./bookmarks";
 import FilterBookmarks from "./FilterBookmarks";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bookmarks",
+  description: "A collection of my favorite resources.",
+};
 
 interface PageProps {
   searchParams: {

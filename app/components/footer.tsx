@@ -19,7 +19,7 @@ export const Footer = () => {
           </div>
         </div>
         <blockquote className="mt-2 text-xs leading-6 text-muted-foreground">
-          “He who is not satisfied with a little is satisfied with nothing.“ –
+          “He who is not satisfied with a little, is satisfied with nothing.“ –
           Epicurus
         </blockquote>
       </Wrapper>
