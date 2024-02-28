@@ -4,15 +4,20 @@ import { Button } from "./ui/button";
 
 const Bookmark = ({ title, url }: { title: string; url: string }) => {
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer">
-      <li className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80">
+    <li>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
+      >
         <div className="min-w-0 flex-auto">
           <div className="flex items-center gap-x-4">
             <h3 className="min-w-0 text-sm leading-6">{title}</h3>
           </div>
         </div>
-      </li>
-    </a>
+      </a>
+    </li>
   );
 };
 

@@ -4,15 +4,18 @@ import { getThoughts } from "@/db/thoughts";
 
 const Thought = ({ title, href }: { title: string; href: string }) => {
   return (
-    <Link href={href}>
-      <li className="group relative flex rounded-md items-center transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80">
+    <li>
+      <Link
+        href={href}
+        className="group relative flex rounded-md items-center transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
+      >
         <div className="min-w-0 flex-auto">
           <div className="flex items-center gap-x-3">
             <h2 className="min-w-0 text-sm leading-6">{title}</h2>
           </div>
         </div>
-      </li>
-    </Link>
+      </Link>
+    </li>
   );
 };
 
