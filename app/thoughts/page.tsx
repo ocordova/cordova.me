@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 const Thought = ({ title, href }: { title: string; href: string }) => {
   return (
-    <li className="group relative flex items-center rounded-md transition-all duration-200 py-3 p-3 -mx-3 cursor-pointer hover:bg-accent/80">
-      <Link href={href}>
+    <li className="group relative flex items-center rounded-md transition-all duration-200 -mx-3 cursor-pointer hover:bg-accent/80">
+      <Link href={href} className="py-3 p-3">
         <div className="min-w-0 flex-auto">
           <h2 className="min-w-0 text-sm leading-6">{title}</h2>
         </div>
