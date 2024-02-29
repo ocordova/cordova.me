@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Wrapper } from "./wrapper";
+import Wrapper from "@/components/wrapper";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +28,9 @@ const NavLink = ({
   );
 };
 
-export function Header() {
+// Export default
+
+export default function Header() {
   const navigation: { href: string; label: string }[] = [
     { href: "/", label: "Home" },
     { href: "/thoughts", label: "Thoughts" },

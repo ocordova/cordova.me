@@ -1,4 +1,5 @@
-import { CustomMDX, Prose } from ".";
+import { CustomMDX } from "@/components/custom-mdx";
+import { Prose } from "@/components/prose";
 import { formatDate } from "@/lib/formatDate";
 
 interface ArticleLayoutProps {

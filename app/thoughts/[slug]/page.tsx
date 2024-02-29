@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getThoughts } from "@/db/thoughts";
-import { ArticleLayout } from "@/components";
+import { ArticleLayout } from "@/containers/article-layout";
 import type { Metadata } from "next";
 import { CONSTANTS } from "@/db/constants";
 

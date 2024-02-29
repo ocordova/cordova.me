@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ModeToggle, Wrapper } from ".";
+import Wrapper from "@/components/wrapper";
+import { ModeToggle } from "@/components/mode-toggle";
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <footer className="px-6 py-20">
       <Wrapper>
@@ -25,4 +26,4 @@ export const Footer = () => {
       </Wrapper>
     </footer>
   );
-};
+}

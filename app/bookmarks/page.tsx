@@ -1,5 +1,5 @@
 import { bookmarks } from "@/db/bookmarks";
-import { SimpleLayout } from "@/components";
+import { SimpleLayout } from "@/components/simple-layout";
 import { getSearchParam } from "@/lib/params";
 import BookMarksData from "./bookmarks";
 import FilterBookmarks from "./FilterBookmarks";

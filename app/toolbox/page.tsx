@@ -1,4 +1,4 @@
-import { SimpleLayout } from "@/components";
+import { SimpleLayout } from "@/components/simple-layout";
 import { categories } from "@/db/tools";
 import { Metadata } from "next";
 import Image from "next/image";

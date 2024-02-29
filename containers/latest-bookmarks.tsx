@@ -1,6 +1,6 @@
 import { bookmarks } from "@/db/bookmarks";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const Bookmark = ({ title, url }: { title: string; url: string }) => {
   return (

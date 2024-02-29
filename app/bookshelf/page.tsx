@@ -1,4 +1,4 @@
-import { SimpleLayout } from "@/components";
+import { SimpleLayout } from "@/components/simple-layout";
 import { Button } from "@/components/ui/button";
 import { books } from "@/db/books";
 import { ExternalLink } from "lucide-react";

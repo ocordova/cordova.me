@@ -1,11 +1,14 @@
-import "./styles/global.css";
+import "@/styles/global.css";
 import "focus-visible";
 import { Inter as FontSans } from "next/font/google";
 import { CONSTANTS } from "@/db/constants";
 import { Metadata } from "next";
 import Script from "next/script";
-import { Footer, Header, ThemeProvider, Wrapper } from "./components";
-import { cn } from "./lib/utils";
+import Header from "@/containers/header";
+import Footer from "@/containers/footer";
+import ThemeProvider from "@/components/theme-provider";
+import Wrapper from "@/components/wrapper";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL(CONSTANTS.baseUrl),

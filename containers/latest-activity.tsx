@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
 const Book = ({ title, author }: { title: string; author: string }) => {

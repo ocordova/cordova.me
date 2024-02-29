@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { SimpleLayout } from "@/components";
+import { SimpleLayout } from "@/components/simple-layout";
 import { getThoughts } from "@/db/thoughts";
 import Link from "next/link";
 

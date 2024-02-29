@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { getThoughts } from "@/db/thoughts";
 
 const Thought = ({ title, href }: { title: string; href: string }) => {

@@ -1,4 +1,4 @@
-import { TextLink } from "@/components";
+import { TextLink } from "@/components/text-link";
 
 export default function AboutPage() {
   return (
