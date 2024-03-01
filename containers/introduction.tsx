@@ -12,9 +12,10 @@ const Introduction = () => {
           About
         </h2>
         <p className="text-sm leading-7">
-          I prioritize outcomes and impact over tools or methods. I place
-          problems before ideas and craft solutions through direct customer
-          engagement and data to ensure we solve real-life problems.
+          I prioritize outcomes and impact over tools or methods, placing
+          problems before ideas. With a product-driven approach, I love crafting
+          solutions through direct customer engagement and data, ensuring we
+          address real-life problems effectively.
         </p>
         <p className="text-sm leading-7 [&:not(:first-child)]:mt-3">
           Currently, I work as a Software Engineer by day at ________ and as a
