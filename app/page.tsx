@@ -3,6 +3,7 @@ import Bookmarks from "@/containers/latest-bookmarks";
 import LatestThoughts from "@/containers/latest-thoughts";
 import Contact from "@/containers/contact";
 import Introduction from "@/containers/introduction";
+import NowReading from "@/containers/now-reading";
 
 export const metadata: Metadata = {
   title: "Óscar Córdova - Product Engineer",
@@ -16,6 +17,7 @@ export default function Page() {
       <LatestThoughts />
       <Bookmarks />
       <Contact />
+      <NowReading />
     </>
   );
 }

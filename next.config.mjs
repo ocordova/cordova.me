@@ -10,6 +10,12 @@ const nextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.literal.club",
+      },
+    ],
   },
   redirects: async () => {
     return [
