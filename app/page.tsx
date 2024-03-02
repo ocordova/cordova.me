@@ -4,6 +4,7 @@ import LatestThoughts from "@/containers/latest-thoughts";
 import Contact from "@/containers/contact";
 import Introduction from "@/containers/introduction";
 import NowReading from "@/containers/now-reading";
+import NowListening from "@/containers/now-listening";
 
 export const metadata: Metadata = {
   title: "Óscar Córdova - Product Engineer",
@@ -18,6 +19,7 @@ export default function Page() {
       <Bookmarks />
       <Contact />
       <NowReading />
+      <NowListening />
     </>
   );
 }

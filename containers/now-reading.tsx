@@ -23,6 +23,7 @@ function Book({ data }: { data: NowReading }) {
         </div>
         <div className="w-full truncate">
           <div className="truncate text-sm">{title}</div>
+
           <div className="truncate text-sm slashed-zero text-muted-foreground">
             {author}
           </div>

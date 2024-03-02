@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "assets.literal.club",
       },
+      {
+        protocol: "https",
+        hostname: "lastfm.freetls.fastly.net",
+      },
     ],
   },
   redirects: async () => {
