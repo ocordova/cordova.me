@@ -25,13 +25,12 @@ export async function GET(req: Request) {
             justifyContent: "center",
             backgroundColor: "#fff",
             fontSize: 32,
-            fontWeight: 600,
           }}
         >
           <svg
-            width="75"
+            width="128"
             viewBox="0 0 24 24"
-            fill="#000"
+            fill="hsl(240, 10%, 3.9%)"
             style={{ margin: "0 75px" }}
           >
             <path d="M11 19a6 6 0 006-6h2a8 8 0 11-8-8v2a6 6 0 000 12m4.854-12.406a1.5 1.5 0 11-.001 3.001 1.5 1.5 0 01.001-3.001z"></path>
@@ -39,13 +38,15 @@ export async function GET(req: Request) {
           <div
             style={{
               marginTop: 40,
-              maxWidth: 600,
+              maxWidth: 800,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              fontSize: 40,
+              fontSize: 56,
+              lineHeight: 1.2,
+              color: "hsl(240, 10%, 3.9%)",
             }}
           >
             {title}
