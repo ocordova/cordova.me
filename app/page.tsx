@@ -19,8 +19,8 @@ export default function Page() {
       <LatestThoughts />
       <Bookmarks />
       <Contact />
-      <NowReading />
       <NowListening />
+      <NowReading />
       <NowWatching />
     </>
   );
