@@ -1,5 +1,5 @@
 import { formatDistanceToNowStrict } from "date-fns";
-import { NowListening, getNowListening } from "@/app/actions/now-listening";
+import { NowWatching, getNowWatching } from "@/app/actions/now-watching";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { unstable_noStore as noStore } from "next/cache";
@@ -7,39 +7,23 @@ import Image from "next/image";
 import { Suspense } from "react";
 import { Badge } from "@/components/ui/badge";
 
-function Song({ data }: { data: NowListening }) {
-  const { url, cover, title, artist, isPlaying, album, date } = data;
+function Movie({ data }: { data: NowWatching }) {
+  const { title, year, date, poster, slug } = data;
 
-  const timeAgo = date
-    ? formatDistanceToNowStrict(date, {
-        addSuffix: true,
-      })
-    : "";
-
+  const timeAgo = formatDistanceToNowStrict(date, {
+    addSuffix: true,
+  });
   return (
     <>
       <div className="mt-16 flex items-center justify-between">
         <h2 className="flex gap-2 font-medium tracking-tight text-forground">
-          Listening
+          Watching
           <Badge variant="secondary" className="font-normal">
-            {isPlaying ? (
-              <>
-                <div
-                  className="relative flex h-2 w-2 items-center justify-center mr-1.5"
-                  aria-hidden
-                >
-                  <div className="opacity-85 absolute inline-flex h-full w-full animate-ping rounded-full bg-primary dark:opacity-30"></div>
-                  <div className="relative inline-flex h-1 w-1 rounded-full bg-primary"></div>
-                </div>
-                now playing
-              </>
-            ) : (
-              timeAgo
-            )}
+            {timeAgo}
           </Badge>
         </h2>
         <a
-          href="https://www.last.fm/user/ocordova"
+          href="https://trakt.tv/users/ocordova"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -54,7 +38,7 @@ function Song({ data }: { data: NowListening }) {
       </div>
       <dd className="mt-2 list-content grid gap-4">
         <a
-          href={url}
+          href={`https://trakt.tv/movies/${slug}`}
           target="_blank"
           title="View on Literal"
           rel="noopener noreferrer"
@@ -63,13 +47,13 @@ function Song({ data }: { data: NowListening }) {
           <div className="group flex items-center gap-4">
             <div className="relative">
               <div className="relative origin-center">
-                <Image src={cover} alt={title} width={80} height={80} />
+                <Image src={poster} alt={title} width={80} height={80} />
               </div>
             </div>
             <div className="w-full truncate">
               <div className="truncate text-sm font-medium">{title}</div>
               <div className="truncate text-sm slashed-zero text-muted-foreground">
-                {artist}, {album}
+                {year}
               </div>
             </div>
           </div>
@@ -79,19 +63,19 @@ function Song({ data }: { data: NowListening }) {
   );
 }
 
-async function LatestSong() {
+async function LatestMovie() {
   noStore();
-  const data = await getNowListening();
+  const data = await getNowWatching();
   return data ? (
-    <Song data={data} />
+    <Movie data={data} />
   ) : (
     <div className="text-sm text-muted-foreground">
-      No songs found. Check back later.
+      Not watching anything right now
     </div>
   );
 }
 
-async function NowListening() {
+async function NowWatching() {
   return (
     <section className="mt-16">
       <Suspense
@@ -105,10 +89,10 @@ async function NowListening() {
           </div>
         }
       >
-        <LatestSong />
+        <LatestMovie />
       </Suspense>
     </section>
   );
 }
 
-export default NowListening;
+export default NowWatching;
