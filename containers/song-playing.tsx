@@ -74,7 +74,7 @@ function SongPlaying({ data }: { data: NowListening }) {
         >
           <div className="group flex items-center gap-4">
             <div className="relative">
-              <div className="relative origin-center">
+              <div className="relative origin-center w-12">
                 <Image
                   className="rounded-sm"
                   src={cover}
@@ -85,7 +85,7 @@ function SongPlaying({ data }: { data: NowListening }) {
               </div>
             </div>
             <div className="w-full">
-              <div className="line-clamp-1 text-sm font-medium">{title}</div>
+              <div className="line-clamp-1 text-sm">{title}</div>
               <div className="line-clamp-1 text-sm text-muted-foreground">
                 {artist} &middot; {album}
               </div>

@@ -17,13 +17,13 @@ function Book({ data }: { data: NowReading }) {
     >
       <div className="group flex items-center gap-4">
         <div className="relative">
-          <div className="relative origin-center">
+          <div className="relative origin-center w-12">
             <Image
               className="rounded-sm"
               src={cover}
               alt={title}
-              height={72}
-              width={72}
+              width={64}
+              height={96}
             />
           </div>
         </div>

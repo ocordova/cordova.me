@@ -46,18 +46,18 @@ function Movie({ data }: { data: NowWatching }) {
         >
           <div className="group flex items-center gap-4">
             <div className="relative">
-              <div className="relative origin-center">
+              <div className="relative origin-center w-12">
                 <Image
                   className="rounded-sm"
                   src={poster}
                   alt={title}
-                  width={72}
-                  height={72}
+                  width={64}
+                  height={96}
                 />
               </div>
             </div>
             <div className="w-full">
-              <div className="line-clamp-1 text-sm font-medium">{title}</div>
+              <div className="line-clamp-1 text-sm">{title}</div>
               <div className="line-clamp-1 text-sm slashed-zero text-muted-foreground">
                 {year}
               </div>
