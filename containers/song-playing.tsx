@@ -37,11 +37,15 @@ function SongPlaying({ data }: { data: NowListening }) {
             {isPlaying ? (
               <>
                 <div
-                  className="relative flex h-2 w-2 items-center justify-center mr-1.5"
+                  className="relative flex h-3 w-3 items-center justify-center mr-1.5"
                   aria-hidden
                 >
-                  <div className="opacity-85 absolute inline-flex h-full w-full animate-ping rounded-full bg-primary dark:opacity-30"></div>
-                  <div className="relative inline-flex h-1 w-1 rounded-full bg-primary"></div>
+                  <Image
+                    src="/static/now-playing.gif"
+                    alt="Now playing"
+                    width={12}
+                    height={12}
+                  />
                 </div>
                 now playing
               </>
