@@ -56,14 +56,14 @@ function Song({ data }: { data: NowListening }) {
         <a
           href={url}
           target="_blank"
-          title="View on Literal"
+          title="View on Last.fm"
           rel="noopener noreferrer"
           className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
         >
           <div className="group flex items-center gap-4">
             <div className="relative">
               <div className="relative origin-center">
-                <Image src={cover} alt={title} width={80} height={80} />
+                <Image src={cover} alt={title} width={72} height={72} />
               </div>
             </div>
             <div className="w-full truncate">

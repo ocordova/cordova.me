@@ -40,14 +40,14 @@ function Movie({ data }: { data: NowWatching }) {
         <a
           href={`https://trakt.tv/movies/${slug}`}
           target="_blank"
-          title="View on Literal"
+          title="View on Trakt"
           rel="noopener noreferrer"
           className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
         >
           <div className="group flex items-center gap-4">
             <div className="relative">
               <div className="relative origin-center">
-                <Image src={poster} alt={title} width={80} height={80} />
+                <Image src={poster} alt={title} width={72} height={72} />
               </div>
             </div>
             <div className="w-full truncate">
