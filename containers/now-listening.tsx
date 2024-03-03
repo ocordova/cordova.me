@@ -1,89 +1,14 @@
-import { formatDistanceToNowStrict } from "date-fns";
-import { NowListening, getNowListening } from "@/app/actions/now-listening";
-import { Button } from "@/components/ui/button";
+import { getNowListening } from "@/app/actions/now-listening";
 import { Skeleton } from "@/components/ui/skeleton";
 import { unstable_noStore as noStore } from "next/cache";
-import Image from "next/image";
 import { Suspense } from "react";
-import { Badge } from "@/components/ui/badge";
-
-function Song({ data }: { data: NowListening }) {
-  const { url, cover, title, artist, isPlaying, album, date } = data;
-
-  const timeAgo = date
-    ? formatDistanceToNowStrict(date, {
-        addSuffix: true,
-      })
-    : "";
-
-  return (
-    <>
-      <div className="mt-16 flex items-center justify-between">
-        <h2 className="flex gap-2 font-medium tracking-tight text-forground">
-          Listening
-          <Badge variant="secondary" className="font-normal">
-            {isPlaying ? (
-              <>
-                <div
-                  className="relative flex h-2 w-2 items-center justify-center mr-1.5"
-                  aria-hidden
-                >
-                  <div className="opacity-85 absolute inline-flex h-full w-full animate-ping rounded-full bg-primary dark:opacity-30"></div>
-                  <div className="relative inline-flex h-1 w-1 rounded-full bg-primary"></div>
-                </div>
-                now playing
-              </>
-            ) : (
-              timeAgo
-            )}
-          </Badge>
-        </h2>
-        <a
-          href="https://www.last.fm/user/ocordova"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-muted-foreground -mr-3"
-          >
-            View all
-          </Button>
-        </a>
-      </div>
-      <dd className="mt-2 list-content grid gap-4">
-        <a
-          href={url}
-          target="_blank"
-          title="View on Last.fm"
-          rel="noopener noreferrer"
-          className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
-        >
-          <div className="group flex items-center gap-4">
-            <div className="relative">
-              <div className="relative origin-center">
-                <Image src={cover} alt={title} width={72} height={72} />
-              </div>
-            </div>
-            <div className="w-full truncate">
-              <div className="truncate text-sm font-medium">{title}</div>
-              <div className="truncate text-sm slashed-zero text-muted-foreground">
-                {artist}, {album}
-              </div>
-            </div>
-          </div>
-        </a>
-      </dd>
-    </>
-  );
-}
+import SongPlaying from "./song-playing";
 
 async function LatestSong() {
   noStore();
   const data = await getNowListening();
   return data ? (
-    <Song data={data} />
+    <SongPlaying data={data} />
   ) : (
     <div className="text-sm text-muted-foreground">
       No songs found. Check back later.

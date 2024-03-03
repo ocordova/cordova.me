@@ -18,12 +18,18 @@ function Book({ data }: { data: NowReading }) {
       <div className="group flex items-center gap-4">
         <div className="relative">
           <div className="relative origin-center">
-            <Image src={cover} alt={title} height={72} width={72} />
+            <Image
+              className="rounded-sm"
+              src={cover}
+              alt={title}
+              height={72}
+              width={72}
+            />
           </div>
         </div>
-        <div className="w-full truncate">
-          <div className="truncate text-sm">{title}</div>
-          <div className="truncate text-sm slashed-zero text-muted-foreground">
+        <div className="w-full">
+          <div className="line-clamp-1 text-sm">{title}</div>
+          <div className="line-clamp-1 text-sm slashed-zero text-muted-foreground">
             {author}
           </div>
         </div>

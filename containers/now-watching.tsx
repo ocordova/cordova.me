@@ -36,7 +36,7 @@ function Movie({ data }: { data: NowWatching }) {
           </Button>
         </a>
       </div>
-      <dd className="mt-2 list-content grid gap-4">
+      <div className="mt-2 list-content grid gap-4">
         <a
           href={`https://trakt.tv/movies/${slug}`}
           target="_blank"
@@ -47,18 +47,24 @@ function Movie({ data }: { data: NowWatching }) {
           <div className="group flex items-center gap-4">
             <div className="relative">
               <div className="relative origin-center">
-                <Image src={poster} alt={title} width={72} height={72} />
+                <Image
+                  className="rounded-sm"
+                  src={poster}
+                  alt={title}
+                  width={72}
+                  height={72}
+                />
               </div>
             </div>
-            <div className="w-full truncate">
-              <div className="truncate text-sm font-medium">{title}</div>
-              <div className="truncate text-sm slashed-zero text-muted-foreground">
+            <div className="w-full">
+              <div className="line-clamp-1 text-sm font-medium">{title}</div>
+              <div className="line-clamp-1 text-sm slashed-zero text-muted-foreground">
                 {year}
               </div>
             </div>
           </div>
         </a>
-      </dd>
+      </div>
     </>
   );
 }
