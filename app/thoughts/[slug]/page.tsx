@@ -25,7 +25,7 @@ export async function generateMetadata({
       url: `${CONSTANTS.baseUrl}/writing/${params.slug}`,
       images: [
         {
-          url: `${CONSTANTS.baseUrl}${CONSTANTS.ogImage}`,
+          url: `${CONSTANTS.baseUrl}/api/og?title=${title}`,
         },
       ],
     },
