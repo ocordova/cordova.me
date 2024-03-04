@@ -15,6 +15,14 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title: "The Guide to Product Analytics - Mixpanel",
+    url: "https://mixpanel.com/content/guide-to-product-analytics/",
+    category: Category.resource,
+    description:
+      "A practical guide to product analytics with hands-on examples.",
+    icon: "/static/bookmarks/mixpanel.png",
+  },
+  {
     title: "Stick to boring architecture for as long as possible - Addy Osmani",
     url: "https://addyo.substack.com/p/stick-to-boring-architecture-for",
     category: Category.article,
