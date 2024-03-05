@@ -6,6 +6,7 @@ import Introduction from "@/containers/introduction";
 import NowReading from "@/containers/now-reading";
 import NowListening from "@/containers/now-listening";
 import NowWatching from "@/containers/now-watching";
+import Currently from "@/containers/currently";
 
 export const metadata: Metadata = {
   title: "Óscar Córdova - Product Engineer",
@@ -16,6 +17,7 @@ export default function Page() {
   return (
     <>
       <Introduction />
+      <Currently />
       <LatestThoughts />
       <Bookmarks />
       <Contact />

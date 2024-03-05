@@ -11,15 +11,11 @@ const Introduction = () => {
         <h2 className="my-4 font-medium tracking-tight text-forground">
           About
         </h2>
-        <p className="text-sm leading-7">
-          I prioritize outcomes and impact over tools or methods, placing
-          problems before ideas. With a product-driven approach, I love crafting
-          solutions through direct customer engagement and data, ensuring we
-          address real-life problems effectively.
-        </p>
-        <p className="text-sm leading-7 [&:not(:first-child)]:mt-3">
-          Currently, I work as a Software Engineer by day at ________ and as a
-          Product Manager by night at Artiflora.
+        <p className="text-sm leading-7 text-justify">
+          I prioritize measurable outcomes over outputs, emphasizing long-term
+          sustainability over short-term profit. By directly engaging customers
+          and analyzing data, I ensure our solutions effectively address real
+          unmet needs.
         </p>
       </section>
     </>
