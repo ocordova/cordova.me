@@ -52,7 +52,7 @@ async function LatestBook() {
 
 async function Reading() {
   return (
-    <section className="mt-16">
+    <section className="mt-12">
       <div className="mt-16 flex items-center justify-between">
         <h2 className="font-medium tracking-tight text-forground">Reading</h2>
         <a

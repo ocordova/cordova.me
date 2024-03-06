@@ -18,7 +18,7 @@ async function LatestSong() {
 
 async function NowListening() {
   return (
-    <section className="mt-16">
+    <section className="mt-12">
       <Suspense
         fallback={
           <div className="flex items-center space-x-4">

@@ -7,7 +7,7 @@ const Introduction = () => {
           <p className="text-sm text-muted-foreground">Product Engineer</p>
         </div>
       </section>
-      <section className="mt-16">
+      <section className="mt-12">
         <h2 className="my-4 font-medium tracking-tight text-forground">
           About
         </h2>

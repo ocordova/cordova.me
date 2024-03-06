@@ -1,7 +1,7 @@
 const Currently = () => {
   return (
     <>
-      <section className="mt-16">
+      <section className="mt-12">
         <h2 className="my-4 font-medium tracking-tight text-forground">
           Currently
         </h2>

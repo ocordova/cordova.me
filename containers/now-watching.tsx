@@ -18,7 +18,7 @@ function Movie({ data }: { data: NowWatching }) {
 
   return (
     <>
-      <div className="mt-16 flex items-center justify-between">
+      <div className="mt-12 flex items-center justify-between">
         <h2 className="flex gap-2 font-medium tracking-tight text-forground">
           Watching
           <Badge variant="secondary" className="font-normal">
