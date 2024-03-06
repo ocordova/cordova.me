@@ -10,16 +10,32 @@ import { Badge } from "@/components/ui/badge";
 function Movie({ data }: { data: NowWatching }) {
   const { title, year, date, poster, slug } = data;
 
+  const isCurrentlyWatching = date > new Date();
+
   const timeAgo = formatDistanceToNowStrict(date, {
     addSuffix: true,
   });
+
   return (
     <>
       <div className="mt-16 flex items-center justify-between">
         <h2 className="flex gap-2 font-medium tracking-tight text-forground">
           Watching
           <Badge variant="secondary" className="font-normal">
-            {timeAgo}
+            {isCurrentlyWatching ? (
+              <>
+                <div
+                  className="relative flex h-2 w-2 items-center justify-center mr-1.5"
+                  aria-hidden
+                >
+                  <div className="opacity-85 absolute inline-flex h-full w-full animate-ping rounded-full bg-primary dark:opacity-30"></div>
+                  <div className="relative inline-flex h-1 w-1 rounded-full bg-primary"></div>
+                </div>
+                now playing
+              </>
+            ) : (
+              timeAgo
+            )}
           </Badge>
         </h2>
         <a
