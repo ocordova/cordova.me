@@ -171,13 +171,6 @@ export const categories = [
         icon: "/static/tools/cloudflare.png",
       },
       {
-        name: "Google Domains",
-        description:
-          "I moved all my domains. It's easy to manage, and they don't charge you for everything.",
-        url: "https://domains.google/",
-        icon: "/static/tools/google-domains.png",
-      },
-      {
         name: "Google One",
         description:
           "I used to use SugarSync, but it started to have annoying bugs. I moved to Google One, and I'm happy with it.",
