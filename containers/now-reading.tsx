@@ -69,7 +69,7 @@ async function Reading() {
           </Button>
         </a>
       </div>
-      <dd className="mt-2 list-content grid gap-4">
+      <div className="mt-2 list-content grid gap-4">
         <Suspense
           fallback={
             <div className="flex items-center space-x-4">
@@ -83,7 +83,7 @@ async function Reading() {
         >
           <LatestBook />
         </Suspense>
-      </dd>
+      </div>
     </section>
   );
 }
