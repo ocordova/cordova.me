@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Toolbox",
+  title: "Uses",
   description: "A collection of my favorite tools.",
 };
 
@@ -51,7 +51,7 @@ const Tool = ({
                 height={28}
                 src={icon}
                 alt={name}
-                className="flex-none rounded-full"
+                className="flex-none"
               />
             ) : null}
             <h3 className="flex-auto truncate text-sm font-semibold">{name}</h3>
@@ -63,9 +63,9 @@ const Tool = ({
   );
 };
 
-export default function ToolboxPage() {
+export default function UsesPage() {
   return (
-    <SimpleLayout title="Toolbox">
+    <SimpleLayout title="Uses">
       <div className="space-y-8">
         {categories.map((category, index) => {
           return (

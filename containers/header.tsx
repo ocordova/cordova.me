@@ -35,13 +35,13 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/thoughts", label: "Thoughts" },
     { href: "/bookmarks", label: "Bookmarks" },
-    { href: "/toolbox", label: "Toolbox" },
+    { href: "/uses", label: "Uses" },
   ];
 
   return (
     <header>
       <Wrapper>
-        <div className="h-14 flex justify-start sm:justify-end items-center w-full mx-auto max-w- px-4 py-4 sm:px-0 mb-8">
+        <div className="h-14 flex justify-center sm:justify-end items-center w-full mx-auto max-w- px-4 py-4 sm:px-0 mb-8">
           <nav className="flex items-center gap-6 text-sm">
             {navigation.map((item) => (
               <NavLink key={item.href} href={item.href}>

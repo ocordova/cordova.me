@@ -136,7 +136,7 @@ export const categories = [
         description:
           "My go to tool for whiteboarding. I used to use Excalidraw.",
         url: "https://tldraw.com/",
-        icon: "/static/tools/tldraw.svg",
+        icon: "/static/tools/tldraw.png",
       },
       {
         name: "TickTick",
@@ -188,7 +188,7 @@ export const categories = [
         name: "hCaptcha",
         description: "Privacy-focused alternative to Google reCAPTCHA.",
         url: "https://www.hcaptcha.com/",
-        icon: "/static/tools/hcaptcha.svg",
+        icon: "/static/tools/hcaptcha.png",
       },
       {
         name: "Last.fm",
@@ -208,7 +208,7 @@ export const categories = [
         name: "Literal",
         description: "I use Literal to track my books and discover new ones.",
         url: "https://literal.club/",
-        icon: "/static/tools/literal.webp",
+        icon: "/static/tools/literal.png",
       },
       {
         name: "Notion",
@@ -221,7 +221,7 @@ export const categories = [
         description:
           "A comprehensive and efficient solution for managing various aspects of business operations, from accounting, inventory, and manufacturing to HR.",
         url: "https://www.odoo.com/",
-        icon: "/static/tools/odoo.webp",
+        icon: "/static/tools/odoo.png",
       },
       {
         name: "Plausible",
@@ -231,11 +231,18 @@ export const categories = [
         icon: "/static/tools/plausible.png",
       },
       {
+        name: "Pulumi",
+        description:
+          "I love you use general-purpose programming languages to define infrastructure as code instead of HCL like Terraform.",
+        url: "https://www.pulumi.com/",
+        icon: "/static/tools/pulumi.png",
+      },
+      {
         name: "Shopify",
         description:
           "My preferred e-commerce option, Hydrogen/Remix, offers the best developer experience for frontend development.",
         url: "https://www.shopify.com/",
-        icon: "/static/tools/shopify.svg",
+        icon: "/static/tools/shopify.png",
       },
       {
         name: "Trakt",
