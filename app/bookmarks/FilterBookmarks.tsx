@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Category } from "@/db/bookmarks";
 import { getSearchParam } from "@/lib/params";
-import { ChevronDown } from "lucide-react";
+import { ListFilter } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function FilterBookmarks() {
@@ -58,11 +58,11 @@ export default function FilterBookmarks() {
   };
 
   return (
-    <div className="flex w-full items-center justify-center">
+    <div className="flex flex-col w-full ">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="ml-auto font-normal">
-            Filter <ChevronDown className="ml-2 h-4 w-4" />
+            <ListFilter className="mr-2 h-4 w-4" /> Filter
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
