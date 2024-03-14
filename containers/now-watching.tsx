@@ -39,7 +39,7 @@ function Movie({ data }: { data: NowWatching }) {
           </Badge>
         </h2>
         <a
-          href="https://trakt.tv/users/ocordova"
+          href="https://trakt.tv/users/ocordova/history"
           rel="noopener noreferrer"
           target="_blank"
         >
