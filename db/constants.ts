@@ -6,4 +6,5 @@ export const CONSTANTS = {
   description: "Product Engineer",
   ogImage: "/api/og",
   isProduction: isProduction,
+  plausibleDomain: process.env.PLAUSIBLE_DATA_DOMAIN,
 };

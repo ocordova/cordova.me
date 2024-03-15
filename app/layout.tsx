@@ -92,7 +92,7 @@ export default function RootLayout({
       {CONSTANTS.isProduction && (
         <Script
           defer
-          data-domain="cordova.me"
+          data-domain={CONSTANTS.plausibleDomain}
           src="https://plausible.io/js/script.outbound-links.js"
         ></Script>
       )}
