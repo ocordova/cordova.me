@@ -1,22 +1,36 @@
 # cordova.me
 
-🏡 My personal site. Built with Next.js, Tailwind, Prisma and Vercel
+🏡 My personal site.
+
+## Stack:
+
+- _Framework_: [Next.js](https://nextjs.org/)
+- _Styling:_ [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
+- _Icons:_ [Lucide](https://lucide.dev/)
+- _Deployment:_ [Vercel](https://vercel.com/)
+- _Analytics:_ [Plausible](https://plausible.io/)
 
 ## Getting started
 
-To get started with this template, first install the npm dependencies:
+1. Install the npm dependencies:
 
 ```bash
 npm install
 ```
 
-Next, run the development server:
+2. Configure environment variables by creating a .env.local file similar to .env.example:
+
+```bash
+cp .env.example .env.local
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
 ## License
 
