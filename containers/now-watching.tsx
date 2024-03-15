@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import { Badge } from "@/components/ui/badge";
 
 function Movie({ data }: { data: NowWatching }) {
-  const { title, year, date, poster, slug } = data;
+  const { title, year, date, poster, url } = data;
 
   const isCurrentlyWatching = date > new Date();
 
@@ -54,7 +54,7 @@ function Movie({ data }: { data: NowWatching }) {
       </div>
       <div className="mt-2 list-content grid gap-4">
         <a
-          href={`https://trakt.tv/movies/${slug}`}
+          href={url}
           target="_blank"
           title="View on Trakt"
           rel="noopener noreferrer"

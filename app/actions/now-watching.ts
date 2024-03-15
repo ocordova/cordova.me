@@ -1,3 +1,4 @@
+const TRAKT_BASE_URL = "https://trakt.tv/";
 const TRAKT_API = "https://api.trakt.tv/";
 const TRAKT_CLIENT_ID = process.env.TRAKT_CLIENT_ID;
 const TRAKT_USERNAME = "ocordova";
@@ -5,15 +6,55 @@ const TRAKT_ENDPOINT = `${TRAKT_API}users/${TRAKT_USERNAME}/history`;
 
 const TMDB_API = "https://api.themoviedb.org/3/";
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
-const TMDB_ENDPOINT = `${TMDB_API}movie/`;
+const TMDB_MOVIE_ENDPOINT = `${TMDB_API}movie/`;
+const TMDB_TV_ENDPOINT = `${TMDB_API}tv/`;
 
+enum Type {
+  Movie = "movie",
+  Episode = "episode",
+}
 export interface NowWatching {
   title: string;
   year: number;
   date: Date;
   poster: string;
-  slug: string;
+  url: string;
 }
+
+export interface TraktMovie {
+  type: Type.Movie;
+  movie: {
+    ids: {
+      tmdb: number;
+      slug: string;
+    };
+  };
+  watched_at: string;
+}
+
+export interface TraktEpisode {
+  watched_at: string;
+  type: Type.Episode;
+  episode: {
+    season: number;
+    number: number;
+    title: string;
+    ids: {
+      trakt: number;
+      tmdb: number;
+    };
+  };
+  show: {
+    title: string;
+    year: number;
+    ids: {
+      slug: string;
+      tmdb: number;
+    };
+  };
+}
+
+export type TraktResponse = (TraktMovie | TraktEpisode)[];
 
 export async function getNowWatching(): Promise<NowWatching | undefined> {
   try {
@@ -25,59 +66,77 @@ export async function getNowWatching(): Promise<NowWatching | undefined> {
     const traktresponse = await fetch(TRAKT_ENDPOINT, { headers });
 
     if (!traktresponse.ok) {
-      console.error(traktresponse);
+      console.error(
+        "Trakt API error:",
+        traktresponse.status,
+        traktresponse.statusText,
+      );
       throw new Error("Failed to fetch data from Trakt API");
     }
 
-    const traktdata = await traktresponse.json();
+    const traktdata: TraktResponse = await traktresponse.json();
 
     if (traktdata.length === 0) {
       return;
     }
 
-    const movies = traktdata.filter((item) => item.type === "movie");
+    const latest = traktdata[0];
 
-    if (movies.length === 0) {
-      return;
-    }
+    let title = "";
+    let year = 0;
+    let date = new Date();
+    let poster = "";
+    let slug = "";
+    let url = "";
 
-    const latestMovie = movies[0];
-
-    const tmdbId = latestMovie.movie.ids.tmdb;
-    const date = new Date(latestMovie.watched_at);
-    const slug = latestMovie.movie.ids.slug;
-
-    // TMDB Fetch for movie details with bearer token
     const tmdbHeaders = new Headers();
     tmdbHeaders.append("Content-Type", "application/json");
     tmdbHeaders.append("Authorization", `Bearer ${TMDB_API_KEY}`);
 
-    const tmdbResponse = await fetch(`${TMDB_ENDPOINT}${tmdbId}`, {
+    const tmdbId =
+      latest.type === Type.Movie ? latest.movie.ids.tmdb : latest.show.ids.tmdb;
+    const tmdbEndpoint =
+      latest.type === Type.Movie ? TMDB_MOVIE_ENDPOINT : TMDB_TV_ENDPOINT;
+
+    const tmdbResponse = await fetch(`${tmdbEndpoint}${tmdbId}`, {
       headers: tmdbHeaders,
     });
 
     if (!tmdbResponse.ok) {
-      console.error(tmdbResponse);
+      console.error(
+        "TMDB API error:",
+        tmdbResponse.status,
+        tmdbResponse.statusText,
+      );
       throw new Error("Failed to fetch data from TMDB API");
     }
 
     const tmdbData = await tmdbResponse.json();
 
-    const title = tmdbData.title;
-    const year = tmdbData.release_date.split("-")[0];
-    const posterPath = tmdbData.poster_path;
+    if (latest.type === Type.Movie) {
+      title = tmdbData.title;
+      year = new Date(tmdbData.release_date).getFullYear();
+      poster = `https://image.tmdb.org/t/p/w200${tmdbData.poster_path}`;
+      slug = latest.movie.ids.slug;
+      url = `${TRAKT_BASE_URL}movies/${slug}`;
+    } else {
+      title = `${latest.show.title} - S${latest.episode.season}E${latest.episode.number} - ${latest.episode.title}`;
+      year = new Date(tmdbData.first_air_date).getFullYear();
+      poster = `https://image.tmdb.org/t/p/w200${tmdbData.poster_path}`;
+      slug = latest.show.ids.slug;
+      url = `${TRAKT_BASE_URL}shows/${slug}/seasons/${latest.episode.season}/episodes/${latest.episode.number}`;
+    }
 
-    const poster = `https://image.tmdb.org/t/p/w200${posterPath}`;
-
+    date = new Date(latest.watched_at);
     return {
       title,
       year,
       date,
       poster,
-      slug,
+      url,
     };
   } catch (error) {
-    console.error(error);
+    console.error("Error:", error.message);
     return;
   }
 }
