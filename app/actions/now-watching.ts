@@ -1,3 +1,5 @@
+import { leadingZero } from "@/lib/utils";
+
 const TRAKT_BASE_URL = "https://trakt.tv/";
 const TRAKT_API = "https://api.trakt.tv/";
 const TRAKT_CLIENT_ID = process.env.TRAKT_CLIENT_ID;
@@ -120,7 +122,10 @@ export async function getNowWatching(): Promise<NowWatching | undefined> {
       slug = latest.movie.ids.slug;
       url = `${TRAKT_BASE_URL}movies/${slug}`;
     } else {
-      title = `${latest.show.title} - S${latest.episode.season}E${latest.episode.number} - ${latest.episode.title}`;
+      const seasonAndEpisode = `S${latest.episode.season} E${leadingZero(
+        latest.episode.number,
+      )}`;
+      title = `${latest.show.title} · ${seasonAndEpisode} · ${latest.episode.title}`;
       year = new Date(tmdbData.first_air_date).getFullYear();
       poster = `https://image.tmdb.org/t/p/w200${tmdbData.poster_path}`;
       slug = latest.show.ids.slug;
