@@ -4,8 +4,9 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Footer() {
   return (
-    <footer className="px-6 py-20">
+    <footer className="px-6 py-12">
       <Wrapper>
+        <div className="h-px bg-border/50 my-4" />
         <div className="flex justify-between items-center">
           <nav className="flex items-center gap-6 text-sm">
             <Link
