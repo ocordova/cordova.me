@@ -4,11 +4,11 @@
 
 ## Stack:
 
-- _Framework_: [Next.js](https://nextjs.org/)
-- _Styling:_ [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
-- _Icons:_ [Lucide](https://lucide.dev/)
-- _Deployment:_ [Vercel](https://vercel.com/)
-- _Analytics:_ [Plausible](https://plausible.io/)
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
+- **Icons:** [Lucide](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com/)
+- **Analytics:** [Plausible](https://plausible.io/)
 
 ## Getting started
 

@@ -1,4 +1,10 @@
 import { TextLink } from "@/components/text-link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Colophon",
+  description: "The tech stack behind this site.",
+};
 
 export default function AboutPage() {
   return (
@@ -86,7 +92,7 @@ export default function AboutPage() {
         </ul>
 
         <p className="leading-7 mt-6 text-justify">
-          The source code is available on{" "}
+          The open source code is available on{" "}
           <TextLink
             href="https://github.com/ocordova/cordova.me"
             target="_blank"
