@@ -75,12 +75,6 @@ export const categories = [
     name: "Apps",
     tools: [
       {
-        name: "Cron",
-        description: "Best calendar app for Mac and mobile.",
-        url: "https://cron.com/",
-        icon: "/static/tools/cron.png",
-      },
-      {
         name: "DaisyDisk",
         description:
           "I use this app to clean my Mac, which displays the sizes of folders and files.",
