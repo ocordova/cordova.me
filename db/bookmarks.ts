@@ -15,13 +15,14 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
-    title: "The Guide to Product Analytics - Mixpanel",
-    url: "https://mixpanel.com/content/guide-to-product-analytics/",
-    category: Category.resource,
+    title: "Rethinking the Technical Interview",
+    url: "https://www.youtube.com/watch?v=H2OjewTu_fY",
+    category: Category.video,
     description:
-      "A practical guide to product analytics with hands-on examples.",
-    icon: "/static/bookmarks/mixpanel.png",
+      "Theo's perspective on the technical interview process focuses less on LeetCode and algorithms and more on highlighting the strengths of the candidate.",
+    icon: "/static/bookmarks/theo.jpg",
   },
+
   {
     title: "Stick to boring architecture for as long as possible - Addy Osmani",
     url: "https://addyo.substack.com/p/stick-to-boring-architecture-for",
@@ -60,6 +61,14 @@ export const bookmarks: Bookmark[] = [
     description:
       "A step-by-step guide to writing a product strategy in 1 day / 1 week / 1 month.",
     icon: "/static/bookmarks/aakashg.png",
+  },
+  {
+    title: "The Guide to Product Analytics - Mixpanel",
+    url: "https://mixpanel.com/content/guide-to-product-analytics/",
+    category: Category.resource,
+    description:
+      "A practical guide to product analytics with hands-on examples.",
+    icon: "/static/bookmarks/mixpanel.png",
   },
   {
     title: "The Dangerous Animals of Product Management",
