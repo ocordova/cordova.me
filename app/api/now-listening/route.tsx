@@ -6,4 +6,4 @@ export async function GET() {
   return NextResponse.json(data);
 }
 
-export const revalidate = 35;
+export const revalidate = 0;
