@@ -75,6 +75,13 @@ export const categories = [
     name: "Apps",
     tools: [
       {
+        name: "Brave",
+        description:
+          "My default browser. It's faster, secure and has a built-in ad blocker. I just disable almost all the crypto features.",
+        url: "https://brave.com/",
+        icon: "/static/tools/brave.png",
+      },
+      {
         name: "DaisyDisk",
         description:
           "I use this app to clean my Mac, which displays the sizes of folders and files.",
@@ -248,7 +255,7 @@ export const categories = [
       {
         name: "Vercel",
         description:
-          "The best developer experience. Here where I host all my websites.",
+          "The best developer experience. When I can, I use Vercel for my frontend projects.",
         url: "https://vercel.com/",
         icon: "/static/tools/vercel.png",
       },
