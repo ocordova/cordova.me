@@ -95,7 +95,6 @@ export const categories = [
         url: "https://www.dashlane.com/",
         icon: "/static/tools/dashlane.png",
       },
-
       {
         name: "Insomnia",
         description:
@@ -172,24 +171,17 @@ export const categories = [
         icon: "/static/tools/cloudflare.png",
       },
       {
-        name: "Google One",
-        description:
-          "I used to use SugarSync, but it started to have annoying bugs. I moved to Google One, and I'm happy with it.",
-        url: "https://one.google.com/",
-        icon: "/static/tools/google-one.png",
-      },
-      {
-        name: "Grammarly",
-        description:
-          "It improved my writing skills significantly, and I highly recommend it to non-native English speakers like me.",
-        url: "https://www.grammarly.com/",
-        icon: "/static/tools/grammarly.png",
-      },
-      {
         name: "hCaptcha",
         description: "Privacy-focused alternative to Google reCAPTCHA.",
         url: "https://www.hcaptcha.com/",
         icon: "/static/tools/hcaptcha.png",
+      },
+      {
+        name: "iCloud+",
+        description:
+          "I switched to iCloud+ from Dashlane, Google Now, and Google Workspace for its seamless integration with the Apple ecosystem.",
+        url: "https://www.apple.com/icloud/",
+        icon: "/static/tools/icloud+.png",
       },
       {
         name: "Last.fm",
@@ -324,7 +316,7 @@ export const categories = [
     name: "Audio",
     tools: [
       {
-        name: "AirPods Pro (1st gen)",
+        name: "AirPods Pro (2nd gen)",
         description:
           "I use my AirPods Pro for everything. I love the noise cancellation and the transparency mode; I wish they had volume controls and multiple-device support.",
         url: "https://www.apple.com//airpods-pro/",
