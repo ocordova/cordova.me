@@ -89,13 +89,6 @@ export const categories = [
         icon: "/static/tools/daisy-disk.png",
       },
       {
-        name: "Dashlane",
-        description:
-          "I prefer Dashlane over LastPass and 1Password for my password manager due to its superior UI and UX.",
-        url: "https://www.dashlane.com/",
-        icon: "/static/tools/dashlane.png",
-      },
-      {
         name: "Insomnia",
         description:
           "I prefer Insomnia over Postman. It's faster and has a better UI.",
@@ -328,11 +321,11 @@ export const categories = [
     name: "Reading",
     tools: [
       {
-        name: "Audible",
+        name: "Everand",
         description:
-          "I like to listen to audiobooks while I do exercise or while I'm cooking.",
-        url: "https://www.audible.com/",
-        icon: "/static/tools/audible.png",
+          "I switched from Audible to Everand. It’s subscription-based, instead of requiring the purchase of individual books. I love listening to audiobooks while I exercise or cook.",
+        url: "https://www.everand.com/",
+        icon: "/static/tools/everand.png",
       },
       {
         name: "Kindle Paperwhite (8 GB)",
