@@ -15,6 +15,15 @@ export interface Bookmark {
 
 export const bookmarks: Bookmark[] = [
   {
+    title:
+      "Trust (is) the process: Why following a framework doesn’t guarantee good results",
+    url: "https://uxdesign.cc/trust-is-the-process-why-following-a-framework-doesnt-guarantee-good-results-fa933c4304cd",
+    category: Category.article,
+    description:
+      "A good reminder that following a process doesn't guarantee good results.",
+    icon: "/static/bookmarks/uxdesign.jpeg",
+  },
+  {
     title: "Rethinking the Technical Interview",
     url: "https://www.youtube.com/watch?v=H2OjewTu_fY",
     category: Category.video,

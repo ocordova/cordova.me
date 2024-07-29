@@ -25,7 +25,7 @@ const Item = ({ title, description, url, icon, category }: Bookmark) => {
               {category}
             </Badge>
           </div>
-          <h3 className="mt-3 flex-auto truncate text-sm font-semibold leading-6">
+          <h3 className="mt-3 flex-auto text-sm font-semibold leading-6">
             {title}
           </h3>
           <p className="mt-1 text-sm text-muted-foreground">{description}</p>
