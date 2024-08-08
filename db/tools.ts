@@ -30,7 +30,6 @@ export const categories = [
         url: "https://copilot.github.com/",
         icon: "/static/tools/github-copilot.png",
       },
-
       {
         name: "Visual Studio Code",
         description:
@@ -123,6 +122,13 @@ export const categories = [
           "If you work with APIs and OpenAPI, this is a must-have; it's an excellent tool for managing your API documentation.",
         url: "https://stoplight.io/",
         icon: "/static/tools/stoplight.png",
+      },
+      {
+        name: "TablePlus",
+        description:
+          "I used to use DBeaver, but I switched to TablePlus when they added a Diagram feature. Overall, the UI is better.",
+        url: "https://tableplus.com/",
+        icon: "/static/tools/tableplus.png",
       },
       {
         name: "tldraw",
