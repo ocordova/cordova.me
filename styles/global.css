@@ -59,3 +59,17 @@
     text-rendering: optimizeLegibility;
   }
 }
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-wave {
+  animation: wave 0.7s infinite ease-in-out;
+}

@@ -40,12 +40,19 @@ function SongPlaying({ data }: { data: NowListening }) {
                   className="relative flex h-3 w-3 items-center justify-center mr-1.5"
                   aria-hidden
                 >
-                  <Image
-                    src="/static/now-playing.gif"
-                    alt="Now playing"
-                    width={12}
-                    height={12}
-                  />
+                  <div className="flex h-full items-center justify-center">
+                    <div
+                      className="animate-wave mx-[0.07rem] h-[9px] w-[0.125rem] rounded bg-foreground"
+                      style={{ animationDelay: "-0.4s" }}
+                    ></div>
+                    <div
+                      className="animate-wave mx-[0.07rem] h-[10px] w-[0.125rem] rounded bg-foreground"
+                      style={{
+                        animationDelay: "-0.3s",
+                      }}
+                    ></div>
+                    <div className="animate-wave mx-[0.07rem] h-[11px] w-[0.125rem] rounded bg-foreground"></div>
+                  </div>
                 </div>
                 now playing
               </>
