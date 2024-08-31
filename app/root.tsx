@@ -18,13 +18,14 @@ import globalStyles from "./styles/globals.css?url";
 import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import AppLayout from "./components/layouts/app-layout";
 import Header from "./components/header";
-import "@fontsource-variable/inter/wght.css";
+import interFont from "@fontsource-variable/inter/index.css?url";
 import Footer from "./components/footer";
 import { cn } from "./lib/utils";
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: globalStyles },
+    { rel: "stylesheet", href: interFont },
     // { rel: "icon", type: "image/svg+xml", href: favicon },
   ];
 };
