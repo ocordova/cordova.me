@@ -31,12 +31,18 @@ export const links: LinksFunction = () => {
 
 export interface LoaderData {
   theme: Theme | null;
+  isProduction: boolean;
+  plausibleDomain: string | undefined;
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
+  const plausibleDomain = process.env.PLAUSIBLE_DATA_DOMAIN;
+  const isProduction = process.env.NODE_ENV === "production";
 
   return json<LoaderData>({
+    plausibleDomain,
+    isProduction,
     theme: getTheme(),
   });
 }
@@ -56,9 +62,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 function InnerLayout({
   ssrTheme,
   children,
+  plausibleDomain,
+  isProduction,
 }: {
   ssrTheme: boolean;
   children: React.ReactNode;
+  plausibleDomain?: string;
+  isProduction?: boolean;
 }) {
   const [theme] = useTheme();
 
@@ -79,6 +89,13 @@ function InnerLayout({
         <ScrollRestoration />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(ssrTheme)} />
         <Scripts />
+        {isProduction && plausibleDomain ? (
+          <script
+            defer
+            data-domain={plausibleDomain}
+            src="https://plausible.io/js/script.tagged-events.outbound-links.js"
+          ></script>
+        ) : null}
       </body>
     </html>
   );

@@ -58,6 +58,7 @@ export default function AboutPage() {
               href="https://ui.shadcn.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:no-underline text-foreground/80"
             >
               shadcn/ui
             </a>

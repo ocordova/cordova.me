@@ -55,7 +55,7 @@ const Tool = ({
                 className="flex-none"
               />
             ) : null}
-            <h3 className="flex-auto truncate text-sm font-semibold">{name}</h3>
+            <h3 className="flex-auto truncate text-sm font-medium">{name}</h3>
           </div>
           <p className="mt-2.5 text-sm text-muted-foreground">{children}</p>
         </div>
