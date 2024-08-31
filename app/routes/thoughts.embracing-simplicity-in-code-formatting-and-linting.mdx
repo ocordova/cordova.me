@@ -1,0 +1,24 @@
+---
+  author: Óscar Córdova
+  date: 2024-02-25
+  title: Embracing Simplicity in Code Formatting and Linting
+  description: Simplify coding process, focus on value.
+---
+
+import { formatDate } from "../lib/utils";
+
+<h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
+<time
+  dateTime={frontmatter.date}
+  className="mt-1 text-sm text-muted-foreground"
+>
+  <span>{formatDate(frontmatter.date)}</span>
+</time>
+
+In my quest for code consistency, I once meticulously configured formatting and linting tools such as Prettier and ESLint to enforce my style preferences. Previously, I delved into researching and utilizing style guidelines like Airbnb ESLint or Google's. However, I've realized that this method only contributed to my cognitive fatigue. Each new project or team I joined brought differing opinions on code conventions, leading to draining discussions. Even with tools like Prettier for JavaScript or Black for Python, adjustments were made to align with our preferences, but ultimately, it boiled down to subjective opinions.
+
+Now, I've embraced a simpler approach. Instead of micromanaging every tool setting, I've embraced their default configurations. My `prettierrc.json` file is now an empty `{}`, and for ESLint, I only extend `eslint:recommended`. I no longer dwell on trivial matters like tabs versus spaces, trailing commas, single quotes, or semicolons; I simply let the tools handle it. The code remains clean, consistent, and easy to read, without lint errors, which was the primary goal from the outset.
+
+Moreover, this shift has allowed me to focus more on value creation. By letting go of strong opinions and the need for fine-tuning, I've freed up mental energy to concentrate on what truly matters: delivering high-quality code that adds real value to projects and teams.
+
+Importantly, this approach is not limited to code; it can be applied to various other aspects of product development. Whether it's design choices, project management methodologies, or team communication strategies, embracing simplicity and focusing on value creation can lead to similar positive outcomes. By adopting this mindset, I can streamline processes, foster creativity, and ultimately deliver better products to our users.
