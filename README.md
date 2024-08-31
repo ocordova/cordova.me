@@ -1,40 +1,39 @@
-# Welcome to Remix!
+# cordova.me
 
-- 📖 [Remix docs](https://remix.run/docs)
+🏡 My personal site.
 
-## Development
+## Stack:
 
-Run the dev server:
+- **Framework**: [Remix](https://remix.run/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
+- **Icons:** [Lucide](https://lucide.dev/)
+- **Deployment:** [Vercel](https://vercel.com/)
+- **Analytics:** [Plausible](https://plausible.io/)
 
-```shellscript
+## Getting started
+
+1. Install the npm dependencies:
+
+```bash
+npm install
+```
+
+2. Configure environment variables by creating a .env file similar to .env.example:
+
+```bash
+cp .env.example .env
+```
+
+3. Run the development server:
+
+```bash
 npm run dev
 ```
 
-## Deployment
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
-First, build your app for production:
+## License
 
-```sh
-npm run build
-```
+This is free and unencumbered software released into the public domain. For more information, see <http://unlicense.org/> or the accompanying UNLICENSE file.
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+&#10084;
