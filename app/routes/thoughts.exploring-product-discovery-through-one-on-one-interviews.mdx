@@ -1,0 +1,29 @@
+---
+  author: Óscar Córdova
+  date: 2023-02-13
+  title: Exploring Product Discovery Through One-on-One Interviews
+  description: Discover the advantages of starting your product discovery phase with one-on-one interviews instead of surveys.
+  coverAlt: Diagram of the difference between things you know and things you don’t know
+---
+
+import { formatDate } from "../lib/utils";
+
+<h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
+<time
+  dateTime={frontmatter.date}
+  className="mt-1 text-sm text-muted-foreground"
+>
+  <span>{formatDate(frontmatter.date)}</span>
+</time>
+
+Product discovery is a crucial phase in the development of any product, filled with curiosity as we seek to understand the intricacies of our target audience, explore market potentials, and validate our assumptions to shape the right product.
+
+Surveys often appear as a convenient option for efficiently gathering customer feedback. Yet, I've found them to be deceiving during the discovery phase. Surveys assume we know the right questions to ask and the possible answers when, in truth, we're navigating unknown territory.
+
+In contrast, one-on-one interviews offer a more effective approach to understanding customer needs, wants, and motivations. Through open-ended questions and follow-up discussions, I’ve gathered invaluable insights into the context and emotions driving customer behavior, which would be hard to obtain in any other way.
+
+In addition, these interviews have allowed me to observe subtle cues like body language, providing additional layers of understanding. Facial expressions and gestures can reveal underlying emotions such as excitement, frustration, or confusion, helping me validate or challenge my assumptions.
+
+One-on-one interviews serve as a qualitative validation tool, offering valuable insights that can guide our product development process. With this knowledge in hand, we can then design surveys to verify or quantify our findings, transitioning from exploration to validation.
+
+At its core, product discovery is about learning if what we think we should build is the right thing to build, instead of learning after we ship our product and learn that nobody wants it. We must use these tools as learning opportunities.
