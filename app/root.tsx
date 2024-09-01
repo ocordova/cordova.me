@@ -32,22 +32,12 @@ export const links: LinksFunction = () => {
 
 export interface LoaderData {
   theme: Theme | null;
-  ENV: {
-    isProduction: boolean;
-    plausibleDomain: string;
-  };
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
-  const plausibleDomain = process.env.PLAUSIBLE_DATA_DOMAIN || "";
-  const isProduction = process.env.NODE_ENV === "production";
 
   return json<LoaderData>({
-    ENV: {
-      isProduction,
-      plausibleDomain,
-    },
     theme: getTheme(),
   });
 }
@@ -59,9 +49,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       specifiedTheme={data?.theme as Theme}
       themeAction="/action/set-theme"
     >
-      <InnerLayout env={data!.ENV} ssrTheme={Boolean(data?.theme)}>
-        {children}
-      </InnerLayout>
+      <InnerLayout ssrTheme={Boolean(data?.theme)}>{children}</InnerLayout>
     </ThemeProvider>
   );
 }
@@ -69,11 +57,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 function InnerLayout({
   ssrTheme,
   children,
-  env,
 }: {
   ssrTheme: boolean;
   children: React.ReactNode;
-  env: LoaderData["ENV"];
 }) {
   const [theme] = useTheme();
 
@@ -94,13 +80,6 @@ function InnerLayout({
         <ScrollRestoration />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(ssrTheme)} />
         <Scripts />
-        {env.isProduction ? (
-          <script
-            defer
-            data-domain={env.plausibleDomain}
-            src="https://plausible.io/js/script.tagged-events.outbound-links.js"
-          ></script>
-        ) : null}
       </body>
     </html>
   );

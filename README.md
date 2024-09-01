@@ -8,7 +8,6 @@
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
 - **Icons:** [Lucide](https://lucide.dev/)
 - **Deployment:** [Vercel](https://vercel.com/)
-- **Analytics:** [Plausible](https://plausible.io/)
 
 ## Getting started
 
