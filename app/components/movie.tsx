@@ -5,10 +5,10 @@ import { Button } from "./ui/button";
 
 function Movie({ movie }: { movie: NowWatching }) {
   const { title, year, date, poster, url } = movie;
+  const watchedAt = new Date(date);
+  const isCurrentlyWatching = watchedAt > new Date();
 
-  const isCurrentlyWatching = date > new Date();
-
-  const timeAgo = formatDistanceToNowStrict(date, {
+  const timeAgo = formatDistanceToNowStrict(watchedAt, {
     addSuffix: true,
   });
 
