@@ -6,10 +6,10 @@ const WorkPhilosophy = () => {
           Work Philosophy
         </h2>
         <p className="text-sm leading-7 text-pretty">
-          I prioritize measurable outcomes over outputs, emphasizing long-term
-          sustainability over short-term profit. I engage directly with
-          customers and analyze data to ensure our solutions effectively address
-          real unmet needs.
+          I prioritize meaningful, measurable outcomes over mere outputs,
+          emphasizing long-term sustainability over short-term profit. By
+          directly engaging with customers and thoroughly analyzing data, I
+          ensure our solutions effectively address genuine unmet needs.
         </p>
       </section>
     </>
