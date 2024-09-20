@@ -88,18 +88,6 @@ export default function AboutPage() {
             </a>
             .
           </li>
-          <li>
-            Tracking data with{" "}
-            <a
-              href="https://plausible.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:no-underline text-foreground/80"
-            >
-              Plausible
-            </a>
-            .
-          </li>
         </ul>
 
         <p className="leading-7 mt-6 text-justify">
