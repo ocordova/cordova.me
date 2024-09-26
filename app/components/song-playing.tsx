@@ -24,21 +24,21 @@ function SongPlaying({ song }: { song: NowListening }) {
             {isPlaying ? (
               <>
                 <div
-                  className="relative flex h-3 w-3 items-center justify-center mr-1.5"
+                  className="relative flex h-3 w-3 items-center justify-center mr-1"
                   aria-hidden
                 >
-                  <div className="flex h-full items-center justify-center">
+                  <div className="flex h-full justify-center items-center space-x-0.5">
                     <div
-                      className="animate-wave mx-[0.07rem] h-[9px] w-[0.125rem] rounded bg-foreground"
+                      className="animate-wave h-[9px] w-0.5 rounded-full bg-foreground"
                       style={{ animationDelay: "-0.4s" }}
                     ></div>
                     <div
-                      className="animate-wave mx-[0.07rem] h-[10px] w-[0.125rem] rounded bg-foreground"
+                      className="animate-wave h-[10px] w-0.5 rounded-full bg-foreground"
                       style={{
                         animationDelay: "-0.3s",
                       }}
                     ></div>
-                    <div className="animate-wave mx-[0.07rem] h-[11px] w-[0.125rem] rounded bg-foreground"></div>
+                    <div className="animate-wave h-[11px] w-0.5 rounded-full bg-foreground"></div>
                   </div>
                 </div>
                 now playing
