@@ -55,11 +55,18 @@ export const categories = [
     name: "Design",
     tools: [
       {
-        name: "Adobe Creative Cloud",
+        name: "Affinity Designer",
         description:
-          "I use Photoshop, Illustrator, InDesign and After Effects. I'm used to the Adobe shortcuts and makes me work faster.",
-        url: "https://www.adobe.com/creativecloud.html",
-        icon: "/static/tools/adobe-creative-cloud.png",
+          "Great alternative to Adobe Illustrator. I use it for vector design and illustrations.",
+        url: "https://affinity.serif.com/designer/",
+        icon: "/static/tools/affinity-designer.png",
+      },
+      {
+        name: "Affinity Photo",
+        description:
+          "Great alternative to Adobe Photoshop. I use it for photo editing. It has all the features I need and very similar shortcuts.",
+        url: "https://affinity.serif.com/photo/",
+        icon: "/static/tools/affinity-photo.png",
       },
       {
         name: "Figma",
@@ -115,6 +122,13 @@ export const categories = [
           "I use it to take notes, and it's great for organizing and managing user and market research.",
         url: "https://obsidian.md/",
         icon: "/static/tools/obsidian.png",
+      },
+      {
+        name: "Photoroom",
+        description:
+          "Amazing tool to automatically remove the background from product photos and replace it with a solid color, it's saves me a lot of time when I need to edit e-commerce photos.",
+        url: "https://photoroom.com/",
+        icon: "/static/tools/photoroom.png",
       },
       {
         name: "Stoplight",
