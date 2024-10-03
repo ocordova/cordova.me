@@ -7,8 +7,8 @@ const About = () => {
         </h2>
         <p className="text-sm leading-7">
           Part of the whole. Epicurean at heart. Product engineer. Cook.
-          Defender of my Mexican culinary heritage. Passionate about preserving
-          cultural traditions. Movie enthusiast. Student of human behavior.
+          Defender of my Mexican culinary heritage and passionate preserver of
+          cultural traditions. Movie enthusiast. A student of human behavior.
         </p>
       </section>
     </>
