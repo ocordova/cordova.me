@@ -79,12 +79,12 @@ export default function AboutPage() {
           <li>
             Hosted on{" "}
             <a
-              href="https://vercel.com/"
+              href="https://fly.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 hover:no-underline text-foreground/80"
             >
-              Vercel
+              Fly
             </a>
             .
           </li>

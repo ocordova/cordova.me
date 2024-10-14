@@ -7,7 +7,7 @@
 - **Framework**: [Remix](https://remix.run/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
 - **Icons:** [Lucide](https://lucide.dev/)
-- **Deployment:** [Vercel](https://vercel.com/)
+- **Deployment:** [Fly.io](https://fly.io/)
 
 ## Getting started
 

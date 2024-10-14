@@ -184,6 +184,13 @@ export const categories = [
         icon: "/static/tools/cloudflare.png",
       },
       {
+        name: "Fly",
+        description:
+          "Greatdeveloper experience. It's my go-to option for deploying my projects.",
+        url: "https://fly.io/",
+        icon: "/static/tools/fly.png",
+      },
+      {
         name: "hCaptcha",
         description: "Privacy-focused alternative to Google reCAPTCHA.",
         url: "https://www.hcaptcha.com/",
@@ -256,13 +263,6 @@ export const categories = [
           "I use Trakt to track my TV shows and movies watching habits and to discover new content.",
         url: "https://trakt.tv/",
         icon: "/static/tools/trakt.png",
-      },
-      {
-        name: "Vercel",
-        description:
-          "The best developer experience. When I can, I use Vercel for my frontend projects.",
-        url: "https://vercel.com/",
-        icon: "/static/tools/vercel.png",
       },
     ],
   },
