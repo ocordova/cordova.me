@@ -6,7 +6,7 @@ const WorkPhilosophy = () => {
           Work Philosophy
         </h2>
         <p className="text-sm leading-7 text-pretty">
-          I prioritize meaningful, measurable outcomes over mere outputs,
+          I prioritize meaningful, measurable outcomes over superficial outputs,
           emphasizing long-term sustainability over short-term profit. By
           directly engaging with customers and thoroughly analyzing data, I
           ensure that our solutions effectively address genuine unmet needs.

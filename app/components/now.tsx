@@ -11,7 +11,7 @@ const Now = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Summit Management;
+            Summit Management, and
           </a>{" "}
           by night, as a Product Manager at{" "}
           <a
