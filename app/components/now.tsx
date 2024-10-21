@@ -11,9 +11,9 @@ const Now = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Summit Management, and
+            Summit Management
           </a>{" "}
-          by night, as a Product Manager at{" "}
+          , and by night, as a Product Manager at{" "}
           <a
             className="underline-offset-4 underline hover:no-underline transition-all duration-200"
             href="https://artiflora.mx"
