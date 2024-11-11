@@ -12,7 +12,7 @@ export const categories = [
       {
         name: "0xProto",
         description:
-          "I love that in this font the ligatures does not deform the shape of the characters.",
+          "I love that in this font the ligatures do not deform the shape of the characters.",
         url: "https://github.com/0xType/0xProto",
         icon: "/static/tools/0xProto.png",
       },
@@ -83,7 +83,7 @@ export const categories = [
       {
         name: "Brave",
         description:
-          "My default browser. It's faster, secure and has a built-in ad blocker. I just disable almost all the crypto features.",
+          "My default browser. It's faster, secure, and has a built-in ad blocker. I just disable almost all the crypto features.",
         url: "https://brave.com/",
         icon: "/static/tools/brave.png",
       },
@@ -112,7 +112,7 @@ export const categories = [
       {
         name: "Magnet",
         description:
-          "I'm used to how Windows or GNOME manage their windows, , and it helps me organize them by dragging to the edges or using keyboard shortcuts.",
+          "I'm used to how Windows or GNOME manage their windows, and it helps me organize them by dragging to the edges or using keyboard shortcuts.",
         url: "https://magnet.crowdcafe.com/",
         icon: "/static/tools/magnet.png",
       },
@@ -126,7 +126,7 @@ export const categories = [
       {
         name: "Photoroom",
         description:
-          "Amazing tool to automatically remove the background from product photos and replace it with a solid color, it's saves me a lot of time when I need to edit e-commerce photos.",
+          "Amazing tool to automatically remove the background from product photos and replace it with a solid color, it saves me a lot of time when I need to edit e-commerce photos.",
         url: "https://photoroom.com/",
         icon: "/static/tools/photoroom.png",
       },
@@ -160,7 +160,8 @@ export const categories = [
       },
       {
         name: "TomatoBar",
-        description: "When I find hard to focus, I use the Pomodoro technique.",
+        description:
+          "When I find it hard to focus, I use the Pomodoro technique.",
         url: "https://github.com/ivoronin/TomatoBar",
         icon: "/static/tools/tomato-bar.png",
       },
@@ -186,7 +187,7 @@ export const categories = [
       {
         name: "Fly",
         description:
-          "Greatdeveloper experience. It's my go-to option for deploying my projects.",
+          "Great developer experience. It's my go-to option for deploying my projects.",
         url: "https://fly.io/",
         icon: "/static/tools/fly.png",
       },
@@ -246,7 +247,7 @@ export const categories = [
       {
         name: "Pulumi",
         description:
-          "I love you use general-purpose programming languages to define infrastructure as code instead of HCL like Terraform.",
+          "I love using general-purpose programming languages to define infrastructure as code instead of HCL like Terraform.",
         url: "https://www.pulumi.com/",
         icon: "/static/tools/pulumi.png",
       },
@@ -291,14 +292,14 @@ export const categories = [
       {
         name: "MacBook Air M1 (2020)",
         description:
-          "The M1 chip is fantastic. It has plenty of power to run all the apps I need, even Adobe CS and Android Studio.",
+          "The M1 chip is fantastic. It has plenty of power to run all the apps I need, even for Adobe CS and Android Studio.",
         url: "https://www.apple.com/mx/shop/buy-mac/macbook-air/m1-chip",
         icon: "/static/tools/macbook-air-m1.png",
       },
       {
         name: 'Samsung 34" Monitor Ultra WQHD',
         description:
-          "Easier to work with two windows or more side by side. Perfect for frontend development and design",
+          "Easier to work with two windows or more side by side. Perfect for frontend development and design.",
         url: "https://www.samsung.com/us/computing/monitors/uhd-and-wqhd/34-sj55w-ultra-wqhd-monitor-ls34j550wqnxza/",
         icon: "/static/tools/samsung-monitor.png",
       },
@@ -343,7 +344,7 @@ export const categories = [
       {
         name: "Everand",
         description:
-          "I switched from Audible to Everand. It’s subscription-based, instead of requiring the purchase of individual books. I love listening to audiobooks while I exercise or cook.",
+          "I switched from Audible to Everand. It's subscription-based rather than requiring individual book purchases. I love listening to audiobooks while I exercise or cook.",
         url: "https://www.everand.com/",
         icon: "/static/tools/everand.png",
       },
