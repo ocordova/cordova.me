@@ -32,12 +32,21 @@ export const links: LinksFunction = () => {
 
 export interface LoaderData {
   theme: Theme | null;
+  ENV: {
+    isProduction: boolean;
+    umamiId: string;
+  };
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
-
+  const umamiId = process.env.UMAMI_ID || "";
+  const isProduction = process.env.NODE_ENV === "production";
   return json<LoaderData>({
+    ENV: {
+      isProduction,
+      umamiId,
+    },
     theme: getTheme(),
   });
 }
@@ -49,7 +58,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       specifiedTheme={data?.theme as Theme}
       themeAction="/action/set-theme"
     >
-      <InnerLayout ssrTheme={Boolean(data?.theme)}>{children}</InnerLayout>
+      <InnerLayout env={data!.ENV} ssrTheme={Boolean(data?.theme)}>
+        {children}
+      </InnerLayout>
     </ThemeProvider>
   );
 }
@@ -57,9 +68,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 function InnerLayout({
   ssrTheme,
   children,
+  env,
 }: {
   ssrTheme: boolean;
   children: React.ReactNode;
+  env: LoaderData["ENV"];
 }) {
   const [theme] = useTheme();
 
@@ -80,6 +93,13 @@ function InnerLayout({
         <ScrollRestoration />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(ssrTheme)} />
         <Scripts />
+        {env.isProduction ? (
+          <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id={env.umamiId}
+          ></script>
+        ) : null}
       </body>
     </html>
   );
