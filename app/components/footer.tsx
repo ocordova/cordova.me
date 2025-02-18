@@ -1,8 +1,16 @@
 import { ModeToggle } from "~/components/mode-toggle";
 import AppLayout from "./layouts/app-layout";
 import { Link } from "@remix-run/react";
+import { useState } from "react";
+import { quotes } from "~/db/quotes";
 
 export default function Footer() {
+  const startIndex = Math.floor(Math.random() * quotes.length);
+  const [index, setIndex] = useState(startIndex);
+
+  const nextQuote = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+  };
   return (
     <footer className="px-6 py-12">
       <AppLayout>
@@ -20,10 +28,11 @@ export default function Footer() {
             <ModeToggle />
           </div>
         </div>
-        <blockquote className="mt-2 text-xs leading-6 text-muted-foreground">
-          “He who is not satisfied with a little, is satisfied with nothing.” -
-          Epicurus
-        </blockquote>
+        <button onClick={nextQuote} className="hover:cursor-default">
+          <blockquote className="mt-2 text-left text-xs leading-6 text-muted-foreground text-pretty ">
+            {quotes[index]}
+          </blockquote>
+        </button>
       </AppLayout>
     </footer>
   );
