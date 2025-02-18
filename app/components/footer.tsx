@@ -1,16 +1,23 @@
 import { ModeToggle } from "~/components/mode-toggle";
 import AppLayout from "./layouts/app-layout";
 import { Link } from "@remix-run/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { quotes } from "~/db/quotes";
 
 export default function Footer() {
-  const startIndex = Math.floor(Math.random() * quotes.length);
-  const [index, setIndex] = useState(startIndex);
+  const [index, setIndex] = useState<number | null>(null); // Start with null
+
+  useEffect(() => {
+    const startIndex = Math.floor(Math.random() * quotes.length);
+    setIndex(startIndex);
+  }, []);
 
   const nextQuote = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+    setIndex((prevIndex) =>
+      prevIndex !== null ? (prevIndex + 1) % quotes.length : 0
+    );
   };
+
   return (
     <footer className="px-6 py-12">
       <AppLayout>
@@ -30,7 +37,7 @@ export default function Footer() {
         </div>
         <button onClick={nextQuote} className="hover:cursor-default">
           <blockquote className="mt-2 text-left text-xs leading-6 text-muted-foreground text-pretty ">
-            {quotes[index]}
+            {index !== null ? quotes[index] : "Loading..."}
           </blockquote>
         </button>
       </AppLayout>
