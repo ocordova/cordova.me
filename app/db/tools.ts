@@ -12,28 +12,28 @@ export const categories = [
       {
         name: "0xProto",
         description:
-          "I love that in this font the ligatures do not deform the shape of the characters.",
+          "I love that the ligatures in this font do not distort the characters' shapes.",
         url: "https://github.com/0xType/0xProto",
         icon: "/static/tools/0xProto.png",
       },
       {
         name: "Dracula Theme",
         description:
-          "I love this dark theme. I use it in VSCode, Warp, Telegram, Slack, etc.",
+          "I love this dark theme. I use it in VSCode, Warp, Telegram, Slack, and more.",
         url: "https://draculatheme.com/",
         icon: "/static/tools/dracula.png",
       },
       {
         name: "GitHub Copilot",
         description:
-          "The code completion is impressive, helping you code faster, write tests, and learn new things.",
+          "Its code completion is impressive, helping you code faster, write tests, and learn new things.",
         url: "https://copilot.github.com/",
         icon: "/static/tools/github-copilot.png",
       },
       {
         name: "Visual Studio Code",
         description:
-          "After using Sublime for many years, I switched to VSCode like everyone else. It's fast, lightweight, and has numerous extensions.",
+          "After many years with Sublime, I switched to VSCode like everyone else. It's fast, lightweight, and has a multitude of extensions.",
         url: "https://code.visualstudio.com/",
         icon: "/static/tools/vscode.png",
       },
@@ -45,7 +45,7 @@ export const categories = [
       {
         name: "Warp",
         description:
-          "I used to use Hyper with Fig, but a friend recommended Warp. It's fast, has smooth scrolling, and offers efficient bookmark management.",
+          "I used to rely on Hyper with Fig, but a friend recommended Warp. It's fast, offers smooth scrolling, and provides efficient bookmark management.",
         url: "https://warp.dev/",
         icon: "/static/tools/warp.png",
       },
@@ -57,21 +57,21 @@ export const categories = [
       {
         name: "Affinity Designer",
         description:
-          "Great alternative to Adobe Illustrator. I use it for vector design and illustrations.",
+          "A great alternative to Adobe Illustrator. I use it for vector design and illustrations.",
         url: "https://affinity.serif.com/designer/",
         icon: "/static/tools/affinity-designer.png",
       },
       {
         name: "Affinity Photo",
         description:
-          "Great alternative to Adobe Photoshop. I use it for photo editing. It has all the features I need and very similar shortcuts.",
+          "A great alternative to Adobe Photoshop. I use it for photo editing; it has all the features I need along with similar shortcuts.",
         url: "https://affinity.serif.com/photo/",
         icon: "/static/tools/affinity-photo.png",
       },
       {
         name: "Figma",
         description:
-          "I use Figma for interface and web design and Adobe Creative Cloud for everything else.",
+          "I use Figma for interface and web design, and Affinity for everything else.",
         url: "https://www.figma.com/",
         icon: "/static/tools/figma.png",
       },
@@ -83,14 +83,14 @@ export const categories = [
       {
         name: "Brave",
         description:
-          "My default browser. It's faster, secure, and has a built-in ad blocker. I just disable almost all the crypto features.",
+          "My default browser—it's fast, secure, and features a built-in ad blocker. I disable almost all of its crypto features.",
         url: "https://brave.com/",
         icon: "/static/tools/brave.png",
       },
       {
         name: "DaisyDisk",
         description:
-          "I use this app to clean my Mac, which displays the sizes of folders and files.",
+          "I use this app to clean up my Mac; it displays the sizes of folders and files.",
         url: "https://daisydiskapp.com/",
         icon: "/static/tools/daisy-disk.png",
       },
@@ -101,67 +101,66 @@ export const categories = [
         url: "https://insomnia.rest/",
         icon: "/static/tools/insomnia.png",
       },
-
       {
         name: "LinearMouse",
         description:
-          "It helps me adjust my mouse's speed and acceleration beyond Mac's settings without using the terminal.",
+          "It helps me adjust my mouse's speed and acceleration beyond the default Mac settings without using the terminal.",
         url: "https://linearmouse.app/",
         icon: "/static/tools/linear-mouse.png",
       },
       {
         name: "Magnet",
         description:
-          "I'm used to how Windows or GNOME manage their windows, and it helps me organize them by dragging to the edges or using keyboard shortcuts.",
+          "I'm used to how Windows or GNOME manage windows, and Magnet helps me organize them by dragging to the edges or using keyboard shortcuts.",
         url: "https://magnet.crowdcafe.com/",
         icon: "/static/tools/magnet.png",
       },
       {
         name: "Obsidian",
         description:
-          "I use it to take notes, and it's great for organizing and managing user and market research.",
+          "I use it for note-taking, and it's excellent for organizing and managing both user and market research.",
         url: "https://obsidian.md/",
         icon: "/static/tools/obsidian.png",
       },
       {
         name: "Photoroom",
         description:
-          "Amazing tool to automatically remove the background from product photos and replace it with a solid color, it saves me a lot of time when I need to edit e-commerce photos.",
+          "An amazing tool that automatically removes the background from product photos and replaces it with a solid color. It saves me a lot of time when editing e-commerce photos.",
         url: "https://photoroom.com/",
         icon: "/static/tools/photoroom.png",
       },
       {
         name: "Stoplight",
         description:
-          "If you work with APIs and OpenAPI, this is a must-have; it's an excellent tool for managing your API documentation.",
+          "If you work with APIs and OpenAPI, this is a must-have. It's an excellent tool for managing your API documentation.",
         url: "https://stoplight.io/",
         icon: "/static/tools/stoplight.png",
       },
       {
         name: "TablePlus",
         description:
-          "I used to use DBeaver, but I switched to TablePlus when they added a Diagram feature. Overall, the UI is better.",
+          "I used to use DBeaver, but I switched to TablePlus when they added a diagramming feature. Overall, the UI is better.",
         url: "https://tableplus.com/",
         icon: "/static/tools/tableplus.png",
       },
       {
         name: "tldraw",
         description:
-          "My go to tool for whiteboarding. I used to use Excalidraw.",
+          "My go-to tool for whiteboarding. I used to use Excalidraw.",
         url: "https://tldraw.com/",
         icon: "/static/tools/tldraw.png",
       },
       {
         name: "TickTick",
         description:
-          "My current choice for to-do lists. It has a great UI and UX.",
+          "My current choice for managing to-do lists—it offers a great UI and UX.",
         url: "https://ticktick.com/",
         icon: "/static/tools/tick_tick.png",
       },
       {
         name: "TomatoBar",
         description:
-          "When I find it hard to focus, I use the Pomodoro technique.",
+          "When I have difficulty focusing, I use the Pomodoro technique with TomatoBar.",
         url: "https://github.com/ivoronin/TomatoBar",
         icon: "/static/tools/tomato-bar.png",
       },
@@ -173,48 +172,55 @@ export const categories = [
       {
         name: "Algolia",
         description:
-          "When it comes to incorporating search capabilities into any project, my go-to option is always the same.",
+          "When it comes to adding search functionality to any project, Algolia is my go-to option.",
         url: "https://www.algolia.com/",
         icon: "/static/tools/algolia.png",
       },
       {
+        name: "Better Stack",
+        description:
+          "I love its site monitoring, uptime alerts, heartbeat checks, and on-call management features.",
+        url: "https://betterstack.com",
+        icon: "/static/tools/betterstack.png",
+      },
+      {
         name: "Cloudflare",
         description:
-          "I use Cloudflare to manage my DNS and CDN for all my domains.",
+          "I use Cloudflare to manage the DNS and CDN for all my domains.",
         url: "https://www.cloudflare.com/",
         icon: "/static/tools/cloudflare.png",
       },
       {
         name: "Fly",
         description:
-          "Great developer experience. It's my go-to option for deploying my projects.",
+          "Fly offers a great developer experience, making it my go-to option for deploying projects.",
         url: "https://fly.io/",
         icon: "/static/tools/fly.png",
       },
       {
         name: "hCaptcha",
-        description: "Privacy-focused alternative to Google reCAPTCHA.",
+        description: "A privacy-focused alternative to Google reCAPTCHA.",
         url: "https://www.hcaptcha.com/",
         icon: "/static/tools/hcaptcha.png",
       },
       {
         name: "iCloud+",
         description:
-          "I switched to iCloud+ from Dashlane, Google Now, and Google Workspace for its seamless integration with the Apple ecosystem.",
+          "I switched to iCloud+ from Dashlane, Google Now, and Google Workspace because of its seamless integration with the Apple ecosystem.",
         url: "https://www.apple.com/icloud/",
         icon: "/static/tools/icloud+.png",
       },
       {
         name: "Last.fm",
         description:
-          "I love to see my music stats. I use Last.fm to track my music listening habits.",
+          "I love checking my music stats—I use Last.fm to track my listening habits.",
         url: "https://www.last.fm/",
         icon: "/static/tools/lastfm.png",
       },
       {
         name: "Linear",
         description:
-          "Amazing issue tracker. I use it for my personal and freelance projects. Jira no longer exists for me.",
+          "An amazing issue tracker that I use for both personal and freelance projects. Jira is no longer an option for me.",
         url: "https://linear.app/",
         icon: "/static/tools/linear.png",
       },
@@ -226,42 +232,42 @@ export const categories = [
       },
       {
         name: "Notion",
-        description: "I use Notion for my personal and project notes.",
+        description: "I use Notion for personal and project notes.",
         url: "https://www.notion.so/",
         icon: "/static/tools/notion.png",
       },
       {
         name: "Odoo",
         description:
-          "A comprehensive and efficient solution for managing various aspects of business operations, from accounting, inventory, and manufacturing to HR.",
+          "A comprehensive and efficient solution for managing various aspects of business operations—from accounting and inventory to manufacturing and HR.",
         url: "https://www.odoo.com/",
         icon: "/static/tools/odoo.png",
       },
       {
         name: "Plausible",
         description:
-          "You can make informed decisions without cookies or personal data.",
+          "Make informed decisions without relying on cookies or personal data.",
         url: "https://plausible.io/",
         icon: "/static/tools/plausible.png",
       },
       {
         name: "Pulumi",
         description:
-          "I love using general-purpose programming languages to define infrastructure as code instead of HCL like Terraform.",
+          "I love using general-purpose programming languages to define infrastructure as code instead of using HCL like Terraform.",
         url: "https://www.pulumi.com/",
         icon: "/static/tools/pulumi.png",
       },
       {
         name: "Shopify",
         description:
-          "My preferred e-commerce option, Hydrogen/Remix, offers the best developer experience for frontend development.",
+          "Shopify is my preferred e-commerce platform, and its Hydrogen/Remix framework offers the best developer experience for frontend development.",
         url: "https://www.shopify.com/",
         icon: "/static/tools/shopify.png",
       },
       {
         name: "Trakt",
         description:
-          "I use Trakt to track my TV shows and movies watching habits and to discover new content.",
+          "I use Trakt to track my TV shows and movies while also discovering new content.",
         url: "https://trakt.tv/",
         icon: "/static/tools/trakt.png",
       },
@@ -273,14 +279,14 @@ export const categories = [
       {
         name: "Kap",
         description:
-          "I use Kap to record small videos on my screen and easily share them as mp4 or gifs.",
+          "I use Kap to record short screen videos that I can easily share as MP4s or GIFs.",
         url: "https://getkap.co/",
         icon: "/static/tools/kap.png",
       },
       {
         name: "Shottr",
         description:
-          "I use it to take screenshots of my screen, edit them and share them. Perfect for designers and front-end developers.",
+          "I use it to capture, edit, and share screenshots—perfect for designers and front-end developers.",
         url: "https://shottr.cc/",
         icon: "/static/tools/shottr.png",
       },
@@ -292,14 +298,14 @@ export const categories = [
       {
         name: "MacBook Air M1 (2020)",
         description:
-          "The M1 chip is fantastic. It has plenty of power to run all the apps I need, even for Adobe CS and Android Studio.",
+          "The M1 chip is fantastic—it has enough power to run all the apps I need, even Adobe CS and Android Studio.",
         url: "https://www.apple.com/mx/shop/buy-mac/macbook-air/m1-chip",
         icon: "/static/tools/macbook-air-m1.png",
       },
       {
         name: 'Samsung 34" Monitor Ultra WQHD',
         description:
-          "Easier to work with two windows or more side by side. Perfect for frontend development and design.",
+          "It makes working with multiple windows side by side much easier—perfect for frontend development and design.",
         url: "https://www.samsung.com/us/computing/monitors/uhd-and-wqhd/34-sj55w-ultra-wqhd-monitor-ls34j550wqnxza/",
         icon: "/static/tools/samsung-monitor.png",
       },
@@ -313,14 +319,14 @@ export const categories = [
       {
         name: "Apple Magic Keyboard",
         description:
-          "I'm not demanding when it comes to keyboards, and this one is comfortable to type, quiet, and combines well with the trackpad :P",
+          "I'm not overly demanding when it comes to keyboards, but this one is comfortable to type on, quiet, and works well with the trackpad.",
         url: "https://www.apple.com/shop/product/MK2A3E/A/magic-keyboard-spanish",
         icon: "/static/tools/apple-magic-keyboard.png",
       },
       {
         name: "Anker 533 USB-C Hub (5-in-1, Slim)",
         description:
-          "All I need in one place. I can connect my monitor, external hard drive and ethernet cable.",
+          "Everything I need in one place—I can connect my monitor, external hard drive, and Ethernet cable.",
         url: "https://www.anker.com/products/a8338",
         icon: "/static/tools/anker-usb-c-hub.png",
       },
@@ -332,8 +338,8 @@ export const categories = [
       {
         name: "AirPods Pro (2nd gen)",
         description:
-          "I use my AirPods Pro for everything. I love the noise cancellation and the transparency mode; I wish they had volume controls and multiple-device support.",
-        url: "https://www.apple.com//airpods-pro/",
+          "I use my AirPods Pro for everything. I love the noise cancellation and transparency mode, though I wish they had volume controls and support for multiple devices.",
+        url: "https://www.apple.com/airpods-pro/",
         icon: "/static/tools/airpods-pro.png",
       },
     ],
@@ -344,14 +350,14 @@ export const categories = [
       {
         name: "Everand",
         description:
-          "I switched from Audible to Everand. It's subscription-based rather than requiring individual book purchases. I love listening to audiobooks while I exercise or cook.",
+          "I switched from Audible to Everand—i's subscription-based rather than requiring individual book purchases. I love listening to audiobooks while exercising or cooking.",
         url: "https://www.everand.com/",
         icon: "/static/tools/everand.png",
       },
       {
         name: "Kindle Paperwhite (8 GB)",
         description:
-          "It took me years to finally move to an e-reader. Fantastic for text books and long reads.",
+          "It took me years to finally transition to an e-reader. Fantastic for textbooks and long reads.",
         url: "https://www.amazon.com/Kindle-Paperwhite-adjustable-Ad-Supported/dp/B08KTZ8249",
         icon: "/static/tools/kindle.png",
       },
