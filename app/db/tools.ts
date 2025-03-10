@@ -244,13 +244,6 @@ export const categories = [
         icon: "/static/tools/odoo.png",
       },
       {
-        name: "Plausible",
-        description:
-          "Make informed decisions without relying on cookies or personal data.",
-        url: "https://plausible.io/",
-        icon: "/static/tools/plausible.png",
-      },
-      {
         name: "Pulumi",
         description:
           "I love using general-purpose programming languages to define infrastructure as code instead of using HCL like Terraform.",
