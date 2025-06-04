@@ -31,11 +31,11 @@ export const categories = [
         icon: "/static/tools/github-copilot.png",
       },
       {
-        name: "Visual Studio Code",
+        name: "Zed",
         description:
-          "After many years with Sublime, I switched to VSCode like everyone else. It's fast, lightweight, and has a multitude of extensions.",
-        url: "https://code.visualstudio.com/",
-        icon: "/static/tools/vscode.png",
+          "After many years with VSCode, I switched to Zed and haven’t looked back. It’s fast and minimal. VSCode had started to feel bloated and slow.",
+        url: "https://zed.dev/",
+        icon: "/static/tools/zed.png",
       },
     ],
   },

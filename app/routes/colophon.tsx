@@ -22,12 +22,12 @@ export default function AboutPage() {
           <li>
             Carefully hand-coded with{" "}
             <a
-              href="https://code.visualstudio.com/"
+              href="https://zed.dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 hover:no-underline text-foreground/80"
             >
-              Visual Studio Code
+              Zed
             </a>
             .
           </li>
