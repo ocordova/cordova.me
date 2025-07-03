@@ -5,15 +5,15 @@ import {
   Theme,
 } from "remix-themes";
 import { themeSessionResolver } from "./session.server";
+import { json } from "@remix-run/node";
 import {
-  json,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
-} from "@remix-run/react";
+} from "react-router-dom";
 import globalStyles from "./styles/globals.css?url";
 import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import AppLayout from "./components/layouts/app-layout";

@@ -1,6 +1,6 @@
 import { cn } from "~/lib/utils";
 import Wrapper from "./layouts/app-layout";
-import { NavLink } from "@remix-run/react";
+import { NavLink } from "react-router-dom";
 
 // const NavLink = ({
 //   href,
