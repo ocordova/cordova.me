@@ -5,7 +5,7 @@ import {
   Theme,
 } from "remix-themes";
 import { themeSessionResolver } from "./session.server";
-import { json } from "@remix-run/node";
+import { json } from "react-router";
 import {
   Links,
   Meta,
@@ -15,7 +15,7 @@ import {
   useRouteLoaderData,
 } from "react-router-dom";
 import globalStyles from "./styles/globals.css?url";
-import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { LinksFunction, LoaderFunctionArgs } from "react-router";
 import AppLayout from "./components/layouts/app-layout";
 import Header from "./components/header";
 import interFont from "@fontsource-variable/inter/index.css?url";

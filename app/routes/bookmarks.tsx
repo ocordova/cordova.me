@@ -1,7 +1,7 @@
 import { Bookmark, bookmarks, Category } from "~/db/bookmarks";
 import { SimpleLayout } from "~/components/layouts/simple-layout";
 
-import { json, MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json, MetaFunction, LoaderFunctionArgs } from "react-router";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import {
   DropdownMenu,

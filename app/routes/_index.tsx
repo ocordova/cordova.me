@@ -1,4 +1,4 @@
-import { defer, type MetaFunction } from "@remix-run/node";
+import { defer, type MetaFunction } from "react-router";
 import { Await, useLoaderData, useRevalidator } from "react-router-dom";
 import { Suspense, useEffect } from "react";
 import {

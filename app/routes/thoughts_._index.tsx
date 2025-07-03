@@ -1,7 +1,7 @@
 import { SimpleLayout } from "~/components/layouts/simple-layout";
 import { getThoughts } from "~/db/thoughts.server";
-import { MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { MetaFunction } from "react-router";
+import { json } from "react-router";
 import { Link, useLoaderData } from "react-router-dom";
 
 export const meta: MetaFunction = () => {
