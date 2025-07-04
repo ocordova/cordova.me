@@ -1,6 +1,6 @@
 import { SimpleLayout } from "~/components/layouts/simple-layout";
 import { categories } from "~/db/tools";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 import { ReactNode } from "react";
 
 export const meta: MetaFunction = () => {

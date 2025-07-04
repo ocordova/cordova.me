@@ -1,4 +1,4 @@
-import { MetaFunction } from "@remix-run/node";
+import { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
@@ -34,12 +34,12 @@ export default function AboutPage() {
           <li>
             Built with{" "}
             <a
-              href="https://remix.run/"
+              href="https://reactrouter.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-4 hover:no-underline text-foreground/80"
             >
-              Remix
+              React Router
             </a>
             .
           </li>

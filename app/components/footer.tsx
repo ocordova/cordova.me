@@ -1,6 +1,6 @@
 import { ModeToggle } from "~/components/mode-toggle";
 import AppLayout from "./layouts/app-layout";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import { quotes } from "~/db/quotes";
 

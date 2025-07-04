@@ -6,16 +6,16 @@ import {
 } from "remix-themes";
 import { themeSessionResolver } from "./session.server";
 import {
-  json,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
-} from "@remix-run/react";
+} from "react-router";
+import { json } from "~/lib/response-helpers";
 import globalStyles from "./styles/globals.css?url";
-import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { LinksFunction, LoaderFunctionArgs } from "react-router";
 import AppLayout from "./components/layouts/app-layout";
 import Header from "./components/header";
 import interFont from "@fontsource-variable/inter/index.css?url";
@@ -42,7 +42,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
   const umamiId = process.env.UMAMI_ID || "";
   const isProduction = process.env.NODE_ENV === "production";
-  return json<LoaderData>({
+  return Response.json({
     ENV: {
       isProduction,
       umamiId,
