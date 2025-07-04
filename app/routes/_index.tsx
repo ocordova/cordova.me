@@ -1,5 +1,5 @@
-import { defer, type MetaFunction } from "@remix-run/node";
-import { Await, useLoaderData, useRevalidator } from "@remix-run/react";
+import { type MetaFunction } from "react-router";
+import { Await, useLoaderData, useRevalidator } from "react-router";
 import { Suspense, useEffect } from "react";
 import {
   getNowListening,
@@ -48,9 +48,9 @@ function loadDeferredData() {
 export const loader = async () => {
   const deferredData = loadDeferredData();
 
-  return defer<LoaderData>({
+  return {
     ...deferredData,
-  });
+  };
 };
 
 const INTERVAL_30_SECONDS = 30 * 1000;

@@ -31,3 +31,6 @@ yarn-error.log*
 
 # env
 .env
+
+# React Router generated types
+.react-router/

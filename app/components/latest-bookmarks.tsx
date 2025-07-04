@@ -1,6 +1,6 @@
 import { bookmarks } from "~/db/bookmarks";
 import { Button } from "~/components/ui/button";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 
 const Bookmark = ({ title, url }: { title: string; url: string }) => {
   return (

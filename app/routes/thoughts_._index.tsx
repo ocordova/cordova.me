@@ -1,7 +1,7 @@
 import { SimpleLayout } from "~/components/layouts/simple-layout";
 import { getThoughts } from "~/db/thoughts.server";
-import { MetaFunction } from "@remix-run/node";
-import { json, Link, useLoaderData } from "@remix-run/react";
+import { MetaFunction } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
@@ -19,8 +19,8 @@ type LoaderData = {
 };
 
 export const loader = async () => {
-  return json<LoaderData>({
-    thoughts: await getThoughts(),
+  return Response.json({
+    thoughts: getThoughts(),
   });
 };
 

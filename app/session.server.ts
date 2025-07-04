@@ -1,5 +1,5 @@
 import { createThemeSessionResolver } from "remix-themes";
-import { createCookieSessionStorage } from "@remix-run/node";
+import { createCookieSessionStorage } from "react-router";
 
 const themeStorage = createCookieSessionStorage({
   cookie: {

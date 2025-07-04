@@ -4,7 +4,7 @@
 
 ## Stack:
 
-- **Framework**: [Remix](https://remix.run/)
+- **Framework**: [React Router](https://reactrouter.com/)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [shadcn/ui](https://ui.shadcn.com/)
 - **Icons:** [Lucide](https://lucide.dev/)
 - **Deployment:** [Fly.io](https://fly.io/)

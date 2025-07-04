@@ -1,8 +1,8 @@
 import { Bookmark, bookmarks, Category } from "~/db/bookmarks";
 import { SimpleLayout } from "~/components/layouts/simple-layout";
 
-import { json, MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
-import { useLoaderData, useNavigate } from "@remix-run/react";
+import { MetaFunction, LoaderFunctionArgs } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -36,7 +36,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     return bookmark.category === category;
   });
 
-  return json<LoaderData>({
+  return Response.json({
     category: category as Category,
     bookmarks: filteredBookmarks,
   });
