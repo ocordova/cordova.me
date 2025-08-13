@@ -2,8 +2,11 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { NowWatching } from "~/actions/now-watching.server";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { useState } from "react";
+import { Skeleton } from "./ui/skeleton";
 
 function Movie({ movie }: { movie: NowWatching }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const { title, year, date, poster, url } = movie;
   const watchedAt = new Date(date);
   const isCurrentlyWatching = watchedAt > new Date();
@@ -58,13 +61,20 @@ function Movie({ movie }: { movie: NowWatching }) {
         >
           <div className="group flex items-center gap-4">
             <div className="relative">
-              <div className="relative origin-center w-12">
+              <div className="relative origin-center w-[64px]">
+                {!imageLoaded && (
+                  <Skeleton className="absolute inset-0 h-[96px] w-[64px] rounded-sm" />
+                )}
                 <img
-                  className="rounded-sm"
+                  className={`rounded-sm transition-opacity duration-200 ${
+                    imageLoaded ? "opacity-100" : "opacity-0"
+                  }`}
                   src={poster}
                   alt={title}
                   width={64}
                   height={96}
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageLoaded(true)}
                 />
               </div>
             </div>

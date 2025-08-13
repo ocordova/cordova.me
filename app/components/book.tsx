@@ -1,6 +1,9 @@
 import { NowReading } from "~/actions/now-reading.server";
+import { useState } from "react";
+import { Skeleton } from "./ui/skeleton";
 
 function Book({ book }: { book: NowReading }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const { url, cover, title, author } = book;
   return (
     <a
@@ -12,13 +15,20 @@ function Book({ book }: { book: NowReading }) {
     >
       <div className="group flex items-center gap-4">
         <div className="relative">
-          <div className="relative origin-center w-12">
+          <div className="relative origin-center w-[64px]">
+            {!imageLoaded && (
+              <Skeleton className="absolute inset-0 h-[96px] w-[64px] rounded-sm" />
+            )}
             <img
-              className="rounded-sm"
+              className={`rounded-sm transition-opacity duration-200 ${
+                imageLoaded ? "opacity-100" : "opacity-0"
+              }`}
               src={cover}
               alt={title}
               width={64}
               height={96}
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageLoaded(true)}
             />
           </div>
         </div>

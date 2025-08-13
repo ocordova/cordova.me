@@ -3,6 +3,7 @@ import AppLayout from "./layouts/app-layout";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import { quotes } from "~/db/quotes";
+import { QuoteSkeleton } from "./ui/content-skeletons";
 
 export default function Footer() {
   const [index, setIndex] = useState<number | null>(null); // Start with null
@@ -36,8 +37,8 @@ export default function Footer() {
           </div>
         </div>
         <button onClick={nextQuote} className="hover:cursor-default">
-          <blockquote className="mt-2 text-left text-xs leading-6 text-muted-foreground text-pretty ">
-            {index !== null ? quotes[index] : "Loading..."}
+          <blockquote className="mt-2 text-left text-xs leading-6 text-muted-foreground text-pretty">
+            {index !== null ? quotes[index] : <QuoteSkeleton />}
           </blockquote>
         </button>
       </AppLayout>

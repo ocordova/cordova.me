@@ -2,8 +2,12 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { NowListening } from "~/actions/now-listening.server";
+import { useState } from "react";
+import { Skeleton } from "./ui/skeleton";
 
 function SongPlaying({ song }: { song: NowListening }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
   if (!song) {
     return null;
   }
@@ -72,13 +76,20 @@ function SongPlaying({ song }: { song: NowListening }) {
         >
           <div className="group flex items-center gap-4">
             <div className="relative">
-              <div className="relative origin-center w-12">
+              <div className="relative origin-center w-[72px]">
+                {!imageLoaded && (
+                  <Skeleton className="absolute inset-0 h-[72px] w-[72px] rounded-sm" />
+                )}
                 <img
-                  className="rounded-sm"
+                  className={`rounded-sm transition-opacity duration-200 ${
+                    imageLoaded ? "opacity-100" : "opacity-0"
+                  }`}
                   src={cover}
                   alt={title}
                   width={72}
                   height={72}
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageLoaded(true)}
                 />
               </div>
             </div>
