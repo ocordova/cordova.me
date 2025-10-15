@@ -6,9 +6,9 @@ const About = () => {
           Óscar Córdova
         </h2>
         <p className="text-sm leading-7">
-          Part of the whole. An Epicurean at heart, guided by the Tao. Product
-          engineer. Cook. Defender of my Mexican culinary heritage. Passionate
-          about preserving cultural traditions.
+          Part of the whole. Epicurean at heart, guided by the Tao. Product
+          engineer and cook. Keeper of Mexican culinary heritage. Seeker of
+          balance.
         </p>
       </section>
     </>
