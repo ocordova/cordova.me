@@ -7,11 +7,15 @@ import { Skeleton } from "./ui/skeleton";
 
 function SongPlaying({ song }: { song: NowListening }) {
   const [imageLoaded, setImageLoaded] = useState(false);
-  
+  const [imageSrc, setImageSrc] = useState<string>("");
+
   if (!song) {
     return null;
   }
   const { url, cover, title, artist, isPlaying, album, date } = song;
+
+  const placeholderImage = "/static/listening/placeholder.webp";
+  const actualImageSrc = imageSrc || (cover || placeholderImage);
 
   const timeAgo = date
     ? formatDistanceToNowStrict(date, {
@@ -84,12 +88,15 @@ function SongPlaying({ song }: { song: NowListening }) {
                   className={`rounded-sm transition-opacity duration-200 ${
                     imageLoaded ? "opacity-100" : "opacity-0"
                   }`}
-                  src={cover}
+                  src={actualImageSrc}
                   alt={title}
                   width={72}
                   height={72}
                   onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageLoaded(true)}
+                  onError={() => {
+                    setImageSrc(placeholderImage);
+                    setImageLoaded(true);
+                  }}
                 />
               </div>
             </div>
