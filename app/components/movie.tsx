@@ -7,7 +7,7 @@ import { Skeleton } from "./ui/skeleton";
 
 function Movie({ movie }: { movie: NowWatching }) {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const { title, year, date, poster, url } = movie;
+  const { title, year, date, poster, url, rating } = movie;
   const watchedAt = new Date(date);
   const isCurrentlyWatching = watchedAt > new Date();
 
@@ -82,6 +82,12 @@ function Movie({ movie }: { movie: NowWatching }) {
               <div className="line-clamp-1 text-sm">{title}</div>
               <div className="line-clamp-1 text-sm slashed-zero text-muted-foreground">
                 {year}
+                {rating && (
+                  <>
+                    <span className="mx-1">&middot;</span>
+                    <span title={`My rating: ${rating}/10`}>★ {rating}</span>
+                  </>
+                )}
               </div>
             </div>
           </div>

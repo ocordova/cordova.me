@@ -6,10 +6,54 @@ const TRAKT_CLIENT_ID = process.env.TRAKT_CLIENT_ID;
 const TRAKT_USERNAME = "ocordova";
 const TRAKT_ENDPOINT = `${TRAKT_API}users/${TRAKT_USERNAME}/history`;
 
+const TRAKT_RATINGS_ENDPOINT = `${TRAKT_API}users/${TRAKT_USERNAME}/ratings`;
+
 const TMDB_API = "https://api.themoviedb.org/3/";
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const TMDB_MOVIE_ENDPOINT = `${TMDB_API}movie/`;
 const TMDB_TV_ENDPOINT = `${TMDB_API}tv/`;
+
+interface RatingsCache {
+  data: Map<string, number>;
+  timestamp: number;
+}
+
+const RATINGS_CACHE_TTL = 60 * 60 * 1000; // 1 hour
+let ratingsCache: RatingsCache | null = null;
+
+async function fetchRatings(
+  headers: Headers,
+  type: "movies" | "shows"
+): Promise<Map<string, number>> {
+  if (ratingsCache && Date.now() - ratingsCache.timestamp < RATINGS_CACHE_TTL) {
+    return ratingsCache.data;
+  }
+
+  const response = await fetch(`${TRAKT_RATINGS_ENDPOINT}/${type}`, {
+    headers,
+  });
+
+  if (!response.ok) {
+    return new Map();
+  }
+
+  const data: Array<{
+    rating: number;
+    movie?: { ids: { slug: string } };
+    show?: { ids: { slug: string } };
+  }> = await response.json();
+
+  const map = new Map<string, number>();
+  for (const item of data) {
+    const slug = item.movie?.ids.slug ?? item.show?.ids.slug;
+    if (slug) {
+      map.set(slug, item.rating);
+    }
+  }
+
+  ratingsCache = { data: map, timestamp: Date.now() };
+  return map;
+}
 
 enum Type {
   Movie = "movie",
@@ -21,6 +65,7 @@ export interface NowWatching {
   date: Date;
   poster: string;
   url: string;
+  rating?: number;
 }
 
 export interface TraktMovie {
@@ -99,10 +144,17 @@ export async function getNowWatching(): Promise<NowWatching> {
       latest.type === Type.Movie ? latest.movie.ids.tmdb : latest.show.ids.tmdb;
     const tmdbEndpoint =
       latest.type === Type.Movie ? TMDB_MOVIE_ENDPOINT : TMDB_TV_ENDPOINT;
+    const ratingsType =
+      latest.type === Type.Movie ? "movies" : "shows";
+    const ratingSlug =
+      latest.type === Type.Movie
+        ? latest.movie.ids.slug
+        : latest.show.ids.slug;
 
-    const tmdbResponse = await fetch(`${tmdbEndpoint}${tmdbId}`, {
-      headers: tmdbHeaders,
-    });
+    const [tmdbResponse, ratings] = await Promise.all([
+      fetch(`${tmdbEndpoint}${tmdbId}`, { headers: tmdbHeaders }),
+      fetchRatings(headers, ratingsType),
+    ]);
 
     if (!tmdbResponse.ok) {
       console.error(
@@ -114,6 +166,7 @@ export async function getNowWatching(): Promise<NowWatching> {
     }
 
     const tmdbData = await tmdbResponse.json();
+    const rating = ratings.get(ratingSlug);
 
     if (latest.type === Type.Movie) {
       title = tmdbData.title;
@@ -139,6 +192,7 @@ export async function getNowWatching(): Promise<NowWatching> {
       date,
       poster,
       url,
+      rating,
     };
   } catch (error) {
     throw new Error("Failed to fetch data from Trakt API");
