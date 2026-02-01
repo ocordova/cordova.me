@@ -3,7 +3,21 @@ import { NowWatching } from "~/actions/now-watching.server";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { Star } from "lucide-react";
 import { Skeleton } from "./ui/skeleton";
+
+const ratingLabels: Record<number, string> = {
+  1: "Weak Sauce",
+  2: "Terrible",
+  3: "Bad",
+  4: "Poor",
+  5: "Meh",
+  6: "Fair",
+  7: "Good",
+  8: "Great",
+  9: "Superb",
+  10: "Totally Ninja!",
+};
 
 function Movie({ movie }: { movie: NowWatching }) {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -82,13 +96,12 @@ function Movie({ movie }: { movie: NowWatching }) {
               <div className="line-clamp-1 text-sm">{title}</div>
               <div className="line-clamp-1 text-sm slashed-zero text-muted-foreground">
                 {year}
-                {rating && (
-                  <>
-                    <span className="mx-1">&middot;</span>
-                    <span title={`My rating: ${rating}/10`}>★ {rating}</span>
-                  </>
-                )}
               </div>
+              {rating && (
+                <div className="text-xs text-muted-foreground">
+                  <Star className="inline size-3" /> {rating} {ratingLabels[rating]}
+                </div>
+              )}
             </div>
           </div>
         </a>

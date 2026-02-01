@@ -13,22 +13,10 @@ const TMDB_API_KEY = process.env.TMDB_API_KEY;
 const TMDB_MOVIE_ENDPOINT = `${TMDB_API}movie/`;
 const TMDB_TV_ENDPOINT = `${TMDB_API}tv/`;
 
-interface RatingsCache {
-  data: Map<string, number>;
-  timestamp: number;
-}
-
-const RATINGS_CACHE_TTL = 60 * 60 * 1000; // 1 hour
-let ratingsCache: RatingsCache | null = null;
-
 async function fetchRatings(
   headers: Headers,
   type: "movies" | "shows"
 ): Promise<Map<string, number>> {
-  if (ratingsCache && Date.now() - ratingsCache.timestamp < RATINGS_CACHE_TTL) {
-    return ratingsCache.data;
-  }
-
   const response = await fetch(`${TRAKT_RATINGS_ENDPOINT}/${type}`, {
     headers,
   });
@@ -51,7 +39,6 @@ async function fetchRatings(
     }
   }
 
-  ratingsCache = { data: map, timestamp: Date.now() };
   return map;
 }
 
