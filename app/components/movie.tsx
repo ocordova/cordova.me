@@ -93,13 +93,12 @@ function Movie({ movie }: { movie: NowWatching }) {
               </div>
             </div>
             <div className="w-full">
-              <div className="line-clamp-1 text-sm">{title}</div>
-              <div className="line-clamp-1 text-sm slashed-zero text-muted-foreground">
-                {year}
+              <div className="line-clamp-1 text-sm">
+                {title} <span className="text-muted-foreground slashed-zero">({year})</span>
               </div>
               {rating && (
-                <div className="text-xs text-muted-foreground">
-                  <Star className="inline size-3" /> {rating} {ratingLabels[rating]}
+                <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <Star className="size-3.5 fill-current" /> {rating} {ratingLabels[rating]}
                 </div>
               )}
             </div>
