@@ -6,4 +6,5 @@ export const quotes: string[] = [
   "\u201CHe who defines himself can\u2019t know who he really is.\u201D - Lao Tzu",
   "\u201CTrying to define yourself is like trying to bite your own teeth.\u201D - Alan Watts",
   "\u201CIn Zen, we don\u2019t find the answers. We lose the questions.\u201D - Zen proverb",
+  "\u201CThings are as they are. Looking out into the universe at night, we make no comparisons between right and wrong stars.\u201D - Alan Watts",
 ];
