@@ -32,5 +32,8 @@ yarn-error.log*
 # env
 .env
 
+# Trakt OAuth tokens (local dev)
+.data/
+
 # React Router generated types
 .react-router/

@@ -4,7 +4,7 @@
 #
 
 app = 'cordova-me'
-primary_region = 'qro'
+primary_region = 'dfw'
 
 [build]
 
@@ -15,6 +15,13 @@ primary_region = 'qro'
   auto_start_machines = true
   min_machines_running = 1
   processes = ['app']
+
+[mounts]
+  source = "trakt_data"
+  destination = "/data"
+
+[env]
+  TRAKT_TOKEN_PATH = "/data/trakt-tokens.json"
 
 [[vm]]
   memory = '256mb'
