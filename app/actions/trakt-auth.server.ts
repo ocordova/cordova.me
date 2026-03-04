@@ -95,14 +95,16 @@ function curlFetch(
   });
 }
 
-export async function traktFetch<T>(url: string): Promise<T> {
-  const accessToken = await getTraktAccessToken();
-  const raw = await curlFetch(url, {
+function buildTraktHeaders(accessToken: string): Record<string, string> {
+  return {
     "Content-Type": "application/json",
     "trakt-api-version": "2",
     "trakt-api-key": TRAKT_CLIENT_ID,
     "Authorization": `Bearer ${accessToken}`,
-  });
+  };
+}
+
+function parseTraktResponse<T>(url: string, raw: string): T {
   try {
     return JSON.parse(raw) as T;
   } catch (err) {
@@ -113,7 +115,42 @@ export async function traktFetch<T>(url: string): Promise<T> {
   }
 }
 
+export async function traktFetch<T>(url: string): Promise<T> {
+  const accessToken = await getTraktAccessToken();
+  try {
+    const raw = await curlFetch(url, buildTraktHeaders(accessToken));
+    return parseTraktResponse<T>(url, raw);
+  } catch (err) {
+    const is401 =
+      err instanceof Error && err.message.includes("HTTP 401");
+    if (!is401) throw err;
+
+    console.log("[trakt] Got 401, forcing token refresh and retrying...");
+    cachedTokens = null;
+    const freshToken = await forceTokenRefresh();
+    const raw = await curlFetch(url, buildTraktHeaders(freshToken));
+    return parseTraktResponse<T>(url, raw);
+  }
+}
+
 let cachedTokens: TraktTokens | null = null;
+
+async function forceTokenRefresh(): Promise<string> {
+  const tokens = await readTokens();
+  if (!tokens) {
+    throw new Error("No Trakt tokens found. Cannot refresh.");
+  }
+  console.log("[trakt] Forcing token refresh after 401...");
+  const refreshed = await refreshAccessToken(tokens.refresh_token);
+  console.log("[trakt] Token refreshed successfully after 401");
+  try {
+    await writeTokens(refreshed);
+  } catch (err) {
+    console.error("[trakt] Failed to write refreshed tokens to disk:", err);
+  }
+  cachedTokens = refreshed;
+  return refreshed.access_token;
+}
 
 export async function getTraktAccessToken(): Promise<string> {
   if (cachedTokens && !isTokenExpired(cachedTokens)) {
