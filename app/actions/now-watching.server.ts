@@ -33,7 +33,8 @@ async function fetchRatings(
       }
     }
     return map;
-  } catch {
+  } catch (error) {
+    console.error(`[trakt] Failed to fetch ${type} ratings:`, error);
     return new Map();
   }
 }
@@ -124,6 +125,9 @@ export async function getNowWatching(): Promise<NowWatching> {
     ]);
 
     if (!tmdbResponse.ok) {
+      console.error(
+        `[trakt] TMDB API failed: HTTP ${tmdbResponse.status} for ${tmdbEndpoint}${tmdbId}`
+      );
       throw new Error("Failed to fetch data from TMDB API");
     }
 

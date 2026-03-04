@@ -16,9 +16,13 @@ interface TraktTokens {
 
 async function readTokens(): Promise<TraktTokens | null> {
   try {
+    console.log(`[trakt] Reading tokens from ${TOKEN_PATH}`);
     const raw = await readFile(TOKEN_PATH, "utf-8");
-    return JSON.parse(raw) as TraktTokens;
-  } catch {
+    const tokens = JSON.parse(raw) as TraktTokens;
+    console.log("[trakt] Tokens loaded from disk");
+    return tokens;
+  } catch (err) {
+    console.error(`[trakt] Failed to read tokens from ${TOKEN_PATH}:`, err);
     return null;
   }
 }
@@ -99,7 +103,14 @@ export async function traktFetch<T>(url: string): Promise<T> {
     "trakt-api-key": TRAKT_CLIENT_ID,
     "Authorization": `Bearer ${accessToken}`,
   });
-  return JSON.parse(raw) as T;
+  try {
+    return JSON.parse(raw) as T;
+  } catch (err) {
+    console.error(
+      `[trakt] Failed to parse JSON from ${url}: ${raw.slice(0, 200)}`
+    );
+    throw err;
+  }
 }
 
 let cachedTokens: TraktTokens | null = null;
