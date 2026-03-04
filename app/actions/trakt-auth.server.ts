@@ -16,9 +16,13 @@ interface TraktTokens {
 
 async function readTokens(): Promise<TraktTokens | null> {
   try {
+    console.log(`[trakt] Reading tokens from ${TOKEN_PATH}`);
     const raw = await readFile(TOKEN_PATH, "utf-8");
-    return JSON.parse(raw) as TraktTokens;
-  } catch {
+    const tokens = JSON.parse(raw) as TraktTokens;
+    console.log("[trakt] Tokens loaded from disk");
+    return tokens;
+  } catch (err) {
+    console.error(`[trakt] Failed to read tokens from ${TOKEN_PATH}:`, err);
     return null;
   }
 }
@@ -50,21 +54,43 @@ async function refreshAccessToken(
   });
 
   if (!response.ok) {
+    const body = await response.text();
+    console.error(
+      `[trakt] Token refresh failed: HTTP ${response.status}: ${body.slice(0, 200)}`
+    );
     throw new Error(`Trakt token refresh failed: ${response.status}`);
   }
 
   return (await response.json()) as TraktTokens;
 }
 
-function curlFetch(url: string, headers: Record<string, string>): Promise<string> {
-  const args = ["-s", url];
+function curlFetch(
+  url: string,
+  headers: Record<string, string>
+): Promise<string> {
+  const args = ["-s", "-w", "\n%{http_code}", url];
   for (const [key, value] of Object.entries(headers)) {
     args.push("-H", `${key}: ${value}`);
   }
   return new Promise((resolve, reject) => {
     execFile("curl", args, (error, stdout) => {
-      if (error) return reject(error);
-      resolve(stdout);
+      if (error) {
+        console.error(`[trakt] curl error for ${url}:`, error.message);
+        return reject(error);
+      }
+      const lines = stdout.trimEnd().split("\n");
+      const statusCode = parseInt(lines.pop()!, 10);
+      const body = lines.join("\n");
+      if (statusCode >= 400) {
+        console.error(
+          `[trakt] HTTP ${statusCode} for ${url}: ${body.slice(0, 200)}`
+        );
+        return reject(
+          new Error(`Trakt API returned HTTP ${statusCode} for ${url}`)
+        );
+      }
+      console.log(`[trakt] OK ${statusCode} for ${url}`);
+      resolve(body);
     });
   });
 }
@@ -77,7 +103,14 @@ export async function traktFetch<T>(url: string): Promise<T> {
     "trakt-api-key": TRAKT_CLIENT_ID,
     "Authorization": `Bearer ${accessToken}`,
   });
-  return JSON.parse(raw) as T;
+  try {
+    return JSON.parse(raw) as T;
+  } catch (err) {
+    console.error(
+      `[trakt] Failed to parse JSON from ${url}: ${raw.slice(0, 200)}`
+    );
+    throw err;
+  }
 }
 
 let cachedTokens: TraktTokens | null = null;
@@ -96,12 +129,16 @@ export async function getTraktAccessToken(): Promise<string> {
   }
 
   if (isTokenExpired(tokens)) {
+    console.log("[trakt] Token expired, refreshing...");
     tokens = await refreshAccessToken(tokens.refresh_token);
+    console.log("[trakt] Token refreshed successfully");
     try {
       await writeTokens(tokens);
-    } catch {
-      // Token is still usable in-memory even if disk write fails
+    } catch (err) {
+      console.error("[trakt] Failed to write tokens to disk:", err);
     }
+  } else {
+    console.log("[trakt] Using cached/stored token (not expired)");
   }
 
   cachedTokens = tokens;
