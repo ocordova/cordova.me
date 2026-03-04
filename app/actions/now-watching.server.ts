@@ -156,7 +156,8 @@ export async function getNowWatching(): Promise<NowWatching> {
       url,
       rating,
     };
-  } catch {
+  } catch (error) {
+    console.error("[trakt] getNowWatching failed:", error);
     throw new Error("Failed to fetch data from Trakt API");
   }
 }
