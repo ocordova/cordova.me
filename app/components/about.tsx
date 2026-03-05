@@ -2,7 +2,7 @@ const About = () => {
   return (
     <>
       <section>
-        <h2 className="my-4 font-medium tracking-tight text-forground">
+        <h2 className="my-4 font-medium tracking-tight text-foreground">
           Óscar Córdova
         </h2>
         <p className="text-sm leading-7">
