@@ -1,49 +1,49 @@
+import { formatDistanceToNowStrict } from "date-fns";
 import { useNowWatching } from "~/lib/hooks";
+import NowSection from "./now-section";
 import Movie from "./movie";
 import { WatchingSectionSkeleton } from "./ui/content-skeletons";
+import { Badge } from "./ui/badge";
 
 export default function NowWatchingSection() {
   const { data: movie, loading, error, isInitialLoad } = useNowWatching();
 
-  if (loading && isInitialLoad) {
-    return (
-      <section className="mt-16">
-        <WatchingSectionSkeleton />
-      </section>
-    );
-  }
+  const badge = movie ? (() => {
+    const watchedAt = new Date(movie.date);
+    const isCurrentlyWatching = watchedAt > new Date();
 
-  if (error) {
     return (
-      <section className="mt-16">
-        <div className="mt-12 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Watching</h2>
-        </div>
-        <div className="mt-2 p-4 rounded-md bg-destructive/10 border border-destructive/20">
-          <p className="text-sm text-destructive">
-            Failed to load currently watching: {error}
-          </p>
-        </div>
-      </section>
+      <Badge variant="secondary" className="font-normal">
+        {isCurrentlyWatching ? (
+          <>
+            <div
+              className="relative flex h-2 w-2 items-center justify-center mr-1.5"
+              aria-hidden
+            >
+              <div className="opacity-85 absolute inline-flex h-full w-full animate-ping rounded-full bg-primary dark:opacity-30" />
+              <div className="relative inline-flex h-1 w-1 rounded-full bg-primary" />
+            </div>
+            now playing
+          </>
+        ) : (
+          formatDistanceToNowStrict(watchedAt, { addSuffix: true })
+        )}
+      </Badge>
     );
-  }
-
-  if (!movie) {
-    return (
-      <section className="mt-16">
-        <div className="mt-12 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Watching</h2>
-        </div>
-        <div className="mt-2 text-sm text-muted-foreground">
-          No watching data available
-        </div>
-      </section>
-    );
-  }
+  })() : undefined;
 
   return (
-    <section className="mt-16">
-      <Movie movie={movie} />
-    </section>
+    <NowSection
+      title="Watching"
+      viewAllHref="https://trakt.tv/users/ocordova/history"
+      badge={badge}
+      skeleton={<WatchingSectionSkeleton />}
+      loading={loading}
+      isInitialLoad={isInitialLoad}
+      error={error}
+      hasData={!!movie}
+    >
+      {movie && <Movie movie={movie} />}
+    </NowSection>
   );
 }
