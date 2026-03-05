@@ -2,7 +2,7 @@ const WorkPhilosophy = () => {
   return (
     <>
       <section className="mt-12">
-        <h2 className="my-4 font-medium tracking-tight text-forground">
+        <h2 className="my-4 font-medium tracking-tight text-foreground">
           Work Philosophy
         </h2>
         <p className="text-sm leading-7 text-pretty">

@@ -1,7 +1,7 @@
 const Contact = () => {
   return (
     <section className="mt-12">
-      <h2 className="my-4 font-medium tracking-tight text-forground">
+      <h2 className="my-4 font-medium tracking-tight text-foreground">
         Contact
       </h2>
       <p className="text-sm leading-7">

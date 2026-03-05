@@ -27,7 +27,7 @@ const Bookmarks = () => {
   return (
     <section>
       <div className="mt-12 flex items-center justify-between">
-        <h2 className="font-medium tracking-tight text-forground">Bookmarks</h2>
+        <h2 className="font-medium tracking-tight text-foreground">Bookmarks</h2>
         <Link to="/bookmarks">
           <Button
             variant="ghost"
