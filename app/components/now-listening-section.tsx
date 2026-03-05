@@ -1,49 +1,57 @@
+import { formatDistanceToNowStrict } from "date-fns";
 import { useNowListening } from "~/lib/hooks";
+import NowSection from "./now-section";
 import SongPlaying from "./song-playing";
 import { ListeningSectionSkeleton } from "./ui/content-skeletons";
+import { Badge } from "./ui/badge";
 
 export default function NowListeningSection() {
   const { data: song, loading, error, isInitialLoad } = useNowListening();
 
-  if (loading && isInitialLoad) {
-    return (
-      <section className="mt-12">
-        <ListeningSectionSkeleton />
-      </section>
-    );
-  }
+  const timeAgo = song?.date
+    ? formatDistanceToNowStrict(song.date, { addSuffix: true })
+    : "";
 
-  if (error) {
-    return (
-      <section className="mt-12">
-        <div className="mt-16 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Listening</h2>
-        </div>
-        <div className="mt-2 p-4 rounded-md bg-destructive/10 border border-destructive/20">
-          <p className="text-sm text-destructive">
-            Failed to load currently listening: {error}
-          </p>
-        </div>
-      </section>
-    );
-  }
-
-  if (!song) {
-    return (
-      <section className="mt-12">
-        <div className="mt-16 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Listening</h2>
-        </div>
-        <div className="mt-2 text-sm text-muted-foreground">
-          No music data available
-        </div>
-      </section>
-    );
-  }
+  const badge = song ? (
+    <Badge variant="secondary" className="font-normal">
+      {song.isPlaying ? (
+        <>
+          <div
+            className="relative flex h-3 w-3 items-center justify-center mr-1"
+            aria-hidden
+          >
+            <div className="flex h-full justify-center items-center space-x-0.5">
+              <div
+                className="animate-wave h-[9px] w-0.5 rounded-full bg-foreground"
+                style={{ animationDelay: "-0.4s" }}
+              />
+              <div
+                className="animate-wave h-[10px] w-0.5 rounded-full bg-foreground"
+                style={{ animationDelay: "-0.3s" }}
+              />
+              <div className="animate-wave h-[11px] w-0.5 rounded-full bg-foreground" />
+            </div>
+          </div>
+          now playing
+        </>
+      ) : (
+        timeAgo
+      )}
+    </Badge>
+  ) : undefined;
 
   return (
-    <section className="mt-12">
-      <SongPlaying song={song} />
-    </section>
+    <NowSection
+      title="Listening"
+      viewAllHref="https://www.last.fm/user/ocordova"
+      badge={badge}
+      skeleton={<ListeningSectionSkeleton />}
+      loading={loading}
+      isInitialLoad={isInitialLoad}
+      error={error}
+      hasData={!!song}
+    >
+      {song && <SongPlaying song={song} />}
+    </NowSection>
   );
 }
