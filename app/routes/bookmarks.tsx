@@ -11,7 +11,6 @@ import {
 } from "~/components/ui/dropdown-menu";
 import { Button } from "~/components/ui/button";
 import { ListFilterIcon } from "lucide-react";
-import { Badge } from "~/components/ui/badge";
 
 export const meta: MetaFunction = () => {
   return [
@@ -125,29 +124,29 @@ function FilterBookmarks({
 
 const Item = ({ title, description, url, icon, category }: Bookmark) => {
   return (
-    <li className="group -mx-3">
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        <div className="p-3 hover:bg-accent/80 rounded-md transition-colors duration-200">
-          <div className="flex items-center justify-between gap-x-2">
-            {icon ? (
-              <img
-                width={28}
-                height={28}
-                src={icon}
-                alt={title}
-                className="flex-none rounded-full"
-              />
-            ) : (
-              <div></div>
-            )}
-            <Badge variant="secondary" className="flex-none font-normal">
-              {category}
-            </Badge>
-          </div>
-          <h3 className="mt-3 flex-auto text-sm font-medium leading-6">
-            {title}
+    <li>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-start gap-3 py-2"
+      >
+        <div className="flex-none w-6 h-6 mt-0.5">
+          {icon ? (
+            <img
+              width={24}
+              height={24}
+              src={icon}
+              alt=""
+              className="rounded-sm"
+            />
+          ) : null}
+        </div>
+        <div className="min-w-0">
+          <h3 className="text-sm leading-6">
+            <span className="link-underline">{title}</span>
           </h3>
-          <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+          <p className="text-[0.8125rem] text-muted-foreground">{description}</p>
         </div>
       </a>
     </li>
@@ -156,7 +155,7 @@ const Item = ({ title, description, url, icon, category }: Bookmark) => {
 
 function BookMarksData({ bookmarks }: { bookmarks: Bookmark[] }) {
   return (
-    <ul className="mt-4 space-y-2">
+    <ul className="mt-4">
       {bookmarks.map((bookmark) => {
         return <Item key={bookmark.title} {...bookmark} />;
       })}

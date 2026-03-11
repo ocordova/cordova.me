@@ -1,52 +1,35 @@
 import { bookmarks } from "~/db/bookmarks";
-import { Button } from "~/components/ui/button";
 import { Link } from "react-router";
-
-const Bookmark = ({ title, url }: { title: string; url: string }) => {
-  return (
-    <li>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative flex items-center rounded-md transition-colors duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
-      >
-        <div className="min-w-0 flex-auto">
-          <div className="flex items-center gap-x-4">
-            <h3 className="min-w-0 text-sm leading-6">{title}</h3>
-          </div>
-        </div>
-      </a>
-    </li>
-  );
-};
 
 const Bookmarks = () => {
   const latestTwoBookmarks = bookmarks.slice(0, 2);
 
   return (
-    <section>
-      <div className="mt-12 flex items-center justify-between">
-        <h2 className="font-medium tracking-tight text-foreground">Bookmarks</h2>
-        <Link to="/bookmarks">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-muted-foreground -mr-3"
-          >
-            View all
-          </Button>
+    <section className="mt-12">
+      <div className="flex items-center justify-between">
+        <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">
+          Bookmarks
+        </h2>
+        <Link
+          to="/bookmarks"
+          className="text-[0.8125rem] text-muted-foreground transition-colors hover:text-foreground"
+        >
+          View all
         </Link>
       </div>
-      <ul className="mt-2">
+      <div className="mt-2">
         {latestTwoBookmarks.map((bookmark) => (
-          <Bookmark
+          <a
             key={bookmark.title}
-            title={bookmark.title}
-            url={bookmark.url}
-          />
+            href={bookmark.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block py-2"
+          >
+            <span className="text-sm link-underline">{bookmark.title}</span>
+          </a>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

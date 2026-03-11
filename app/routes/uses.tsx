@@ -22,10 +22,10 @@ const ToolsSection = ({
 }) => {
   return (
     <section>
-      <h2 className="sticky top-0 -mx-3 px-3 z-10 py-2 font-medium tracking-tight bg-background">
+      <h2 className="sticky top-0 -mx-3 px-3 z-10 py-2 font-serif text-lg font-medium tracking-tight bg-background">
         {title}
       </h2>
-      <ul className="mt-4 space-y-2">{children}</ul>
+      <ul className="mt-2">{children}</ul>
     </section>
   );
 };
@@ -42,22 +42,29 @@ const Tool = ({
   children: ReactNode;
 }) => {
   return (
-    <li className="group -mx-3">
-      <a href={url} target="_blank" rel="noopener noreferrer">
-        <div className="p-3 hover:bg-accent/80 rounded-md transition-colors duration-200">
-          <div className="flex items-center justify-between gap-x-2">
-            {icon ? (
-              <img
-                width="28"
-                height="28"
-                src={icon}
-                alt={name}
-                className="flex-none"
-              />
-            ) : null}
-            <h3 className="flex-auto truncate text-sm font-medium">{name}</h3>
-          </div>
-          <p className="mt-2.5 text-sm text-muted-foreground">{children}</p>
+    <li>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-start gap-3 py-2"
+      >
+        <div className="flex-none w-6 h-6 mt-0.5">
+          {icon ? (
+            <img
+              width={24}
+              height={24}
+              src={icon}
+              alt=""
+              className="rounded-sm"
+            />
+          ) : null}
+        </div>
+        <div className="min-w-0">
+          <h3 className="text-sm">
+            <span className="link-underline">{name}</span>
+          </h3>
+          <p className="text-[0.8125rem] text-muted-foreground">{children}</p>
         </div>
       </a>
     </li>
@@ -67,7 +74,7 @@ const Tool = ({
 export default function UsesPage() {
   return (
     <SimpleLayout title="Uses">
-      <div className="space-y-8">
+      <div className="space-y-4">
         {categories.map((category, index) => {
           return (
             <ToolsSection key={index} title={category.name}>

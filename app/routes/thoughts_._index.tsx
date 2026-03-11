@@ -29,27 +29,19 @@ export default function ThoughtsPage() {
 
   return (
     <SimpleLayout title="Thoughts">
-      <ul className="">
+      <div>
         {thoughts.map((thought) => (
-          <Thought
+          <Link
             key={thought.slug}
-            title={thought.frontmatter.title}
-            href={`/thoughts/${thought.slug}`}
-          />
+            to={`/thoughts/${thought.slug}`}
+            className="block py-2"
+          >
+            <span className="text-sm link-underline">
+              {thought.frontmatter.title}
+            </span>
+          </Link>
         ))}
-      </ul>
+      </div>
     </SimpleLayout>
   );
 }
-
-const Thought = ({ title, href }: { title: string; href: string }) => {
-  return (
-    <li className="group relative flex items-center rounded-md transition-colors duration-200 -mx-3 cursor-pointer hover:bg-accent/80">
-      <Link to={href} className="py-3 p-3">
-        <div className="min-w-0 flex-auto">
-          <h2 className="min-w-0 text-sm leading-6">{title}</h2>
-        </div>
-      </Link>
-    </li>
-  );
-};
