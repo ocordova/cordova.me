@@ -2,7 +2,7 @@ import { Bookmark, bookmarks, Category } from "~/db/bookmarks";
 import { SimpleLayout } from "~/components/layouts/simple-layout";
 
 import { MetaFunction, LoaderFunctionArgs } from "react-router";
-import { useLoaderData, useNavigate } from "react-router";
+import { useLoaderData, useNavigate, useLocation } from "react-router";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -59,6 +59,7 @@ function FilterBookmarks({
   currenyCategory?: Category | null;
 }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const tabs = [
     {
       name: "All",
@@ -88,11 +89,9 @@ function FilterBookmarks({
   ];
 
   const handleTypeChange = (type: string) => {
-    const url = new URL(location.href);
-    url.searchParams.set("category", type);
-    navigate({
-      search: url.search,
-    });
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set("category", type);
+    navigate({ search: searchParams.toString() });
   };
 
   return (
@@ -128,7 +127,7 @@ const Item = ({ title, description, url, icon, category }: Bookmark) => {
   return (
     <li className="group -mx-3">
       <a href={url} target="_blank" rel="noopener noreferrer">
-        <div className="p-3 hover:bg-accent/80 rounded-md transition-all duration-200">
+        <div className="p-3 hover:bg-accent/80 rounded-md transition-colors duration-200">
           <div className="flex items-center justify-between gap-x-2">
             {icon ? (
               <img

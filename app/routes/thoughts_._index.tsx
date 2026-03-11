@@ -44,7 +44,7 @@ export default function ThoughtsPage() {
 
 const Thought = ({ title, href }: { title: string; href: string }) => {
   return (
-    <li className="group relative flex items-center rounded-md transition-all duration-200 -mx-3 cursor-pointer hover:bg-accent/80">
+    <li className="group relative flex items-center rounded-md transition-colors duration-200 -mx-3 cursor-pointer hover:bg-accent/80">
       <Link to={href} className="py-3 p-3">
         <div className="min-w-0 flex-auto">
           <h2 className="min-w-0 text-sm leading-6">{title}</h2>

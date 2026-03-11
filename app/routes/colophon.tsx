@@ -15,7 +15,7 @@ export default function AboutPage() {
     <>
       <div className="text-sm">
         <h1 className="mt-8 font-semibold">Colophon</h1>
-        <p className="leading-7 [&:not(:first-child)]:mt-6 text-justify">
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-left">
           In case you were wondering, this site is:
         </p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
@@ -90,7 +90,7 @@ export default function AboutPage() {
           </li>
         </ul>
 
-        <p className="leading-7 mt-6 text-justify">
+        <p className="leading-7 mt-6 text-left">
           The open source code is available on{" "}
           <a
             href="https://github.com/ocordova/cordova.me"

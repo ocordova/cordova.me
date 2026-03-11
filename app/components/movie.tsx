@@ -31,8 +31,8 @@ function Movie({ movie }: { movie: NowWatching }) {
 
   return (
     <>
-      <div className="mt-12 flex items-center justify-between">
-        <h2 className="flex gap-2 font-medium tracking-tight text-forground">
+      <div className="flex items-center justify-between">
+        <h2 className="flex gap-2 font-medium tracking-tight text-foreground">
           Watching
           <Badge variant="secondary" className="font-normal">
             {isCurrentlyWatching ? (
@@ -71,9 +71,9 @@ function Movie({ movie }: { movie: NowWatching }) {
           target="_blank"
           title="View on Trakt"
           rel="noopener noreferrer"
-          className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
+          className="group relative flex items-center rounded-md transition-colors duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
         >
-          <div className="group flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <div className="relative">
               <div className="relative origin-center w-[64px]">
                 {!imageLoaded && (
@@ -87,6 +87,7 @@ function Movie({ movie }: { movie: NowWatching }) {
                   alt={title}
                   width={64}
                   height={96}
+                  loading="lazy"
                   onLoad={() => setImageLoaded(true)}
                   onError={() => setImageLoaded(true)}
                 />

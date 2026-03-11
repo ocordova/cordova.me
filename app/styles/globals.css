@@ -58,6 +58,10 @@
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background rounded-sm;
+  }
 }
 
 @keyframes wave {
@@ -72,4 +76,18 @@
 
 .animate-wave {
   animation: wave 0.7s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

@@ -25,8 +25,8 @@ function SongPlaying({ song }: { song: NowListening }) {
 
   return (
     <>
-      <div className="mt-16 flex items-center justify-between">
-        <h2 className="flex gap-2 font-medium tracking-tight text-forground">
+      <div className="flex items-center justify-between">
+        <h2 className="flex gap-2 font-medium tracking-tight text-foreground">
           Listening
           <Badge variant="secondary" className="font-normal">
             {isPlaying ? (
@@ -76,9 +76,9 @@ function SongPlaying({ song }: { song: NowListening }) {
           target="_blank"
           title="View on Last.fm"
           rel="noopener noreferrer"
-          className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
+          className="group relative flex items-center rounded-md transition-colors duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
         >
-          <div className="group flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <div className="relative">
               <div className="relative origin-center w-[72px]">
                 {!imageLoaded && (
@@ -92,6 +92,7 @@ function SongPlaying({ song }: { song: NowListening }) {
                   alt={title}
                   width={72}
                   height={72}
+                  loading="lazy"
                   onLoad={() => setImageLoaded(true)}
                   onError={() => {
                     setImageSrc(placeholderImage);
