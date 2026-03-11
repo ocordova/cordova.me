@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+      serif: ["Newsreader Variable", ...defaultTheme.fontFamily.serif],
     },
     container: {
       center: true,

@@ -14,18 +14,27 @@ export default function AboutPage() {
   return (
     <>
       <div className="text-sm">
-        <h1 className="mt-8 font-semibold">Colophon</h1>
+        <h1 className="mt-8 font-serif text-xl font-medium tracking-tight">Colophon</h1>
         <p className="leading-7 [&:not(:first-child)]:mt-6 text-left">
           In case you were wondering, this site is:
         </p>
         <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
           <li>
-            Carefully hand-coded with{" "}
+            Pair-programmed with{" "}
+            <a
+              href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline"
+            >
+              Claude Code
+            </a>{" "}
+            &{" "}
             <a
               href="https://zed.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:no-underline text-foreground/80"
+              className="link-underline"
             >
               Zed
             </a>
@@ -37,7 +46,7 @@ export default function AboutPage() {
               href="https://reactrouter.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:no-underline text-foreground/80"
+              className="link-underline"
             >
               React Router
             </a>
@@ -49,7 +58,7 @@ export default function AboutPage() {
               href="https://tailwindcss.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:no-underline text-foreground/80"
+              className="link-underline"
             >
               Tailwind CSS
             </a>{" "}
@@ -58,7 +67,7 @@ export default function AboutPage() {
               href="https://ui.shadcn.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:no-underline text-foreground/80"
+              className="link-underline"
             >
               shadcn/ui
             </a>
@@ -70,9 +79,30 @@ export default function AboutPage() {
               href="https://lucide.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:no-underline text-foreground/80"
+              className="link-underline"
             >
               Lucide
+            </a>
+            .
+          </li>
+          <li>
+            Typeset in{" "}
+            <a
+              href="https://github.com/productiontype/Newsreader"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline"
+            >
+              Newsreader
+            </a>{" "}
+            &{" "}
+            <a
+              href="https://rsms.me/inter/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline"
+            >
+              Inter
             </a>
             .
           </li>
@@ -82,7 +112,7 @@ export default function AboutPage() {
               href="https://fly.io/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:no-underline text-foreground/80"
+              className="link-underline"
             >
               Fly
             </a>
@@ -96,7 +126,7 @@ export default function AboutPage() {
             href="https://github.com/ocordova/cordova.me"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-4 hover:no-underline text-foreground/80"
+            className="link-underline"
           >
             GitHub
           </a>

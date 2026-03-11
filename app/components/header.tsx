@@ -1,35 +1,23 @@
-import { cn } from "~/lib/utils";
 import Wrapper from "./layouts/app-layout";
-import { NavLink } from "react-router";
+import { Link, useLocation } from "react-router";
 
 export default function Header() {
-  const navigation: { href: string; label: string }[] = [
-    { href: "/", label: "Home" },
-    { href: "/thoughts", label: "Thoughts" },
-    { href: "/bookmarks", label: "Bookmarks" },
-    { href: "/uses", label: "Uses" },
-  ];
+  const { pathname } = useLocation();
+
+  if (pathname === "/") {
+    return null;
+  }
 
   return (
     <header>
       <Wrapper>
-        <div className="h-14 flex justify-center sm:justify-end items-center w-full mx-auto max-w- px-4 py-4 sm:px-0 mb-8">
-          <nav className="flex items-center gap-6 text-sm">
-            {navigation.map((item) => (
-              <NavLink
-                className={({ isActive }) =>
-                  cn(
-                    "transition-colors hover:text-foreground/80",
-                    isActive ? "text-foreground" : "text-foreground/60"
-                  )
-                }
-                key={item.href}
-                to={item.href}
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+        <div className="py-8 px-4 sm:px-0">
+          <Link
+            to="/"
+            className="font-serif text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            ← Home
+          </Link>
         </div>
       </Wrapper>
     </header>
