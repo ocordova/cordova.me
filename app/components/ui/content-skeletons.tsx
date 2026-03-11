@@ -2,7 +2,7 @@ import { Skeleton } from "./skeleton";
 
 export function SongSkeleton() {
   return (
-    <div className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3">
+    <div className="group relative flex items-center rounded-md transition-colors duration-200 py-2 p-3 -mx-3">
       <div className="group flex items-center gap-4">
         <div className="relative">
           <div className="relative origin-center w-[72px]">
@@ -20,7 +20,7 @@ export function SongSkeleton() {
 
 export function BookSkeleton() {
   return (
-    <div className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3">
+    <div className="group relative flex items-center rounded-md transition-colors duration-200 py-2 p-3 -mx-3">
       <div className="group flex items-center gap-4">
         <div className="relative">
           <div className="relative origin-center w-[64px]">
@@ -38,7 +38,7 @@ export function BookSkeleton() {
 
 export function MovieSkeleton() {
   return (
-    <div className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3">
+    <div className="group relative flex items-center rounded-md transition-colors duration-200 py-2 p-3 -mx-3">
       <div className="group flex items-center gap-4">
         <div className="relative">
           <div className="relative origin-center w-[64px]">
@@ -66,7 +66,7 @@ export function QuoteSkeleton() {
 export function ListeningSectionSkeleton() {
   return (
     <>
-      <div className="mt-16 flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <div className="flex gap-2 items-center">
           <Skeleton variant="text" className="h-[24px] w-[70px]" />
           <Skeleton className="h-[24px] w-[90px] rounded-full" />
@@ -83,7 +83,7 @@ export function ListeningSectionSkeleton() {
 export function ReadingSectionSkeleton() {
   return (
     <>
-      <div className="mt-16 flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <Skeleton variant="text" className="h-[24px] w-[60px]" />
         <Skeleton variant="text" className="h-[32px] w-[64px] rounded-md" />
       </div>
@@ -97,7 +97,7 @@ export function ReadingSectionSkeleton() {
 export function WatchingSectionSkeleton() {
   return (
     <>
-      <div className="mt-12 flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <div className="flex gap-2 items-center">
           <Skeleton variant="text" className="h-[24px] w-[75px]" />
           <Skeleton className="h-[24px] w-[90px] rounded-full" />

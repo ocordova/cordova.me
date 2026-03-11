@@ -2,32 +2,6 @@ import { cn } from "~/lib/utils";
 import Wrapper from "./layouts/app-layout";
 import { NavLink } from "react-router";
 
-// const NavLink = ({
-//   href,
-//   children,
-// }: {
-//   href: string;
-//   children: React.ReactNode;
-// }) => {
-//   const pathname = usePathname();
-
-//   const isActive = href === "/" ? pathname === href : pathname.startsWith(href);
-
-//   return (
-//     <Link
-//       href={href}
-//       className={cn(
-//         "transition-colors hover:text-foreground/80",
-//         isActive ? "text-foreground" : "text-foreground/60",
-//       )}
-//     >
-//       {children}
-//     </Link>
-//   );
-// };
-
-// Export default
-
 export default function Header() {
   const navigation: { href: string; label: string }[] = [
     { href: "/", label: "Home" },

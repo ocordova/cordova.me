@@ -44,7 +44,7 @@ const Tool = ({
   return (
     <li className="group -mx-3">
       <a href={url} target="_blank" rel="noopener noreferrer">
-        <div className="p-3 hover:bg-accent/80 rounded-md transition-all duration-200">
+        <div className="p-3 hover:bg-accent/80 rounded-md transition-colors duration-200">
           <div className="flex items-center justify-between gap-x-2">
             {icon ? (
               <img

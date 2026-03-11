@@ -16,8 +16,8 @@ export default function NowListeningSection() {
   if (error) {
     return (
       <section className="mt-12">
-        <div className="mt-16 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Listening</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="font-medium tracking-tight text-foreground">Listening</h2>
         </div>
         <div className="mt-2 p-4 rounded-md bg-destructive/10 border border-destructive/20">
           <p className="text-sm text-destructive">
@@ -31,8 +31,8 @@ export default function NowListeningSection() {
   if (!song) {
     return (
       <section className="mt-12">
-        <div className="mt-16 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Listening</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="font-medium tracking-tight text-foreground">Listening</h2>
         </div>
         <div className="mt-2 text-sm text-muted-foreground">
           No music data available

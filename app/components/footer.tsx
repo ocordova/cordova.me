@@ -36,7 +36,7 @@ export default function Footer() {
             <ModeToggle />
           </div>
         </div>
-        <button onClick={nextQuote} className="hover:cursor-default">
+        <button onClick={nextQuote} className="hover:cursor-default" aria-label="Show next quote">
           <blockquote className="mt-2 text-left text-xs leading-6 text-muted-foreground text-pretty">
             {index !== null ? quotes[index] : <QuoteSkeleton />}
           </blockquote>

@@ -17,8 +17,8 @@ export default function NowReadingSection() {
   if (error) {
     return (
       <section className="mt-12">
-        <div className="mt-16 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Reading</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="font-medium tracking-tight text-foreground">Reading</h2>
           <a
             href="https://literal.club/ocordova"
             rel="noopener noreferrer"
@@ -45,8 +45,8 @@ export default function NowReadingSection() {
   if (!book) {
     return (
       <section className="mt-12">
-        <div className="mt-16 flex items-center justify-between">
-          <h2 className="font-medium tracking-tight text-forground">Reading</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="font-medium tracking-tight text-foreground">Reading</h2>
           <a
             href="https://literal.club/ocordova"
             rel="noopener noreferrer"
@@ -71,7 +71,7 @@ export default function NowReadingSection() {
   return (
     <section className="mt-12">
       <div className="mt-16 flex items-center justify-between">
-        <h2 className="font-medium tracking-tight text-forground">Reading</h2>
+        <h2 className="font-medium tracking-tight text-foreground">Reading</h2>
         <a
           href="https://literal.club/ocordova"
           rel="noopener noreferrer"

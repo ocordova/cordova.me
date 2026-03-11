@@ -9,7 +9,7 @@ const Bookmark = ({ title, url }: { title: string; url: string }) => {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative flex items-center rounded-md transition-all duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
+        className="group relative flex items-center rounded-md transition-colors duration-200 py-2 p-3 -mx-3 cursor-pointer hover:bg-accent/80"
       >
         <div className="min-w-0 flex-auto">
           <div className="flex items-center gap-x-4">
@@ -27,7 +27,7 @@ const Bookmarks = () => {
   return (
     <section>
       <div className="mt-12 flex items-center justify-between">
-        <h2 className="font-medium tracking-tight text-forground">Bookmarks</h2>
+        <h2 className="font-medium tracking-tight text-foreground">Bookmarks</h2>
         <Link to="/bookmarks">
           <Button
             variant="ghost"
