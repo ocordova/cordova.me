@@ -22,7 +22,7 @@ export default function AboutPage() {
           <li>
             Pair-programmed with{" "}
             <a
-              href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview"
+              href="https://claude.com/product/claude-code"
               target="_blank"
               rel="noopener noreferrer"
               className="link-underline"

@@ -18,7 +18,7 @@ export const categories = [
       {
         name: "Claude Code",
         description: "Pair programming and brainstorming.",
-        url: "https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview",
+        url: "https://claude.com/product/claude-code",
         icon: "/static/tools/claude.png",
       },
       {
