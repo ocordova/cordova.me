@@ -108,7 +108,7 @@ const Now = () => {
         <div className="flex flex-col gap-2 mt-5">
           {/* Listening */}
           <NowMediaRow label="Listening" loading={songLoading && songInitial}>
-            {song && (
+            {song ? (
               <>
                 <a
                   href={song.url}
@@ -146,12 +146,14 @@ const Now = () => {
                   </>
                 ) : null}
               </>
-            )}
+            ) : !songLoading ? (
+              <span className="text-muted-foreground">—</span>
+            ) : null}
           </NowMediaRow>
 
           {/* Reading */}
           <NowMediaRow label="Reading" loading={bookLoading && bookInitial}>
-            {book && (
+            {book ? (
               <>
                 <a
                   href={book.url}
@@ -164,12 +166,14 @@ const Now = () => {
                 <span className="text-muted-foreground flex-shrink-0">&middot;</span>
                 <span className="text-muted-foreground truncate">{book.author}</span>
               </>
-            )}
+            ) : !bookLoading ? (
+              <span className="text-muted-foreground">—</span>
+            ) : null}
           </NowMediaRow>
 
           {/* Watching */}
           <NowMediaRow label="Watching" loading={movieLoading && movieInitial}>
-            {movie && (
+            {movie ? (
               <>
                 <a
                   href={movie.url}
@@ -192,7 +196,9 @@ const Now = () => {
                   {shortTimeAgo(new Date(movie.date))}
                 </span>
               </>
-            )}
+            ) : !movieLoading ? (
+              <span className="text-muted-foreground">—</span>
+            ) : null}
           </NowMediaRow>
         </div>
       </section>
