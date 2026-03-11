@@ -23,8 +23,8 @@ export default function Footer() {
     <footer className="px-6 py-12">
       <AppLayout>
         <div className="h-px bg-border/50 my-4" />
-        <div className="flex justify-between items-center">
-          <nav className="flex items-center gap-6 text-[0.8125rem]">
+        <div className="flex justify-between items-start gap-2">
+          <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-6 text-[0.8125rem]">
             <Link
               className="text-muted-foreground transition-colors hover:text-foreground"
               to="/"
@@ -65,7 +65,7 @@ export default function Footer() {
           className="hover:cursor-default"
           aria-label="Show next quote"
         >
-          <blockquote className="mt-2 text-left text-sm leading-7 text-muted-foreground text-pretty font-serif italic">
+          <blockquote className="mt-4 text-left text-sm leading-7 text-muted-foreground text-pretty font-serif italic">
             {index !== null ? quotes[index] : <QuoteSkeleton />}
           </blockquote>
         </button>
