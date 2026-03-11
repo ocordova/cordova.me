@@ -68,8 +68,8 @@
 .link-underline {
   @apply no-underline;
   background-image: linear-gradient(
-    hsl(var(--border)),
-    hsl(var(--border))
+    hsl(var(--muted-foreground) / 0.4),
+    hsl(var(--muted-foreground) / 0.4)
   );
   background-size: 100% 1px;
   background-position: 0 100%;
