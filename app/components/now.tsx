@@ -30,32 +30,41 @@ function shortTimeAgo(date: Date): string {
 
 function NowMediaRow({
   label,
-  children,
+  title,
+  meta,
   loading,
 }: {
   label: string;
-  children: React.ReactNode;
+  title: React.ReactNode;
+  meta?: React.ReactNode;
   loading?: boolean;
 }) {
   if (loading) {
     return (
-      <div className="flex items-center gap-2 text-[0.8125rem]">
+      <div className="flex items-start gap-2 text-[0.8125rem]">
         <span className="text-muted-foreground w-[4.5rem] flex-shrink-0">
           {label}
         </span>
-        <Skeleton variant="text" className="h-[18px] w-[120px]" />
-        <Skeleton variant="text" className="h-[18px] w-[100px]" />
+        <div className="flex flex-col gap-1">
+          <Skeleton variant="text" className="h-[18px] w-[160px]" />
+          <Skeleton variant="text" className="h-[18px] w-[120px]" />
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="flex items-center gap-2 text-[0.8125rem] overflow-hidden">
+    <div className="flex items-start gap-2 text-[0.8125rem]">
       <span className="text-muted-foreground w-[4.5rem] flex-shrink-0">
         {label}
       </span>
-      <div className="flex items-center gap-2 min-w-0 overflow-hidden">
-        {children}
+      <div className="flex flex-col gap-0.5 min-w-0">
+        <div className="min-w-0 truncate">{title}</div>
+        {meta && (
+          <div className="flex items-center gap-2 text-muted-foreground">
+            {meta}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -105,101 +114,118 @@ const Now = () => {
           </a>
           .
         </p>
-        <div className="flex flex-col gap-2 mt-5">
+        <div className="flex flex-col gap-3 mt-5">
           {/* Listening */}
-          <NowMediaRow label="Listening" loading={songLoading && songInitial}>
-            {song ? (
-              <>
+          <NowMediaRow
+            label="Listening"
+            loading={songLoading && songInitial}
+            title={
+              song ? (
                 <a
                   href={song.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-underline text-[0.8125rem] truncate flex-shrink-0 max-w-[45%]"
+                  className="link-underline text-[0.8125rem]"
                 >
                   {song.title}
                 </a>
-                <span className="text-muted-foreground flex-shrink-0">&middot;</span>
-                <span className="text-muted-foreground truncate">{song.artist}</span>
-                {song.isPlaying ? (
-                  <span className="inline-flex items-center gap-1 text-xs text-muted-foreground opacity-70 flex-shrink-0">
-                    <span
-                      className="inline-flex items-center gap-px h-[10px]"
-                      aria-hidden
-                    >
+              ) : !songLoading ? (
+                <span className="text-muted-foreground">—</span>
+              ) : null
+            }
+            meta={
+              song ? (
+                <>
+                  <span className="truncate">{song.artist}</span>
+                  {song.isPlaying ? (
+                    <span className="inline-flex items-center gap-1 text-xs opacity-70 flex-shrink-0">
                       <span
-                        className="animate-wave w-0.5 h-[6px] rounded-full bg-foreground opacity-50"
-                        style={{ animationDelay: "-0.4s" }}
-                      />
-                      <span
-                        className="animate-wave w-0.5 h-[8px] rounded-full bg-foreground opacity-50"
-                        style={{ animationDelay: "-0.3s" }}
-                      />
-                      <span className="animate-wave w-0.5 h-[10px] rounded-full bg-foreground opacity-50" />
+                        className="inline-flex items-center gap-px h-[10px]"
+                        aria-hidden
+                      >
+                        <span
+                          className="animate-wave w-0.5 h-[6px] rounded-full bg-foreground opacity-50"
+                          style={{ animationDelay: "-0.4s" }}
+                        />
+                        <span
+                          className="animate-wave w-0.5 h-[8px] rounded-full bg-foreground opacity-50"
+                          style={{ animationDelay: "-0.3s" }}
+                        />
+                        <span className="animate-wave w-0.5 h-[10px] rounded-full bg-foreground opacity-50" />
+                      </span>
                     </span>
-                  </span>
-                ) : song.date ? (
-                  <>
-                    <span className="text-muted-foreground flex-shrink-0">&middot;</span>
-                    <span className="text-muted-foreground opacity-70 flex-shrink-0">
-                      {shortTimeAgo(new Date(song.date))}
-                    </span>
-                  </>
-                ) : null}
-              </>
-            ) : !songLoading ? (
-              <span className="text-muted-foreground">—</span>
-            ) : null}
-          </NowMediaRow>
+                  ) : song.date ? (
+                    <>
+                      <span className="flex-shrink-0">&middot;</span>
+                      <span className="opacity-70 flex-shrink-0">
+                        {shortTimeAgo(new Date(song.date))}
+                      </span>
+                    </>
+                  ) : null}
+                </>
+              ) : undefined
+            }
+          />
 
           {/* Reading */}
-          <NowMediaRow label="Reading" loading={bookLoading && bookInitial}>
-            {book ? (
-              <>
+          <NowMediaRow
+            label="Reading"
+            loading={bookLoading && bookInitial}
+            title={
+              book ? (
                 <a
                   href={book.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-underline text-[0.8125rem] truncate flex-shrink-0 max-w-[55%]"
+                  className="link-underline text-[0.8125rem]"
                 >
                   {book.title}
                 </a>
-                <span className="text-muted-foreground flex-shrink-0">&middot;</span>
-                <span className="text-muted-foreground truncate">{book.author}</span>
-              </>
-            ) : !bookLoading ? (
-              <span className="text-muted-foreground">—</span>
-            ) : null}
-          </NowMediaRow>
+              ) : !bookLoading ? (
+                <span className="text-muted-foreground">—</span>
+              ) : null
+            }
+            meta={
+              book ? <span className="truncate">{book.author}</span> : undefined
+            }
+          />
 
           {/* Watching */}
-          <NowMediaRow label="Watching" loading={movieLoading && movieInitial}>
-            {movie ? (
-              <>
+          <NowMediaRow
+            label="Watching"
+            loading={movieLoading && movieInitial}
+            title={
+              movie ? (
                 <a
                   href={movie.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-underline text-[0.8125rem] truncate flex-shrink-0 max-w-[45%]"
+                  className="link-underline text-[0.8125rem]"
                 >
                   {movie.title}
                 </a>
-                {movie.rating && (
-                  <>
-                    <span className="text-muted-foreground flex-shrink-0">&middot;</span>
-                    <span className="text-muted-foreground flex-shrink-0">
-                      ★ {movie.rating} {ratingLabels[movie.rating]}
-                    </span>
-                  </>
-                )}
-                <span className="text-muted-foreground flex-shrink-0">&middot;</span>
-                <span className="text-muted-foreground opacity-70 flex-shrink-0">
-                  {shortTimeAgo(new Date(movie.date))}
-                </span>
-              </>
-            ) : !movieLoading ? (
-              <span className="text-muted-foreground">—</span>
-            ) : null}
-          </NowMediaRow>
+              ) : !movieLoading ? (
+                <span className="text-muted-foreground">—</span>
+              ) : null
+            }
+            meta={
+              movie ? (
+                <>
+                  {movie.rating && (
+                    <>
+                      <span className="flex-shrink-0">
+                        ★ {movie.rating} {ratingLabels[movie.rating]}
+                      </span>
+                      <span className="flex-shrink-0">&middot;</span>
+                    </>
+                  )}
+                  <span className="opacity-70 flex-shrink-0">
+                    {shortTimeAgo(new Date(movie.date))}
+                  </span>
+                </>
+              ) : undefined
+            }
+          />
         </div>
       </section>
     </>
