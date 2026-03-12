@@ -59,7 +59,7 @@ function NowMediaRow({
         {label}
       </span>
       <div className="flex flex-col gap-0.5 min-w-0">
-        <div className="min-w-0">{title}</div>
+        <div className="min-w-0 truncate">{title}</div>
         {meta && (
           <div className="flex items-center gap-2 text-muted-foreground">
             {meta}
