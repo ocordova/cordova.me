@@ -138,7 +138,7 @@ const Now = () => {
                 <>
                   <span className="truncate">{song.artist}</span>
                   {song.isPlaying ? (
-                    <span className="inline-flex items-center gap-1 text-xs opacity-70 flex-shrink-0">
+                    <span className="inline-flex items-center gap-1 text-xs opacity-80 flex-shrink-0">
                       <span
                         className="inline-flex items-center gap-px h-[10px]"
                         aria-hidden
@@ -157,7 +157,7 @@ const Now = () => {
                   ) : song.date ? (
                     <>
                       <span className="flex-shrink-0">&middot;</span>
-                      <span className="opacity-70 flex-shrink-0">
+                      <span className="opacity-80 flex-shrink-0">
                         {shortTimeAgo(new Date(song.date))}
                       </span>
                     </>
@@ -219,7 +219,7 @@ const Now = () => {
                       <span className="flex-shrink-0">&middot;</span>
                     </>
                   )}
-                  <span className="opacity-70 flex-shrink-0">
+                  <span className="opacity-80 flex-shrink-0">
                     {shortTimeAgo(new Date(movie.date))}
                   </span>
                 </>
