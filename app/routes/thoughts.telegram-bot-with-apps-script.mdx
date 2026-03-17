@@ -7,6 +7,11 @@
 
 import { formatDate } from "../lib/utils";
 
+export const meta = () => [
+  { title: frontmatter.title },
+  { name: "description", content: frontmatter.description },
+];
+
 <h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
 <time
   dateTime={frontmatter.date}

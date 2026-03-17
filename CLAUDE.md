@@ -1,6 +1,6 @@
 # cordova.me
 
-Personal site for Óscar Córdova. React Router + Tailwind CSS + shadcn/ui (zinc theme) + Inter Variable font. Deployed on Fly.io.
+Personal site for Óscar Córdova. React Router + Tailwind CSS + shadcn/ui (zinc theme) + Inter Variable + Newsreader Variable fonts. Deployed on Fly.io.
 
 ## Commands
 
@@ -22,7 +22,7 @@ Visitors are fellow engineers, product people, and curious individuals discoveri
 - **References:** paco.me (understated elegance, thoughtful details), leerob.io (clean developer blog, content-first with minimal chrome)
 - **Anti-references:** Flashy portfolios, heavy animations, corporate SaaS aesthetics, cluttered dashboards
 - **Theme:** Light and dark mode. Neutral zinc/slate palette. No bright accent colors — let content breathe.
-- **Typography:** Inter Variable as the sole typeface. Small, comfortable text sizes. Tight tracking on headings.
+- **Typography:** Inter Variable (sans-serif, primary) and Newsreader Variable (serif, headings and editorial accents). Small, comfortable text sizes. Tight tracking on headings.
 
 ### Design Principles
 1. **Content over chrome** — Every element should serve the content. Remove anything decorative that doesn't aid comprehension or navigation.

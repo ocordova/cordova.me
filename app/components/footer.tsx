@@ -63,7 +63,7 @@ export default function Footer() {
         <button
           onClick={nextQuote}
           className="hover:cursor-default"
-          aria-label="Show next quote"
+          type="button"
         >
           <blockquote className="mt-4 text-left text-sm leading-7 text-muted-foreground text-pretty font-serif italic">
             {index !== null ? quotes[index] : <QuoteSkeleton />}
