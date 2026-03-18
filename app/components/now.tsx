@@ -157,7 +157,7 @@ const Now = () => {
                   ) : song.date ? (
                     <>
                       <span className="flex-shrink-0">&middot;</span>
-                      <span className="opacity-80 flex-shrink-0">
+                      <span className="text-muted-foreground flex-shrink-0">
                         {shortTimeAgo(new Date(song.date))}
                       </span>
                     </>
@@ -219,7 +219,7 @@ const Now = () => {
                       <span className="flex-shrink-0">&middot;</span>
                     </>
                   )}
-                  <span className="opacity-80 flex-shrink-0">
+                  <span className="text-muted-foreground flex-shrink-0">
                     {shortTimeAgo(new Date(movie.date))}
                   </span>
                 </>
