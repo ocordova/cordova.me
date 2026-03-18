@@ -64,6 +64,7 @@ export default function Footer() {
           onClick={nextQuote}
           className="hover:cursor-default"
           type="button"
+          aria-label="Show next quote"
         >
           <blockquote className="mt-4 text-left text-sm leading-7 text-muted-foreground text-pretty font-serif italic">
             {index !== null ? quotes[index] : <QuoteSkeleton />}

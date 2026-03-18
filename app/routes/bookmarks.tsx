@@ -143,9 +143,9 @@ const Item = ({ title, description, url, icon, category }: Bookmark) => {
           ) : null}
         </div>
         <div className="min-w-0">
-          <h3 className="text-sm leading-6">
+          <h2 className="text-sm leading-6 font-normal">
             <span className="link-underline">{title}</span>
-          </h3>
+          </h2>
           <p className="text-[0.8125rem] text-muted-foreground">{description}</p>
         </div>
       </a>
