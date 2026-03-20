@@ -23,7 +23,7 @@ export const categories = [
       },
       {
         name: "Dracula Theme",
-        description: "Dark theme everywhere — editor, terminal, apps.",
+        description: "Dark theme everywhere: editor, terminal, apps.",
         url: "https://draculatheme.com/",
         icon: "/static/tools/dracula.png",
       },
@@ -51,7 +51,7 @@ export const categories = [
     tools: [
       {
         name: "Affinity",
-        description: "Design, photo editing, and publishing — all in one.",
+        description: "Design, photo editing, and publishing, all in one.",
         url: "https://affinity.serif.com/",
         icon: "/static/tools/affinity.png",
       },
@@ -280,8 +280,9 @@ export const categories = [
       },
       {
         name: "Evermusic",
-        description: "Music player for desktop and mobile.",
+        description: "Music player with iCloud sync for my MP3 files.",
         url: "https://evermusic.app/",
+        icon: "/static/tools/evermusic.png",
       },
     ],
   },
