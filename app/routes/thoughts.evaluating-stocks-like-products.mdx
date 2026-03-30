@@ -1,0 +1,76 @@
+---
+  author: Óscar Córdova
+  date: 2026-03-30
+  title: Evaluating Stocks Like Products
+  description: If I were to invest my own money, what would I look for?
+---
+
+import { formatDate } from "../lib/utils";
+
+export const meta = () => [
+  { title: frontmatter.title },
+  { name: "description", content: frontmatter.description },
+];
+
+<h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
+<time
+  dateTime={frontmatter.date}
+  className="mt-1 text-sm text-muted-foreground"
+>
+  <span>{formatDate(frontmatter.date)}</span>
+</time>
+
+Since mid-2024 I work as a lead engineer at Summit Management, a hedge fund. My job is building the fund's system: the data pipelines, the scoring engines, the infrastructure that supports investment decisions. Through that work I've picked up the basics: P/E ratios, PEG, ROIC, debt-to-equity, revenue growth rates. Enough to follow the conversation, not enough to call myself a financial analyst, but at some point I asked myself: if I were to invest my own money, what would I actually look for?
+
+I'm a product engineer. I've spent years training in both product and tech. The way I think about problems is shaped by that dual background: building software but also evaluating whether something should exist. Is the problem real? Is it must-have or nice-to-have? What happens if no one solves it? What are the alternatives? Those are the questions that build conviction for me, and they don't appear in any financial screener. I've seen this pattern with products before: impressive metrics hiding a weak foundation. A spike driven by a trend, growth that evaporated when a competitor showed up with a free alternative, engagement numbers that masked the fact that nobody truly needed the thing. For me to feel confident holding something with my own money, I need to understand the product underneath the numbers.
+
+So I built a framework that combines both lenses. A quantitative evaluation that captures the financial picture (is it a good time?) and a qualitative evaluation that captures the product picture (is it worth it?). Neither alone is enough. A great business at a terrible price destroys returns, and a cheap stock with no defensibility is cheap for a reason. I needed both sides to hold up before I could commit.
+
+Most frameworks I found focused on one side. Financial analysis looks at the past and present, what the numbers say today. Growth projections look at the future: analyst estimates, TAM, revenue forecasts. But neither asks: is this product actually solving a real problem? Could someone with more resources just come in and take the market? I wanted something that evaluated different things without overlapping: numbers for timing, product thinking for conviction.
+
+## The quantitative side
+
+This is the automated, data-driven part. It evaluates four dimensions:
+
+- **Valuation:** are you overpaying relative to growth?
+- **Quality:** does the business generate real returns on capital?
+- **Growth:** is revenue actually expanding?
+- **Risk:** how leveraged and volatile is it?
+
+Standard financial metrics (PEG ratio, ROIC, revenue growth rates, beta, debt-to-equity) weighted and combined into a single number. Any screener can approximate this. It answers the timing question well but says nothing about whether the underlying business deserves your attention.
+
+## The qualitative side
+
+This is where my product background earns its keep. It evaluates two dimensions:
+
+**Problem.** How severe is the problem this company solves? Inspired by Ash Maurya's Running Lean, I ask: Is it must-have or nice-to-have? What are the consequences if nobody solves it? Is regulation mandating a solution? A company whose product is legally required has a fundamentally different risk profile from one selling a convenience.
+
+**Defensibility.** Why can't someone with more resources take their market? I lean on Hamilton Helmer's 7 Powers: scale economies, network effects, switching costs, branding, cornered resources, counter-positioning, process power. For software companies, I add a product manager's lens:
+
+- How painful is it for a customer to migrate away?
+- Does the user live inside the application all day?
+- Does the product get smarter with more data?
+- Is there a free alternative that solves eighty percent of the problem?
+
+The two evaluations combine through a geometric mean, which penalizes imbalance. You can't brute-force entry with cheap valuation alone or with a great narrative alone.
+
+## What each side catches
+
+| Situation | Quantitative catches it? | Qualitative catches it? |
+|---|---|---|
+| Expensive company | Yes, low valuation score | |
+| Excessive debt | Yes, low risk score | |
+| Value trap (good numbers, no future) | No | Yes, weak problem score |
+| Disguised commodity (no moat) | No | Yes, weak defensibility |
+| Greenwashing (doesn't solve a real problem) | No | Yes, weak problem score |
+| Eroding moat | No, ROIC still looks high | Yes, defensibility trend |
+
+## An example
+
+Consider two hypothetical companies with similar growth numbers. Both expanding revenue at twenty percent, both with solid margins. The first has brutal exit friction: migrating off their platform takes months of engineering work. Users spend their entire workday inside the application. Every transaction feeds a data layer that makes the product smarter, creating a compounding advantage. The second looks similar on a spreadsheet, but the customer can export a file and leave in an afternoon. No workflow lock-in, no data moat, and the core functionality is replicable by any team with six months and a modest budget. The quantitative evaluations might be close. The qualitative evaluations are worlds apart. That difference is what determines whether I'd hold through a thirty-percent drawdown or sell at the first sign of trouble.
+
+## A proof of concept
+
+This is my way of finding conviction in what I buy, not a claim that it outperforms anything else. The real value, I've found, is in the process itself. Forcing myself to articulate why a business matters, what its moat actually is, whether the problem it solves is real and durable. That's where conviction comes from. Not from a number on a spreadsheet, but from understanding what the number represents.
+
+In a future post I'll walk through how I built this into a working system: the pipeline, the data sources, the scoring engine, and the tradeoffs along the way.
