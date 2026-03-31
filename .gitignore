@@ -37,3 +37,6 @@ yarn-error.log*
 
 # React Router generated types
 .react-router/
+
+# Superpowers specs and plans
+docs/superpowers/
