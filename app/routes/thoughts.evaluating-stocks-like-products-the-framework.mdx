@@ -24,9 +24,13 @@ Since mid-2024 I work as a lead engineer at Summit Management, a hedge fund. My 
 
 I'm a product engineer. I've spent years training in both product and tech. The way I think about problems is shaped by that dual background: building software but also evaluating whether something should exist. Is the problem real? Is it must-have or nice-to-have? What happens if no one solves it? What are the alternatives? Those are the questions that build conviction for me, and they don't appear in any financial screener. I've seen this pattern with products before: impressive metrics hiding a weak foundation. A spike driven by a trend, growth that evaporated when a competitor showed up with a free alternative, engagement numbers that masked the fact that nobody truly needed the thing. For me to feel confident holding something with my own money, I need to understand the product underneath the numbers.
 
-So I built a framework that combines both lenses. A quantitative evaluation that captures the financial picture (is it a good time?) and a qualitative evaluation that captures the product picture (is it worth it?). Neither alone is enough. A great business at a terrible price destroys returns, and a cheap stock with no defensibility is cheap for a reason. I needed both sides to hold up before I could commit.
+So I built a framework around a simple idea: business quality is the intersection of three evidences, each answering a different question.
 
-Most frameworks I found focused on one side. Financial analysis looks at the past and present, what the numbers say today. Growth projections look at the future: analyst estimates, TAM, revenue forecasts. But neither asks: is this product actually solving a real problem? Could someone with more resources just come in and take the market? I wanted something that evaluated different things without overlapping: numbers for timing, product thinking for conviction.
+- **Is the quality real?** The numbers: ROIC, margins, cash generation. If a business cannot demonstrate returns above its cost of capital, nothing else matters.
+- **Is the quality defensible?** The structure: moat, switching costs, competitive powers. Why can't someone with more resources come in and take the market?
+- **Will the quality persist?** The forward view: a falsifiable belief about the future, with concrete signals that confirm or invalidate it. The world changes, and a moat that was real five years ago might not be real tomorrow.
+
+High ROIC without a moat is a value trap. A strong moat without a view on whether the world sustains it is a Kodak. A compelling thesis without financial evidence is wishful thinking. I needed all three to hold up before I could commit. Numbers for timing, product thinking for conviction, and a hypothesis for durability.
 
 ## The quantitative side
 
@@ -73,4 +77,4 @@ Consider two hypothetical companies with similar growth numbers. Both expanding 
 
 This is my way of finding conviction in what I buy, not a claim that it outperforms anything else. The real value, I've found, is in the process itself. Forcing myself to articulate why a business matters, what its moat actually is, whether the problem it solves is real and durable. That's where conviction comes from. Not from a number on a spreadsheet, but from understanding what the number represents.
 
-In a future post I'll walk through how I built this into a working system: the pipeline, the data sources, the scoring engine, and the tradeoffs along the way.
+This post covers the first two layers. In [the next post](/thoughts/building-the-scoring-engine) I walk through the scoring engine: the weights, thresholds, and how the two evaluations combine. In the [third](/thoughts/the-missing-why), I cover the layer I added later: the forward-looking hypothesis that tells me whether the conditions sustaining quality will persist.
