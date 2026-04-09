@@ -1,0 +1,75 @@
+---
+  author: Óscar Córdova
+  date: 2026-04-09
+  title: "Evaluating Stocks Like Products: The Missing Why"
+  description: Why scoring alone doesn't capture the belief behind the investment.
+---
+
+import { formatDate } from "../lib/utils";
+
+export const meta = () => [
+  { title: frontmatter.title },
+  { name: "description", content: frontmatter.description },
+];
+
+<h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
+<time
+  dateTime={frontmatter.date}
+  className="mt-1 text-sm text-muted-foreground"
+>
+  <span>{formatDate(frontmatter.date)}</span>
+</time>
+
+In the [first post](/thoughts/evaluating-stocks-like-products) I described why I evaluate companies through two lenses: a quantitative one for timing and a qualitative one for conviction. In the [second](/thoughts/building-the-scoring-engine) I showed the machinery: the weights, the thresholds, the geometric mean that penalizes imbalance. Both posts answer the same question from different angles: is this a good company to buy right now?
+
+What neither post answers is why I believe the future favors this company in the first place.
+
+## The implicit belief
+
+Every investment carries a hypothesis about the world. When I bought Intuitive Surgical, I was betting that robotic surgery will become the standard of care for most elective procedures. When I bought Veeva, I was betting that the top twenty pharma companies will consolidate their clinical, regulatory, and commercial workflows onto a single cloud platform. These beliefs existed in my head but were never written down, never given concrete signals that would confirm or invalidate them, and never connected to each other to reveal shared risk.
+
+The scores told me Veeva had a 4.64 and Intuitive Surgical had a 4.40. They did not tell me what to do when the stock drops thirty percent. Is this panic, or is my thesis broken? Without the hypothesis written down, the answer depends on how I feel that day. That is not a system.
+
+## What goes wrong
+
+Three things go wrong when the belief stays implicit.
+
+First, you cannot distinguish between poor execution and a wrong thesis. If a company misses earnings, is it because management failed or because the world moved in a different direction than you expected? The quarterly numbers cannot answer that. The hypothesis can.
+
+Second, you cannot see hidden correlations. My portfolio has two companies that both depend on P&C insurers modernizing their core systems to cloud. If that migration wave stalls, both positions suffer simultaneously. The statistical correlation check — weekly returns over three years — might not catch this because the stocks do not co-move yet. But the hypothesis makes the shared risk visible immediately.
+
+Third, re-evaluations become mechanical. Every quarter I update the quantitative score with fresh earnings data. But the quantitative score only tells me what happened last quarter. It does not ask the harder question: is the world still moving in the direction I bet on?
+
+## What a hypothesis looks like
+
+A hypothesis is not a vague belief. "AI will change the world" is not a hypothesis. "Enterprise AI spending will grow more than twenty-five percent annually through 2028" is — because you can check it, and you know when you are wrong.
+
+Each hypothesis in my system has five components:
+
+- A **falsifiable statement** about the future with a specific time horizon
+- **Confirming signals** — concrete, observable events I should look for
+- **Falsifying signals** — concrete, observable events that would invalidate the belief
+- A **status** — active, weakening, or falsified
+- **Linked positions** — which holdings depend on this belief being true
+
+The status matters more than it seems. "Weakening" without a date is dangerous — you can sit in weakening for eighteen months without acting because the hypothesis never formally crossed to falsified. So I added a rule: if a hypothesis has been weakening for more than twelve months without new confirming evidence, treat it as falsified and re-evaluate every linked position.
+
+## Two examples
+
+**Veeva — the strongest hypothesis.** My belief is that the top twenty pharma companies will consolidate from dozens of point solutions to a unified cloud platform for CRM, clinical, regulatory, quality, and safety. As of March 2026, ten of the top twenty have committed to Veeva's Vault CRM. Merck committed in July 2025, Roche in November, Novo Nordisk in January 2026. Fiscal year revenue hit 3.2 billion dollars, up sixteen percent. AI agents launched in December 2025 with more modules planned through 2026. All five confirming signals I defined have fired. No falsifying signal is active. The migration timeline stretches from 2026 to 2029, which means multi-year revenue visibility that no quarterly earnings report can provide.
+
+**Visa — the weakest hypothesis.** My belief is that digital payments will continue displacing cash globally and that card networks will capture that growth. The first half is virtually certain: 2026 is the first year in history when more than half of global consumer payments use card credentials. But the second half — that Visa captures the growth — is where the cracks show. India's UPI system now processes thirteen billion real-time transactions per month, representing seventy-one percent of all transactions in the country. Credit card market share in India fell from forty-three percent in 2018 to twenty-one percent in 2024. India built a national payment rail that bypasses card networks entirely. Brazil's Pix is following the same playbook. In the US, FedNow has over fifteen hundred participating institutions, up forty-four percent year over year, with its transaction limit raised to ten million dollars. None of these are falsifying signals yet — FedNow's share of consumer point-of-sale payments is near zero. But this is the only hypothesis in my portfolio where confirming and falsifying signals are active simultaneously. It is the closest to weakening.
+
+The contrast is the point. Both companies score well. Both passed the same quantitative and strategic evaluation. But the conviction behind each position is fundamentally different, and the hypothesis makes that difference visible in a way the scores alone cannot.
+
+## What hypotheses do not do
+
+They do not change the scores. A great hypothesis does not save a company with a score total below 3.0. They do not determine position sizing — the scores and classification do that. And they do not add a top-down screening step. The framework remains bottom-up: screen the universe, score the companies, then document the belief that explains why you looked at this company in the first place.
+
+Not every position needs a macro hypothesis. Some businesses are structural — the world needs credit scoring regardless of what happens with AI or autonomous vehicles or interest rates. Those positions get tagged as structural with a one-line reason, and the monitoring shifts to company-specific risk rather than macro signals.
+
+## What I know now
+
+After building this layer, I can see things the scores alone could not show me. I can see that my insurance stack — three companies, twenty-five percent of the portfolio — shares risk at the industry level even though two of them depend on the same macro hypothesis and one is structural. I can see that Visa is the position where I should pay the most attention, not because the score is low, but because the world might be moving in a direction that bypasses the company's moat entirely. And I can see that Veeva is the position where my conviction is highest, backed by the most concrete evidence, on a timeline I can actually verify.
+
+The hypothesis is the thing I check when the stock drops thirty percent and I need to decide whether this is panic or a broken thesis. The score tells me what happened. The hypothesis tells me whether what happened matters.
