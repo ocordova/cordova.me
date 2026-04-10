@@ -22,9 +22,9 @@ export const meta = () => [
 
 In a [previous post](/thoughts/evaluating-stocks-1-the-framework) I described the framework: a quantitative lens for timing and a qualitative lens for conviction. What I didn't show was the machinery underneath. Here it is.
 
-Every stock gets two scores, each on a one-to-five scale. The quantitative score captures the financial picture. The strategic score captures the product picture. They combine through a geometric mean:
+Every stock gets two scores, each on a one-to-five scale. The quantitative score captures the financial picture. The product score captures the product picture. They combine through a geometric mean:
 
-**Total = √(Quantitative × Strategic)**
+**Total = √(Quantitative × Product)**
 
 Neither side can compensate for the other. A cheap stock with no moat fails. A great business at a terrible price fails. Both must hold. The rest of this post walks through each side and the decisions behind the numbers.
 
@@ -56,7 +56,7 @@ A few decisions worth explaining.
 - **Debt-to-equity moved from Quality to Risk.** It used to live alongside ROIC, but that double-counted leverage. I replaced it with a simple binary: if the company has more cash than debt, Quality gets a half-point bonus.
 - **Gross margin over free cash flow margin.** Gross margin is independent of capital structure. FCF margin made asset-light businesses look artificially better.
 
-## The strategic side
+## The product side
 
 Two dimensions, equal weight.
 
@@ -104,7 +104,7 @@ Two real examples from my evaluations.
 | Risk | 3 / 5 | High debt levels, fees tied to AUM |
 | **Quantitative** | **4.10** | |
 
-**Strategic — 5.00.** $16.5 trillion in assets are benchmarked to MSCI indexes. ETFs literally cannot be constructed without an index to track, and pension funds are required by ERISA, MiFID II, and Solvency II to measure performance against standardized benchmarks. **Problem: 5/5.** Pension funds with trillions of dollars do not switch benchmarks — doing so means re-reporting decades of performance against a new yardstick and explaining to the board why. Hence 95% retention. The 57 years of historical index data are irreplicable, and every new ETF launched against MSCI reinforces it as the global standard. **Defensibility: 5/5.**
+**Product — 5.00.** $16.5 trillion in assets are benchmarked to MSCI indexes. ETFs literally cannot be constructed without an index to track, and pension funds are required by ERISA, MiFID II, and Solvency II to measure performance against standardized benchmarks. **Problem: 5/5.** Pension funds with trillions of dollars do not switch benchmarks — doing so means re-reporting decades of performance against a new yardstick and explaining to the board why. Hence 95% retention. The 57 years of historical index data are irreplicable, and every new ETF launched against MSCI reinforces it as the global standard. **Defensibility: 5/5.**
 
 **Total: 4.53 (Exceptional).** Decent numbers, extraordinary moat. MSCI has switching costs, a cornered resource, network effects, brand, and scale all reinforcing each other. The qualitative side reveals what the financials alone cannot capture.
 
@@ -118,7 +118,7 @@ Two real examples from my evaluations.
 | Risk | 4 / 5 | Beta 1.10, retention declining |
 | **Quantitative** | **4.60** | |
 
-**Strategic — 3.00.** Skipping the airport security line is a real annoyance, but people have flown without CLEAR for decades. TSA PreCheck solves roughly 70% of the same pain at $78 for five years versus $209 per year, and United just cut the free CLEAR benefit for elite flyers — a quiet signal that even the airlines no longer see it as indispensable. **Problem: 3/5.** CLEAR has built genuine infrastructure — 38 million biometric profiles, physical eGates in 37 airports — that takes years to replicate. But that protects the supplier, not the user. A traveler cancels the $209 subscription online, walks back to the TSA PreCheck line, and nothing breaks. Retention is already declining to 86%. **Defensibility: 3/5.**
+**Product — 3.00.** Skipping the airport security line is a real annoyance, but people have flown without CLEAR for decades. TSA PreCheck solves roughly 70% of the same pain at $78 for five years versus $209 per year, and United just cut the free CLEAR benefit for elite flyers — a quiet signal that even the airlines no longer see it as indispensable. **Problem: 3/5.** CLEAR has built genuine infrastructure — 38 million biometric profiles, physical eGates in 37 airports — that takes years to replicate. But that protects the supplier, not the user. A traveler cancels the $209 subscription online, walks back to the TSA PreCheck line, and nothing breaks. Retention is already declining to 86%. **Defensibility: 3/5.**
 
 **Total: 3.71 (Strong).** Excellent financials hiding a fragile thesis. CLEAR has scale and a cornered resource on the infrastructure side, but no switching costs on the user side — and a moat that only works for the supplier is half a moat. A full tier below what the numbers alone would suggest.
 
@@ -130,6 +130,6 @@ What it structurally misses: turnarounds (weak moat today but improving), early-
 
 ## What I don't know yet
 
-This is version one with real money behind it. I am monitoring quantitative-only rankings alongside the combined score to see whether the strategic side actually adds alpha or just adds work. The weights might be wrong. Some thresholds are probably too generous, others too strict. I will find out as I run this through more market cycles.
+This is version one with real money behind it. I am monitoring quantitative-only rankings alongside the combined score to see whether the product side actually adds alpha or just adds work. The weights might be wrong. Some thresholds are probably too generous, others too strict. I will find out as I run this through more market cycles.
 
 What I do know is that the process itself has been valuable. Forcing myself to articulate why a business matters, what its moat actually is, whether the problem it solves is real and durable. That is where my conviction comes from. Not from the final number, but from understanding what the number represents.
