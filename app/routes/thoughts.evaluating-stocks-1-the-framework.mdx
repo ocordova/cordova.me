@@ -22,15 +22,15 @@ export const meta = () => [
 
 Since mid-2024 I work as a lead engineer at Summit Management, a hedge fund. My job is building the fund's system: the data pipelines, the scoring engines, the infrastructure that supports investment decisions. Through that work I've picked up the basics: P/E ratios, PEG, ROIC, debt-to-equity, revenue growth rates. Enough to follow the conversation, not enough to call myself a financial analyst, but at some point I asked myself: if I were to invest my own money, what would I actually look for?
 
-I'm a product engineer. I've spent years training in both product and tech. The way I think about problems is shaped by that dual background: building software but also evaluating whether something should exist. Is the problem real? Is it must-have or nice-to-have? What happens if no one solves it? What are the alternatives? Those are the questions that build conviction for me, and they don't appear in any financial screener. I've seen this pattern with products before: impressive metrics hiding a weak foundation. A spike driven by a trend, growth that evaporated when a competitor showed up with a free alternative, engagement numbers that masked the fact that nobody truly needed the thing. For me to feel confident holding something with my own money, I need to understand the product underneath the numbers.
+I'm a product engineer. I've spent years training in both product and tech. The way I think about problems is shaped by that dual background: building software but also evaluating whether something should exist. Is the problem real? Is it must-have or nice-to-have? What happens if no one solves it? What are the alternatives? Those are the questions that build conviction for me. I've seen this pattern with products before: impressive metrics hiding a weak foundation. A spike driven by a trend, growth that evaporated when a competitor showed up with a free alternative, engagement numbers that masked the fact that nobody truly needed the thing. For me to feel confident holding something with my own money, I need to understand the product underneath the numbers.
 
 So I built a framework around a simple idea: business quality is the intersection of three evidences, each answering a different question.
 
 - **Is the quality real?** The numbers: ROIC, margins, cash generation. If a business cannot demonstrate returns above its cost of capital, nothing else matters.
 - **Is the quality defensible?** The structure: moat, switching costs, competitive powers. Why can't someone with more resources come in and take the market?
-- **Will the quality persist?** The forward view: a falsifiable belief about the future, with concrete signals that confirm or invalidate it. The world changes, and a moat that was real five years ago might not be real tomorrow.
+- **Where is the world going?** A falsifiable belief about a macro trend, with concrete signals that confirm or invalidate it. If the world is not moving in a direction that favors this business, the moat and the numbers are irrelevant.
 
-High ROIC without a moat is a value trap. A strong moat without a view on whether the world sustains it is a Kodak. A compelling thesis without financial evidence is wishful thinking. I needed all three to hold up before I could commit. Numbers for timing, product thinking for conviction, and a hypothesis for durability.
+High ROIC without a moat is a value trap. A strong moat without a view on where the world is going is a Kodak. A compelling thesis without financial evidence is wishful thinking. I needed all three to hold up before I could commit. Numbers for timing, product thinking for conviction, and a hypothesis for direction.
 
 ## The quantitative side
 
@@ -41,7 +41,7 @@ This is the automated, data-driven part. It evaluates four dimensions:
 - **Growth:** is revenue actually expanding?
 - **Risk:** how leveraged and volatile is it?
 
-Standard financial metrics (PEG ratio, ROIC, revenue growth rates, beta, debt-to-equity) weighted and combined into a single number. Any screener can approximate this. It answers the timing question well but says nothing about whether the underlying business deserves your attention.
+Standard financial metrics (PEG ratio, ROIC, revenue growth rates, beta, debt-to-equity) weighted and combined into a single number. It answers the timing question well but says nothing about whether the underlying business deserves your attention.
 
 ## The qualitative side
 
@@ -77,4 +77,4 @@ Consider two hypothetical companies with similar growth numbers. Both expanding 
 
 This is my way of finding conviction in what I buy, not a claim that it outperforms anything else. The real value, I've found, is in the process itself. Forcing myself to articulate why a business matters, what its moat actually is, whether the problem it solves is real and durable. That's where conviction comes from. Not from a number on a spreadsheet, but from understanding what the number represents.
 
-This post covers the first two layers. In [the next post](/thoughts/building-the-scoring-engine) I walk through the scoring engine: the weights, thresholds, and how the two evaluations combine. In the [third](/thoughts/the-missing-why), I cover the layer I added later: the forward-looking hypothesis that tells me whether the conditions sustaining quality will persist.
+This post covers the first two layers. In [the next post](/thoughts/evaluating-stocks-2-the-scoring-engine) I walk through the scoring engine: the weights, thresholds, and how the two evaluations combine. In the [third](/thoughts/evaluating-stocks-3-the-hypothesis), I cover the forward-looking hypothesis that asks where the world is going and whether it favors this business.
