@@ -41,27 +41,57 @@ function isTokenExpired(tokens: TraktTokens): boolean {
 async function refreshAccessToken(
   refreshToken: string
 ): Promise<TraktTokens> {
-  const response = await fetch(`${TRAKT_API}oauth/token`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      client_id: TRAKT_CLIENT_ID,
-      client_secret: TRAKT_CLIENT_SECRET,
-      refresh_token: refreshToken,
-      redirect_uri: "urn:ietf:wg:oauth:2.0:oob",
-      grant_type: "refresh_token",
-    }),
+  const url = `${TRAKT_API}oauth/token`;
+  const payload = JSON.stringify({
+    client_id: TRAKT_CLIENT_ID,
+    client_secret: TRAKT_CLIENT_SECRET,
+    refresh_token: refreshToken,
+    redirect_uri: "urn:ietf:wg:oauth:2.0:oob",
+    grant_type: "refresh_token",
   });
 
-  if (!response.ok) {
-    const body = await response.text();
-    console.error(
-      `[trakt] Token refresh failed: HTTP ${response.status}: ${body.slice(0, 200)}`
+  return new Promise((resolve, reject) => {
+    execFile(
+      "curl",
+      [
+        "-s",
+        "-w",
+        "\n%{http_code}",
+        "-X",
+        "POST",
+        "-H",
+        "Content-Type: application/json",
+        "-d",
+        payload,
+        url,
+      ],
+      (error, stdout) => {
+        if (error) {
+          console.error(`[trakt] curl error for token refresh:`, error.message);
+          return reject(error);
+        }
+        const lines = stdout.trimEnd().split("\n");
+        const statusCode = parseInt(lines.pop()!, 10);
+        const body = lines.join("\n");
+        if (statusCode >= 400) {
+          console.error(
+            `[trakt] Token refresh failed: HTTP ${statusCode}: ${body.slice(0, 200)}`
+          );
+          return reject(
+            new Error(`Trakt token refresh failed: ${statusCode}`)
+          );
+        }
+        try {
+          resolve(JSON.parse(body) as TraktTokens);
+        } catch (err) {
+          console.error(
+            `[trakt] Failed to parse token refresh response: ${body.slice(0, 200)}`
+          );
+          reject(err);
+        }
+      }
     );
-    throw new Error(`Trakt token refresh failed: ${response.status}`);
-  }
-
-  return (await response.json()) as TraktTokens;
+  });
 }
 
 function curlFetch(
