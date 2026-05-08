@@ -1,0 +1,216 @@
+---
+  author: Óscar Córdova
+  date: 2026-05-08
+  title: "Evaluating Stocks Like Products: The Players"
+  description: Five types of players, three get evaluated, two gates decide entry.
+---
+
+import { formatDate } from "../lib/utils";
+
+export const meta = () => [
+  { title: frontmatter.title },
+  { name: "description", content: frontmatter.description },
+];
+
+<h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
+<time
+  dateTime={frontmatter.date}
+  className="mt-1 text-sm text-muted-foreground"
+>
+  <span>{formatDate(frontmatter.date)}</span>
+</time>
+
+In a [previous post](/thoughts/evaluating-stocks-1-the-problem) I described the first half of the framework: the thesis. The permanent need, scored on its own without any company attached. Five pieces, ending in a roster of who could capture the need.
+
+The roster is where this post starts. Once the thesis is alive and the roster exists, the question turns: which of these players is worth committing capital to. A thesis without a player is just a forecast. A player without a thesis is just a stock.
+
+This post is about how I score the players, and the two gates that decide whether any of them stays.
+
+## Five types of players
+
+The roster I introduced last time was not a list of competitors. It was deliberately wider than that. In the registry, every player carries a classification that tells me what role it plays in the thesis.
+
+- **Position.** A player I currently hold.
+- **Candidate.** A player I am actively considering for a position.
+- **Competitor.** A player capturing the same need but not currently a candidate. I track it for relative-strength shifts. If a competitor pulls ahead of the position on signals, that is a swap-candidate flag.
+- **Regulator.** Sets or enforces the rules that shape the capture surface. SEC, ESMA, FCA, DOL.
+- **Ecosystem.** Doesn't compete for the customer but shapes the market. BIS, IMF, IOSCO, CFA Institute.
+
+Five types. Three are investable. The other two are signal sources, not vehicles.
+
+## Which ones get evaluated
+
+The scoring machinery only runs against position, candidate, and competitor. Regulators and ecosystem participants are watched, not scored. They show up in the roster because their actions are signals about the thesis, not because I plan to buy them. You don't score the SEC. You watch what it does.
+
+For the rest of the post, "player" means an investable player.
+
+## How a player gets scored
+
+Every investable player carries three numbers, combined into a final Player Strength.
+
+- **Quant Score (1 to 5).** The financial profile of the business. Numbers from the 10-K.
+- **Defensibility (1 to 5).** The moat structure. Eight Powers, each rated on whether the benefit exists, the barrier holds, and the trend is stable, eroding, or strengthening.
+- **Thesis Focus (1 to 5).** How much of the player's actual operations point at this specific thesis. Identified primarily from the 10-K segment disclosure.
+
+The three combine through one formula:
+
+**Player Strength = √(Quant × Defensibility) × (Thesis Focus / 5)**
+
+The geometric mean between Quant and Defensibility penalizes imbalance. A five on one and a one on the other gives a 2.24, not a 3.0. The Thesis Focus multiplier penalizes players whose business is mostly somewhere else. A great company doing the wrong thing for this thesis cannot enter just because the financials look strong.
+
+The example throughout will be **MSCI under the Financial Index thesis**, the same example I used in the previous post.
+
+### Quant Score
+
+Four dimensions, each scored one to five, combined as a weighted average.
+
+- **Valuation (30%).** Reverse DCF verdict. The current price is reverse-engineered into the implied growth, margin, and discount-rate path the market is pricing in. The verdict is plausible, fair, stretched, implausible, or a math violation. Plausible scores a five. Implausible scores a one.
+- **Quality (30%).** ROIC plus gross margin, with a net-cash bonus and earnings-quality caps. Does the business generate real returns above its cost of capital, and are the earnings clean.
+- **Growth (20%).** Three-year revenue CAGR plus trailing or forward EPS year-over-year. Is the company actually expanding, and is that expansion converting to per-share earnings.
+- **Risk (20%).** Beta against SPY plus debt-to-equity. How leveraged and volatile is the business.
+
+The thresholds:
+
+| Metric | 5 | 4 | 3 | 2 | 1 |
+|---|---|---|---|---|---|
+| Reverse DCF verdict | plausible | fair | n/a | stretched | implausible / violation |
+| ROIC | > 25% | 15-25% | 10-15% | 5-10% | < 5% |
+| Gross margin | > 50% | 40-50% | 35-40% | 30-35% | < 30% |
+| Revenue CAGR (3yr) | > 20% | 10-20% | 5-10% | 0-5% | declining |
+| EPS YoY | > 25% | 15-25% | 10-15% | 0-10% | declining |
+| Beta | 0.7-1.0 | 1.0-1.2 | 1.2-1.5 | 1.5-2.0 | > 2.0 |
+| Debt-to-equity | < 0.3 | 0.3-0.7 | 0.7-1.0 | 1.0-1.5 | > 1.5 |
+
+Two earnings-quality gates run alongside Quality. An Accrual Ratio Alert flags when accruals diverge from cash flow. A Quality Signal Count from the Piotroski subset checks positive ROA, positive operating cash flow, and a few other concrete signals. If either fires, the Quality dimension is capped, regardless of how good ROIC and gross margin look.
+
+MSCI scores **4.30 / 5** on Quant.
+
+### Defensibility
+
+Hamilton Helmer's 7 Powers, plus a split that breaks Cornered Resource into Structural and Regulatory. Eight powers in total, each rated on three axes:
+
+- **Rating (1 to 5).** Does the power exist for this player today.
+- **Benefit (1 to 5).** How much does the power translate into profitability.
+- **Barrier (1 to 5).** How hard is it for someone with more resources to replicate.
+
+A trend column tracks whether each power is stable, eroding, or strengthening over the last few quarters.
+
+The eight Powers:
+
+- **Switching costs.** What it costs the customer to leave.
+- **Scale economies.** Per-unit cost falls with size.
+- **Network effects.** Each user adds value for the next.
+- **Brand.** Trusted name commands a premium.
+- **Cornered resource (structural).** A unique asset (data, IP, location) the player owns.
+- **Cornered resource (regulatory).** Recognition or licensing that the regulator has granted to a small set.
+- **Process power.** Embedded operational know-how that is hard to copy.
+- **Counter-positioning.** A model incumbents can't copy without cannibalizing themselves.
+
+The blended Defensibility score is **0.7 × Structural + 0.3 × Regulatory**, a split I introduced after noticing that regulatory powers are more politically reversible than structural ones.
+
+For MSCI:
+
+| Power | Rating | Benefit | Barrier | Trend |
+|---|---|---|---|---|
+| Switching costs | 5 | 5 | 5 | stable |
+| Scale economies | 4 | 4 | 4 | stable |
+| Network effects | 4 | 4 | 4 | stable |
+| Brand | 4 | 4 | 4 | stable |
+| Cornered resource (structural) | 4 | 4 | 4 | stable |
+| Cornered resource (regulatory) | 3 | 3 | 3 | eroding |
+| Process power | 4 | 4 | 4 | stable |
+| Counter-positioning | 3 | 3 | 3 | eroding |
+
+Six Powers stable, two eroding. Switching costs carry the moat: changing benchmarks breaks public ETF prospectuses (SEC Form N-1A, Rule 6c-11) and triggers ERISA fiduciary review. The two eroding Powers are the ones I monitor most. Counter-positioning is under pressure from Morningstar's CRSP acquisition. Regulatory cornering is exposed to FCA FRAND remedies.
+
+Blended Defensibility: **4.40 / 5**.
+
+The eight Powers are a structural lens. For software businesses I add a product-manager lens on top of them, four questions whose answers don't always show up in a 10-K:
+
+- How painful is it for a customer to migrate away?
+- Does the user live inside the application all day?
+- Does the product get smarter with more data?
+- Is there a free alternative that solves eighty percent of the problem?
+
+The PM lens sharpens specific Powers (mostly Switching costs, Network effects, Process power) and catches cases where a player clears every structural test and still feels fragile. For MSCI, all four resolve toward the moat. Migration breaks the public ETF prospectus. The institutional asset manager lives in the methodology daily. The product gets denser with every new ETF launched against an MSCI index. There is no free 80% alternative for a fund mandated to use externally administered benchmarks.
+
+### Thesis Focus
+
+A great company can be the wrong vehicle for a thesis. Defensibility tells me whether the player has a moat. Thesis Focus tells me whether that moat is pointing at the need I am trying to capture.
+
+Identification is mechanical. Most public companies disclose revenue by operating segment in the 10-K. The Thesis Focus question is: what percentage of the player's revenue comes from segments that capture this thesis. Segments are mutually exclusive in primary disclosure, so the percentages add up cleanly.
+
+The mapping from segment percentage to score:
+
+| Segment % capturing thesis | TF |
+|---|---|
+| > 80% | 5 |
+| 60-80% | 4 |
+| 40-60% | 3 |
+| 20-40% | 2 |
+| < 20% | 1 |
+
+One refinement on the literal mapping. If the thesis-aligned segment is not just the largest by revenue but also the largest by profit and the largest by growth, the score escalates one band. The intuition is that a segment dominating all three legs is doing real work for the thesis even when the percentage looks moderate. If only revenue dominance holds, the score stays at the literal band.
+
+For players that span more than one registered thesis, segment shares aggregate across linked theses, with eligibility rules I won't dwell on here. The single-thesis case is the common one.
+
+MSCI's largest 10-K segment is Index, at roughly 57% of revenue, which would land at the 40-60% band scoring 3. But Index is also the largest contributor to operating profit and the fastest-growing segment year over year. The three legs hold, so the dominant-engine escalation lifts MSCI's TF to 4. The other 43% is Analytics and ESG plus Climate, which serve the same institutional customer but capture adjacent needs rather than the Financial Index thesis directly.
+
+## Player Strength
+
+The three numbers combine.
+
+**Strength = √(Quant × Defensibility) × (TF / 5)**
+
+For MSCI: √(4.30 × 4.40) × (4 / 5) = √18.92 × 0.8 = 4.35 × 0.8 = **3.48**.
+
+Strength tiers:
+
+| Tier | Range | Position size |
+|---|---|---|
+| Exceptional | ≥ 4.5 | 15-25% |
+| Strong | 3.5-4.4 | 8-15% |
+| Acceptable | 3.0-3.4 | 3-8% |
+| Below threshold | < 3.0 | does not enter |
+
+MSCI sits in the acceptable tier. Strong financials and switching costs, but two Powers eroding and a Thesis Focus held back by the multi-segment business mix. Position size sits in the lower half of the acceptable band.
+
+## Capture-layer signals
+
+The thesis carries its own signals on the need itself. Each player carries a parallel set on whether *this specific player* can keep capturing the need.
+
+The structure mirrors the thesis layer. Capture-layer falsifiers (F#) are concrete thresholds that, if crossed, should lower my conviction in the player. Capture-layer confirmers (C#) register evidence that the player is still capturing the need.
+
+A few of MSCI's open falsifiers:
+
+- Morningstar Indexes plus CRSP captures a single asset-management customer with more than $100B in AUM, replaying the 2012 Vanguard-CRSP precedent shape.
+- BlackRock revenue concentration moves outside the 9-12% band of MSCI consolidated revenue. Above 12% signals over-concentration. Below 9% signals captive-revenue loss.
+- The BlackRock 2035 contract Index asset-based fee yield declines more than 5% year over year for two consecutive quarters.
+- Direct-indexing AUM displaces standardized index licensing at scale, with MSCI Index segment growth decelerating below 3% for two consecutive years.
+
+When a capture-layer falsifier fires, it doesn't kill the position by itself. It feeds back into the underlying scores: a degraded Power rating, a lower Quant verdict, a TF revisit. The two gates fire from the scores, not directly from the signals.
+
+## The two gates
+
+For a player to enter or stay in the portfolio, two conditions must hold:
+
+- **Thesis Alive.** The need-layer falsifiers from the previous post have not fired. The thesis is supported by current evidence.
+- **Player Strength ≥ 3.0.** The combined score sits at or above the threshold.
+
+Both must be true. There are no overrides.
+
+The two gates close different failure modes. If only Player Strength gated entry, a thesis could quietly be falsified while the player kept scoring well, and I would hold a strong vehicle pointing at a dead need. If only Thesis Alive gated entry, a player could degrade structurally while the thesis stayed valid, and I would hold a weakening vehicle in a healthy market.
+
+Exit is symmetric. Thesis Falsified or Player Strength below 3.0 forces an exit. The cascade I described in the previous post applies here too. A falsified thesis exits every position under it, no matter how strong the player looks on its own.
+
+What the gates do not tell me is how much capital each position should carry. Position sizing comes from the Strength tier table above, with adjustments for sector concentration and correlation that are separate from the gate logic. And what the gates do not address at all is when to add or trim inside an existing position. That is a different mechanism, and one I'll write about separately.
+
+## What I'm still calibrating
+
+The 30/30/20/20 weights have held up after running the framework for a year and a half. I have wanted to lower Risk's weight a few times during volatile periods, and have resisted. The 0.7/0.3 split between structural and regulatory defensibility is a more recent decision, still in validation.
+
+The threshold I have most wanted to move is the Player Strength gate at 3.0. There have been positions sitting at 3.05 where it was tempting to declare them strong enough, and positions at 2.95 where it was tempting to wait one quarter for a recovery. Holding the line at 3.0 has cost me time and trades. Moving it would cost me discipline.
+
+The layer that has changed most over the year, and is still moving, is when to add to a position whose strength is rising and when to trim one whose strength is falling. That is what comes next.
+
+The two gates tell me whether to be in. They don't tell me how much.
