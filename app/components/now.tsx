@@ -203,6 +203,7 @@ const Now = () => {
                   className="link-underline text-[0.8125rem]"
                 >
                   {movie.title}
+                  {movie.year ? ` (${movie.year})` : ""}
                 </a>
               ) : !movieLoading ? (
                 <span className="text-muted-foreground">—</span>
