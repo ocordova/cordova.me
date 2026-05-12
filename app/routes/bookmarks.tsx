@@ -22,11 +22,6 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-type LoaderData = {
-  category?: Category | null;
-  bookmarks: typeof bookmarks;
-};
-
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const searchParams = new URLSearchParams(new URL(request.url).search);
   const category = searchParams.get("category");
@@ -122,7 +117,7 @@ function FilterBookmarks({
   );
 }
 
-const Item = ({ title, description, url, icon, category }: Bookmark) => {
+const Item = ({ title, description, url, icon }: Bookmark) => {
   return (
     <li>
       <a
