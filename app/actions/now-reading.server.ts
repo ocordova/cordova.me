@@ -1,4 +1,4 @@
-// Fetch the current reading from literal graphql api
+import { cached, TTL } from "~/lib/cache.server";
 
 const LITERAL_API = process.env.LITERAL_API || "";
 const LITERAL_TOKEN = process.env.LITERAL_TOKEN || "";
@@ -46,7 +46,7 @@ fragment BookParts on Book {
 }
 `;
 
-export async function getNowReading(): Promise<NowReading> {
+async function fetchNowReading(): Promise<NowReading> {
   try {
     const response = await fetch(LITERAL_API, {
       method: "POST",
@@ -89,3 +89,6 @@ export async function getNowReading(): Promise<NowReading> {
     throw new Error("Failed to fetch now reading data");
   }
 }
+
+export const getNowReading = (): Promise<NowReading> =>
+  cached("now-reading", TTL.reading, fetchNowReading);
