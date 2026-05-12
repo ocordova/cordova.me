@@ -55,14 +55,14 @@ function useApiData<T>(url: string, interval?: number): UseApiDataState<T> {
   return state;
 }
 
-export function useNowListening(interval = 30000) {
+export function useNowListening(interval: number | undefined = 60_000) {
   return useApiData<NowListening>("/api/now-listening", interval);
 }
 
-export function useNowReading(interval = 30000) {
-  return useApiData<NowReading>("/api/now-reading", interval);
+export function useNowReading() {
+  return useApiData<NowReading>("/api/now-reading");
 }
 
-export function useNowWatching(interval = 30000) {
-  return useApiData<NowWatching>("/api/now-watching", interval);
+export function useNowWatching() {
+  return useApiData<NowWatching>("/api/now-watching");
 }
