@@ -20,70 +20,64 @@ export const meta = () => [
   <span>{formatDate(frontmatter.date)}</span>
 </time>
 
-Since mid-2024 I work as a lead engineer at Summit Management, a hedge fund. My job is building the fund's system: the data pipelines, the scoring engines, the infrastructure that supports investment decisions. Through that work I picked up the basics: P/E ratios, PEG, ROIC, debt-to-equity, revenue growth rates. Enough to follow the conversation, not enough to call myself a financial analyst. At some point I asked myself: if I were to invest my own money, what would I actually look for?
+Since mid-2024 I've worked as a lead engineer at Summit Management, a hedge fund. My job is the fund's system. Data pipelines, scoring engines, the infrastructure behind investment decisions.
 
-I am a product engineer. I've spent years training in both product and tech. The way I think about problems is shaped by that dual background: building software but also evaluating whether something should exist. Is the problem real? Is it must-have or nice-to-have? What happens if nobody solves it? What are the alternatives? Those are the questions that build conviction for me.
+Along the way I picked up the basics. P/E ratios, ROIC, debt-to-equity, revenue growth. Enough to follow the conversation, not enough to call myself an analyst. At some point I asked myself something simple. If I were to invest my own money, what would I actually look for?
+
+I'm a product engineer. Years doing both sides, product and tech. That shapes how I think. I build software, but I also ask whether something should exist at all. Is the problem real? Must-have or nice-to-have? What happens if nobody solves it? What are the alternatives? Those are the questions that build conviction for me.
 
 The natural place to apply them was the company itself. That instinct was half right. The questions were the right questions. The subject was not.
 
 Companies don't have problems. They solve problems that the world has. The world has the problem. The company is just who happens to capture it.
 
-The framework that follows from this has two components, evaluated in order:
+It splits in two, and the order matters:
 
 - **The thesis.** The permanent need itself, scored on its own without any company attached. If the need is not real or not durable, no company matters.
-- **The player.** A candidate that might capture the thesis, scored on the quantitative profile of the business and on its defensibility, then weighted by how much of its operations actually point at the thesis. If the candidate does not actually capture the need, the financials are irrelevant.
+- **The player.** A candidate that might capture the thesis. Scored on the business itself, on its defensibility, and on how much of it actually points at the thesis. If the candidate doesn't capture the need, the financials don't matter.
 
-A position requires both: a thesis that is alive and a player that is strong enough. Neither side can compensate for the other.
+Both have to hold. A thesis that's alive and a player that's strong enough. One doesn't save the other.
 
-This post is about the thesis. The player is the subject of the next one.
+This post is about the thesis. The player comes next.
 
 ## The unit isn't the company
 
-The natural starting point is the company because the company is what you can actually buy. Run the product questions on the business, score it, decide whether to commit. The trouble is that you have already chosen which problem to evaluate by the moment you choose the company. The question "is this problem real" turns into a question of confirmation, not exploration.
+The natural starting point is the company, because the company is what you can actually buy. Pick one, run the product questions on it, decide. The trouble is that by the moment you've picked, you've already chosen the problem to evaluate. "Is this problem real" turns into confirmation, not exploration.
 
-Starting from the world reverses the order. First, articulate the problem. Then ask who could capture it. Companies become the candidates, not the unit. Instead of asking whether MSCI is a good business, I ask whether benchmarking institutional money is a permanent need. If the answer is yes, MSCI is one of the candidates worth evaluating. If the answer is no, MSCI is not interesting at any score.
+Starting from the world reverses the order. Articulate the problem first. Then ask who could capture it. Companies become candidates, not the unit. So instead of asking whether MSCI is a good business, I ask whether benchmarking institutional money is a permanent need. If yes, MSCI is one of the names worth a look. If no, MSCI isn't interesting at any score.
 
 ## What a thesis is
 
-With the unit set, the next question is what counts as a real thesis. A thesis in this framework is not a vague belief. "AI will change the world" is not a thesis. "Pension funds, ETFs, and insurers are required by law to measure performance against externally administered benchmarks, and that requirement persists for the foreseeable future" is, because I can check it, and I know what would make me wrong. That sentence is the start of a real thesis I keep in my registry, called **Financial Index**. I'll use it as the example throughout.
+So what counts as a real thesis. Not a vague belief. "AI will change the world" is not a thesis. "Pension funds, ETFs, and insurers are required by law to measure performance against externally administered benchmarks, and that requirement won't go away" is. Because I can check it, and I know what would make me wrong. That sentence is the start of a real thesis I keep in my registry. I call it **Financial Index** and I'll use it as the example throughout.
 
-Each thesis I keep in the registry has six pieces:
+Each thesis I keep has five pieces:
 
 - **Problem Score.** How severe and durable the problem is.
 - **Base rate.** The reference class for this kind of need and how often it survives.
-- **Trajectory.** The direction it is moving.
-- **Variant perception.** What I assert about the need that consensus does not.
+- **Trajectory.** The direction it's moving.
 - **Signals.** What would make me walk away (falsifiers) or sustain my conviction (confirmers).
 - **Status.** Where the thesis stands today, derived from the signals.
 
-The first five are below. The roster gets its own section.
+These are below. The roster gets its own section after them.
 
 ### Problem Score
 
-A one-to-five scale summarizing how severe and durable the problem is. Four sub-questions roll up into the score: does anyone solve it without this kind of provider, is it must-have, is it mandated by regulation, is it worsening. A five is critical infrastructure that is mandated or close to it. A one is a perceived problem with no urgency.
+One to five, how severe and durable the problem is. Four sub-questions feed into it. Does anyone solve it without this kind of provider? Is it must-have? Is it mandated by regulation? Is it getting worse? A five is critical infrastructure, mandated or close to it. A one is a perceived problem with no urgency.
 
-Financial Index scores 5 / 5:
-
-| Sub-question | Score |
-|---|---|
-| Does anyone solve it without this kind of provider? | 5 |
-| Is it must-have? | 5 |
-| Is it mandated by regulation? | 5 |
-| Is it worsening? | 5 |
-
-ERISA, MiFID II, and Solvency II all enforce some version of the mandate. There is no parallel solver structure outside externally administered benchmarks.
+Financial Index scores a 5 on all four. ERISA, MiFID II, and Solvency II all enforce some version of the mandate. There is no parallel solver structure outside externally administered benchmarks.
 
 ### Base rate
 
-Problem Score is inside view — how severe and durable this need looks on its merits. Base rate is the outside-view check: how often have needs in the same reference class actually survived twenty years?
+Problem Score is an inside view. It tells me how severe the need looks on its own merits. Base rate is the outside-view check. How often have needs in the same class actually survived over the long run?
 
-The reference class for Financial Index is regulated financial-infrastructure rails — clearing, settlement, exchanges, ratings, benchmarks — that lock in via statute or fiduciary mandate. Historically these rails consolidate rather than disappear. Names rotate; the rail persists. There is no instance, within this reference class, of a regulated benchmark regime being replaced by an open or unregulated equivalent at scale.
+The reference class for Financial Index is independent third-party financial-data infrastructure providers operating under explicit regulatory recognition. The Big-3 credit ratings (post-1975), the Big-3 index providers, CUSIP (single-vendor since 1968), CRSP. Across the last forty years, seven incumbents preserved top-3 dominance in their primary asset class. Around ten entrants tried. Zero displaced an incumbent in a core asset class. The base rate of preserved dominance sits at 85%.
 
-The danger the base rate catches is conflating "this is critical infrastructure" with "this incumbent will survive." The need outliving every incumbent is the typical case for infrastructure rails — which is why the thesis is the unit, not the ticker.
+The inside-view adjustment is that index providers carry deeper lock-in than the rest of the class. Switching a benchmark breaks a public fund prospectus (SEC Form N-1A, Rule 6c-11) and triggers an ERISA fiduciary review. That's a stronger constraint than the internal contracts behind credit ratings or identifiers. Index revenue also rides global AUM growth instead of issuance cycles, which compounds the durability the 85% already captures. The expected players sit in the upper tail of the reference class.
+
+The danger the base rate catches is conflating critical infrastructure with the survival of any one incumbent. The need outliving most incumbents is the typical case for infrastructure rails. That's why the thesis is the unit, not the ticker.
 
 ### Trajectory
 
-Improving, stable, or weakening. The score is a snapshot. The trajectory is the direction.
+Improving, stable, or weakening. The score is a snapshot. The trajectory is where it's going.
 
 Financial Index is intensifying. Five primary-source signals from 2024 to 2026 all push the same way:
 
@@ -91,35 +85,27 @@ Financial Index is intensifying. Five primary-source signals from 2024 to 2026 a
 - EU Regulation 2024/3005 extends the regulated-administrator template from financial benchmarks into ESG ratings, with ESMA registration and separate methodology.
 - Solvency II Review Directive 2025/2 amends Article 132 to require macroeconomic and macroprudential considerations in investment decisions, effective 2027.
 - The US Department of Labor's Proposed Rule on DIA selection operationalizes "meaningful benchmark" inside ERISA fiduciary process.
-- Direct indexing AUM, projected to grow to roughly $1.1T by 2028, consumes standardized index methodology as a starting universe rather than displacing it.
-
-### Variant perception
-
-Trajectory says where the need is moving. Variant perception says where my reading diverges from the market's.
-
-A real thesis disagrees with consensus somewhere. If everyone already agrees the need is permanent and the rail is concentrated, the thesis carries no edge — it is a summary of received opinion.
-
-For Financial Index, the variant is that benchmark licensing stays a regulated, concentrated rail rather than commoditizing. Consensus increasingly treats index data as margin-compressing — direct indexing, open-source benchmark catalogs, vertical integration by asset managers. My read is that the regulatory perimeter (ERISA, MiFID II, BMR) holds the rail concentrated for the foreseeable future. Wrong if the FCA or ESMA opens benchmark licensing to FRAND-style remedies. That failure mode is registered as one of the falsifiers below.
+- Direct indexing AUM, projected to reach roughly $1.1T by 2028, consumes standardized index methodology as a starting universe rather than displacing it.
 
 ### Signals
 
-Signals come in two directions:
+Signals come in two directions.
 
-- **Falsifiers (F#).** Concrete thresholds that, if crossed, force the thesis to Falsified.
-- **Confirmers (C#).** Concrete thresholds that, when met, register evidence the need is intact.
+- **Falsifiers.** Concrete thresholds that, if crossed, kill the thesis.
+- **Confirmers.** Concrete thresholds that, when met, register evidence the need is still there.
 
-Falsifiers come first. The discipline they impose is what makes the rest of the framework work: if I cannot write down what would make me wrong, I do not have a thesis. I have a feeling.
+Falsifiers come first. The discipline they impose is what makes everything else work. If I can't write down what would make me wrong, I don't have a thesis. I have a feeling.
 
-Both falsifiers and confirmers come from adversarial research — queries designed to break the thesis, not to confirm it. If I cannot find a primary source for a claim, the claim drops.
+Both come from adversarial research. Queries designed to break the thesis, not to confirm it. If I can't find a primary source for a claim, the claim doesn't make it in.
 
-The open falsifiers under Financial Index:
+Open falsifiers under Financial Index:
 
 - The UK FCA publishes a policy statement imposing FRAND or open-access remedies on benchmark licensing before the end of 2027.
 - The European Commission formally proposes extending the 2024/3005 template (separation of business, ESMA authorization, transparency on methodology) to non-critical financial benchmarks before the end of 2028.
 - ESMA's register of financial-benchmark administrators drops more than 50% by end-2026, alongside primary-source evidence of buy-side migration to unregistered boutique benchmarks.
 - Four consecutive quarters of equity-segment passive net outflows alongside active equity net inflows.
 
-The confirmers, all currently fired:
+Confirmers, all currently firing:
 
 - ICI 2025 Investment Company Fact Book: $39.2T total US-registered investment company AUM at year-end 2024. ETF AUM crossed $10T for the first time. Long-term index funds took $109B in February 2026 net inflows versus $35B for active.
 - EU BMR Regulation 2025/914 (effective January 2026) preserves the authorization-plus-supervision regime for "critical" and "significant" benchmarks. That is the tier where dominant index incumbents operate.
@@ -130,25 +116,25 @@ Each is concrete enough that a quarterly check tells me whether the thesis is st
 
 ### Status
 
-Where the thesis stands today. Five possible states:
+Where the thesis stands today. Five possible states.
 
-- **Alive.** The evidence still supports the thesis. Falsifiers haven't fired and at least one confirmer is.
-- **Searching.** The thesis is registered without a vehicle yet, sitting there monitored until a candidate qualifies. No forcing.
+- **Alive.** Falsifiers haven't fired and at least one confirmer is.
+- **Searching.** Registered without a vehicle yet, monitored until a candidate qualifies. No forcing.
 - **Weakening.** Evidence is starting to push the other way and I owe myself an explanation.
-- **Uncapturable.** The need is real, but the capture universe is structurally closed. No public vehicle exists, and there is no reason to expect one.
+- **Uncapturable.** The need is real, but the capture universe is closed. No public vehicle exists.
 - **Falsified.** Evidence has crossed a threshold I committed to in advance. The thesis is dead.
 
-Of these five, the state I underestimated at first is Searching. The temptation is always to attach a ticker to a thesis as soon as you have one. The discipline is to wait.
+The state I underestimated at first is Searching. The temptation is always to attach a ticker to a thesis as soon as you have one. The discipline is to wait.
 
 Financial Index is Alive.
 
 ## Filters before the roster
 
-Not every alive thesis becomes investable. Two filters sit before scoring begins. The thesis has to fall inside my circle of competence — sectors I can evaluate from primary sources, not from analyst summaries. And the underlying activity has to clear a values floor: defense primes, surveillance contractors, and a few other categories are out regardless of score. Financial Index clears both. Theses that don't pass go to a "too hard" list — neither alive nor falsified, just outside the lens.
+Not every alive thesis becomes investable. Some need sectors I can't evaluate from primary sources. Biotech mechanism-of-action, deep semiconductor process economics, opaque commodity chains. Those go to a "too hard" list. Neither alive nor falsified. Just outside the lens. Financial infrastructure is inside.
 
 ## The roster
 
-Public companies, private incumbents, regulators, ecosystem participants. The roster is what I monitor, not any single name on it. At this stage every entry is a candidate. Whether any becomes a position depends on what happens when each is evaluated.
+Public companies, private incumbents, regulators, ecosystem participants. I monitor the roster, not any single name on it. At this stage every entry is a candidate. Whether any becomes a position depends on how it evaluates.
 
 The Financial Index roster:
 
@@ -158,7 +144,7 @@ The Financial Index roster:
 | Ecosystem | Bank for International Settlements, IMF, IOSCO, CFA Institute |
 | Regulators | SEC, US Department of Labor, ESMA, UK Financial Conduct Authority |
 
-Take three examples of what a quarterly signal looks like: a new SEC rule about ETF index licensing, a competitor cutting prices on a thematic index family, a new IOSCO principle on benchmark administration. None of these will move quarterly numbers immediately, but each one is a signal about the thesis. The roster is what makes the thesis monitorable.
+What does a quarterly signal look like? A new SEC rule on ETF index licensing. A competitor cutting prices on a thematic index family. A new IOSCO principle on benchmark administration. None of these moves quarterly numbers immediately. Each is a signal about the thesis. The roster is what makes the thesis monitorable.
 
 The cascade also runs the other way. If the thesis is Falsified, every position under it exits with it, no matter how strong the player looked on its own. Player strength does not save a dead thesis.
 
