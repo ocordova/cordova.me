@@ -1,3 +1,5 @@
+import { cached, TTL } from "~/lib/cache.server";
+
 const LASTFM_API = "https://ws.audioscrobbler.com/2.0/";
 const LASTFM_API_KEY = process.env.LASTFM_API_KEY;
 const LASTFM_USERNAME = "ocordova";
@@ -13,7 +15,7 @@ export interface NowListening {
   album: string;
 }
 
-export const getNowListening = async (): Promise<NowListening> => {
+const fetchNowListening = async (): Promise<NowListening> => {
   try {
     const response = await fetch(LASTFM_ENDPOINT);
     const data = await response.json();
@@ -43,3 +45,6 @@ export const getNowListening = async (): Promise<NowListening> => {
     throw new Error("Failed to fetch now listening data");
   }
 };
+
+export const getNowListening = (): Promise<NowListening> =>
+  cached("now-listening", TTL.listening, fetchNowListening);
