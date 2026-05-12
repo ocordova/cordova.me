@@ -1,5 +1,6 @@
 import { leadingZero } from "~/lib/utils";
 import { traktFetch } from "~/actions/trakt-auth.server";
+import { cached, TTL } from "~/lib/cache.server";
 
 const TRAKT_BASE_URL = "https://trakt.tv/";
 const TRAKT_API = "https://api.trakt.tv/";
@@ -87,7 +88,7 @@ export interface TraktEpisode {
 
 export type TraktResponse = (TraktMovie | TraktEpisode)[];
 
-export async function getNowWatching(): Promise<NowWatching> {
+async function fetchNowWatching(): Promise<NowWatching> {
   try {
     const traktdata = await traktFetch<TraktResponse>(TRAKT_ENDPOINT);
 
@@ -165,3 +166,6 @@ export async function getNowWatching(): Promise<NowWatching> {
     throw new Error("Failed to fetch data from Trakt API");
   }
 }
+
+export const getNowWatching = (): Promise<NowWatching> =>
+  cached("now-watching", TTL.watching, fetchNowWatching);
