@@ -36,7 +36,7 @@ The roster I introduced last time was not a list of competitors. It was delibera
 
 Only competitors are investable. Regulators and ecosystem participants show up in the roster because their actions are signals about the thesis, not because I plan to buy them. They get watched, not scored. You don't score the SEC. You watch what it does.
 
-Among the competitors, two more states show up as I evaluate them. A competitor under active evaluation for entry becomes a **candidate**. A candidate that passes both gates becomes a **position**. These come out of the scoring, not at the start. The same player moves between them as the evaluation evolves. If a competitor on the roster pulls ahead of the current position on signals, the thesis is still alive, just with a different player now serving as the better vehicle for it.
+Among the competitors, one more state shows up as I evaluate them. A competitor that passes both gates becomes **qualified**: the framework signs off on it as worth committing capital to. Qualified is the framework's terminal output, not a portfolio state. Whether I actually hold a qualified player, and how much, is a separate decision I make against my Investment Policy Statement and my broker, not against the framework. The same player can fall back below qualified if its strength erodes or if the thesis is falsified. If a competitor on the roster pulls ahead of the qualified player on signals, the thesis is still alive, just with a different player now serving as the better vehicle for it.
 
 For the rest of this post, "player" means a competitor under scoring.
 
@@ -160,14 +160,16 @@ For MSCI: √(4.30 × 4.40) × (4 / 5) = √18.92 × 0.8 = 4.35 × 0.8 = **3.48*
 
 Strength tiers:
 
-| Tier | Range | Position size |
+| Tier | Range | Advisory weight |
 |---|---|---|
-| Exceptional | ≥ 4.5 | 15-25% |
-| Strong | 3.5-4.4 | 8-15% |
-| Acceptable | 3.0-3.4 | 3-8% |
-| Below threshold | < 3.0 | does not enter |
+| Exceptional | ≥ 4.5 | 12-25% |
+| Strong | 3.5-4.4 | 6-15% |
+| Acceptable | 3.0-3.4 | 4-7% |
+| Below threshold | < 3.0 | not qualified |
 
-MSCI sits in the acceptable tier. Strong financials and switching costs, but two Powers eroding and a Thesis Focus held back by the multi-segment business mix. Position size sits in the lower half of the acceptable band.
+The Advisory weight column is the framework's range inside my stockpicking bucket, the portion of my portfolio my Investment Policy Statement allocates to single-stock picks. The matrix narrows further by Problem tier: a P5 thesis sits in the upper half of each band, a P4 thesis in the lower half. The framework outputs a range, not a number. What I actually hold inside that range is my call.
+
+MSCI sits in the acceptable tier under a P5 thesis. Strong financials and switching costs, but two Powers eroding and a Thesis Focus held back by the multi-segment business mix. The advisory range lands at 4-7% of my stockpicking bucket.
 
 ## Capture-layer signals
 
@@ -182,29 +184,29 @@ A few of MSCI's open falsifiers:
 - The BlackRock 2035 contract Index asset-based fee yield declines more than 5% year over year for two consecutive quarters.
 - Direct-indexing AUM displaces standardized index licensing at scale, with MSCI Index segment growth decelerating below 3% for two consecutive years.
 
-When a capture-layer falsifier fires, it doesn't kill the position by itself. It feeds back into the underlying scores: a Power rating drops, the Quant verdict turns lower, or the Thesis Focus needs a revisit. The two gates fire from the scores, not directly from the signals.
+When a capture-layer falsifier fires, it doesn't drop the player from qualified by itself. It feeds back into the underlying scores: a Power rating drops, the Quant verdict turns lower, or the Thesis Focus needs a revisit. The two gates fire from the scores, not directly from the signals.
 
 ## The two gates
 
-For a player to enter or stay in the portfolio, two conditions must hold:
+For a player to be qualified, two conditions must hold:
 
 - **Thesis Alive.** The need-layer falsifiers from the previous post have not fired. The thesis is supported by current evidence.
 - **Player Strength ≥ 3.0.** The combined score sits at or above the threshold.
 
 Both must be true. There are no overrides.
 
-The two gates close different failure modes. If only Player Strength gated entry, a thesis could quietly be falsified while the player kept scoring well, and I would hold a strong vehicle pointing at a dead need. If only Thesis Alive gated entry, a player could degrade structurally while the thesis stayed valid, and I would hold a weakening vehicle in a healthy market.
+The two gates close different failure modes. If only Player Strength gated qualification, a thesis could quietly be falsified while the player kept scoring well, and the framework would still sign off on a strong vehicle pointing at a dead need. If only Thesis Alive gated qualification, a player could degrade structurally while the thesis stayed valid, and a weakening vehicle would still sit on the qualified list.
 
-Exit is symmetric. Thesis Falsified or Player Strength below 3.0 forces an exit, and the cascade from the previous post still applies: a dead thesis takes every position with it.
+The reverse is symmetric. If the thesis is Falsified or Player Strength drops below 3.0, the player falls off the qualified list, and the cascade from the previous post still applies: a dead thesis takes every qualified player with it. What I do with that information at the broker is my call; the framework is just telling me the vehicle is no longer signed off.
 
-What the gates don't tell me is how much capital each position should carry. Position sizing comes from the Strength tier table above, plus adjustments for sector concentration and correlation. And the gates say nothing about when to add or trim inside an existing position. That's a different mechanism, and one I'll write about separately.
+What the gates don't tell me is how much capital each qualified player should carry. The matrix above produces an advisory range, but that's all: the framework is silent on when to enter, when to add to a rising player, or when to trim a falling one. A thesis can carry more than one qualified player at the same time. If both Visa and Mastercard passed the gates under a card-payment-network thesis, the framework would sign off on both at similar weights without telling me which to favor, whether to split, or how much room to leave for the market move I'm reading at the broker. Those calls happen against my Investment Policy Statement and the market context I read at the broker. The hand-off is deliberate: the framework is advisory, the IPS plus the broker are where capital actions live.
 
 ## What I'm still calibrating
 
 The 30/30/20/20 weights have held up across the first two months of running the framework. I have wanted to lower Risk's weight a couple of times during volatile periods, and have resisted. The 0.7/0.3 split between structural and regulatory defensibility is even more recent, still in validation.
 
-The threshold I have most wanted to move is the Player Strength gate at 3.0. There have been positions sitting at 3.05 where it was tempting to declare them strong enough, and positions at 2.95 where it was tempting to wait one quarter for a recovery. Holding the line at 3.0 has cost me time and trades. Moving it would cost me discipline.
+The threshold I have most wanted to move is the Player Strength gate at 3.0. There have been players sitting at 3.05 where it was tempting to declare them strong enough, and players at 2.95 where it was tempting to wait one quarter for a recovery. Holding the line at 3.0 has cost me time and trades. Moving it would cost me discipline.
 
-The layer that has changed most so far, and is still moving, is when to add to a position whose strength is rising and when to trim one whose strength is falling. That is what comes next.
+The layer that has changed most so far, and is still moving, is the hand-off itself: the line between what the framework decides (qualified or not, advisory range) and what I decide (how much to actually hold, when to add, when to trim). That separation is what comes next.
 
-The two gates tell me whether to be in. They don't tell me how much.
+The two gates tell me whether the player is qualified. How much, when, and which of several qualified players to favor — those are separate questions, decided outside the framework.
