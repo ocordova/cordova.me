@@ -13,7 +13,6 @@ import {
   ScrollRestoration,
   useRouteLoaderData,
 } from "react-router";
-import { json } from "~/lib/response-helpers";
 import globalStyles from "./styles/globals.css?url";
 import { LinksFunction, LoaderFunctionArgs } from "react-router";
 import AppLayout from "./components/layouts/app-layout";

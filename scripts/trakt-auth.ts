@@ -34,6 +34,7 @@ async function deviceAuth() {
   console.log("Waiting for authorization...\n");
 
   // Step 2: Poll for token
+  // eslint-disable-next-line no-constant-condition
   while (true) {
     await new Promise((resolve) => setTimeout(resolve, interval * 1000));
 
