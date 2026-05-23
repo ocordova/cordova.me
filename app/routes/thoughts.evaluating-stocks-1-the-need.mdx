@@ -1,0 +1,159 @@
+---
+  author: Óscar Córdova
+  date: 2026-05-15
+  title: "Evaluating Stocks Like Products: The Need"
+  description: The world has the need. The company is who happens to capture it.
+---
+
+import { formatDate } from "../lib/utils";
+
+export const meta = () => [
+  { title: frontmatter.title },
+  { name: "description", content: frontmatter.description },
+];
+
+<h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
+<time
+  dateTime={frontmatter.date}
+  className="mt-1 text-sm text-muted-foreground"
+>
+  <span>{formatDate(frontmatter.date)}</span>
+</time>
+
+Since mid-2024 I've worked as a lead engineer at Summit Management, a hedge fund. My job is the fund's system: data pipelines, returns and performance, the infrastructure behind investment decisions.
+
+Along the way I picked up the basics. P/E ratios, ROIC, debt-to-equity, revenue growth. Enough to follow the conversation, not enough to call myself an analyst. At some point I asked myself a simple question. If I were to invest my own money, what would I actually look for?
+
+I'm a product engineer. I've spent years on both sides, product and tech, and that shapes how I think. I build software, but I also ask whether something should exist at all. Is the problem real? Must-have or nice-to-have? What happens if nobody solves it? Those are the questions that build conviction for me.
+
+The natural place to apply them was the company itself. That instinct was half right. The questions were the right questions. The subject was not.
+
+There are plenty of ways to invest, and none of what follows is a recipe or a suggestion. It's just how I try to think about it now.
+
+## The unit isn't the company
+
+Companies don't have problems. They solve problems that the world has. The world has the need. The company is just who happens to capture it.
+
+Starting from the company is what feels natural, because the company is what you can actually buy. Pick one, run the product questions on it, decide. The trouble is that by the moment you've picked, you've already chosen the problem to evaluate. "Is this need real" turns into confirmation, not exploration.
+
+Starting from the world reverses the order. Write the need down first, then ask who could capture it. Companies become candidates, not the unit. So instead of asking whether FICO is a good business, I ask whether US lenders being required to use a validated credit-score model in mortgage origination is a permanent need. If yes, FICO is one of the names on the list of who could capture it. If no, FICO isn't interesting at any price.
+
+It splits in two, and the order matters.
+
+- **The thesis.** The permanent need, written down without any company attached. If the need isn't real or isn't durable, no company matters.
+- **The player.** A company on the roster that might capture the need. Evaluated on what it does, how defensible that is, and how much of it actually points at the thesis.
+
+Both have to hold. A thesis that's alive and a player that's strong enough. One doesn't save the other.
+
+This post is about the thesis. The player comes next.
+
+## Understanding the need first
+
+A thesis statement is short. A few sentences. What sits behind it isn't. Before I can write down that US lenders are required to use a validated credit-score model and that the requirement won't go away soon, I have to understand how credit scoring actually works in the world. Who holds the data, who runs the algorithm, who pays whom, what statute holds it together, what's been changing recently around it.
+
+That understanding is its own thing, separate from the thesis. It's a long-form deep dive on the need, and the thesis comes out of it, not the other way around. The shape varies by problem. Some needs benefit from a value-chain diagram. Some need a timeline of recent structural events. Some need a side-by-side of two worlds that get mixed up. There isn't a fixed template. If it were a checklist, it would stop being thinking.
+
+For Credit Scoring, the picture I ended up with had a few core pieces:
+
+- **The framing that organizes everything else.** A single sentence that makes the rest fit together. For Credit Scoring: *The consumer-credit data sits at the three bureaus permanently. The score is the result of applying an algorithm to that data. FICO and VantageScore are algorithms, not bureaus.* Reach that frame and the four legal anchors stop being a list and become a boundary. Miss it and the falsifiers come out vague.
+- **The value chain.** Who pays whom, layer by layer, and where the value gets captured. For Credit Scoring: lender → bureau → score vendor, with regulators setting the boundary and the bureaus sitting in two roles (distribution and co-owners of the VantageScore joint venture).
+- **The operational distinctions worth keeping straight.** Splits in the need that get mixed up and produce sloppy thinking when missed. Mortgage tri-merge and non-mortgage single-bureau scoring are different worlds in practice, and MDLP only applies to one.
+- **Why this falsifier and not another.** Each falsifier has alternatives I considered and rejected, a threshold I picked over higher or lower ones, a horizon date I chose specifically. The reasoning lives here. The thesis statement just keeps the falsifier itself.
+- **What I don't yet understand, and how I'd find out.** A list of open questions, dated. Every source I used tagged by tier: primary (issuer filings, regulator pages, peer-reviewed), trade press (context only), aggregator (replace or drop).
+
+The deep dive isn't a one-time exercise. It keeps growing as the need keeps moving: new statutes, new entrants, new product launches. The thesis statement is what the understanding distills to. The deep dive is where the understanding actually lives.
+
+## What a thesis is
+
+What counts as a real thesis? Not a vague belief. "AI will change the world" isn't a thesis. But "US lenders are required by federal regulation to use a validated credit-score model in mortgage origination, and that requirement won't go away soon" is, because I can check it and I know what would make me wrong. That sentence is the opener of the first thesis I wrote down, called **Credit Scoring**. I'll use it as the example throughout.
+
+What makes it a thesis and not a hunch is that it points at concrete law and concrete behavior. Four legal anchors require validated-score use today.
+
+- **12 CFR Part 1254.** The FHFA validation regime that requires GSE mortgage purchases to use validated credit-score models.
+- **FCRA Section 615 and Dodd-Frank Section 1100F.** Adverse-action notices for credit-based decisions must disclose the score used.
+
+Two more in the same shape: Regulation B and ECOA on anti-discrimination, and Basel III IRB on bank capital weighting that references external credit-score inputs.
+
+Any single one of those weakening doesn't kill the need. All four going at once would. That's the shape of a real permanent need. Multiple anchors at once, not one.
+
+A thesis writes that down, with references anyone can check.
+
+## What I keep for each thesis
+
+I keep four pieces. Each is either a fact of the world or a qualitative label.
+
+- **Falsifiers.** Concrete events that, if they happen, kill the thesis. Each one has a description of what would happen, a mechanism for how the world arrives there, an observable signal that's measurable, a horizon with a date, and a primary source I can check.
+- **Watch signals.** Concrete events that I monitor quarterly to track confidence. They don't kill the thesis on their own. They move my read of it.
+- **Trajectory.** Where the need is moving today. Is the world heading toward this need being more binding, less binding, or sideways? Four options: intensifying, stable, weakening, or risks emerging. Qualitative tag.
+- **Status.** The current state. Active, weakening, or archived.
+
+Concrete from Credit Scoring.
+
+One of the falsifiers I keep is **F1**:
+
+- **Description.** 12 CFR Part 1254 rescinded such that GSE mortgage purchase no longer requires a validated credit-score model.
+- **Mechanism.** FHFA or a successor administration rescinds the validation regime via rulemaking, and Fannie or Freddie drop the requirement from their Selling Guides.
+- **Observable signal.** A Federal Register notice rescinding the rule, or a Selling Guide bulletin removing the requirement.
+- **Horizon.** 2028-12-31.
+- **Source.** The eCFR page for the rule itself.
+
+One of the watch signals is **W2**:
+
+- **Description.** US consumer credit, FRED TOTALSL series, 3-year CAGR at or above 2%.
+- **Activation criterion.** Trailing 3-year CAGR drops below 2%.
+- **Cadence.** Quarterly.
+- **Source.** The FRED TOTALSL series.
+
+Current state of the thesis:
+
+- **Trajectory.** Intensifying. The regulators have been adding tools, not removing them.
+- **Status.** Active.
+
+That's all there is. Need statement, falsifiers, watch signals, trajectory, status, plus an ongoing log of observations as evidence comes in.
+
+## The roster
+
+Every thesis has a roster. It isn't a list of competitors. It's wider on purpose, and tracks three types of player.
+
+- **Competitor.** A company or entity that captures the need today, or aims to. Could be public, private, or a joint venture.
+- **Regulator.** Whoever sets or enforces the rules that shape how the need gets captured. Their actions are what fire falsifiers and watch signals.
+- **Ecosystem.** Participants that don't compete for the customer but shape the market.
+
+Only competitors are candidates for capital, and only the public ones can actually be bought. Private competitors stay on the roster because they shape how the need gets served anyway (VantageScore itself is a joint venture owned by the bureaus, not directly buyable, but you can't read FICO without it). Regulators and ecosystem entries show up because their actions are signals about the thesis. They get watched.
+
+For Credit Scoring the roster looks like this. Competitor: FICO and VantageScore at the algorithm layer, and the three bureaus (Experian, TransUnion, Equifax) at the data plus distribution layer. Regulator: FHFA, CFPB, Federal Reserve, SEC. Ecosystem: the bureaus again, in their second role of being the channel that every US lender plugs into.
+
+The bureau row is the one most worth pausing on. The same three entities sit in two roles. They distribute the dominant score and they own the alternative. All three are publicly traded, which makes them direct candidates for capital. The bureau slice of the need (data plus VS co-ownership) is the part most worth evaluating against the thesis. You only see overlap like that when you start from the need, not the company.
+
+## Triage before a thesis gets written
+
+Not every alive need becomes a thesis I write down. A small triage runs before I commit.
+
+- **Inside my circle of competence.** Sectors I understand. Each one tagged in, learning, or out. If the thesis lives outside the circle, it doesn't get written.
+- **Operationally comprehensible.** If I can't explain the mechanics of the need in three sentences without hand-waving, I'm not ready to write it down yet.
+- **Primary data accessible.** EDGAR, regulator pages, official statistics. If the only references for a need are aggregators and trade press, it stays out until real sources turn up.
+
+If any of those fail, the candidate goes to a "too hard" log. A documented no, not a deferred yes.
+
+## Monitoring the need
+
+The thesis isn't written once and forgotten. It's a living description that gets touched whenever the world moves on it.
+
+Two loops run on it.
+
+- **Event-driven.** The continuous loop. Earnings releases, regulator rulings, court decisions, M&A announcements, management changes, news that touches the thesis. As each one lands, I read the primary source, write an observation, tag it confirming, weakening, falsifying, or neutral, and link the source. If the event doesn't move a falsifier I wrote before it happened, it isn't a reason to act, only to record. Events that map nowhere are signal about gaps in my falsifier set, not signal to trade.
+- **Quarterly and annual.** Every quarter I revisit watch signals and observations. Every year I revisit the lessons that came out of those observations and ask what they're teaching me about how the need actually works.
+
+The observations are append-only. The lessons accumulate. The trajectory tag updates as evidence comes in. The status moves when a falsifier fires.
+
+Most quarters end with a one-line observation and no action. The default between events is to do nothing. Action requires justification, inaction doesn't. The point of monitoring isn't to act more often. It's to be in the position to act when something actually moves.
+
+Nothing in that loop is automated. The discipline structures it. It doesn't decide it.
+
+## What this gets me
+
+The thesis describes the need. A thesis without a player is a forecast, and that's a legitimate state. Sometimes the need is real, persistent, even intensifying, and no public company captures it cleanly. That's information, not failure. A player without a thesis is a stock.
+
+The Credit Scoring thesis is alive. Its roster has names on it. Whether any of them is a business worth capital is a separate question, with its own gates, and that's what the next post is about.
+
+The lens didn't change. The unit did.

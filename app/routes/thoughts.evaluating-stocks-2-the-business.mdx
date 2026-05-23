@@ -1,0 +1,193 @@
+---
+  author: Óscar Córdova
+  date: 2026-05-15
+  title: "Evaluating Stocks Like Products: The Business"
+  description: Once the need is on the page, the question becomes who actually captures it.
+---
+
+import { formatDate } from "../lib/utils";
+
+export const meta = () => [
+  { title: frontmatter.title },
+  { name: "description", content: frontmatter.description },
+];
+
+<h1 className="font-medium text-base mb-1">{frontmatter.title}</h1>
+<time
+  dateTime={frontmatter.date}
+  className="mt-1 text-sm text-muted-foreground"
+>
+  <span>{formatDate(frontmatter.date)}</span>
+</time>
+
+The [previous post](/thoughts/evaluating-stocks-1-the-need) was about the thesis. The need described without any company attached. By the end of it, the Credit Scoring thesis was alive and its roster had names on it.
+
+This is the post about the names.
+
+A player on a roster is a candidate, not a position. Whether to commit capital is its own question. What I keep for each candidate makes sure that question gets answered against evidence, not impulse.
+
+For each candidate I keep five pieces. What it does. Where its moat is. Whether it dominates on revenue, profit, and growth. What would break it, and the pre-mortem that maps to those. What would make me leave. The numbers come last, as confirmation.
+
+I'll walk through them on FICO. What follows is some of what I keep, not all of it. The full record has more under each piece (more moat elements, more falsifiers, more capital allocation decisions, more pre-mortem causes). The shape is the same.
+
+## What FICO sells
+
+Two segments, per FICO's 10-K Item 1 (business description) and the segment notes in the financial statements.
+
+- **Scores.** Licenses the FICO score, the algorithm itself, distributed mostly through the three credit bureaus to lenders. Roughly 90% of US lenders use FICO somewhere in their credit decisioning (per Sen. Hawley's October 2025 letter to the CFPB). Within Scores, mortgage is about 72% of B2B Scores revenue. That's the part most directly anchored to the thesis.
+- **Software.** Sells decision-management platforms used by banks, insurers, and retailers. The diversification line. Its only meaningful growth sub-line is Platform, up 33% in FY25. The rest of Software is flat to declining.
+
+Scores is the dominant engine. FICO sits on the roster as a candidate today. Cleared on exclusions. Trajectory tagged "risks emerging."
+
+One thing worth knowing first. In October 2025 FICO launched **MDLP** (Mortgage Direct License Program), which lets FICO license the score algorithm directly to mortgage-report intermediaries instead of routing through the three bureaus. It runs today for non-GSE lender programs but not yet for Fannie- and Freddie-bound mortgages (about 70% of US mortgage origination). GSE-channel approval is still pending, and Pulte controls that door. That's why a lot of the regulatory pressure below points at MDLP.
+
+## The deep-dive
+
+Behind every piece I keep there's a long-form deep-dive. For FICO that meant five years of 10-Ks (Item 1, Item 1A, Item 7, segment notes), the last eight earnings transcripts, the recent proxy statements, the FHFA approved-model history, Sen. Hawley's October 2025 letter to the CFPB, the eCFR pages for the four legal anchors, and trade press around the April 2026 GSE ruling. A few thousand words of notes that nobody else reads, sitting in a long-form file separate from the thesis itself.
+
+The work matters because structural moves only show up when the pieces sit together. On FICO, the deep-dive surfaced a pincer: between 2022 and 2026, the company raised wholesale pricing roughly 1500% on the bureau channel, launched MDLP to bypass the bureaus, and then priced a new MDLP tier that matched the FHFA's $0.99 demand at the headline while preserving per-funded-loan economics. None of those three facts is a moat element on its own. Together they're one move in three pieces, and the deep-dive is where they got seen that way.
+
+The pattern is one deep-dive per player before writing anything down, then quarterly observations and an annual deep review against the same notes as the years go on.
+
+## The moat
+
+A moat is a set of named pieces, one or many, each with prose and a primary source. There are ten types I work with, and only those ten: brand, switching cost, network effect, scale economies, process power, intangibles, pricing power, cornered resource (regulatory), cornered resource (structural), reinvestment moat. Most of the evidence sits in 10-K Item 1 (business description) and Item 1A (risk factors), with regulatory anchors verifiable in the eCFR or Federal Register. Alongside each element I track a trajectory in my notes (stable, eroding, or strengthening) so the picture moves as the world does.
+
+Six of the ten apply meaningfully to FICO. The one most pivotal to the thesis:
+
+- **Cornered resource (regulatory).** The four legal anchors from the previous post all require validated-score use. FICO is one of two FHFA-approved models as of April 22, 2026. Before that date FICO was the sole approved model at the GSE channel. The April 22 ruling did not remove the floor. It ended exclusivity. The regulatory moat became a regulatory floor. Trajectory: eroding.
+
+The other five apply too (pricing power, brand, switching costs, scale economies, process power) each with its own trajectory tag. Pricing power is stable but under pressure (the same MDLP move below). Brand and switching costs are stable. The two scale-related ones are stable to strengthening.
+
+The eroding trajectory is the one I watch most. The April 2026 GSE ruling already moved the regulatory floor from sole-approved to one of two. A further FHFA action that removes FICO from the approved set entirely is the falsifier I weigh most.
+
+## Three legs of dominance
+
+A business can dominate revenue and not profit. It can grow fast and capture none of the profit. The three-leg test asks whether the thesis-aligned segment is dominant on all three of revenue, profit, and growth. Three binary pass-or-fail verdicts, each with evidence and a primary source.
+
+For FICO under Credit Scoring:
+
+- **Revenue.** Pass. About 90% of US lender share. Mortgage Scores revenue grew 127% YoY in Q2 FY26. VS approval at the GSE channel happened in April 2026, but LOS reconfiguration cycles take 12 to 36 months, so the share is sticky in the short and medium term.
+- **Profit.** Pass. Scores segment operating margin ran around 88% in FY25 via near-zero marginal cost per score. Blended TTM operating margin 50.4%. FCF over net income at 1.19. Mortgage is 72% of B2B Scores revenue.
+- **Growth.** Pass. TTM revenue growth approximately 15% YoY. Organic. Multiple growth fronts running at once: Scores pricing capture, MDLP mortgage origination, the Software Platform sub-line, UltraFICO plus Plaid alt-data.
+
+All three pass. The dominant engine is intact today. Whether it stays intact is what the falsifiers are for.
+
+## What management did with the cash
+
+Capital allocation sits between structure and numbers in the read order. The structure says what kind of business this is. The numbers say whether it produced cash. Management is the part in the middle that decides whether the cash, once generated, does useful work or quiet damage.
+
+I keep a record of the last ten years of major decisions. For each one: the year, what the decision was, the rough amount, whether it created, destroyed, or stayed neutral for the business, and a short note. No score. Just the call and what it did.
+
+For FICO, the one that stands out most across the last few years:
+
+- **MDLP launch, October 2025.** Going-direct counter-move that licenses the algorithm direct to tri-merge resellers, bypassing the bureaus as pass-through middleman. 55 lenders and $495B annual origination capacity signed in six months. Q2 FY26 mortgage Scores revenue grew 127% YoY. Created value. The move the deep-dive flagged as part of the pincer.
+
+More on the list: aggressive price increases on Scores wholesale ($0.60 to $10 between 2018 and 2025, tagged created but now contested), routine buybacks at full multiples in 2024-2025 (tagged neutral with a note that they may look worse later if FY26 stock, down roughly 43% year to date, keeps compressing), and the Software Platform investment (tagged tbd).
+
+Reading the decisions in sequence is how I tell whether management has been a friend or a tax over time. The format preserves the thinking with the date attached, which is what makes the record useful five years from now when I revisit the call.
+
+## What would kill it
+
+The thesis has falsifiers about the need. The player has falsifiers about whether this company can capture it. Same shape, plus a probability tier (low, medium, high). A thesis-layer falsifier kills the need itself. A player-layer falsifier kills only this company's ability to capture it. The thesis can stay alive while a player on its roster falls off.
+
+The most material of the ones I keep for FICO is PF7:
+
+**PF7: FHFA caps MDLP at $0.99 per score and bans the per-funded-loan tail.**
+
+- **Mechanism.** Pulte issues a Selling Guide bulletin or Federal Register notice capping MDLP at $0.99 per score for GSE acceptance, banning any per-funded-loan fee on top. The MDLP pricing strategy collapses to a pure $0.99 per score, killing the $65 tail that preserved the real per-funded-loan economics.
+- **Observable signal.** A Selling Guide bulletin or Federal Register notice with that specific cap.
+- **Horizon.** 2027-12-31.
+- **Probability.** Medium. Pulte has been signaling continued pressure ("still not happy") and the funded-loan tail is the obvious next pressure point.
+
+Six more falsifiers run the same shape, each pointing at a different failure path: the FHFA removing FICO from the approved set entirely, FICO cutting wholesale prices voluntarily under political pressure, FICO 10T adoption stalling at top mortgage lenders, the three-bureau distribution channel concentrating further, the Software diversification line turning over, and DOJ/SEC/FTC enforcement landing. None of them, on its own, kills the Credit Scoring thesis. The thesis is broader than any one player.
+
+## Pre-mortem maps to falsifier
+
+The pre-mortem is where the two layers connect in practice.
+
+I write a pre-mortem before deploying capital. Three to five causes, ranked by how likely I think each is, describing how the position fails in five years. Each cause has a description, a mechanism, and a mapped falsifier.
+
+The mapping is enforced. A cause that doesn't map to an existing falsifier is either a gap in the falsifier set or a vague cause. If it's the first, I add the falsifier. If it's the second, I sharpen the cause until it points at something observable. Unmapped causes don't make it into the pre-mortem.
+
+For FICO, the highest-likelihood cause I keep:
+
+- **Cause 1.** FHFA-driven pricing cut compounds. Pulte's $0.99 demand becomes a binding regulatory action by 2027-2028. FICO cuts 30 to 50% off wholesale price in a negotiated GSE deal. Scores revenue compresses 25 to 30%. Mapped to **PF1**.
+
+Two more causes follow the same shape, one covering VS 4.0 lender capture accelerating (mapped to PF5) and one covering the Hawley investigation escalating to formal SEC or DOJ enforcement (mapped to PF6). The pre-mortem isn't speculation. It's tied to events I can observe, dated, and sourced.
+
+The discipline runs the other way too. When I review the player annually, I take each cause and ask whether its mapped falsifier has moved closer or further. The pre-mortem isn't a one-time exercise. It's a check I keep running over time.
+
+## What would make me leave
+
+Exit criteria sit alongside falsifiers but do a different job. A falsifier degrades conviction. An exit criterion is an observable trigger that takes me out of the position without re-evaluation.
+
+For FICO, the cleanest one:
+
+- **Compound firing.** PF1 fires (FICO removed from approved-model set) AND FICO discloses an FY revenue guide cut greater than 10% in the same reporting window.
+
+Two more in the same shape: the three-bureau aggregate share crossing 65% of FICO revenue while VS takes more than 25% of GSE mortgage origination, and the Hawley investigation escalating to formal SEC or DOJ enforcement (or a securities class action). Each one is mechanical. If it fires, I leave. The decision is made now, when nothing is on the line, instead of in the moment when something is.
+
+## The numbers
+
+Numbers come last. They're facts the company already produced, derived from the financial statements in 10-K (annual) and 10-Q (quarterly) filings, verifiable against EDGAR. They get calculated from the line items, not assigned. They confirm the moat and three-leg reads. They don't generate them.
+
+From the snapshot pulled 2026-05-15:
+
+| Metric | TTM |
+|---|---|
+| Revenue | $2.26B |
+| Net income | $759.6M |
+| Free cash flow | $900.9M |
+| FCF / Net income | 1.19 |
+| Return on invested capital | 68.1% |
+| Gross margin | 84.2% |
+| Operating margin | 50.4% |
+| Net margin | 33.7% |
+| Net debt / EBITDA | 3.01 |
+
+A 68.1% ROIC is what the income statement and the balance sheet produce when divided. If the moat read said cornered resource plus switching cost plus pricing power and ROIC came in at 4%, something would be off in one or the other. With FICO, the layers agree.
+
+I don't project future numbers, and I don't lean on price targets (mine or anyone else's). Every projection assumes growth I can't verify, and that assumption is what I'd be betting on rather than the business itself. What gives me conviction is the business, not a model of where the price could go.
+
+What the numbers do help me read is whether the price today looks expensive, cheap, or fair against the business producing them. That's one input to the enter, wait, or skip judgment, not the answer. A good business at the wrong price is still a bad call. A good business at a fair price is what I'm looking for.
+
+One diagnostic I do run is an accrual check, which flags when reported earnings diverge from cash flow over multiple periods. Diagnostic, not a gate. I run it when something in the moat-vs-numbers read smells off.
+
+## After qualification
+
+When all five pieces hold and the numbers confirm them (business described, moat documented, three legs pass, falsifiers and pre-mortem mapped, exit criteria set, numbers consistent with the rest), the player has cleared the bar. That's the end of what the discipline does. The rest is a separate judgment.
+
+Qualified means "worth capital." It doesn't mean "buy now." Whether I actually deploy, how much, when, and across one name or several, depends on things the discipline doesn't speak to. How close earnings are. Whether I'd be doubling up on something I already hold (Visa and Mastercard are functionally the same exposure, I might want one and not both). Whether I'm averaging in or buying it all at once. What else is qualified and competing for the same capital. Whether the price today is one I want to live with for years. Sometimes a player qualifies and I still don't enter. That's a valid outcome.
+
+When I do enter, sizing lives in three qualitative buckets:
+
+- **Core (10-20%).** Maximum conviction, business I understand deeply, odds clearly in my favor.
+- **Normal (5-10%).** Solid business, solid thesis, regular size.
+- **Tracking (2-5%).** Exposure I want with relevant uncertainty, or where I'm still learning the operational shape.
+
+The ranges are percentages of total patrimony, not of any sub-bucket. No matrix. No formula. I decide the bucket against the same judgment factors above.
+
+A thesis can carry more than one qualified player at the same time, and the qualified set can shift as the world moves. Under Credit Scoring, FICO is the obvious candidate today, and Equifax sits on the same roster capturing a different slice of the need (consumer-credit data, distribution to lenders, a co-owner stake in VantageScore). If FICO's regulatory floor erodes and Equifax's distribution share strengthens, either or both could qualify at a given moment. The discipline says "this is worth capital" for any that pass. Which one, how much, and when stay calls I make against the factors above.
+
+## If I deploy
+
+When I do commit capital, a snapshot of the moment gets frozen. Evaluator, date, price, target weight, rationale paragraph, comparative context against alternatives, and a list of sources I read before deciding. Set once. No rewriting it later.
+
+The reason for the freeze is the principle that decisions get judged by what was known at the time, not by outcomes. A year later at half the price or twice the price, the question is whether the rationale was honest given the evidence I had, not whether the outcome turned out well. A frozen entry context is the only way that question stays answerable.
+
+After deployment, two regular checks run. Quarterly: read the 10-Q, refresh the numbers, log an observation with a primary source. Annually: bear-case-first deep review, ask whether the model of the business has changed in the year, update the trajectory tag if it has.
+
+## Where this leaves me
+
+The thesis describes the need. The player is the company that captures it. Both have to hold for capital to move.
+
+Whether FICO is worth holding at any given moment is a decision I keep separately. The discipline's job is to make sure I can answer "what did I know when I decided" without reconstructing it under pressure later.
+
+The discipline prevents the obvious mistakes: unmapped causes, ungated entries, hidden judgment. It doesn't produce edge. If there's any edge in concentrated investing, it comes from the research itself (10-Ks, transcripts, regulator filings, news, interviews, watching how the business and the world around it shift over time), not from the notes that organize the thinking. The notes are bookkeeping. The research is the work. And most of that work is on the need itself, not on the players. When I understand the problem well enough, the players get easier to read.
+
+There's another piece to it. Because the attachment is to the problem and not to the company, I find it easier to discard. When a company I follow announces a new product, an acquisition, or a new investment, the first question is whether it serves the need they're supposed to capture, or whether it's drifting away from the moat. If it's drifting, that's a signal, not noise to explain away. Confirmation bias has less to grab onto when what I care about is the problem, not the name on the stock.
+
+None of this is a framework I'd hand to someone else, and I'm not out to convince anyone of it. People invest in plenty of ways, and none of them is wrong. This is just the angle I landed on, the one that gives me conviction when I sit with it.
+
+In the end, what I'm looking for is just a good business. The rest is bookkeeping that keeps me honest with myself.
