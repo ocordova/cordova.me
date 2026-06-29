@@ -14,4 +14,6 @@ export const quotes: string[] = [
   "\u201CYou exist as an idea in your mind.\u201D - Shunryu Suzuki",
   "\u201CTo study the self is to forget the self.\u201D - D\u014Dgen",
   "\u201CWe are here to awaken from our illusion of separateness.\u201D - Thich Nhat Hanh",
+  "\u201CSitting quietly, doing nothing, spring comes, and the grass grows by itself.\u201D - Zen proverb",
+  "\u201CWhen walking, walk. When eating, eat.\u201D - Zen proverb",
 ];
