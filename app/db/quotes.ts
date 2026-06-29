@@ -11,4 +11,7 @@ export const quotes: string[] = [
   "\u201CThe obstacle is the path.\u201D - Zen proverb",
   "\u201CMuddy water is best cleared by leaving it alone.\u201D - Alan Watts",
   "\u201CNot what we have but what we enjoy, constitutes our abundance.\u201D - Epicurus",
+  "\u201CYou exist as an idea in your mind.\u201D - Shunryu Suzuki",
+  "\u201CTo study the self is to forget the self.\u201D - D\u014Dgen",
+  "\u201CWe are here to awaken from our illusion of separateness.\u201D - Thich Nhat Hanh",
 ];
