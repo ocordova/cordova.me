@@ -7,4 +7,13 @@ export const quotes: string[] = [
   "\u201CTrying to define yourself is like trying to bite your own teeth.\u201D - Alan Watts",
   "\u201CIn Zen, we don\u2019t find the answers. We lose the questions.\u201D - Zen proverb",
   "\u201CThings are as they are. Looking out into the universe at night, we make no comparisons between right and wrong stars.\u201D - Alan Watts",
+  "\u201CBefore enlightenment, chop wood, carry water. After enlightenment, chop wood, carry water.\u201D - Zen proverb",
+  "\u201CThe obstacle is the path.\u201D - Zen proverb",
+  "\u201CMuddy water is best cleared by leaving it alone.\u201D - Alan Watts",
+  "\u201CNot what we have but what we enjoy, constitutes our abundance.\u201D - Epicurus",
+  "\u201CYou exist as an idea in your mind.\u201D - Shunryu Suzuki",
+  "\u201CTo study the self is to forget the self.\u201D - D\u014Dgen",
+  "\u201CWe are here to awaken from our illusion of separateness.\u201D - Thich Nhat Hanh",
+  "\u201CSitting quietly, doing nothing, spring comes, and the grass grows by itself.\u201D - Zen proverb",
+  "\u201CWhen walking, walk. When eating, eat.\u201D - Zen proverb",
 ];
