@@ -93,7 +93,7 @@ const Now = () => {
           Now
         </h2>
         <p className="text-sm leading-7">
-          By day, I work as a Lead Engineer at{" "}
+          By day, I work as CTO at{" "}
           <a
             className="link-underline"
             href="https://www.summit-mgmt.mx"
