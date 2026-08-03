@@ -164,6 +164,27 @@ export async function traktFetch<T>(url: string): Promise<T> {
 }
 
 let cachedTokens: TraktTokens | null = null;
+// Serializes refreshes so concurrent callers never send the same single-use
+// refresh_token twice (Trakt rotates and invalidates it on first use).
+let refreshInFlight: Promise<TraktTokens> | null = null;
+
+async function refreshAndPersist(refreshToken: string): Promise<TraktTokens> {
+  const refreshed = await refreshAccessToken(refreshToken);
+  // Persistence must succeed: a rotated token dropped only in memory means the
+  // next cold start reads a dead token from disk → permanent invalid_grant.
+  await writeTokens(refreshed);
+  cachedTokens = refreshed;
+  return refreshed;
+}
+
+function refreshTokens(refreshToken: string): Promise<TraktTokens> {
+  if (!refreshInFlight) {
+    refreshInFlight = refreshAndPersist(refreshToken).finally(() => {
+      refreshInFlight = null;
+    });
+  }
+  return refreshInFlight;
+}
 
 async function forceTokenRefresh(): Promise<string> {
   const tokens = await readTokens();
@@ -171,14 +192,8 @@ async function forceTokenRefresh(): Promise<string> {
     throw new Error("No Trakt tokens found. Cannot refresh.");
   }
   console.log("[trakt] Forcing token refresh after 401...");
-  const refreshed = await refreshAccessToken(tokens.refresh_token);
+  const refreshed = await refreshTokens(tokens.refresh_token);
   console.log("[trakt] Token refreshed successfully after 401");
-  try {
-    await writeTokens(refreshed);
-  } catch (err) {
-    console.error("[trakt] Failed to write refreshed tokens to disk:", err);
-  }
-  cachedTokens = refreshed;
   return refreshed.access_token;
 }
 
@@ -187,7 +202,7 @@ export async function getTraktAccessToken(): Promise<string> {
     return cachedTokens.access_token;
   }
 
-  let tokens = await readTokens();
+  const tokens = await readTokens();
 
   if (!tokens) {
     throw new Error(
@@ -197,17 +212,12 @@ export async function getTraktAccessToken(): Promise<string> {
 
   if (isTokenExpired(tokens)) {
     console.log("[trakt] Token expired, refreshing...");
-    tokens = await refreshAccessToken(tokens.refresh_token);
+    const refreshed = await refreshTokens(tokens.refresh_token);
     console.log("[trakt] Token refreshed successfully");
-    try {
-      await writeTokens(tokens);
-    } catch (err) {
-      console.error("[trakt] Failed to write tokens to disk:", err);
-    }
-  } else {
-    console.log("[trakt] Using cached/stored token (not expired)");
+    return refreshed.access_token;
   }
 
+  console.log("[trakt] Using cached/stored token (not expired)");
   cachedTokens = tokens;
   return tokens.access_token;
 }
