@@ -179,7 +179,19 @@ const Now = () => {
               ) : null
             }
             meta={
-              book ? <span className="truncate">{book.author}</span> : undefined
+              book ? (
+                <>
+                  <span className="truncate">{book.author}</span>
+                  {book.date && (
+                    <>
+                      <span className="flex-shrink-0">&middot;</span>
+                      <span className="text-muted-foreground flex-shrink-0">
+                        {shortTimeAgo(new Date(book.date))}
+                      </span>
+                    </>
+                  )}
+                </>
+              ) : undefined
             }
           />
 

@@ -10,84 +10,100 @@ export interface NowReading {
   cover: string;
   url: string;
   author: string;
+  date: string;
 }
 
-const BOOKS_BY_READING_STATE_AND_PROFILE = `
-query booksByReadingStateAndProfile(
-  $profileId: String!
-) {
-  booksByReadingStateAndProfile(
-    limit: 3
-    offset: 0
-    readingStatus: IS_READING
-    profileId: $profileId
-  ) {
-    ...BookParts # find fragments below
-  }
+interface LiteralBook {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  cover: string;
+  authors: { name: string }[];
 }
-fragment BookParts on Book {
-	id
-	slug
-	title
-	subtitle
-	description
-	isbn10
-	isbn13
-	language
-	pageCount
-	publishedDate
-	publisher
-	cover
-	authors {
-		id
-		name
-	}
-	gradientColors
-}
-`;
 
-async function fetchNowReading(): Promise<NowReading> {
-  try {
-    const response = await fetch(LITERAL_API, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${LITERAL_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: BOOKS_BY_READING_STATE_AND_PROFILE,
-        variables: {
-          profileId: LITERAL_PROFILE_ID,
-        },
-      }),
-    });
+type ReadingStatus = "IS_READING" | "FINISHED";
 
-    const { data, errors } = await response.json();
+async function literalQuery<T>(query: string, variables: object): Promise<T> {
+  const response = await fetch(LITERAL_API, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${LITERAL_TOKEN}`,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
 
-    if (errors) {
-      console.error(errors);
-      throw new Error("Failed to fetch now reading data");
-    }
-
-    const currentReading = data.booksByReadingStateAndProfile;
-
-    if (!currentReading.length) {
-      throw new Error("No books found");
-    }
-
-    const book = currentReading[0];
-    const url = `https://literal.club/book/${book.slug}`;
-    return {
-      title: book.title,
-      subtitle: book.subtitle,
-      cover: book.cover,
-      url,
-      author: book.authors[0].name,
-    };
-  } catch (error) {
-    console.error(error);
+  const { data, errors } = await response.json();
+  if (errors) {
+    console.error("[literal] query errors:", errors);
     throw new Error("Failed to fetch now reading data");
   }
+  return data;
+}
+
+// readingStatus is a fixed enum constant, not user input, so interpolating it
+// into the query is safe. profileId stays a bound variable.
+function booksQuery(status: ReadingStatus): string {
+  return `
+query booksByReadingStateAndProfile($profileId: String!) {
+  booksByReadingStateAndProfile(
+    limit: 1
+    offset: 0
+    readingStatus: ${status}
+    profileId: $profileId
+  ) {
+    id
+    slug
+    title
+    subtitle
+    cover
+    authors {
+      name
+    }
+  }
+}`;
+}
+
+const READING_STATE_QUERY = `
+query readingStateByWork($bookId: String!, $profileId: String!) {
+  readingStateByWork(bookId: $bookId, profileId: $profileId) {
+    createdAt
+  }
+}`;
+
+async function fetchBooks(status: ReadingStatus): Promise<LiteralBook[]> {
+  const data = await literalQuery<{
+    booksByReadingStateAndProfile: LiteralBook[];
+  }>(booksQuery(status), { profileId: LITERAL_PROFILE_ID });
+  return data.booksByReadingStateAndProfile ?? [];
+}
+
+async function fetchReadingDate(bookId: string): Promise<string> {
+  const data = await literalQuery<{
+    readingStateByWork: { createdAt: string } | null;
+  }>(READING_STATE_QUERY, { bookId, profileId: LITERAL_PROFILE_ID });
+  return data.readingStateByWork?.createdAt ?? "";
+}
+
+async function fetchNowReading(): Promise<NowReading> {
+  // Prefer a book in progress; otherwise fall back to the most recently
+  // finished one so the row is never empty between books.
+  const [reading] = await fetchBooks("IS_READING");
+  const book = reading ?? (await fetchBooks("FINISHED"))[0];
+
+  if (!book) {
+    throw new Error("No books found");
+  }
+
+  return {
+    title: book.title,
+    subtitle: book.subtitle,
+    cover: book.cover,
+    url: `https://literal.club/book/${book.slug}`,
+    author: book.authors[0]?.name ?? "",
+    date: await fetchReadingDate(book.id),
+  };
 }
 
 export const getNowReading = (): Promise<NowReading> =>
