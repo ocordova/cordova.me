@@ -16,13 +16,6 @@ primary_region = 'dfw'
   min_machines_running = 1
   processes = ['app']
 
-[mounts]
-  source = "trakt_data"
-  destination = "/data"
-
-[env]
-  TRAKT_TOKEN_PATH = "/data/trakt-tokens.json"
-
 [[vm]]
   memory = '256mb'
   cpu_kind = 'shared'
