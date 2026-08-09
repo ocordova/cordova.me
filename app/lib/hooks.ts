@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NowListening } from "~/actions/now-listening.server";
+import { NowPlaying } from "~/actions/now-playing.server";
 import { NowReading } from "~/actions/now-reading.server";
 import { NowWatching } from "~/actions/now-watching.server";
 
@@ -65,4 +66,8 @@ export function useNowReading() {
 
 export function useNowWatching() {
   return useApiData<NowWatching>("/api/now-watching");
+}
+
+export function useNowPlaying() {
+  return useApiData<NowPlaying>("/api/now-playing");
 }

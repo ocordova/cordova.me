@@ -5,6 +5,7 @@ const inflight = new Map<string, Promise<unknown>>();
 
 export const TTL = {
   listening: 60_000,
+  playing: 5 * 60_000,
   watching: 30 * 60_000,
   reading: 12 * 60 * 60_000,
 } as const;

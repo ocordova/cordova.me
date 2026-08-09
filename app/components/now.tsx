@@ -1,4 +1,9 @@
-import { useNowListening, useNowReading, useNowWatching } from "~/lib/hooks";
+import {
+  useNowListening,
+  useNowPlaying,
+  useNowReading,
+  useNowWatching,
+} from "~/lib/hooks";
 import { Skeleton } from "./ui/skeleton";
 
 // Letterboxd-style stars from a 0.5–5 rating, e.g. 3.5 -> "★★★½".
@@ -79,6 +84,11 @@ const Now = () => {
     loading: movieLoading,
     isInitialLoad: movieInitial,
   } = useNowWatching();
+  const {
+    data: game,
+    loading: gameLoading,
+    isInitialLoad: gameInitial,
+  } = useNowPlaying();
 
   return (
     <>
@@ -228,6 +238,45 @@ const Now = () => {
                   <span className="text-muted-foreground flex-shrink-0">
                     {shortTimeAgo(new Date(movie.date))}
                   </span>
+                </>
+              ) : undefined
+            }
+          />
+
+          {/* Playing */}
+          <NowMediaRow
+            label="Playing"
+            loading={gameLoading && gameInitial}
+            title={
+              game ? (
+                game.url ? (
+                  <a
+                    href={game.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline text-[0.8125rem]"
+                  >
+                    {game.title}
+                  </a>
+                ) : (
+                  <span>{game.title}</span>
+                )
+              ) : !gameLoading ? (
+                <span className="text-muted-foreground">—</span>
+              ) : null
+            }
+            meta={
+              game ? (
+                <>
+                  <span className="truncate">Nintendo Switch</span>
+                  {game.date && (
+                    <>
+                      <span className="flex-shrink-0">&middot;</span>
+                      <span className="text-muted-foreground flex-shrink-0">
+                        {shortTimeAgo(new Date(game.date))}
+                      </span>
+                    </>
+                  )}
                 </>
               ) : undefined
             }
