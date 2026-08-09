@@ -40,3 +40,6 @@ yarn-error.log*
 
 # Superpowers specs and plans
 docs/superpowers/
+# Trakt export + Letterboxd migration (personal data, do not commit)
+trakt-export-ocordova/
+letterboxd-import.csv
