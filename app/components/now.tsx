@@ -1,18 +1,12 @@
 import { useNowListening, useNowReading, useNowWatching } from "~/lib/hooks";
 import { Skeleton } from "./ui/skeleton";
 
-const ratingLabels: Record<number, string> = {
-  1: "Weak Sauce",
-  2: "Terrible",
-  3: "Bad",
-  4: "Poor",
-  5: "Meh",
-  6: "Fair",
-  7: "Good",
-  8: "Great",
-  9: "Superb",
-  10: "Totally Ninja!",
-};
+// Letterboxd-style stars from a 0.5–5 rating, e.g. 3.5 -> "★★★½".
+function starRating(rating: number): string {
+  const full = Math.floor(rating);
+  const half = rating - full >= 0.5;
+  return "★".repeat(full) + (half ? "½" : "");
+}
 
 function shortTimeAgo(date: Date): string {
   const diff = Date.now() - date.getTime();
@@ -213,8 +207,8 @@ const Now = () => {
                 <>
                   {movie.rating && (
                     <>
-                      <span className="flex-shrink-0">
-                        ★ {movie.rating} {ratingLabels[movie.rating]}
+                      <span className="flex-shrink-0" aria-label={`${movie.rating} out of 5 stars`}>
+                        {starRating(movie.rating)}
                       </span>
                       <span className="flex-shrink-0">&middot;</span>
                     </>

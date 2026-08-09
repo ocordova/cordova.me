@@ -88,8 +88,8 @@ async function fetchNowWatching(): Promise<NowWatching> {
       date: new Date(watchedDate),
       poster,
       url: link ?? LETTERBOXD_PROFILE,
-      // Letterboxd rates 0.5–5 stars; the UI expects a 1–10 scale.
-      rating: memberRating ? Math.round(Number(memberRating) * 2) : undefined,
+      // Letterboxd rating: 0.5–5 stars, in half-star steps. Rendered as stars.
+      rating: memberRating ? Number(memberRating) : undefined,
     };
   }
 
