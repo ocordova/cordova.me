@@ -9,6 +9,10 @@ Personal site for Óscar Córdova. React Router + Tailwind CSS + shadcn/ui (zinc
 - `npm run typecheck` — Type check
 - `npm run lint` — Lint
 
+## Git & PRs
+
+- Do not add the Claude session link or `Claude-Session:` trailer to commit messages or pull request descriptions.
+
 ## Design Context
 
 ### Users
