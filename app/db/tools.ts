@@ -74,7 +74,7 @@ export const categories = [
       },
       {
         name: "FSNotes",
-        description: "Plain-text Markdown notes on the file system.",
+        description: "Plain-text Markdown notes with iCloud sync.",
         url: "https://fsnot.es/",
         icon: "/static/tools/fsnotes.png",
       },
