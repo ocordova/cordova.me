@@ -73,6 +73,12 @@ export const categories = [
         icon: "/static/tools/daisy-disk.png",
       },
       {
+        name: "FSNotes",
+        description: "Plain-text Markdown notes on the file system.",
+        url: "https://fsnot.es/",
+        icon: "/static/tools/fsnotes.png",
+      },
+      {
         name: "Insomnia",
         description: "API client. Faster and cleaner than Postman.",
         url: "https://insomnia.rest/",
