@@ -10,9 +10,11 @@ export interface NowReading {
   cover: string;
   url: string;
   author: string;
+  date: string;
 }
 
 interface LiteralBook {
+  id: string;
   slug: string;
   title: string;
   subtitle: string;
@@ -21,6 +23,24 @@ interface LiteralBook {
 }
 
 type ReadingStatus = "IS_READING" | "FINISHED";
+
+async function literalQuery<T>(query: string, variables: object): Promise<T> {
+  const response = await fetch(LITERAL_API, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${LITERAL_TOKEN}`,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+
+  const { data, errors } = await response.json();
+  if (errors) {
+    console.error("[literal] query errors:", errors);
+    throw new Error("Failed to fetch now reading data");
+  }
+  return data;
+}
 
 // readingStatus is a fixed enum constant, not user input, so interpolating it
 // into the query is safe. profileId stays a bound variable.
@@ -33,6 +53,7 @@ query booksByReadingStateAndProfile($profileId: String!) {
     readingStatus: ${status}
     profileId: $profileId
   ) {
+    id
     slug
     title
     subtitle
@@ -44,25 +65,25 @@ query booksByReadingStateAndProfile($profileId: String!) {
 }`;
 }
 
-async function fetchBooks(status: ReadingStatus): Promise<LiteralBook[]> {
-  const response = await fetch(LITERAL_API, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${LITERAL_TOKEN}`,
-    },
-    body: JSON.stringify({
-      query: booksQuery(status),
-      variables: { profileId: LITERAL_PROFILE_ID },
-    }),
-  });
-
-  const { data, errors } = await response.json();
-  if (errors) {
-    console.error("[literal] query errors:", errors);
-    throw new Error("Failed to fetch now reading data");
+const READING_STATE_QUERY = `
+query readingStateByWork($bookId: String!, $profileId: String!) {
+  readingStateByWork(bookId: $bookId, profileId: $profileId) {
+    createdAt
   }
-  return data?.booksByReadingStateAndProfile ?? [];
+}`;
+
+async function fetchBooks(status: ReadingStatus): Promise<LiteralBook[]> {
+  const data = await literalQuery<{
+    booksByReadingStateAndProfile: LiteralBook[];
+  }>(booksQuery(status), { profileId: LITERAL_PROFILE_ID });
+  return data.booksByReadingStateAndProfile ?? [];
+}
+
+async function fetchReadingDate(bookId: string): Promise<string> {
+  const data = await literalQuery<{
+    readingStateByWork: { createdAt: string } | null;
+  }>(READING_STATE_QUERY, { bookId, profileId: LITERAL_PROFILE_ID });
+  return data.readingStateByWork?.createdAt ?? "";
 }
 
 async function fetchNowReading(): Promise<NowReading> {
@@ -81,6 +102,7 @@ async function fetchNowReading(): Promise<NowReading> {
     cover: book.cover,
     url: `https://literal.club/book/${book.slug}`,
     author: book.authors[0]?.name ?? "",
+    date: await fetchReadingDate(book.id),
   };
 }
 
