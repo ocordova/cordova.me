@@ -1,49 +1,14 @@
-import { leadingZero } from "~/lib/utils";
-import { traktFetch } from "~/actions/trakt-auth.server";
+import { execFile } from "node:child_process";
 import { cached, TTL } from "~/lib/cache.server";
 
-const TRAKT_BASE_URL = "https://trakt.tv/";
-const TRAKT_API = "https://api.trakt.tv/";
-const TRAKT_USERNAME = "ocordova";
-const TRAKT_ENDPOINT = `${TRAKT_API}users/${TRAKT_USERNAME}/history`;
+const LETTERBOXD_USER = "ocordova";
+const LETTERBOXD_RSS = `https://letterboxd.com/${LETTERBOXD_USER}/rss/`;
+const LETTERBOXD_PROFILE = `https://letterboxd.com/${LETTERBOXD_USER}/`;
 
-const TRAKT_RATINGS_ENDPOINT = `${TRAKT_API}users/${TRAKT_USERNAME}/ratings`;
+// Letterboxd sits behind Cloudflare, which blocks the default curl agent.
+const USER_AGENT =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36";
 
-const TMDB_API = "https://api.themoviedb.org/3/";
-const TMDB_API_KEY = process.env.TMDB_API_KEY;
-const TMDB_MOVIE_ENDPOINT = `${TMDB_API}movie/`;
-const TMDB_TV_ENDPOINT = `${TMDB_API}tv/`;
-
-async function fetchRatings(
-  type: "movies" | "shows"
-): Promise<Map<string, number>> {
-  try {
-    const data = await traktFetch<
-      Array<{
-        rating: number;
-        movie?: { ids: { slug: string } };
-        show?: { ids: { slug: string } };
-      }>
-    >(`${TRAKT_RATINGS_ENDPOINT}/${type}`);
-
-    const map = new Map<string, number>();
-    for (const item of data) {
-      const slug = item.movie?.ids.slug ?? item.show?.ids.slug;
-      if (slug) {
-        map.set(slug, item.rating);
-      }
-    }
-    return map;
-  } catch (error) {
-    console.error(`[trakt] Failed to fetch ${type} ratings:`, error);
-    return new Map();
-  }
-}
-
-enum Type {
-  Movie = "movie",
-  Episode = "episode",
-}
 export interface NowWatching {
   title: string;
   year: number;
@@ -53,118 +18,82 @@ export interface NowWatching {
   rating?: number;
 }
 
-export interface TraktMovie {
-  type: Type.Movie;
-  movie: {
-    ids: {
-      tmdb: number;
-      slug: string;
-    };
-  };
-  watched_at: string;
+// The app cannot reach some hosts via node's fetch (undici TLS handshake
+// fails), so shell out to curl like the rest of the server-side fetchers.
+function curlFetch(url: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    execFile(
+      "curl",
+      ["-sS", "-A", USER_AGENT, "-w", "\n%{http_code}", url],
+      { maxBuffer: 10 * 1024 * 1024 },
+      (error, stdout) => {
+        if (error) {
+          console.error(`[letterboxd] curl error for ${url}:`, error.message);
+          return reject(error);
+        }
+        const lines = stdout.trimEnd().split("\n");
+        const statusCode = parseInt(lines.pop()!, 10);
+        const body = lines.join("\n");
+        if (statusCode >= 400) {
+          console.error(
+            `[letterboxd] HTTP ${statusCode} for ${url}: ${body.slice(0, 200)}`
+          );
+          return reject(
+            new Error(`Letterboxd returned HTTP ${statusCode} for ${url}`)
+          );
+        }
+        resolve(body);
+      }
+    );
+  });
 }
 
-export interface TraktEpisode {
-  watched_at: string;
-  type: Type.Episode;
-  episode: {
-    season: number;
-    number: number;
-    title: string;
-    ids: {
-      trakt: number;
-      tmdb: number;
-    };
-  };
-  show: {
-    title: string;
-    year: number;
-    ids: {
-      slug: string;
-      tmdb: number;
-    };
-  };
+function decodeEntities(input: string): string {
+  return input
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) =>
+      String.fromCodePoint(parseInt(hex, 16))
+    )
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
 }
 
-export type TraktResponse = (TraktMovie | TraktEpisode)[];
+function pick(block: string, tag: string): string | undefined {
+  const match = block.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`));
+  return match ? match[1].trim() : undefined;
+}
 
 async function fetchNowWatching(): Promise<NowWatching> {
-  try {
-    const traktdata = await traktFetch<TraktResponse>(TRAKT_ENDPOINT);
+  const xml = await curlFetch(LETTERBOXD_RSS);
+  const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
 
-    if (traktdata.length === 0) {
-      throw new Error("No data returned from Trakt API");
-    }
+  // Feed mixes diary entries, reviews, and list updates. Take the most recent
+  // item that actually names a film with a watched date.
+  for (const item of items) {
+    const filmTitle = pick(item, "letterboxd:filmTitle");
+    const watchedDate = pick(item, "letterboxd:watchedDate");
+    if (!filmTitle || !watchedDate) continue;
 
-    const latest = traktdata[0];
+    const filmYear = pick(item, "letterboxd:filmYear");
+    const memberRating = pick(item, "letterboxd:memberRating");
+    const link = pick(item, "link");
+    const poster = item.match(/<img src="([^"]+)"/)?.[1] ?? "";
 
-    let title = "";
-    let year = 0;
-    let date = new Date();
-    let poster = "";
-    let slug = "";
-    let url = "";
-
-    const tmdbHeaders = new Headers();
-    tmdbHeaders.append("Content-Type", "application/json");
-    tmdbHeaders.append("Authorization", `Bearer ${TMDB_API_KEY}`);
-
-    const tmdbId =
-      latest.type === Type.Movie ? latest.movie.ids.tmdb : latest.show.ids.tmdb;
-    const tmdbEndpoint =
-      latest.type === Type.Movie ? TMDB_MOVIE_ENDPOINT : TMDB_TV_ENDPOINT;
-    const ratingsType =
-      latest.type === Type.Movie ? "movies" : "shows";
-    const ratingSlug =
-      latest.type === Type.Movie
-        ? latest.movie.ids.slug
-        : latest.show.ids.slug;
-
-    const [tmdbResponse, ratings] = await Promise.all([
-      fetch(`${tmdbEndpoint}${tmdbId}`, { headers: tmdbHeaders }),
-      fetchRatings(ratingsType),
-    ]);
-
-    if (!tmdbResponse.ok) {
-      console.error(
-        `[trakt] TMDB API failed: HTTP ${tmdbResponse.status} for ${tmdbEndpoint}${tmdbId}`
-      );
-      throw new Error("Failed to fetch data from TMDB API");
-    }
-
-    const tmdbData = await tmdbResponse.json();
-    const rating = ratings.get(ratingSlug);
-
-    if (latest.type === Type.Movie) {
-      title = tmdbData.title;
-      year = new Date(tmdbData.release_date).getFullYear();
-      poster = `https://image.tmdb.org/t/p/w200${tmdbData.poster_path}`;
-      slug = latest.movie.ids.slug;
-      url = `${TRAKT_BASE_URL}movies/${slug}`;
-    } else {
-      const seasonAndEpisode = `S${latest.episode.season} E${leadingZero(
-        latest.episode.number
-      )}`;
-      title = `${latest.show.title} · ${seasonAndEpisode} · ${latest.episode.title}`;
-      year = new Date(tmdbData.first_air_date).getFullYear();
-      poster = `https://image.tmdb.org/t/p/w200${tmdbData.poster_path}`;
-      slug = latest.show.ids.slug;
-      url = `${TRAKT_BASE_URL}shows/${slug}/seasons/${latest.episode.season}/episodes/${latest.episode.number}`;
-    }
-
-    date = new Date(latest.watched_at);
     return {
-      title,
-      year,
-      date,
+      title: decodeEntities(filmTitle),
+      year: filmYear ? Number(filmYear) : 0,
+      date: new Date(watchedDate),
       poster,
-      url,
-      rating,
+      url: link ?? LETTERBOXD_PROFILE,
+      // Letterboxd rates 0.5–5 stars; the UI expects a 1–10 scale.
+      rating: memberRating ? Math.round(Number(memberRating) * 2) : undefined,
     };
-  } catch (error) {
-    console.error("[trakt] getNowWatching failed:", error);
-    throw new Error("Failed to fetch data from Trakt API");
   }
+
+  throw new Error("No films found in Letterboxd feed");
 }
 
 export const getNowWatching = (): Promise<NowWatching> =>
