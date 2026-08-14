@@ -17,16 +17,28 @@ import globalStyles from "./styles/globals.css?url";
 import { LinksFunction, LoaderFunctionArgs } from "react-router";
 import AppLayout from "./components/layouts/app-layout";
 import Header from "./components/header";
-import interFont from "@fontsource-variable/inter/index.css?url";
-import newsreaderFont from "@fontsource-variable/newsreader/index.css?url";
+import interLatinWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import newsreaderLatinWoff2 from "@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url";
 import Footer from "./components/footer";
 import { cn } from "./lib/utils";
 
 export const links: LinksFunction = () => {
   return [
+    {
+      rel: "preload",
+      href: interLatinWoff2,
+      as: "font",
+      type: "font/woff2",
+      crossOrigin: "anonymous",
+    },
+    {
+      rel: "preload",
+      href: newsreaderLatinWoff2,
+      as: "font",
+      type: "font/woff2",
+      crossOrigin: "anonymous",
+    },
     { rel: "stylesheet", href: globalStyles },
-    { rel: "stylesheet", href: interFont },
-    { rel: "stylesheet", href: newsreaderFont },
     // { rel: "icon", type: "image/svg+xml", href: favicon },
   ];
 };
