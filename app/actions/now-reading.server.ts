@@ -106,5 +106,5 @@ async function fetchNowReading(): Promise<NowReading> {
   };
 }
 
-export const getNowReading = (): Promise<NowReading> =>
-  cached("now-reading", TTL.reading, fetchNowReading);
+export const getNowReading = (opts?: { wait?: boolean }) =>
+  cached("now-reading", TTL.reading, fetchNowReading, opts);

@@ -46,5 +46,5 @@ const fetchNowListening = async (): Promise<NowListening> => {
   }
 };
 
-export const getNowListening = (): Promise<NowListening> =>
-  cached("now-listening", TTL.listening, fetchNowListening);
+export const getNowListening = (opts?: { wait?: boolean }) =>
+  cached("now-listening", TTL.listening, fetchNowListening, opts);

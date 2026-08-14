@@ -96,5 +96,5 @@ async function fetchNowWatching(): Promise<NowWatching> {
   throw new Error("No films found in Letterboxd feed");
 }
 
-export const getNowWatching = (): Promise<NowWatching> =>
-  cached("now-watching", TTL.watching, fetchNowWatching);
+export const getNowWatching = (opts?: { wait?: boolean }) =>
+  cached("now-watching", TTL.watching, fetchNowWatching, opts);
