@@ -26,31 +26,31 @@ export default function Footer() {
         <div className="flex justify-between items-start gap-2">
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-6 text-[0.8125rem]">
             <Link
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-block py-2 -my-2 text-muted-foreground transition-colors hover:text-foreground"
               to="/"
             >
               Home
             </Link>
             <Link
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-block py-2 -my-2 text-muted-foreground transition-colors hover:text-foreground"
               to="/thoughts"
             >
               Thoughts
             </Link>
             <Link
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-block py-2 -my-2 text-muted-foreground transition-colors hover:text-foreground"
               to="/bookmarks"
             >
               Bookmarks
             </Link>
             <Link
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-block py-2 -my-2 text-muted-foreground transition-colors hover:text-foreground"
               to="/uses"
             >
               Uses
             </Link>
             <Link
-              className="text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-block py-2 -my-2 text-muted-foreground transition-colors hover:text-foreground"
               to="/colophon"
             >
               Colophon
@@ -62,11 +62,11 @@ export default function Footer() {
         </div>
         <button
           onClick={nextQuote}
-          className="hover:cursor-default"
+          className="mt-4 hover:cursor-default"
           type="button"
           aria-label="Show next quote"
         >
-          <blockquote className="mt-4 text-left text-sm leading-7 text-muted-foreground text-pretty font-serif italic">
+          <blockquote className="text-left text-sm leading-7 text-muted-foreground text-pretty font-serif italic">
             {index !== null ? quotes[index] : <QuoteSkeleton />}
           </blockquote>
         </button>
