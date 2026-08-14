@@ -12,6 +12,20 @@ import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
+import { getNowListening } from "~/actions/now-listening.server";
+import { getNowPlaying } from "~/actions/now-playing.server";
+import { getNowReading } from "~/actions/now-reading.server";
+import { getNowWatching } from "~/actions/now-watching.server";
+
+// Warm the now-* caches at boot so the first visitor after a deploy or
+// machine wake never waits on a third-party API.
+void Promise.allSettled([
+  getNowListening(),
+  getNowPlaying(),
+  getNowReading(),
+  getNowWatching(),
+]);
+
 const ABORT_DELAY = 5_000;
 
 export default function handleRequest(

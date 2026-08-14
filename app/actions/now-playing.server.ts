@@ -35,5 +35,5 @@ async function fetchNowPlaying(): Promise<NowPlaying> {
   };
 }
 
-export const getNowPlaying = (): Promise<NowPlaying> =>
-  cached("now-playing", TTL.playing, fetchNowPlaying);
+export const getNowPlaying = (opts?: { wait?: boolean }) =>
+  cached("now-playing", TTL.playing, fetchNowPlaying, opts);

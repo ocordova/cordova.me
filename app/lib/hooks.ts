@@ -21,26 +21,41 @@ function useApiData<T>(url: string, interval?: number): UseApiDataState<T> {
 
   const fetchData = async (isInitial = false) => {
     try {
-      setState(prev => ({ 
-        ...prev, 
-        loading: isInitial ? true : prev.data === null, 
-        error: null 
+      setState(prev => ({
+        ...prev,
+        loading: isInitial ? true : prev.data === null,
+        error: null
       }));
       const response = await fetch(url);
-      
+
       if (!response.ok) {
         throw new Error(`Failed to fetch: ${response.statusText}`);
       }
-      
-      const data = await response.json();
+
+      const { data, stale } = await response.json();
       setState({ data, loading: false, error: null, isInitialLoad: false });
+
+      if (stale) {
+        // Stale-while-revalidate: the server answered from cache and is
+        // refreshing in the background; ask again, waiting for fresh data.
+        const freshResponse = await fetch(`${url}?wait=1`);
+        if (freshResponse.ok) {
+          const fresh = await freshResponse.json();
+          setState({
+            data: fresh.data,
+            loading: false,
+            error: null,
+            isInitialLoad: false,
+          });
+        }
+      }
     } catch (error) {
-      setState({ 
-        data: null, 
-        loading: false, 
+      setState(prev => ({
+        data: prev.data,
+        loading: false,
         error: error instanceof Error ? error.message : "An error occurred",
         isInitialLoad: false
-      });
+      }));
     }
   };
 
