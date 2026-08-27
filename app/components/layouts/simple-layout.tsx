@@ -9,7 +9,7 @@ export function SimpleLayout({
 }) {
   return (
     <>
-      <header className="max-w-2xl">
+      <header>
         <h1 className="font-serif text-xl font-medium tracking-tight">{title}</h1>
         {intro && <p className="text-sm text-muted-foreground">{intro}</p>}
       </header>

@@ -11,12 +11,17 @@ interface UseApiDataState<T> {
   isInitialLoad: boolean;
 }
 
-function useApiData<T>(url: string, interval?: number): UseApiDataState<T> {
+function useApiData<T>(
+  url: string,
+  interval?: number,
+  initialData?: T | null
+): UseApiDataState<T> {
+  const hasSeed = initialData != null;
   const [state, setState] = useState<UseApiDataState<T>>({
-    data: null,
-    loading: true,
+    data: initialData ?? null,
+    loading: !hasSeed,
     error: null,
-    isInitialLoad: true,
+    isInitialLoad: !hasSeed,
   });
 
   const fetchData = async (isInitial = false) => {
@@ -71,18 +76,21 @@ function useApiData<T>(url: string, interval?: number): UseApiDataState<T> {
   return state;
 }
 
-export function useNowListening(interval: number | undefined = 60_000) {
-  return useApiData<NowListening>("/api/now-listening", interval);
+export function useNowListening(
+  interval: number | undefined = 60_000,
+  initialData?: NowListening | null
+) {
+  return useApiData<NowListening>("/api/now-listening", interval, initialData);
 }
 
-export function useNowReading() {
-  return useApiData<NowReading>("/api/now-reading");
+export function useNowReading(initialData?: NowReading | null) {
+  return useApiData<NowReading>("/api/now-reading", undefined, initialData);
 }
 
-export function useNowWatching() {
-  return useApiData<NowWatching>("/api/now-watching");
+export function useNowWatching(initialData?: NowWatching | null) {
+  return useApiData<NowWatching>("/api/now-watching", undefined, initialData);
 }
 
-export function useNowPlaying() {
-  return useApiData<NowPlaying>("/api/now-playing");
+export function useNowPlaying(initialData?: NowPlaying | null) {
+  return useApiData<NowPlaying>("/api/now-playing", undefined, initialData);
 }

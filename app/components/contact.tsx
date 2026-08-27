@@ -6,12 +6,7 @@ const Contact = () => {
       </h2>
       <p className="text-sm leading-7">
         You can reach me at{" "}
-        <a
-          className="link-underline"
-          href="mailto:oscar@cordova.me"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="link-underline" href="mailto:oscar@cordova.me">
           oscar@cordova.me
         </a>{" "}
         or{" "}
@@ -22,6 +17,7 @@ const Contact = () => {
           rel="noreferrer"
         >
           Telegram
+          <span className="sr-only"> (opens in a new tab)</span>
         </a>
         .
       </p>

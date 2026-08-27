@@ -4,7 +4,20 @@ import {
   useNowReading,
   useNowWatching,
 } from "~/lib/hooks";
+import type { NowListening } from "~/actions/now-listening.server";
+import type { NowReading } from "~/actions/now-reading.server";
+import type { NowWatching } from "~/actions/now-watching.server";
+import type { NowPlaying } from "~/actions/now-playing.server";
 import { Skeleton } from "./ui/skeleton";
+
+export interface NowInitial {
+  song: NowListening | null;
+  book: NowReading | null;
+  movie: NowWatching | null;
+  game: NowPlaying | null;
+}
+
+const NEW_TAB = <span className="sr-only"> (opens in a new tab)</span>;
 
 // Letterboxd-style stars from a 0.5–5 rating, e.g. 3.5 -> "★★★½".
 function starRating(rating: number): string {
@@ -68,31 +81,30 @@ function NowMediaRow({
   );
 }
 
-const Now = () => {
+const Now = ({ initial }: { initial?: NowInitial }) => {
   const {
     data: song,
     loading: songLoading,
     isInitialLoad: songInitial,
-  } = useNowListening();
+  } = useNowListening(60_000, initial?.song);
   const {
     data: book,
     loading: bookLoading,
     isInitialLoad: bookInitial,
-  } = useNowReading();
+  } = useNowReading(initial?.book);
   const {
     data: movie,
     loading: movieLoading,
     isInitialLoad: movieInitial,
-  } = useNowWatching();
+  } = useNowWatching(initial?.movie);
   const {
     data: game,
     loading: gameLoading,
     isInitialLoad: gameInitial,
-  } = useNowPlaying();
+  } = useNowPlaying(initial?.game);
 
   return (
-    <>
-      <section className="mt-12">
+    <section className="mt-12">
         <h2 className="my-4 font-serif text-lg font-medium tracking-tight text-foreground">
           Now
         </h2>
@@ -131,6 +143,7 @@ const Now = () => {
                   className="link-underline text-[0.8125rem]"
                 >
                   {song.title}
+                  {NEW_TAB}
                 </a>
               ) : !songLoading ? (
                 <span className="text-muted-foreground">—</span>
@@ -183,6 +196,7 @@ const Now = () => {
                   className="link-underline text-[0.8125rem]"
                 >
                   {book.title}
+                  {NEW_TAB}
                 </a>
               ) : !bookLoading ? (
                 <span className="text-muted-foreground">—</span>
@@ -219,6 +233,7 @@ const Now = () => {
                 >
                   {movie.title}
                   {movie.year ? ` (${movie.year})` : ""}
+                  {NEW_TAB}
                 </a>
               ) : !movieLoading ? (
                 <span className="text-muted-foreground">—</span>
@@ -257,6 +272,7 @@ const Now = () => {
                     className="link-underline text-[0.8125rem]"
                   >
                     {game.title}
+                    {NEW_TAB}
                   </a>
                 ) : (
                   <span>{game.title}</span>
@@ -283,7 +299,6 @@ const Now = () => {
           />
         </div>
       </section>
-    </>
   );
 };
 

@@ -22,7 +22,10 @@ const Projects = () => {
             rel="noreferrer"
             className="block py-2"
           >
-            <span className="text-sm link-underline">{project.name}</span>
+            <span className="text-sm link-underline">
+              {project.name}
+              <span className="sr-only"> (opens in a new tab)</span>
+            </span>
             <p className="mt-0.5 text-[0.8125rem] text-muted-foreground">
               {project.description}
             </p>

@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <header>
       <Wrapper>
-        <div className="py-8 px-4 sm:px-0">
+        <div className="py-8 px-6 sm:px-0">
           <Link
             to="/"
             className="font-serif text-sm text-muted-foreground transition-colors hover:text-foreground"
