@@ -13,10 +13,9 @@ export function ModeToggle() {
   const [theme, setTheme, metadata] = useTheme();
 
   return (
-    <>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="w-9 px-0">
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" className="h-11 w-11 px-0">
             <Sun
               size={18}
               className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
@@ -47,8 +46,7 @@ export function ModeToggle() {
           >
             System
           </DropdownMenuCheckboxItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

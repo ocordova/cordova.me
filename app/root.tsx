@@ -20,6 +20,7 @@ import Header from "./components/header";
 import interLatinWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import newsreaderLatinWoff2 from "@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url";
 import Footer from "./components/footer";
+import { quotes } from "./db/quotes";
 import { cn } from "./lib/utils";
 
 export const links: LinksFunction = () => {
@@ -45,6 +46,7 @@ export const links: LinksFunction = () => {
 
 export interface LoaderData {
   theme: Theme | null;
+  quoteIndex: number;
   ENV: {
     isProduction: boolean;
     umamiId: string;
@@ -60,6 +62,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
       isProduction,
       umamiId,
     },
+    quoteIndex: Math.floor(Math.random() * quotes.length),
     theme: getTheme(),
   });
 }

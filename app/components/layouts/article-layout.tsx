@@ -6,15 +6,11 @@ interface ArticleLayoutProps {
 }
 
 export function ArticleLayout({ children }: ArticleLayoutProps) {
+  // Width is governed by the shared AppLayout wrapper in root; this layout only
+  // owns article spacing and prose styling.
   return (
-    <>
-      <div className="xl:relative">
-        <div className="mx-auto max-w-2xl">
-          <article className="mt-8">
-            <Prose className="mt-8">{children}</Prose>
-          </article>
-        </div>
-      </div>
-    </>
+    <article className="mt-8">
+      <Prose className="mt-8">{children}</Prose>
+    </article>
   );
 }

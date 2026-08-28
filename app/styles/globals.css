@@ -18,7 +18,7 @@
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted-foreground: 240 4% 35%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 72.22% 50.59%;
@@ -67,23 +67,18 @@
   }
 }
 
-/* Link underline with slide-out hover animation */
+/* Link underline: a real underline that follows the text per line, faint at
+   rest and darkening to the foreground on hover. */
 .link-underline {
-  @apply no-underline;
-  background-image: linear-gradient(
-    hsl(var(--muted-foreground) / 0.4),
-    hsl(var(--muted-foreground) / 0.4)
-  );
-  background-size: 100% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  padding-bottom: 2px;
-  transition: background-size 0.3s ease;
+  text-decoration-line: underline;
+  text-decoration-color: hsl(var(--muted-foreground) / 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
 }
 
 .link-underline:hover {
-  background-size: 0% 1px;
-  background-position: 100% 100%;
+  text-decoration-color: hsl(var(--foreground));
 }
 
 @keyframes wave {
@@ -98,6 +93,19 @@
 
 .animate-wave {
   animation: wave 0.7s infinite ease-in-out;
+}
+
+/* Forced-colors (Windows high contrast): background images are dropped, so
+   restore a real underline on links and a visible focus outline. */
+@media (forced-colors: active) {
+  .link-underline {
+    text-decoration: underline;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid;
+    outline-offset: 2px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
