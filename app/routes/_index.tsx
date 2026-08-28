@@ -51,8 +51,8 @@ export default function Index() {
   return (
     <>
       <About />
-      <WorkPhilosophy />
       <Now initial={now} />
+      <WorkPhilosophy />
       <Projects />
       <section className="mt-12">
         <div className="flex items-center justify-between">

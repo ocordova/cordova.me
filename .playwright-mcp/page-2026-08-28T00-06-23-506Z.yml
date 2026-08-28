@@ -1,0 +1,126 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - heading "Óscar Córdova" [level=1] [ref=e6]
+        - paragraph [ref=e7]: Part of the whole. A brief expression of the Tao. Unfolding as a product engineer and cook. Keeper of Mexican culinary heritage. Seeker of balance.
+      - generic [ref=e8]:
+        - heading "Now" [level=2] [ref=e9]
+        - paragraph [ref=e10]:
+          - text: By day, I work as CTO at
+          - link "Summit Management" [ref=e11] [cursor=pointer]:
+            - /url: https://www.summit-mgmt.mx
+          - text: ", and by night, as a Product Manager at"
+          - link "Artiflora" [ref=e12] [cursor=pointer]:
+            - /url: https://artiflora.mx
+          - text: .
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - generic [ref=e15]: Listening
+            - generic [ref=e16]:
+              - link "Final Fantasy Crystal Chronicles Remastered OST (opens in a new tab)" [ref=e18] [cursor=pointer]:
+                - /url: https://www.last.fm/music/Foggy+Swamp/_/Final+Fantasy+Crystal+Chronicles+Remastered+OST
+                - text: Final Fantasy Crystal Chronicles Remastered OST
+                - generic [ref=e19]: (opens in a new tab)
+              - generic [ref=e20]:
+                - generic [ref=e21]: Foggy Swamp
+                - generic [ref=e22]: ·
+                - generic [ref=e23]: 19m ago
+          - generic [ref=e24]:
+            - generic [ref=e25]: Reading
+            - generic [ref=e26]:
+              - link "One Up On Wall Street (opens in a new tab)" [ref=e28] [cursor=pointer]:
+                - /url: https://literal.club/book/one-up-on-wall-street-q057w
+                - text: One Up On Wall Street
+                - generic [ref=e29]: (opens in a new tab)
+              - generic [ref=e30]:
+                - generic [ref=e31]: Peter Lynch
+                - generic [ref=e32]: ·
+                - generic [ref=e33]: 24d ago
+          - generic [ref=e34]:
+            - generic [ref=e35]: Watching
+            - generic [ref=e36]:
+              - link "The Odyssey (2026) (opens in a new tab)" [ref=e38] [cursor=pointer]:
+                - /url: https://letterboxd.com/ocordova/film/the-odyssey-2026/
+                - text: The Odyssey (2026)
+                - generic [ref=e39]: (opens in a new tab)
+              - generic [ref=e40]: 5d ago
+          - generic [ref=e42]:
+            - generic [ref=e43]: Playing
+            - generic [ref=e44]:
+              - 'link "Final Fantasy 1: Pixel Remaster (opens in a new tab)" [ref=e46] [cursor=pointer]':
+                - /url: https://www.igdb.com/games/final-fantasy--3
+                - text: "Final Fantasy 1: Pixel Remaster"
+                - generic [ref=e47]: (opens in a new tab)
+              - generic [ref=e48]:
+                - generic [ref=e49]: Nintendo Switch
+                - generic [ref=e50]: ·
+                - generic [ref=e51]: 27d ago
+      - generic [ref=e52]:
+        - heading "Work Philosophy" [level=2] [ref=e53]
+        - paragraph [ref=e54]: I build for long-term value over short-term profit. By starting from the customer’s problem and following evidence over opinion, I make sure the work moves the metrics that matter.
+      - generic [ref=e55]:
+        - heading "Projects" [level=2] [ref=e56]
+        - link "Berry Trail (opens in a new tab) A reading room for 13F filings. What 98 superinvestors hold, every quarter since 2013, as filed." [ref=e58] [cursor=pointer]:
+          - /url: https://berrytrail.io
+          - generic [ref=e59]:
+            - text: Berry Trail
+            - generic [ref=e60]: (opens in a new tab)
+          - paragraph [ref=e61]: A reading room for 13F filings. What 98 superinvestors hold, every quarter since 2013, as filed.
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - heading "Thoughts" [level=2] [ref=e64]
+          - link "View all" [ref=e65] [cursor=pointer]:
+            - /url: /thoughts
+        - generic [ref=e66]:
+          - 'link "Evaluating Stocks Like Products: The Business" [ref=e67] [cursor=pointer]':
+            - /url: /thoughts/evaluating-stocks-2-the-business
+          - 'link "Evaluating Stocks Like Products: The Need" [ref=e69] [cursor=pointer]':
+            - /url: /thoughts/evaluating-stocks-1-the-need
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - heading "Bookmarks" [level=2] [ref=e73]
+          - link "View all" [ref=e74] [cursor=pointer]:
+            - /url: /bookmarks
+        - generic [ref=e75]:
+          - 'link "Trust (is) the process: Why following a framework doesn''t guarantee good results (opens in a new tab)" [ref=e76] [cursor=pointer]':
+            - /url: https://uxdesign.cc/trust-is-the-process-why-following-a-framework-doesnt-guarantee-good-results-fa933c4304cd
+            - generic [ref=e77]:
+              - text: "Trust (is) the process: Why following a framework doesn't guarantee good results"
+              - generic [ref=e78]: (opens in a new tab)
+          - link "Rethinking the Technical Interview (opens in a new tab)" [ref=e79] [cursor=pointer]:
+            - /url: https://www.youtube.com/watch?v=H2OjewTu_fY
+            - generic [ref=e80]:
+              - text: Rethinking the Technical Interview
+              - generic [ref=e81]: (opens in a new tab)
+      - generic [ref=e82]:
+        - heading "Contact" [level=2] [ref=e83]
+        - paragraph [ref=e84]:
+          - text: You can reach me at
+          - link "oscar@cordova.me" [ref=e85] [cursor=pointer]:
+            - /url: mailto:oscar@cordova.me
+          - text: or
+          - link "Telegram (opens in a new tab)" [ref=e86] [cursor=pointer]:
+            - /url: https://t.me/ocordova
+            - text: Telegram
+            - generic [ref=e87]: (opens in a new tab)
+          - text: .
+  - contentinfo [ref=e88]:
+    - generic [ref=e89]:
+      - generic [ref=e91]:
+        - navigation [ref=e92]:
+          - link "Home" [ref=e93] [cursor=pointer]:
+            - /url: /
+          - link "Thoughts" [ref=e94] [cursor=pointer]:
+            - /url: /thoughts
+          - link "Bookmarks" [ref=e95] [cursor=pointer]:
+            - /url: /bookmarks
+          - link "Uses" [ref=e96] [cursor=pointer]:
+            - /url: /uses
+          - link "Colophon" [ref=e97] [cursor=pointer]:
+            - /url: /colophon
+        - button "Toggle theme" [ref=e99] [cursor=pointer]
+      - button "Show next quote" [ref=e107] [cursor=pointer]:
+        - blockquote [ref=e108]: “Muddy water is best cleared by leaving it alone.” - Alan Watts
