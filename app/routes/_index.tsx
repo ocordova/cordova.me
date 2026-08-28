@@ -4,7 +4,6 @@ import About from "~/components/about";
 import Contact from "~/components/contact";
 import Bookmarks from "~/components/latest-bookmarks";
 import Now from "~/components/now";
-import Projects from "~/components/projects";
 import WorkPhilosophy from "~/components/work-philosophy";
 import { getThoughts } from "~/db/thoughts.server";
 import { getNowListening } from "~/actions/now-listening.server";
@@ -53,7 +52,6 @@ export default function Index() {
       <About />
       <Now initial={now} />
       <WorkPhilosophy />
-      <Projects />
       <section className="mt-12">
         <div className="flex items-center justify-between">
           <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">

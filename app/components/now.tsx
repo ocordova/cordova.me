@@ -130,6 +130,27 @@ const Now = ({ initial }: { initial?: NowInitial }) => {
           .
         </p>
         <div className="flex flex-col gap-3 mt-5">
+          {/* Building */}
+          <NowMediaRow
+            label="Building"
+            title={
+              <a
+                href="https://berrytrail.io"
+                target="_blank"
+                rel="noreferrer"
+                className="link-underline text-[0.8125rem]"
+              >
+                Berry Trail
+                {NEW_TAB}
+              </a>
+            }
+            meta={
+              <span className="truncate">
+                A reading room for 13F filings
+              </span>
+            }
+          />
+
           {/* Listening */}
           <NowMediaRow
             label="Listening"
