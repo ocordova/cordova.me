@@ -1,0 +1,126 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - main [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - heading "Óscar Córdova" [level=1] [ref=f1e6]
+        - paragraph [ref=f1e7]: Part of the whole. A brief expression of the Tao. Unfolding as a product engineer and cook. Keeper of Mexican culinary heritage. Seeker of balance.
+      - generic [ref=f1e8]:
+        - heading "Work Philosophy" [level=2] [ref=f1e9]
+        - paragraph [ref=f1e10]: I build for long-term value over short-term profit. By starting from the customer’s problem and following evidence over opinion, I make sure the work moves the metrics that matter.
+      - generic [ref=f1e11]:
+        - heading "Now" [level=2] [ref=f1e12]
+        - paragraph [ref=f1e13]:
+          - text: By day, I work as CTO at
+          - link "Summit Management" [ref=f1e14] [cursor=pointer]:
+            - /url: https://www.summit-mgmt.mx
+          - text: ", and by night, as a Product Manager at"
+          - link "Artiflora" [ref=f1e15] [cursor=pointer]:
+            - /url: https://artiflora.mx
+          - text: .
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]:
+            - generic [ref=f1e18]: Listening
+            - generic [ref=f1e19]:
+              - link "Final Fantasy Crystal Chronicles Remastered OST (opens in a new tab)" [ref=f1e21] [cursor=pointer]:
+                - /url: https://www.last.fm/music/Foggy+Swamp/_/Final+Fantasy+Crystal+Chronicles+Remastered+OST
+                - text: Final Fantasy Crystal Chronicles Remastered OST
+                - generic [ref=f1e22]: (opens in a new tab)
+              - generic [ref=f1e23]:
+                - generic [ref=f1e24]: Foggy Swamp
+                - generic [ref=f1e25]: ·
+                - generic [ref=f1e26]: 18m ago
+          - generic [ref=f1e27]:
+            - generic [ref=f1e28]: Reading
+            - generic [ref=f1e29]:
+              - link "One Up On Wall Street (opens in a new tab)" [ref=f1e31] [cursor=pointer]:
+                - /url: https://literal.club/book/one-up-on-wall-street-q057w
+                - text: One Up On Wall Street
+                - generic [ref=f1e32]: (opens in a new tab)
+              - generic [ref=f1e33]:
+                - generic [ref=f1e34]: Peter Lynch
+                - generic [ref=f1e35]: ·
+                - generic [ref=f1e36]: 24d ago
+          - generic [ref=f1e37]:
+            - generic [ref=f1e38]: Watching
+            - generic [ref=f1e39]:
+              - link "The Odyssey (2026) (opens in a new tab)" [ref=f1e41] [cursor=pointer]:
+                - /url: https://letterboxd.com/ocordova/film/the-odyssey-2026/
+                - text: The Odyssey (2026)
+                - generic [ref=f1e42]: (opens in a new tab)
+              - generic [ref=f1e43]: 5d ago
+          - generic [ref=f1e45]:
+            - generic [ref=f1e46]: Playing
+            - generic [ref=f1e47]:
+              - 'link "Final Fantasy 1: Pixel Remaster (opens in a new tab)" [ref=f1e49] [cursor=pointer]':
+                - /url: https://www.igdb.com/games/final-fantasy--3
+                - text: "Final Fantasy 1: Pixel Remaster"
+                - generic [ref=f1e50]: (opens in a new tab)
+              - generic [ref=f1e51]:
+                - generic [ref=f1e52]: Nintendo Switch
+                - generic [ref=f1e53]: ·
+                - generic [ref=f1e54]: 27d ago
+      - generic [ref=f1e55]:
+        - heading "Projects" [level=2] [ref=f1e56]
+        - link "Berry Trail (opens in a new tab) A reading room for 13F filings. What 98 superinvestors hold, every quarter since 2013, as filed." [ref=f1e58] [cursor=pointer]:
+          - /url: https://berrytrail.io
+          - generic [ref=f1e59]:
+            - text: Berry Trail
+            - generic [ref=f1e60]: (opens in a new tab)
+          - paragraph [ref=f1e61]: A reading room for 13F filings. What 98 superinvestors hold, every quarter since 2013, as filed.
+      - generic [ref=f1e62]:
+        - generic [ref=f1e63]:
+          - heading "Thoughts" [level=2] [ref=f1e64]
+          - link "View all" [ref=f1e65] [cursor=pointer]:
+            - /url: /thoughts
+        - generic [ref=f1e66]:
+          - 'link "Evaluating Stocks Like Products: The Business" [ref=f1e67] [cursor=pointer]':
+            - /url: /thoughts/evaluating-stocks-2-the-business
+          - 'link "Evaluating Stocks Like Products: The Need" [ref=f1e69] [cursor=pointer]':
+            - /url: /thoughts/evaluating-stocks-1-the-need
+      - generic [ref=f1e71]:
+        - generic [ref=f1e72]:
+          - heading "Bookmarks" [level=2] [ref=f1e73]
+          - link "View all" [ref=f1e74] [cursor=pointer]:
+            - /url: /bookmarks
+        - generic [ref=f1e75]:
+          - 'link "Trust (is) the process: Why following a framework doesn''t guarantee good results (opens in a new tab)" [ref=f1e76] [cursor=pointer]':
+            - /url: https://uxdesign.cc/trust-is-the-process-why-following-a-framework-doesnt-guarantee-good-results-fa933c4304cd
+            - generic [ref=f1e77]:
+              - text: "Trust (is) the process: Why following a framework doesn't guarantee good results"
+              - generic [ref=f1e78]: (opens in a new tab)
+          - link "Rethinking the Technical Interview (opens in a new tab)" [ref=f1e79] [cursor=pointer]:
+            - /url: https://www.youtube.com/watch?v=H2OjewTu_fY
+            - generic [ref=f1e80]:
+              - text: Rethinking the Technical Interview
+              - generic [ref=f1e81]: (opens in a new tab)
+      - generic [ref=f1e82]:
+        - heading "Contact" [level=2] [ref=f1e83]
+        - paragraph [ref=f1e84]:
+          - text: You can reach me at
+          - link "oscar@cordova.me" [ref=f1e85] [cursor=pointer]:
+            - /url: mailto:oscar@cordova.me
+          - text: or
+          - link "Telegram (opens in a new tab)" [ref=f1e86] [cursor=pointer]:
+            - /url: https://t.me/ocordova
+            - text: Telegram
+            - generic [ref=f1e87]: (opens in a new tab)
+          - text: .
+  - contentinfo [ref=f1e88]:
+    - generic [ref=f1e89]:
+      - generic [ref=f1e91]:
+        - navigation [ref=f1e92]:
+          - link "Home" [ref=f1e93] [cursor=pointer]:
+            - /url: /
+          - link "Thoughts" [ref=f1e94] [cursor=pointer]:
+            - /url: /thoughts
+          - link "Bookmarks" [ref=f1e95] [cursor=pointer]:
+            - /url: /bookmarks
+          - link "Uses" [ref=f1e96] [cursor=pointer]:
+            - /url: /uses
+          - link "Colophon" [ref=f1e97] [cursor=pointer]:
+            - /url: /colophon
+        - button "Toggle theme" [ref=f1e99] [cursor=pointer]
+      - button "Show next quote" [ref=f1e107] [cursor=pointer]:
+        - blockquote [ref=f1e108]: “Things are as they are. Looking out into the universe at night, we make no comparisons between right and wrong stars.” - Alan Watts

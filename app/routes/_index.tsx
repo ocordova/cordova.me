@@ -66,7 +66,7 @@ export default function Index() {
             View all
           </Link>
         </div>
-        <div className="mt-2">
+        <div className="mt-4">
           {thoughts.map((thought) => (
             <Link
               key={thought.slug}

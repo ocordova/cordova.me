@@ -13,7 +13,7 @@ const Projects = () => {
       <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">
         Projects
       </h2>
-      <div className="mt-2">
+      <div className="mt-4">
         {projects.map((project) => (
           <a
             key={project.name}

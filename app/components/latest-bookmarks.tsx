@@ -17,7 +17,7 @@ const Bookmarks = () => {
           View all
         </Link>
       </div>
-      <div className="mt-2">
+      <div className="mt-4">
         {latestTwoBookmarks.map((bookmark) => (
           <a
             key={bookmark.title}
