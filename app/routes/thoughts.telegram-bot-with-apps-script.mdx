@@ -20,7 +20,7 @@ export const meta = () => [
   <span>{formatDate(frontmatter.date)}</span>
 </time>
 
-[Google Apps Script](https://developers.google.com/apps-script) is a cloud scripting service based in JavaScript and makes it easy to do cool things with most of Google's products. Lately, I've been a big fan of its flexibility and versatility, for example with just a few lines of code you can interact with the [Telegram Bot API](https://core.telegram.org/bots/api) to control your bot, you won't have to worry about having a server, SSL certificates or configure ports.
+[Google Apps Script](https://developers.google.com/apps-script) is a JavaScript-based scripting service for Google's products. With a few lines of code you can call the [Telegram Bot API](https://core.telegram.org/bots/api), and you don't need a server, SSL certificates, or port configuration.
 
 ## What We Are Going to Do
 
@@ -34,11 +34,9 @@ You can test it just by starting a conversation with [DesignQuotesBot](https://t
     <source src="/static/writing/telegram-bot-demo.ogg" type="video/ogg" />
   </video>
 </div>
-Now let's get started with the step by step instructions:
+## Meet BotFather
 
-## 🤖 Meet BotFather
-
-The first step is to talk to [BotFather](https://telegram.me/BotFather) to create and setup our bot, he will also give us our authorization token.
+Talk to [BotFather](https://telegram.me/BotFather) to create and set up the bot. He will also give you the authorization token.
 
 Sign in to Telegram from your favorite device and search for the account **BotFather** and start a conversation.
 
@@ -105,9 +103,9 @@ send requests to the [Bot API](https://core.telegram.org/bots/api).
   />
 </div>
 
-## Ok, It's time to code!
+## Time to code
 
-Let's jump to Google Apps Script, grab your browser and visit [script.google.com/intro](https://script.google.com/intro) (You'll need to be signed in to your Google account.) You'll see the Script Editor with a **Blank project**, delete any code in the **Code.gs** file.
+Open [script.google.com/intro](https://script.google.com/intro) in your browser and sign in. Create a blank project and delete any code in the **Code.gs** file.
 
 <div className="flex justify-center">
   <img
@@ -124,9 +122,9 @@ going to use **Webhooks**, this means every time there is an update in for the b
 (like when someone sends a command to our bot or add him to a group), they will send
 an HTTP POST request to a specified URL containing a JSON-serialized [Update](https://core.telegram.org/bots/api#update).
 
-So, we need to create an application to be able to respond to POST requests sent from the Bot API, the good news are that Google Apps Script would let us deploy our script as a [Web App](https://developers.google.com/apps-script/guides/web) that would let us interpret those request.
+We need an application that can respond to POST requests from the Bot API. Google Apps Script lets us deploy our script as a [Web App](https://developers.google.com/apps-script/guides/web), so we can interpret those requests.
 
-When an user or a program (in this case de Bot API) sends to our script an HTTP Post request, Apps Script will run the special callback function **doPost(e)** so all we need to do is define that function in our script. The `e` argument represents an event parameter that contains the information of the request. As we mentioned above, the Bot API will send the POST request containing a JSON-serialized, this means we're gonna recieve an object converted into String, so we need to parse the text content of the POST body `e.postBody.contents` with the method [JSON.parse()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse).
+When a user or program sends our script an HTTP POST request, Apps Script runs the special callback function **doPost(e)**. We define that function in our script. The `e` argument is an event parameter that contains the request information. The Bot API sends the POST request as JSON, so we receive an object converted to a string. We parse the text content of the POST body `e.postData.contents` with [JSON.parse()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse).
 
 ```javascript
 function doPost(e) {
@@ -248,12 +246,12 @@ The returned value is an Array, so we can use the JavaScript method [shift()](ht
 var post = posts.shift();
 ```
 
-The Bot API supports basic formatting for messages, let's take advantage of this and format the quote, we're goinf to add quotations marks, an em dash and the author in bold.
+The Bot API supports basic formatting, so we'll format the quote with quotation marks, a dash, and the author in bold.
 
 > "No matter how cool your interface is, it would be better if there were less of it."
-> **— Alan Cooper**
+> **- Alan Cooper**
 
-Notice the returned value contains HTML p tags, since Bot API does not support those tags, we need to remove them, we can achieve this with the JavaScript [replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) method and the [Regular expression](https://en.wikipedia.org/wiki/Regular_expression) `/<(?:.|\n)*?>/gm` [(explanation)](https://regex101.com/r/lL7tC7/1). Let's also get rid of the last line break `\n` with the regular expression `/\n/gm`.
+The returned value contains HTML `p` tags, which the Bot API does not support. We remove them with the JavaScript [replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) method and the [regular expression](https://en.wikipedia.org/wiki/Regular_expression) `/<(?:.|\n)*?>/gm` [(explanation)](https://regex101.com/r/lL7tC7/1). We also strip the trailing line break `\n` with `/\n/gm`.
 
 ```javascript
 // Delete the html tags and \n (newline)
@@ -263,7 +261,7 @@ var cleanContent = post.content.rendered
 
 // Format the quote
 var quote =
-  '"' + cleanContent + '"\n — <strong>' + post.title.rendered + "</strong>";
+  '"' + cleanContent + '"\n- <strong>' + post.title.rendered + "</strong>";
 ```
 
 The next step is to send the Bot API our request, for this we're also going to use the **URL Fetch Service** and the Bot API method [sendMessage](https://core.telegram.org/bots/api#sendmessage).
@@ -334,7 +332,7 @@ function doPost(e) {
         var quote =
           '"' +
           cleanContent +
-          '"\n — <strong>' +
+          '"\n- <strong>' +
           post.title.rendered +
           "</strong>";
 
@@ -432,7 +430,7 @@ We just need to open Telegram on any device, search for our bot and send the com
 </div>
 ## We’re done!
 
-I hope this post gave you a better understanding of what we can achieve with Google Apps Script and a little more on how to create a Telegram Bot.
+That is a working Telegram bot built with Google Apps Script. The source code is on GitHub if you want to extend it.
 
 ## Further Reading and Related Links
 

@@ -198,6 +198,23 @@ Visitors are fellow engineers, product people, and curious individuals discoveri
 ## Git and pull requests
 
 - Do not add the Claude session link or `Claude-Session:` trailer to commit messages or pull request descriptions.
+- Use gitmoji for commit messages and PR titles: `✨ feat`, `🐛 fix`, `♻️ refactor`, `🧹 chore`, `📝 docs`, `✅ test`, `🔐 security`.
+- Do NOT include `Co-Authored-By` lines in commit messages.
+- When creating PRs, use this template for the body:
+
+  ```markdown
+  ## What
+
+  <!-- What does this PR do and why? -->
+
+  ## Changes
+
+  <!-- Bullet list of changes -->
+
+  ## Notes
+
+  <!-- New env vars, migrations, breaking changes, deploy steps. Remove if not needed. -->
+  ```
 
 ## Security considerations
 
