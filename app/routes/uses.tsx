@@ -61,8 +61,9 @@ const Tool = ({
           ) : null}
         </div>
         <div className="min-w-0">
-          <h3 className="text-sm">
+          <h3 className="text-[15px]">
             <span className="link-underline">{name}</span>
+            <span className="sr-only"> (opens in a new tab)</span>
           </h3>
           <p className="text-[0.8125rem] text-muted-foreground">{children}</p>
         </div>

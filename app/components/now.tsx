@@ -104,28 +104,30 @@ const Now = ({ initial }: { initial?: NowInitial }) => {
   } = useNowPlaying(initial?.game);
 
   return (
-    <section className="mt-12">
-        <h2 className="mb-4 font-serif text-lg font-medium tracking-tight text-foreground">
+    <section className="mt-16">
+        <h2 className="mb-3 font-serif text-xl font-medium tracking-tight text-foreground">
           Now
         </h2>
-        <p className="text-sm leading-7">
+        <p className="text-[15px] leading-7">
           By day, I work as CTO at{" "}
           <a
             className="link-underline"
             href="https://www.summit-mgmt.mx"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Summit Management
+            {NEW_TAB}
           </a>
           , and by night, as a Product Manager at{" "}
           <a
             className="link-underline"
             href="https://artiflora.mx"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Artiflora
+            {NEW_TAB}
           </a>
           .
         </p>
@@ -137,7 +139,7 @@ const Now = ({ initial }: { initial?: NowInitial }) => {
               <a
                 href="https://berrytrail.io"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="link-underline text-[0.8125rem]"
               >
                 Berry Trail

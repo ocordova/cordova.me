@@ -52,26 +52,26 @@ export default function Index() {
       <About />
       <Now initial={now} />
       <WorkPhilosophy />
-      <section className="mt-12">
+      <section className="mt-16">
         <div className="flex items-center justify-between">
-          <h2 className="font-serif text-lg font-medium tracking-tight text-foreground">
+          <h2 className="font-serif text-xl font-medium tracking-tight text-foreground">
             Thoughts
           </h2>
           <Link
             to="/thoughts"
-            className="inline-flex min-h-[44px] items-center text-[0.8125rem] text-muted-foreground transition-colors hover:text-foreground"
+            className="inline-flex min-h-[44px] items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             View all
           </Link>
         </div>
-        <div className="mt-4">
+        <div className="mt-3">
           {thoughts.map((thought) => (
             <Link
               key={thought.slug}
               to={`/thoughts/${thought.slug}`}
               className="flex min-h-[44px] items-center py-1"
             >
-              <span className="text-sm link-underline">
+              <span className="text-[15px] link-underline">
                 {thought.frontmatter.title}
               </span>
             </Link>

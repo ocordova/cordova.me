@@ -11,7 +11,7 @@ export const Prose = ({
     <div
       className={cn(
         className,
-        "prose-sm prose-neutral prose dark:prose-invert"
+        "prose-base prose-neutral prose dark:prose-invert"
       )}
     >
       {children}

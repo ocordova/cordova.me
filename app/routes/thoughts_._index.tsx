@@ -36,7 +36,7 @@ export default function ThoughtsPage() {
             to={`/thoughts/${thought.slug}`}
             className="block py-2"
           >
-            <span className="text-sm link-underline">
+            <span className="text-[15px] link-underline">
               {thought.frontmatter.title}
             </span>
           </Link>
