@@ -21,20 +21,14 @@ export const meta = () => [
   <span>{formatDate(frontmatter.date)}</span>
 </time>
 
-Finding a delicate balance between stakeholder demands, bug fixes, and long-term goals within a sprint is a common struggle for many scrum teams, including my own.
+Every sprint, our team faces the same tension: stakeholder requests, production bugs, and the roadmap all compete for the same capacity. Prioritization frameworks like RICE, MoSCoW, or Kano help, but they don't save you from a critical bug on Tuesday or an urgent request on Thursday.
 
-Despite our efforts to employ prioritization frameworks like RICE, MoSCoW, or Kano, the reality is that unexpected issues often disrupt our plans. Whether it's a critical bug reported from production or an urgent stakeholder request, these events can lead to confusion within the scrum team and disrupt the sprint goals.
+What has worked better for us is splitting the backlog into buckets. I borrowed the idea from Yuva Murugan's adaptation of Adam Nash's Three Feature Buckets. The percentages are a starting point, not a rule:
 
-In the face of such challenges, I've come to realize the importance of having a structured approach to managing these mid-sprint changes. One model that has resonated with me is Yuva Murugan's adaptation of the Three Feature Buckets concept by Adam Nash to maintain a balance between developing roadmap initiatives and addressing stakeholders' requests or bugs.
-
-This framework divides our sprint backlog into distinct buckets, each with a recommended size based on priority. For instance, the Metric Movers bucket represents 75%-70% of the sprint size. You can estimate this based on the team's historical sprint velocity: the number of story points they have completed in previous sprints.
-
-These are the buckets:
-
-- **Emergent Issues (5-10%):** A buffer reserved for issues that require immediate attention and cannot wait until the end of the sprint. These are hotfixes since they are outside the release cycle.
-- **Metric Movers (75-70%):** Focuses on roadmap initiatives, with the features being broken down and prioritized based on user stories.
-- **Customer and Stakeholder Requests (15-10%)**: Critical requests from customers or internal stakeholders. These also include technical debt or infrastructure updates.
-- **Customer Delights (5-10%)**: Small bucket at the end of the backlog to address improvements for customers, such as Dark Mode or the ability to save the logo as an SVG by right-clicking, which would be hard to prioritize among other features.
+- **Emergent issues (5-10%):** Hotfixes that can't wait for the next release.
+- **Metric movers (70-75%):** Roadmap work, broken down and prioritized by user story.
+- **Customer and stakeholder requests (10-15%):** Critical internal or external asks, plus technical debt and infrastructure work.
+- **Customer delights (5-10%):** Small improvements that are hard to prioritize otherwise, like Dark Mode or saving a logo as SVG.
 
 <img
   src={`/static/writing/diagram-framework-for-prioritizing-sprint-backlog.png`}
@@ -43,10 +37,8 @@ These are the buckets:
   height={2048 / 3}
 />
 
-What I find particularly insightful about this approach is its flexibility. While the percentage allocation to each bucket may vary depending on factors like team velocity or project priorities, the underlying principle remains consistent: to maintain a balance between short-term needs and long-term goals.
+The percentages shift depending on velocity and priorities. The useful part is the conversation, not the math. When we agree on the split beforehand, mid-sprint changes stop feeling arbitrary. Everyone knows what got displaced and why.
 
-But beyond its practical applications, adopting such a framework has sparked a shift in mindset within our team. By openly discussing and agreeing on our prioritization strategy, we've fostered greater transparency and collaboration. This, in turn, has led to improved communication and a shared understanding of our collective priorities.
+It also made our priorities visible. Before, the backlog looked like one long to-do list. Now the trade-offs are explicit: a new stakeholder request means less room for delights, or less roadmap work. That transparency has cut down more arguments than any framework alone.
 
-In essence, embracing a structured approach to prioritization has not only helped us navigate the complexities of sprint planning but has also strengthened our team dynamics. It's a reminder that sometimes, the most valuable tools in our toolkit are not the ones we use to write code but the ones that help us align our efforts and focus on what truly matters.
-
-So, the next time you find yourself overwhelmed by the whirlwind of competing demands during a sprint, consider the power of a prioritization framework. It's not just about organizing tasks; it's about empowering your team to find clarity amidst chaos and drive meaningful impact together.
+The framework doesn't remove the pressure. It just gives the team a shared language for saying no.

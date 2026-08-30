@@ -21,20 +21,22 @@ export const meta = () => [
   <span>{formatDate(frontmatter.date)}</span>
 </time>
 
-**Has it ever happened to you that, even if you deliver features and mark activities as completed, there is no direct impact on the critical metrics of your business?**
+**You ship features, mark tasks done, and still nothing moves in the metrics that matter.**
 
-> “Mistaking ‘making stuff’ for making progress, and mistaking shipping
-> features for being done.” ― Joshua Seiden.
+> "Mistaking 'making stuff' for making progress, and mistaking shipping
+> features for being done."
+>
+> Joshua Seiden.
 
-In my experience, the key is in the roadmaps. In them, the leaders usually deliver both the list of functionalities and the delivery deadlines. In this way, the team focuses only on execution—the success metric being its productivity—and loses sight of the result for the user and the business. Doing this makes it difficult for teams to understand the expected impact; it is not possible to propose a better solution; there is no room to experiment or make mistakes, and all of this complicates the relationship between the activities that are carried out and the results that are expected from the business.
+In my experience, the problem usually starts with the roadmap. Leaders pack it with features and deadlines. The team then measures success by productivity: how much got shipped. The user result and the business result become afterthoughts. Without an outcome to aim at, the team can't propose better ideas, can't experiment, and can't tell whether the work was worth it.
 
-Joshua Seiden, a successful strategy consultant, mentions that leaders and the people who do the work tend to define value at different levels of specificity. Thus, while leaders think about impacts, execution teams tend to think about resources, activities, and outcomes.
+Joshua Seiden points out that leaders and teams often define value at different altitudes. Leaders think about impact. Teams think about resources, tasks, and outputs.
 
-However, this situation can change if leaders improve communication in terms of outcomes, that is if they are more clear, direct, and specific with what must be done and what is expected. For example:
+That gap closes when leaders communicate in outcomes. Be specific about what must change and why.
 
-If the goal is to increase the sales of an online store, then we are talking about the impact. The execution team will know it can achieve this by increasing the average order price. That is the outcome. To achieve this, they consider implementing a section that says, 'Customers who bought this product also bought…'.
+For example, if the goal is to increase online store sales, that's the impact. The team can decide to raise the average order value. That's the outcome. One way to get there is adding a section that says, "Customers who bought this product also bought…" That's the output.
 
-To do this, Seiden proposes a logic model based on the results:
+Seiden frames this as a logic model:
 
 <img
   src={`/static/writing/the-project-logic-model-josh-seiden.jpg`}
@@ -43,18 +45,14 @@ To do this, Seiden proposes a logic model based on the results:
   alt={`The Project Logic Model by Josh Seiden`}
 />
 
-In the online store example, the logical model would look like this:
+In the store example, the impact is more sales, the result is a higher average order value, and the output is the related-products section.
 
-- **Impact**: Increase the sales of the online store.
-- **Result**: Increase the average order value (AOV).
-- **Output**: Add a product section that says, 'Customers who bought this product also bought…'
+When the model is explicit, the team knows what result to measure and can iterate until it happens.
 
-This allows teams to better understand the expected result, measure whether the result was achieved, or iterate until it is achieved.
+Seiden suggests three questions to find the outcome:
 
-Now, for leaders in this situation who want to close the gap, Joshua Seiden proposes a series of questions to identify the results:
+- What user behaviors drive business results?
+- How do we get people to do more of those behaviors?
+- How do we know we're right?
 
-- What are the user and customer behaviors that drive business results? (This is the outcome that we’re trying to create.)
-- How can we get people to do more of those behaviors? (These are the features, policy changes, promotions, etc., that we’ll do to create the outcomes.)
-- How do we know that we’re right? (This uncovers the dynamics of the system and the tests and metrics we’ll use to measure our progress.)
-
-It is a great challenge for leaders to change from using measures of success based on productivity, to using measures of success based on outcomes. However, if you want to have a direct impact on key business metrics, it seems to me that we must insist that teams plan in terms of outcomes, and I consider it essential to ask ourselves, “Why are we doing this?” and “What are we trying to achieve?”
+Moving from productivity metrics to outcome metrics is hard. But if you want the work to matter, plan in outcomes. I keep two questions nearby: "Why are we doing this?" and "What are we trying to achieve?"
