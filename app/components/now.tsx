@@ -121,11 +121,11 @@ const Now = ({ initial }: { initial?: NowInitial }) => {
           , and by night, as a Product Manager at{" "}
           <a
             className="link-underline"
-            href="https://artiflora.mx"
+            href="https://galvia.mx"
             target="_blank"
             rel="noreferrer"
           >
-            Artiflora
+            Galvia
           </a>
           .
         </p>
